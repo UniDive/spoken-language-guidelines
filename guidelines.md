@@ -36,7 +36,7 @@ This is the online documentation of UD guidelines v2 (launched 2016-12-01 with s
 * [Foreign expressions and code-switching](foreign.html)
 * [Guidelines change history](changes.html)
 * Incubator for [Construction-Oriented Documentation](/workgroups/newdoc/index.html) (it will be moved here when it is mature enough)
-
+* :new: Incubator for [spoken language guidelines](workgroups/spoken-data/) 
 # Language-specific Guidelines
 
 <!-- Re-generate: docs-automation\list_lang_spec_docs.pl > docs\_includes\lang_spec_docs.html -->
