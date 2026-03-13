@@ -28,4 +28,4 @@ Disclaimer:
   * Focused syntactic relations (single document)
   * Conversion from speaker view to dependency view
 
-* Miscellanea
+* [Miscellanea](miscellanea.html)
