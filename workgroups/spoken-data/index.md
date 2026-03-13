@@ -16,10 +16,7 @@ Disclaimer: This page represents the output of UniDive WG1 T1.5 group. It is not
   * [CoNLLU format and treebank structure](metadata.html)
 
 * Annotation guidelines
-  * Punctuation
-  * Non verbal behavior
-  * Pauses
-  * Discourse markers
+  * [Other constructions](specific_syntax.html)
 
 * Documentation of tags, features and relations
   * New MISC features (single document)
