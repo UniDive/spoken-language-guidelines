@@ -13,8 +13,7 @@ Disclaimer: This page represents the output of UniDive WG1 T1.5 group. It is not
   * [Tokenization and word segmentation](tokenization.html)
   * [Morphology](morphology.html)
   * [Syntax](syntax.html)
-  * CoNLLU format and new files
-    * Metadata
+  * [CoNLLU format and treebank structure](metadata.html)
 
 * Annotation guidelines
   * Punctuation
