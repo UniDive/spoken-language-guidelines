@@ -4,7 +4,7 @@ title:  'Spoken Language Treebanks'
 udver: '2'
 ---
 
-Disclaimer:
+Disclaimer: This page represents the output of UniDive WG1 T1.5 group. It is not meant to be understood as proper guidelines yet, it will evolve into UD guidelines in the future.
 
 # Guidelines for Spoken Language UD Treebanks
 
