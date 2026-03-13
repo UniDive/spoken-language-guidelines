@@ -27,3 +27,5 @@ Disclaimer:
   * Language-dependent list of allowed values (e.g., filled pauses etc)
   * Focused syntactic relations (single document)
   * Conversion from speaker view to dependency view
+
+* Miscellanea
