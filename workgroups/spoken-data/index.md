@@ -12,7 +12,7 @@ Disclaimer: This page represents the output of UniDive WG1 T1.5 group. It is not
   * **NEW!** [Maximal unit segmentation](maximal_unit_segmentation.html)
   * [Tokenization and word segmentation](tokenization.html)
   * [Morphology](morphology.html)
-  * Syntax
+  * [Syntax](syntax.html)
   * CoNLLU format and new files
     * Metadata
 
