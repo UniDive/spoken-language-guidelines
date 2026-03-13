@@ -9,7 +9,7 @@ Disclaimer: This page represents the output of UniDive WG1 T1.5 group. It is not
 # Guidelines for Spoken Language UD Treebanks
 
 * Basic principles
-  * [NEW!] Maximal unit segmentation
+  * **NEW!** [Maximal unit segmentation](maximal_unit_segmentation.html)
   * Tokenization and word segmentation
   * [MAYBE NOT NEEDED] Morphology
   * Syntax
