@@ -10,7 +10,7 @@ Disclaimer: This page represents the output of UniDive WG1 T1.5 group. It is not
 
 * Basic principles
   * **NEW!** [Maximal unit segmentation](maximal_unit_segmentation.html)
-  * Tokenization and word segmentation
+  * [Tokenization and word segmentation](tokenization.html)
   * [MAYBE NOT NEEDED] Morphology
   * Syntax
   * CoNLLU format and new files
