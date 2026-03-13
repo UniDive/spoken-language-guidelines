@@ -19,9 +19,15 @@ Disclaimer: This page represents the output of UniDive WG1 T1.5 group. It is not
   * [Other constructions](specific_syntax.html)
 
 * Documentation of tags, features and relations
-  * New MISC features (single document)
-  * Language-dependent list of allowed values (e.g., filled pauses etc)
-  * Focused syntactic relations (single document)
-  * Conversion from speaker view to dependency view
+  * POS tags:
+    * [PUNCT](PUNCT.html)
+  * Syntactic relations:
+    * conj:reform
+    * discourse:backchannel
+    * parataxis:insert
+    * parataxis:parent
+    * raparandum
+    * discourse:filledpause
+  * [MISC attributes](MISC.html)
 
 * [Miscellanea](miscellanea.html)

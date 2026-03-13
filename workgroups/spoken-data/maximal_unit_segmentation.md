@@ -5,8 +5,8 @@ udver: '2'
 ---
 
 - [Maximal Unit Segmentation](#maximal-unit-segmentation)
-	- [Speaker view vs. Dependency view](#speaker-view-vs-dependency-view)
-	- [What to do](#what-to-do)
+  - [Speaker view vs. Dependency view](#speaker-view-vs-dependency-view)
+  - [What to do](#what-to-do)
 
 
 # Maximal Unit Segmentation
@@ -31,6 +31,11 @@ TODO: explicit reference to `rectional unit` (Kahane&Pietrandrea) @sylvainkahane
 This means that segmentation has to be performed on the basis of various criteria: syntactic, prosodic and semantic at once.
 
 ## Speaker view vs. Dependency view
+
+proposal: provide both speaker-based and dependency-based information, developing a conversion tool to switch between the two "views" and make data available in both versions.
+
+More specifically, in the speaker-based view each speaker utterance is a new tree, and the Speaker ID attribute applied to the tree (# speaker_id metadata).
+In the dependency-based view, a tree may be the outcome of multiple speaker concatenations. Each token has a Speaker_id attribute in MISC, as there may be arbitrarily many speakers contributing.
 
 TODO: @bguil
 
