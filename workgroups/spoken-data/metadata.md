@@ -124,7 +124,7 @@ The guidelines can be adopted gradually, depending on available time and resourc
 Minimal effort: Simply rename existing metadata fields to match the proposed conventions.
 Intermediate effort: Add metadata that is already available in the underlying corpus but not yet encoded in the treebank.
 Extended effort: Introduce additional metadata where relevant and feasible.
-The metadata can be encoded either directly in CoNLL-U or in an external file as outlined in [treebank structure](treebank_structure). The exact storage format is probably secondary to consistent naming and structure. 
+The metadata can be encoded either directly in CoNLL-U or in an external file as outlined in [treebank structure](treebank_structure.html). The exact storage format is probably secondary to consistent naming and structure. 
 
 @andidyer → propose a metadata.json template with overview of core metadata categories
-> see also [treebank structure](treebank_structure)
+> see also [treebank structure](treebank_structure.html)

@@ -9,19 +9,19 @@ Disclaimer: This page represents the output of UniDive WG1 T1.5 group. It is not
 # Guidelines for Spoken Language UD Treebanks
 
 * Basic principles
-  * **NEW!** [Maximal unit segmentation](maximal_unit_segmentation)
-  * [Tokenization and word segmentation](tokenization)
-  * [Morphology](morphology)
-  * [Syntax](syntax)
-  * [Metadata Harmonisation](metadata)
-  * [CoNLL-U format and treebank structure](treebank_structure)
+  * **NEW!** [Maximal unit segmentation](maximal_unit_segmentation.html)
+  * [Tokenization and word segmentation](tokenization.html)
+  * [Morphology](morphology.html)
+  * [Syntax](syntax.html)
+  * [Metadata Harmonisation](metadata.html)
+  * [CoNLL-U format and treebank structure](treebank_structure.html)
 
 * Annotation guidelines
-  * [Other constructions](specific_syntax)
+  * [Other constructions](specific_syntax.html)
 
 * Documentation of tags, features and relations
   * POS tags:
-    * [PUNCT](PUNCT)
+    * [PUNCT](PUNCT.html)
   * Syntactic relations:
     * conj:reform
     * discourse:backchannel
@@ -29,6 +29,6 @@ Disclaimer: This page represents the output of UniDive WG1 T1.5 group. It is not
     * parataxis:parent
     * raparandum
     * discourse:filledpause
-  * [MISC attributes](MISC)
+  * [MISC attributes](MISC.html)
 
-* [Miscellanea](miscellanea)
+* [Miscellanea](miscellanea.html)
