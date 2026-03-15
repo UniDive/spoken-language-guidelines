@@ -172,9 +172,9 @@ The table below provides access to the relevant GitHub folders and files.
 
 ## Python tools
 
-The scripts described below are available in https://github.com/UniDive/SpLAn-UD (folder `metadata-encoding`).
+The scripts described below are available in [https://github.com/UniDive/SpLAn-UD](https://github.com/UniDive/SpLAn-UD) (folder `metadata-encoding`).
 
-Please note that these scripts use the [conllup](https://pypi.org/project/conllup/) library. It would be easy to switch to a different CoNLL Python library if better integration with the UD infrastructure is required.
+These scripts use the [conllup](https://pypi.org/project/conllup/) library. It would be easy to switch to a different CoNLL Python library if better integration with the UD infrastructure is required.
 
 ### Merge and unshare
 
@@ -196,5 +196,5 @@ The script [`metadata_detect_sharable.py`](https://github.com/UniDive/SpLAn-UD/b
 
 **Note**: the output of the script must be manually processed because we may observe:
  - spurious dependencies between metadata that we do not want to exploit
- - missing expected dependencies due to errors in the metadata treebank (as occurred in [Rhapsodie(https://github.com/surfacesyntacticud/SUD_French-Rhapsodie/commit/23ee4055ad82a20b603db0df5513582e135b1cb7)])
+ - missing expected dependencies due to errors in the metadata treebank (as occurred in [Rhapsodie](https://github.com/surfacesyntacticud/SUD_French-Rhapsodie/commit/23ee4055ad82a20b603db0df5513582e135b1cb7)])
  - when two metadata are mutually dependent (for instance `document_id` and `sound_url`), we have to choose the meaniful one
