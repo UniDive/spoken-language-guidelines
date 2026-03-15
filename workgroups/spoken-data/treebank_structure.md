@@ -12,6 +12,8 @@ While token- and sentence-level information should remain encoded directly in th
 
 Concretely, this takes the form of a `metadata.json` file placed in a designated folder, containing entries indexed by stable identifiers (e.g. `document_id` and `speaker_id`) that are referenced in the CoNLL-U files through those identifiers, as in the examples below.
 
+Another issue relates to the storage of treebanks in CoNLL-U files, which are organised in a way that is consistent with a document-level structure, as discussed in the [Github issue #1146](https://github.com/UniversalDependencies/docs/issues/1146). This problem is also addressed in the proposal below.
+
 > if there is a general template generated for a new treebank, the creation of metadata.json could be a default feature -- to discuss with Dan Zeman
 
 ## Proposal overview
@@ -170,9 +172,13 @@ The table below provides access to the relevant GitHub folders and files.
 
 ## Python tools
 
+The scripts described below are available in https://github.com/UniDive/SpLAn-UD (folder `metadata-encoding`).
+
+Please note that these scripts use the [conllup](https://pypi.org/project/conllup/) library. It would be easy to switch to a different CoNLL Python library if better integration with the UD infrastructure is required.
+
 ### Merge and unshare
 
-We provide a Python script `merge_and_unshare.py` which takes the base folder `<BASE>` (where dev/test/train `conllu` files are expected) as an argument.
+We provide a Python script [`merge_and_unshare.py`](https://github.com/UniDive/SpLAn-UD/blob/main/metadata-encoding/merge_and_unshare.py) which takes the base folder `<BASE>` (where dev/test/train `conllu` files are expected) as an argument.
 From the folder `<BASE>/not-to-release/original_split`, the script reads documents (all files with the `.conllu` extension), as well as the files `merge.json` and, if present, `metadata.json`.
 
 Running the script poduces files in the folder `<BASE>` according to the description in the `merge.json` file.
@@ -180,13 +186,13 @@ If a file `metadata.json` is present the `<BASE>/not-to-release/original_split` 
 
 ### Build the shared metadata version from the full version (with repetitions)
 
-The script `metadata_share.py` is available. It can be used to produce both the `metadata.json` files and the new version of the `conllu` files without the shared metadata.
+The script [`metadata_share.py`](https://github.com/UniDive/SpLAn-UD/blob/main/metadata-encoding/metadata_share.py) is available. It can be used to produce both the `metadata.json` files and the new version of the `conllu` files without the shared metadata.
 The metadata to share must be given explicitly.
 Please refer to `--help` options of the script for usage detail.
 
 ### Discover the metadata dependencies in a treebank
 
-The script `metadata_detect_sharable.py` reads a all the documents in a given folder (i.e. all files with the `.conllu` extension) and prints diagnostics on the dependencies between the metadata used in the treebank. It can be used to help build an explicit metadata set to share with the script `metadata_share.py`.
+The script [`metadata_detect_sharable.py`](https://github.com/UniDive/SpLAn-UD/blob/main/metadata-encoding/metadata_detect_sharable.py) reads a all the documents in a given folder (i.e. all files with the `.conllu` extension) and prints diagnostics on the dependencies between the metadata used in the treebank. It can be used to help build an explicit metadata set to share with the script `metadata_share.py`.
 
 **Note**: the output of the script must be manually processed because we may observe:
  - spurious dependencies between metadata that we do not want to exploit
