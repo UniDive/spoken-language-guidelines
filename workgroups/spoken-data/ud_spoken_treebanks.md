@@ -6,8 +6,8 @@ udver: '2'
 
 # Current spoken treebanks
 
-| treebank_name                          | type        | available since | link                                                                                                                                                                     | genre                                                                               | contact                                                                      | sentences | tokens  | is spoken part clearly identifiable? |
-| -------------------------------------- | ----------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | --------- | ------- | ------------------------------------ |
+| treebank_name                          | type        | available since | link                                                                                                                                                                     | genre                                                                               | contact                                                                      | sentences | tokens  | is spoken part clearly identifiable? | translation |
+|-------------------------------------- | ----------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | --------- | ------- | ------------------------------------ |------------------------------------ |
 | Abaza ATB                              | only spoken | 2.11            | [https://github.com/UniversalDependencies/UD_Abaza-ATB](https://github.com/UniversalDependencies/UD_Abaza-ATB)                                                           | spoken                                                                              | alexeykochevoy@gmail.com                                                     | 98        | 652     | yes                                  |
 | Alemannic DIVITAL                      | mixed       | 2.17            | [https://github.com/UniversalDependencies/UD_Alemannic-DIVITAL](https://github.com/UniversalDependencies/UD_Alemannic-DIVITAL)                                           | fiction nonfiction legal spoken wiki bible                                          | dbernhard@unistra.fr                                                         | 977       | 19334   |                                      |
 | Beja Autogramm                         | only spoken | 2.8             | [https://github.com/UniversalDependencies/UD_Beja-Autogramm](https://github.com/UniversalDependencies/UD_Beja-Autogramm)                                                 | spoken                                                                              | martine.vanhove@cnrs.fr; sylvain@kahane.fr                                   | 763       | 11951   | yes                                  |
@@ -76,4 +76,10 @@ udver: '2'
 1. is spoken part clearly identifiable?
    1. `yes` > add `# modality = spoken` to relevant sentences
    2. `no` > open ISSUE with text XXXX
-2.
+
+
+
+## Workflow
+- (Bruno, 15/04) rigenerate table https://tables.grew.fr/?data=SP_meta/META and MISC table
+- (Ludovica, 17/04) column for https://docs.google.com/spreadsheets/d/1hOS0t3ap-P-NC03XqnSWpDBuhEW17djpUMkxwDsdFIA/edit?usp=sharing
+- grouping issues (Luisa, 30/04)
