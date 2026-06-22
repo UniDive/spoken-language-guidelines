@@ -22,7 +22,7 @@ More broadly, questions concerning the encoding of metadata in CoNLL-U have also
 When preparing a spoken UD treebank, two core principles should guide the treatment of metadata: (1) **preserve all available metadata** associated with the recordings rather than discarding it during conversion to .conllu, and (2) **adopt shared naming conventions** to avoid reinventing feature names that have already been used in existing treebanks.
 
 ### Core metadata categories and naming
-Below, we list the most recurrent speech-related metadata categories occurring in existing treebanks and propose their standardized naming, organized by the level at which they apply.
+Below, we list the most recurrent speech-related metadata categories occurring in existing treebanks and propose their standardized naming, organized by the level at which they apply. The list is not exhaustive: additional metadata may be encoded as needed, but before introducing a new feature, check whether a suitable convention is already used in existing spoken treebanks (see the [Grew metadata inventory](https://tables.grew.fr/?data=SP_meta/META)).
 
 #### Document-level
 
@@ -64,9 +64,6 @@ Below, we list the most recurrent speech-related metadata categories occurring i
 | `OrigLang` | Original language of borrowed or inserted tokens | `OrigLang=en` |
 | `WordAlignmentBegin` | Start timestamp of the token (ms) | `WordAlignmentBegin=14120` |
 | `WordAlignmentEnd` | End timestamp of the token (ms) | `WordAlignmentEnd=14560` |
-
-
-Additional metadata may be encoded flexibly; however, developers are encouraged to first check whether a suitable solution already exists in current treebanks (see the [Grew inventory of metadata](https://tables.grew.fr/?data=SP_meta/META) found in existing spoken data treebanks).
 
 
 ### Taxonomy for describing speech events
