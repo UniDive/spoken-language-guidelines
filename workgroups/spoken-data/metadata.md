@@ -6,7 +6,7 @@ udver: '2'
 
 # Metadata harmonisation
 
-## Background and current practices
+## Background
 
 Speech-related metadata in UD treebanks remains heterogeneous and inconsistently encoded in both spoken-only and mixed-modality resources. This makes it difficult to identify spoken material reliably or retrieve data by speech type (e.g. spontaneous vs. prepared, monologue vs. dialogue) or speaker characteristics (e.g. age, gender, education).
 
