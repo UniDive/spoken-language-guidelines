@@ -14,7 +14,7 @@ This variation (both in the metadata recorded and in its representation in CoNLL
 
 Related UD discussions in issues [#1135](https://github.com/UniversalDependencies/docs/issues/1135) and [#1146](https://github.com/UniversalDependencies/docs/issues/1146) further underline the need for clearer and more consistent metadata practices.
 
-## Proposal for core metadata categories and naming
+## Core metadata categories and naming
 
 When preparing a spoken UD treebank, two core principles should guide the treatment of metadata: (1) **preserve all available metadata** associated with the recordings rather than discarding it during conversion to .conllu, and (2) **adopt shared naming conventions** to avoid reinventing feature names that have already been used in existing treebanks.
 
