@@ -6,19 +6,16 @@ udver: '2'
 
 # Metadata harmonisation
 
-## Problem overview
+## Background and current practices
 
-Speech-related metadata in UD treebanks is currently encoded in heterogeneous and inconsistent ways. This affects both spoken-only and mixed-modality treebanks. As a result, it is often difficult to reliably identify spoken data within mixed-modality resources and to retrieve specific types of speech (e.g. spontaneous vs. prepared, public vs. private, monologue vs. dialogue), or speaker-related information (e.g. age, gender, education). Harmonization is therefore essential to enable efficient retrieval of relevant spoken data within and across treebanks and thus advance the underexplored field of spoken grammar research.
+Speech-related metadata in UD treebanks remains heterogeneous and inconsistently encoded in both spoken-only and mixed-modality resources. This makes it difficult to identify spoken material reliably or retrieve data by speech type (e.g. spontaneous vs. prepared, monologue vs. dialogue) or speaker characteristics (e.g. age, gender, education).
 
-## Current situation
+This variation (both in the metadata recorded and in its representation in CoNLL-U) was initially documented by [Dobrovoljc (2022)](https://aclanthology.org/2022.lrec-1.191/), who recommends retaining all available speech-specific metadata in line with prevailing treebank practices and the initial recommendations of [Kahane et al. (2021)](https://aclanthology.org/2021.tlt-1.4/). The [UniDive survey](https://docs.google.com/forms/d/e/1FAIpQLSerAtOMoRmEiO3o99Qv0tMio8m0uriNUhGu-aoKnc29BVUcNg/viewform) (see summary of [results](https://docs.google.com/presentation/d/1KMZbS_dTAlsL-IOb6YDL8gw25_-NW4SPbF-xdbclHMo/edit?slide=id.g2af43d13921_0_95#slide=id.g2af43d13921_0_95)) and the Grew [metadata inventory](https://tables.grew.fr/?data=SP_meta/META) confirm that this heterogeneity persists: not all mixed-modality treebanks explicitly mark spoken material, and many spoken-only treebanks provide no additional speech-specific metadata; where such metadata is available, it varies in type, granularity, and encoding.
 
-Variation in the encoding of speech-related metadata in UD treebanks (both in the information recorded and in how it is represented in CoNLL-U) has already been documented by [Dobrovoljc (2022)](https://aclanthology.org/2022.lrec-1.191/), who recommends systematically recording all available speech-specific metadata in line with prevailing treebank practices and the initial recommendations proposed by [Kahane et al. (2021)](https://aclanthology.org/2021.tlt-1.4/). The results of the [UniDive spoken data annotation survey](https://docs.google.com/forms/d/e/1FAIpQLSerAtOMoRmEiO3o99Qv0tMio8m0uriNUhGu-aoKnc29BVUcNg/viewform) among spoken UD treebank developers ([results overview](https://docs.google.com/presentation/d/1KMZbS_dTAlsL-IOb6YDL8gw25_-NW4SPbF-xdbclHMo/edit?slide=id.g2af43d13921_0_95#slide=id.g2af43d13921_0_95)), carried out at the end of 2024, and the automatically extracted metadata inventory (see [overview table](https://tables.grew.fr/?data=SP_meta/META) in Grew) confirm that such heterogeneity persists. For example, not all mixed-modality treebanks explicitly mark spoken material, and among spoken-only treebanks only 72% provide additional speech-specific metadata, which, when present, varies considerably in type, granularity, and encoding conventions.
+Related UD discussions in issues [#1135](https://github.com/UniversalDependencies/docs/issues/1135) and [#1146](https://github.com/UniversalDependencies/docs/issues/1146) further underline the need for clearer and more consistent metadata practices.
 
-More broadly, questions concerning the encoding of metadata in CoNLL-U have also been discussed within the UD community (see issues [#1135](https://github.com/UniversalDependencies/docs/issues/1135) and [#1146](https://github.com/UniversalDependencies/docs/issues/1146)), highlighting the need for clearer and more consistent practices beyond speech-specific data only.
+## Our proposal for cross-linguistic harmonization
 
-## Our proposal for cross-linguistic harmonization of metadata encoding
-
-### Main principles
 When preparing a spoken UD treebank, two core principles should guide the treatment of metadata: (1) **preserve all available metadata** associated with the recordings rather than discarding it during conversion to .conllu, and (2) **adopt shared naming conventions** to avoid reinventing feature names that have already been used in existing treebanks.
 
 ### Core metadata categories and naming
@@ -32,7 +29,7 @@ Below, we list the most recurrent speech-related metadata categories occurring i
 | `newdoc id` | Unique identifier of the speech event | `# newdoc id = doc01` |
 | `sound_url` | Link to the audio recording| `# sound_url = link-to-audio.mp3` |
 | `video_url` | Link to the video recording| `# video_url = link-to-video.mp4` |
-| `genre` | Descriptive label of the speech event (see [alternative](###ADD))  | `# genre = interview`, `# genre = conversation`, `# genre = lecture` |
+| `genre` | Descriptive label of the speech event ([more here](#Taxonomy-for-describing-speech-events))  | `# genre = interview`, `# genre = conversation`, `# genre = lecture` |
 
 #### Speaker-level
 
@@ -67,70 +64,37 @@ Below, we list the most recurrent speech-related metadata categories occurring i
 
 
 ### Taxonomy for describing speech events
-In addition to technical metadata harmonization, spoken treebanks often describe speech events in terms of the type of interaction recorded. To make such descriptions more comparable across treebanks, we propose distinguishing between genre as an open, descriptive label (which treebanks can define flexibly), and a fixed set of interaction parameters that capture the main dimensions along which speech events vary. (See also Luisa’s nice longer introduction in green below.)
 
-It should be noted that some genres display a high level of routinization (i.e. exams-> e.g. much anxiety leads to use of certain functional elements etc.): this, because of all the components of modality, is mirrored by language. Keeping genre open and the parameters fixed leaves scholars to their own interpretation and anyways provides a schema to conform to.
+Spoken treebanks often describe speech events by the type of interaction recorded. To make such descriptions more comparable across treebanks, we distinguish two complementary approaches: an open, descriptive **genre** label that treebanks define flexibly, and an optional, fixed set of **interaction parameters** capturing the main dimensions along which speech events vary.
 
-* Genres
-  * Genre is encoded as genre, and treebanks may use descriptive labels that best capture their data. According to the survey of existing spoken treebanks, the most frequently reported genres include:
-    * interview
-    * conversation
-    * lecture
-    * speech
-    * narrative
-    * monologue
-    * Others also include: radio show, TV show, exam, court, vlog, podcast, commentary, etc. See also genre-related discussions and categorizations in UD more broadly here.
+#### Genre
 
-* Interaction parameters:
-  * To complement genre labels, we additionally propose a fixed set of interaction parameters capturing key dimensions of variation in spoken communication.
-	TODO: add short definitions/examples for each of the options below
+Genre is encoded as `genre`, an open descriptive label that treebanks define flexibly to best capture their data, and is the most common way speech events are described. The most frequently reported genres in the survey are `interview`, `conversation`, `lecture`, `speech`, `narrative`, and `monologue`; others include `radio show`, `TV show`, `exam`, `court`, `vlog`, `podcast`, and `commentary`. See also the broader [UD genre discussion here](https://universaldependencies.org/contributing/genres.html).
 
-* degree_of_spontaneity:
-  * unplanned
-  * planned
-  * elicited
+#### Interaction parameters (optional add-on)
 
-* number_of_participants:
-  * monologic
-  * dialogic
-  * multi-party
+In addition to the open genre label, speech events may be described with a fixed set of interaction parameters. This optional, more fine-grained layer captures the key dimensions of variation in spoken communication, drawing on controlled value sets so that descriptions stay comparable across treebanks. Each parameter is drawn from a fixed value set:
 
-* context:
-  * public
-  * private
-  * professional →  clarify with very clear examples, delimitations
+| Parameter | Values | Meaning (in order) |
+|---|---|---|
+| `degree_of_spontaneity` | `unplanned`, `planned`, `elicited` | no prior preparation; prepared or scripted in advance; produced in response to a task or prompt |
+| `number_of_participants` | `monologic`, `dialogic`, `multi-party` | one speaker; two alternating; three or more |
+| `context` | `public`, `private`, `professional` | open/general audience; closed personal setting; institutional or workplace setting |
+| `setting` | `face-to-face`, `telephone`, `broadcast`, `online` | co-present in one space; audio telephony; mass transmission (radio, TV); internet-mediated |
+| `channels` | `phonic-auditory`, `gestural-visual`, `graphic-visual` | spoken/heard; signed/seen; written/read (may combine) |
+| `symmetry` | `symmetric`, `asymmetric` | comparable participant roles; differing roles (e.g. interviewer/interviewee) |
 
-* setting:
-  * face-to-face
-  * telephone
-  * broadcast
-  * online
+For example, a spontaneous face-to-face conversation among friends would be described as:
 
-* channels:
-  * phonic-auditory
-  * gestural-visual
-  * graphic-visual
+```
+# genre = conversation
+# degree_of_spontaneity = unplanned
+# number_of_participants = dialogic
+# context = private
+# setting = face-to-face
+# channels = phonic-auditory; gestural-visual
+# symmetry = symmetric
+```
+### Metadata placement and encoding
 
-* Symmetry:
-  * symmetric
-  * asymmetric
-
-For example, a spontaneous face-to-face conversation among friends could be described as:
- genre = conversation
-with parameters such as
-degree_of_spontaneity = spontaneous
-number_of_participants = dialogic
-context = private
-setting = face-to-face
-channels = phonic-auditory; gestural-visual.
-
-## Implementation proposal
-TBD. As a first step, it would be useful if a small group of treebank developers tried applying these guidelines to their data and shared the results with the community. Working through concrete examples will likely reveal ambiguities and help us refine the proposal before wider adoption.
-The guidelines can be adopted gradually, depending on available time and resources:
-Minimal effort: Simply rename existing metadata fields to match the proposed conventions.
-Intermediate effort: Add metadata that is already available in the underlying corpus but not yet encoded in the treebank.
-Extended effort: Introduce additional metadata where relevant and feasible.
-The metadata can be encoded either directly in CoNLL-U or in an external file as outlined in [treebank structure](treebank_structure.html). The exact storage format is probably secondary to consistent naming and structure. 
-
-@andidyer → propose a metadata.json template with overview of core metadata categories
-> see also [treebank structure](treebank_structure.html)
+This metadata can be encoded directly in the CoNLL-U files following standard practice: token-level features in the MISC column, and sentence-, speaker-, and document-level information as `# key = value` comment lines. To avoid repeating shared document- and speaker-level metadata on every sentence, there is also a proposal to store such metadata in an external `metadata.json` file, referenced from the CoNLL-U files via stable identifiers like `document_id` and `speaker_id`, described in more detail [here](treebank_structure.html).
