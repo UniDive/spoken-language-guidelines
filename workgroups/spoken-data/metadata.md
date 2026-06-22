@@ -14,14 +14,13 @@ This variation (both in the metadata recorded and in its representation in CoNLL
 
 Related UD discussions in issues [#1135](https://github.com/UniversalDependencies/docs/issues/1135) and [#1146](https://github.com/UniversalDependencies/docs/issues/1146) further underline the need for clearer and more consistent metadata practices.
 
-## Our proposal for cross-linguistic harmonization
+## Proposal for core metadata categories and naming
 
 When preparing a spoken UD treebank, two core principles should guide the treatment of metadata: (1) **preserve all available metadata** associated with the recordings rather than discarding it during conversion to .conllu, and (2) **adopt shared naming conventions** to avoid reinventing feature names that have already been used in existing treebanks.
 
-### Core metadata categories and naming
 Below, we list the most recurrent speech-related metadata categories occurring in existing treebanks and propose their standardized naming, organized by the level at which they apply. The list is not exhaustive: additional metadata may be encoded as needed, but before introducing a new feature, check whether a suitable convention is already used in existing spoken treebanks (see the [Grew metadata inventory](https://tables.grew.fr/?data=SP_meta/META)).
 
-#### Document-level
+### Document-level
 
 | Feature | Description | Examples |
 |---|---|---|
@@ -31,7 +30,7 @@ Below, we list the most recurrent speech-related metadata categories occurring i
 | `video_url` | Link to the video recording| `# video_url = link-to-video.mp4` |
 | `genre` | Descriptive label of the speech event ([more here](#Taxonomy-for-describing-speech-events))  | `# genre = interview`, `# genre = conversation`, `# genre = lecture` |
 
-#### Speaker-level
+### Speaker-level
 
 | Feature | Description | Examples |
 |---|---|---|
@@ -42,7 +41,7 @@ Below, we list the most recurrent speech-related metadata categories occurring i
 | `speaker_education` | Highest completed education level | `# speaker_education = high-school` |
 | `speaker_residence` | Place of residence of the speaker | `# speaker_region = south-west`|
 
-#### Sentence-level
+### Sentence-level
 
 | Feature | Description | Examples |
 |---|---|---|
@@ -53,7 +52,7 @@ Below, we list the most recurrent speech-related metadata categories occurring i
 | `text_[type]` | Transcription of a given type | `# text_orthographic = qu'est-ce que tu fais` (other types: `text_phonetic`, `text_morphemic`, `text_transliteration`, `text_conversationanalysis`, `text_macrosyntax`) |
 | `text_[ISO]` | Translation into another language (ISO code) | `# text_en = what are you doing` |
 
-#### Token-level
+### Token-level
 
 | Feature | Description | Examples |
 |---|---|---|
@@ -63,15 +62,15 @@ Below, we list the most recurrent speech-related metadata categories occurring i
 | `WordAlignmentEnd` | End timestamp of the token (ms) | `WordAlignmentEnd=14560` |
 
 
-### Taxonomy for describing speech events
+## Taxonomy for describing speech events
 
 Spoken treebanks often describe speech events by the type of interaction recorded. To make such descriptions more comparable across treebanks, we distinguish two complementary approaches: an open, descriptive **genre** label that treebanks define flexibly, and an optional, fixed set of **interaction parameters** capturing the main dimensions along which speech events vary.
 
-#### Genre
+### Genre
 
 Genre is encoded as `genre`, an open descriptive label that treebanks define flexibly to best capture their data, and is the most common way speech events are described. The most frequently reported genres in the survey are `interview`, `conversation`, `lecture`, `speech`, `narrative`, and `monologue`; others include `radio show`, `TV show`, `exam`, `court`, `vlog`, `podcast`, and `commentary`. See also the broader [UD genre discussion here](https://universaldependencies.org/contributing/genres.html).
 
-#### Interaction parameters (optional add-on)
+### Interaction parameters (optional add-on)
 
 In addition to the open genre label, speech events may be described with a fixed set of interaction parameters. This optional, more fine-grained layer captures the key dimensions of variation in spoken communication, drawing on controlled value sets so that descriptions stay comparable across treebanks. Each parameter is drawn from a fixed value set:
 
@@ -95,6 +94,6 @@ For example, a spontaneous face-to-face conversation among friends would be desc
 # channels = phonic-auditory; gestural-visual
 # symmetry = symmetric
 ```
-### Metadata placement and encoding
+## Metadata placement and encoding
 
 This metadata can be encoded directly in the CoNLL-U files following standard practice: token-level features in the MISC column, and sentence-, speaker-, and document-level information as `# key = value` comment lines. To avoid repeating shared document- and speaker-level metadata on every sentence, there is also a proposal to store such metadata in an external `metadata.json` file, referenced from the CoNLL-U files via stable identifiers like `document_id` and `speaker_id`, described in more detail [here](treebank_structure.html).
