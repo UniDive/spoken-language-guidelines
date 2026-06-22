@@ -6,7 +6,7 @@ udver: '2'
 
 # Metadata harmonisation
 
-## Problem identification
+## Problem overview
 
 Speech-related metadata in UD treebanks is currently encoded in heterogeneous and inconsistent ways. This affects both spoken-only and mixed-modality treebanks. As a result, it is often difficult to reliably identify spoken data within mixed-modality resources and to retrieve specific types of speech (e.g. spontaneous vs. prepared, public vs. private, monologue vs. dialogue), or speaker-related information (e.g. age, gender, education). Harmonization is therefore essential to enable efficient retrieval of relevant spoken data within and across treebanks and thus advance the underexplored field of spoken grammar research.
 
@@ -22,43 +22,52 @@ More broadly, questions concerning the encoding of metadata in CoNLL-U have also
 When preparing a spoken UD treebank, two core principles should guide the treatment of metadata: (1) **preserve all available metadata** associated with the recordings rather than discarding it during conversion to .conllu, and (2) **adopt shared naming conventions** to avoid reinventing feature names that have already been used in existing treebanks.
 
 ### Core metadata categories and naming
-Below, we list the most recurrent speech-related metadata categories and propose their standardized naming. In addition to corpus-level information, such as the authors or data collection principles (to be documented in the treebank's README), we distinguish four levels at which such metadata may apply: document level (information that holds for an entire recording or interaction, e.g. genre or links to audio recordings), speaker level (information describing individual participants, e.g. age or education),  sentence level (information that applies to individual utterances, e.g. speaker identification, alignment data, or translations), and token level (information that applies to individual words, e.g. language switching or word-level audio alignment).
+Below, we list the most recurrent speech-related metadata categories occurring in existing treebanks and propose their standardized naming, organized by the level at which they apply.
 
-TODO @all: Please revise the proposed namings below and think whether any other types of core metadata should be added to this core list (previously mentioned in discussions below but not retained yet: addressee_id, participant_id).
+#### Document-level
 
-add also alternative values where applicable, e.g. modality=written, modality=signed
+| Feature | Description | Examples |
+|---|---|---|
+| `modality` | Data modality in mixed-modality treebanks | `# modality = spoken`, `# modality = written`, `# modality = signed` |
+| `newdoc id` | Unique identifier of the speech event | `# newdoc id = doc01` |
+| `sound_url` | Link to the audio recording| `# sound_url = link-to-audio.mp3` |
+| `video_url` | Link to the video recording| `# video_url = link-to-video.mp4` |
+| `genre` | Descriptive label of the speech event (see [alternative](###ADD))  | `# genre = interview`, `# genre = conversation`, `# genre = lecture` |
 
-* Document-level:
-  * modality=spoken: marking spoken data in mixed-modality treebanks
-  * document_id: unique identifier of the speech event
-  * media_url: link to audio or video recording associated with the speech event - general agreement for more type-specific naming, e.g. sound_url, video_url, manuscript_url
-  * genre: descriptive label of the speech event (e.g. conversation, interview). For a more detailed set of parameters used to describe speech events, see 3.3.3.
+#### Speaker-level
 
-* Speaker-level
-  * speaker_age: age or age range of the speaker.
-  * speaker_gender: gender of the speaker (if available).
-  * speaker_education: highest completed education level.
-  * speaker_residence: place of residence of the speaker
+| Feature | Description | Examples |
+|---|---|---|
+| `speaker_id` | Speaker producing the turn | `# speaker_id = Cf-stra-07534` |
+| `speaker_role` | Role in the interaction | `# speaker_role = interviewer` |
+| `speaker_age` | Age or age range of the speaker | `# speaker_age = 18 to 35` |
+| `speaker_gender` | Gender of the speaker, if available | `# speaker_gender = female`|
+| `speaker_education` | Highest completed education level | `# speaker_education = high-school` |
+| `speaker_residence` | Place of residence of the speaker | `# speaker_region = south-west`|
 
-* Sentence-level:
-  * sent_id: unique identifier of the speech event sentence
-  * speaker_id: unique identifier of the speaker producing the utterance
-  * sound_alignment_begin: start timestamp of the sentence in the recording (ms)
-  * sound_alignment_end: end timestamp of the sentence in the recording (in ms)
-  * duration: duration of the sentence in milliseconds
-  * text_[type of transcription]: transcription of a different type (e.g text_orthographic, text_phonetic, text_morphemic, text_transliteration, text_conversationanalysis, text_macrosyntax)
-  * text_[ISO]: translation into another language (in ISO code)
-  * speaker_role: e.g. interviewer/interviewee; professor/student
+#### Sentence-level
 
-* Token-level:
-  * Lang: language identifier for code-switched tokens.
-  * OrigLang: original language of borrowed or inserted tokens
-  * WordAlignmentBegin: start timestamp of a token in the recording (milliseconds)
-  * WordAlignmentEnd: end timestamp of a token in the recording (milliseconds).
+| Feature | Description | Examples |
+|---|---|---|
+| `sent_id` | Unique identifier of the utterance | `# sent_id = doc01.s144` |
+| `sound_alignment_begin` | Start timestamp in the recording (ms) | `# sound_alignment_begin = 12340` |
+| `sound_alignment_end` | End timestamp in the recording (ms) | `# sound_alignment_end = 14560` |
+| `duration` | Duration of the sentence (ms) | `# duration = 2220` |
+| `text_[type]` | Transcription of a given type | `# text_orthographic = qu'est-ce que tu fais` (other types: `text_phonetic`, `text_morphemic`, `text_transliteration`, `text_conversationanalysis`, `text_macrosyntax`) |
+| `text_[ISO]` | Translation into another language (ISO code) | `# text_en = what are you doing` |
 
-rename word to token + casing (see Ludovica’s comment)
+#### Token-level
 
-Additional metadata may be encoded flexibly; however, developers are encouraged to first verify whether a suitable solution already exists in current treebanks (see Grew-match inventory of metadata found in existing spoken data treebanks).
+| Feature | Description | Examples |
+|---|---|---|
+| `Lang` | Language identifier for code-switched tokens | `Lang=en` |
+| `OrigLang` | Original language of borrowed or inserted tokens | `OrigLang=en` |
+| `WordAlignmentBegin` | Start timestamp of the token (ms) | `WordAlignmentBegin=14120` |
+| `WordAlignmentEnd` | End timestamp of the token (ms) | `WordAlignmentEnd=14560` |
+
+
+Additional metadata may be encoded flexibly; however, developers are encouraged to first check whether a suitable solution already exists in current treebanks (see the [Grew inventory of metadata](https://tables.grew.fr/?data=SP_meta/META) found in existing spoken data treebanks).
+
 
 ### Taxonomy for describing speech events
 In addition to technical metadata harmonization, spoken treebanks often describe speech events in terms of the type of interaction recorded. To make such descriptions more comparable across treebanks, we propose distinguishing between genre as an open, descriptive label (which treebanks can define flexibly), and a fixed set of interaction parameters that capture the main dimensions along which speech events vary. (See also Luisa’s nice longer introduction in green below.)
