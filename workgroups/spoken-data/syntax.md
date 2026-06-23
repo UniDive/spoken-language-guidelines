@@ -10,7 +10,7 @@ udver: '2'
 
 We consider as co-constructions those syntactic relations (without any restrictions) that hold between utterances produced (i) by different speakers or (ii) by the same speaker but after an interruption by another speaker. In interactive scenarios, indeed, multiple speakers may intertwine their utterances, sometimes even perfectly overlapping (Lerner 1991, Sacks 1992, Ono & Thompson 1996, Helasvuo 2004, Calabria 2023)
 
-A coconstruction is encoded by a feature on the root of the second utterance indicating the syntactic role of the second utterance towards the first utterance, the sent-id of the first :utterance, and the token-id of the governor of the second utterance:
+A coconstruction is encoded by a feature on the root of the second utterance indicating the syntactic role of the second utterance towards the first utterance, the sent-id of the first utterance, and the token-id of the governor of the second utterance:
 
 `Coconstruct=<deprel>::<sent-id>::<token-id>`
 

@@ -26,13 +26,13 @@ What relation? Indicate it if you can infer it, otherwise dep
 
 * Silent pauses are a particular case. Two solutions are possible
   * Solution 1. Pauses are tokens: [PAUSE], Duration=205 (millisecond)
-    * Examples in Rhapsodie: https://universal.grew.fr/?custom=68d64faccba6e
-  * Solution 2. Pauses are features: PauseAfter=Yes
+    * In __French-Rhapsodie__ with the token _#_: [Examples](https://universal.grew.fr/?custom=6a3ae6740cf07)
+  * Solution 2. Pauses are features: `PauseAfter=Yes`
 
 - short pauses
 - non verbal behaviours (laughs, coughs, noises of any kind)
 - use of punctuation
 - Interrupted words
 - Language specific documentation should include information about any specific transcription convention that has been followed.
-  - For instance, for KIParla Forest: everything is lowercased, acronyms are transcribed as they are spelled out in speech
+  - For instance, for __Italian-KIParlaForest__: everything is lowercased, acronyms are transcribed as they are spelled out in speech
 - anonymized items

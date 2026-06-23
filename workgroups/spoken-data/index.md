@@ -12,15 +12,15 @@ Disclaimer: This page represents the output of UniDive WG1 T1.5 group. It is not
 * Basic principles
   * [Maximal unit segmentation](maximal_unit_segmentation.html)
   * [Tokenization and word segmentation](tokenization.html)
-          * pauses (filled vs. silent vs. long), non-verbal behaviours and punctuation and anonymization/pseudonymization, incomprehensible speech signal
-          * repetitions, false starts, reformulations, reparandum stuff
+    * pauses (filled vs. silent vs. long), non-verbal behaviours and punctuation and anonymization/pseudonymization, incomprehensible speech signal
+    * repetitions, false starts, reformulations, reparandum stuff
   * [Morphology](morphology.html)
-        * interrupted words, lemmas
-        * what is INTJ
+    * interrupted words, lemmas
+    * what is INTJ
   * [Syntax](syntax.html)
-        * specific syntax (specific_syntax.html)
-        * co-constructed syntax and handling of overlap (in syntax.html)
-        * question answering
+    * [specific syntax](specific_syntax.html)
+    * co-constructed syntax and handling of overlap (in [Syntax](syntax.html))
+    * question answering
   * [Speech specific metadata](metadata.html)
   * [CoNLL-U format and treebank structure](treebank_structure.html)
 
@@ -28,14 +28,14 @@ Disclaimer: This page represents the output of UniDive WG1 T1.5 group. It is not
   * POS tags:
     * [PUNCT](PUNCT.html)
   * Syntactic relations:
-    * conj:reform
+    * `conj:reform`
     * [Discourse relation]
-      * discourse:backchannel
-      * discourse:filledpause
-      * discouse_filler
+      * `discourse:backchannel`
+      * `discourse:filledpause`
+      * `discouse:filler`
     * [Parataxis]
-      * parataxis:insert
-      * parataxis:parent
+      * `parataxis:insert`
+      * `parataxis:parent`
     * reparandum
 
   * [MISC attributes](MISC.html)

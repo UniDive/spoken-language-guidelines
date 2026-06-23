@@ -17,9 +17,9 @@ The syntactic approach can lead to a more "maximal" segmentation. The drawback i
 
 Examples from current works:
 
-* KiParla: standard for segment completion is "If you can link (syntactically), link". This allows us to cross intonation boundaries only if the annotator can link a new syntactic unit back to an exact token in the previous syntactic unit. If not, terminate.
-* Hausa: a new sentence is indicated by a new semantic frame, topic, etc. Which is usually indicated by a discourse marker (and, but, so, therefore, allora, então, etc.)
-* Rhapsodie: if two main verbs are at the same level, we cut, even if there is a coordinating conjunction between them. Exceptions: shared subject (she came and asked a question -> “asked a question” is not autonomous)
+* __Italian-KIParlaForest__: standard for segment completion is "If you can link (syntactically), link". This allows us to cross intonation boundaries only if the annotator can link a new syntactic unit back to an exact token in the previous syntactic unit. If not, terminate.
+* __Hausa__: a new sentence is indicated by a new semantic frame, topic, etc. Which is usually indicated by a discourse marker (and, but, so, therefore, allora, então, etc.)
+* __French-Rhapsodie__: if two main verbs are at the same level, we cut, even if there is a coordinating conjunction between them. Exceptions: shared subject (she came and asked a question -> “asked a question” is not autonomous)
 
 The general principle that we want to enforce is **"if you can link, link"**
 
@@ -44,12 +44,12 @@ TODO: @bguil
 In cases of:
 
 * dislocation
-  * HOW TO: code the explicit relation even when explicit syntactic markers (not only connectives, even things like tense which you wouldn't find in a clause alone) are not there, if prosody allows for it
+  * HOW TO: code the explicit relation even when explicit syntactic markers (not only connectives, even things like tense which you wouldn't find in a clause alone) are not there, if prosody allows for it.
 * reported speech
-  * feature Reported=Yes (on the root of subtree) : it is important because a reported speech is not necessary introduced are marked by a specific construction;
-  * When a reported speech is introduced by a speech verb or any other construction, only the first sentence is attached to it: she said please don’t do that // we need it //
+  * feature `Reported=Yes` (on the root of the subtree): it is important because a reported speech is not necessarily introduced or marked by a specific construction;
+  * When a reported speech is introduced by a speech verb or any other construction, only the first sentence is attached to it: _she said please don’t do that // we need it //_
 * parataxis: generally speaking if two clauses are linked by generic parataxis (juxtaposed sentences) than they should be split into two different maximal units. Exceptions are:
   * `parataxis:parenth` for parenthetical sentences
   * `paratataxis:insert` for inserts in reported speech
   * if a sentence is a verbal dislocated unit, than it is tagged as `dislocated`
-* false starts: are kept into the sentence if possible. Examples `you you we have to do that` or `we should we must do that` are single maximal units.
+* false starts: are kept into the sentence if possible. Examples _you you we have to do that_ or _we should we must do that_ are single maximal units.
