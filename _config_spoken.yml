@@ -1,0 +1,843 @@
+# This in an alternate config file to compile only `workgroups` folder to speed up the compilation 
+# for spoken guidelines only. It should be removed once Spoken guidelines are merged to UD.
+# Use: jekyll build --config _config_spoken.yml 
+
+source:       .
+destination:  ./_site
+markdown:     kramdown
+highlighter:  rouge
+# don't change the following; coderay will break the embedded
+# annotations.
+kramdown:
+  enable_coderay: false
+#   parse_block_html: true # allow markdown in <div> etc.
+permalink:    date
+# safe:         true
+markdown_ext: md
+
+baseurl: ""
+
+# Exclude all folder except `workgroups`   
+exclude:
+  - _ab/
+  - _abq/
+  - _aeb/
+  - _af/
+  - _aii/
+  - _ajp/
+  - _akk/
+  - _aln/
+  - _am/
+  - _ang/
+  - _apu/
+  - _apy/
+  - _aqz/
+  - _ar/
+  - _arh/
+  - _arr/
+  - _as/
+  - _axm/
+  - _az/
+  - _azz/
+  - _bal/
+  - _bar/
+  - _be/
+  - _bej/
+  - _bg/
+  - _bgs/
+  - _bho/
+  - _bm/
+  - _bn/
+  - _bor/
+  - _br/
+  - _brh/
+  - _bxr/
+  - _bzd/
+  - _ca/
+  - _ceb/
+  - _cgg/
+  - _ckb/
+  - _ckt/
+  - _co/
+  - _cop/
+  - _cpg/
+  - _cs/
+  - _ctn/
+  - _cu/
+  - _cux/
+  - _cy/
+  - _da/
+  - _dar/
+  - _data/
+  - _de/
+  - _drs/
+  - _egy/
+  - _el/
+  - _eme/
+  - _en/
+  - _eo/
+  - _es/
+  - _ess/
+  - _et/
+  - _eu/
+  - _fa/
+  - _fi/
+  - _fo/
+  - _fr/
+  - _frm/
+  - _fro/
+  - _fy/
+  - _ga/
+  - _gd/
+  - _gl/
+  - _glk/
+  - _gn/
+  - _got/
+  - _grc/
+  - _gsw/
+  - _gu/
+  - _gub/
+  - _gun/
+  - _gv/
+  - _gwi/
+  - _gya/
+  - _ha/
+  - _hbo/
+  - _he/
+  - _hi/
+  - _hil/
+  - _hit/
+  - _hr/
+  - _hsb/
+  - _ht/
+  - _hu/
+  - _huv/
+  - _hy/
+  - _hyw/
+  - _id/
+  - _is/
+  - _it/
+  - _ja/
+  - _jaa/
+  - _jv/
+  - _ka/
+  - _kab/
+  - _kbc/
+  - _kfm/
+  - _kk/
+  - _kmr/
+  - _ko/
+  - _koi/
+  - _kpv/
+  - _krl/
+  - _kv/
+  - _ky/
+  - _la/
+  - _lad/
+  - _lb/
+  - _lij/
+  - _lrc/
+  - _lt/
+  - _ltg/
+  - _lv/
+  - _lzh/
+  - _lzz/
+  - _mag/
+  - _mdf/
+  - _mg/
+  - _mga/
+  - _misc/
+  - _mjl/
+  - _mk/
+  - _ml/
+  - _mns/
+  - _mpu/
+  - _mr/
+  - _mt/
+  - _myu/
+  - _myv/
+  - _nap/
+  - _naq/
+  - _nci/
+  - _ndg/
+  - _nds/
+  - _ne/
+  - _nhi/
+  - _nl/
+  - _nmf/
+  - _no/
+  - _nyn/
+  - _nyq/
+  - _oc/
+  - _oge/
+  - _ojp/
+  - _olo/
+  - _or/
+  - _orv/
+  - _ota/
+  - _otk/
+  - _pa/
+  - _pad/
+  - _pal/
+  - _pap/
+  - _pay/
+  - _pbv/
+  - _pcm/
+  - _pgl/
+  - _pl/
+  - _pln/
+  - _pnt/
+  - _pra/
+  - _pro/
+  - _ps/
+  - _pt/
+  - _qaf/
+  - _qee/
+  - _qfn/
+  - _qhe/
+  - _qpm/
+  - _qtd/
+  - _qte/
+  - _qti/
+  - _quc/
+  - _quz/
+  - _qxp/
+  - _rmc/
+  - _ro/
+  - _ru/
+  - _sa/
+  - _sab/
+  - _sah/
+  - _say/
+  - _sc/
+  - _scn/
+  - _sd/
+  - _sdh/
+  - _sei/
+  - _sga/
+  - _shp/
+  - _si/
+  - _sjo/
+  - _sk/
+  - _sl/
+  - _sla/
+  - _sme/
+  - _sms/
+  - _soj/
+  - _sq/
+  - _sr/
+  - _ssp/
+  - _sv/
+  - _sw/
+  - _swl/
+  - _ta/
+  - _tagset-conversion/
+  - _tdt/
+  - _te/
+  - _th/
+  - _ti/
+  - _tk/
+  - _tl/
+  - _tn/
+  - _tpn/
+  - _tr/
+  - _trw/
+  - _tt/
+  - _tww/
+  - _u-dep-v1/
+  - _u-dep/
+  - _u-feat/
+  - _u-overview/
+  - _u-pos/
+  - _ug/
+  - _uk/
+  - _umo/
+  - _unk/
+  - _ur/
+  - _urb/
+  - _urj/
+  - _usp/
+  - _uz/
+  - _v2_prelim/
+  - _v2/
+  - _vep/
+  - _vi/
+  - _wbp/
+  - _wo/
+  - _wuu/
+  - _xav/
+  - _xcl/
+  - _xmf/
+  - _xnr/
+  - _xpg/
+  - _xum/
+  - _yi/
+  - _yo/
+  - _yrk/
+  - _yrl/
+  - _yue/
+  - _zh/
+  - _zza/
+  - contributing/
+  - conv-eng/
+  - fixit/
+  - fixud/
+  - flags/
+  - gen_index/
+  - resources/
+  - treebanks/
+
+
+
+
+plugins:
+  - jekyll-redirect-from
+
+liquid:
+  error_mode: warn
+
+collections:
+#
+# Universal
+#
+  u-pos:
+    output: true
+    permalink: /u/pos/:path.html
+  u-feat:
+    output: true
+    permalink: /u/feat/:path.html
+  u-dep:
+    output: true
+    permalink: /u/dep/:path.html
+  u-overview:
+    output: true
+  ext-feat:
+    output: true
+    permalink: /u/ext-feat/:path.html
+  cs:
+    output: true
+  en:
+    output: true
+  sv:
+    output: true
+  fi:
+    output: true
+  af:
+    output: true
+  ar:
+    output: true
+  be:
+    output: true
+  bg:
+    output: true
+  bm:
+    output: true
+  ca:
+    output: true
+  ckb:
+    output: true
+  cop:
+    output: true
+  cu:
+    output: true
+  da:
+    output: true
+  dar:
+    output: true
+  de:
+    output: true
+  el:
+    output: true
+  es:
+    output: true
+  et:
+    output: true
+  eu:
+    output: true
+  fa:
+    output: true
+  fo:
+    output: true
+  fr:
+    output: true
+  fro:
+    output: true
+  ga:
+    output: true
+  gl:
+    output: true
+  got:
+    output: true
+  grc:
+    output: true
+  he:
+    output: true
+  hsb:
+    output: true
+  hu:
+    output: true
+  hy:
+    output: true
+  it:
+    output: true
+  ja:
+    output: true
+  kk:
+    output: true
+  kmr:
+    output: true
+  ko:
+    output: true
+  ky:
+    output: true
+  la:
+    output: true
+  mr:
+    output: true
+  mt:
+    output: true
+  nl:
+    output: true
+  "no":
+    output: true
+  pcm:
+    output: true
+  pl:
+    output: true
+  pt:
+    output: true
+  ro:
+    output: true
+  ru:
+    output: true
+  sa:
+    output: true
+  sk:
+    output: true
+  sl:
+    output: true
+  sla:
+    output: true
+  swl:
+    output: true
+  ta:
+    output: true
+  tr:
+    output: true
+  uk:
+    output: true
+  urj:
+    output: true
+  vi:
+    output: true
+  yue:
+    output: true
+  zh:
+    output: true
+  myv:
+    output: true
+  ka:
+    output: true
+  yo:
+    output: true
+  br:
+    output: true
+  tl:
+    output: true
+  kpv:
+    output: true
+  pbv:
+    output: true
+  lv:
+    output: true
+  shp:
+    output: true
+  cy:
+    output: true
+  wbp:
+    output: true
+  wo:
+    output: true
+  akk:
+    output: true
+  sd:
+    output: true
+  bho:
+    output: true
+  qhe:
+    output: true
+  lt:
+    output: true
+  lzh:
+    output: true
+  aii:
+    output: true
+  krl:
+    output: true
+  olo:
+    output: true
+  orv:
+    output: true
+  mk:
+    output: true
+  gun:
+    output: true
+  am:
+    output: true
+  bxr:
+    output: true
+  hr:
+    output: true
+  hi:
+    output: true
+  id:
+    output: true
+  sme:
+    output: true
+  sr:
+    output: true
+  te:
+    output: true
+  th:
+    output: true
+  ur:
+    output: true
+  ug:
+    output: true
+  gd:
+    output: true
+  as:
+    output: true
+  mdf:
+    output: true
+  sms:
+    output: true
+  gsw:
+    output: true
+  quz:
+    output: true
+  koi:
+    output: true
+  qaf:
+    output: true
+  is:
+    output: true
+  mag:
+    output: true
+  sq:
+    output: true
+  abq:
+    output: true
+  sga:
+    output: true
+  ndg:
+    output: true
+  pgl:
+    output: true
+  mga:
+    output: true
+  oc:
+    output: true
+  ckt:
+    output: true
+  hit:
+    output: true
+  gv:
+    output: true
+  lzz:
+    output: true
+  ajp:
+    output: true
+  kfm:
+    output: true
+  nyq:
+    output: true
+  soj:
+    output: true
+  myu:
+    output: true
+  tpn:
+    output: true
+  aqz:
+    output: true
+  apu:
+    output: true
+  otk:
+    output: true
+  qtd:
+    output: true
+  naq:
+    output: true
+  cgg:
+    output: true
+  nyn:
+    output: true
+  pnt:
+    output: true
+  lad:
+    output: true
+  hil:
+    output: true
+  sw:
+    output: true
+  ess:
+    output: true
+  urb:
+    output: true
+  xnr:
+    output: true
+  gub:
+    output: true
+  si:
+    output: true
+  quc:
+    output: true
+  ojp:
+    output: true
+  qfn:
+    output: true
+  mpu:
+    output: true
+  lij:
+    output: true
+  nds:
+    output: true
+  bej:
+    output: true
+  ha:
+    output: true
+  hyw:
+    output: true
+  kab:
+    output: true
+  arr:
+    output: true
+  ne:
+    output: true
+  ti:
+    output: true
+  pra:
+    output: true
+  bzd:
+    output: true
+  nap:
+    output: true
+  jv:
+    output: true
+  qpm:
+    output: true
+  sah:
+    output: true
+  or:
+    output: true
+  mjl:
+    output: true
+  tt:
+    output: true
+  fy:
+    output: true
+  aeb:
+    output: true
+  sjo:
+    output: true
+  bn:
+    output: true
+  pa:
+    output: true
+  ceb:
+    output: true
+  nhi:
+    output: true
+  hbo:
+    output: true
+  gn:
+    output: true
+  eme:
+    output: true
+  jaa:
+    output: true
+  xum:
+    output: true
+  frm:
+    output: true
+  bal:
+    output: true
+  aln:
+    output: true
+  gu:
+    output: true
+  xav:
+    output: true
+  yrl:
+    output: true
+  say:
+    output: true
+  ml:
+    output: true
+  bor:
+    output: true
+  qee:
+    output: true
+  azz:
+    output: true
+  nci:
+    output: true
+  vep:
+    output: true
+  ps:
+    output: true
+  lb:
+    output: true
+  xcl:
+    output: true
+  pap:
+    output: true
+  uz:
+    output: true
+  sei:
+    output: true
+  cux:
+    output: true
+  huv:
+    output: true
+  usp:
+    output: true
+  ota:
+    output: true
+  ht:
+    output: true
+  bar:
+    output: true
+  ab:
+    output: true
+  tn:
+    output: true
+  tww:
+    output: true
+  egy:
+    output: true
+  pln:
+    output: true
+  trw:
+    output: true
+  kv:
+    output: true
+  xpg:
+    output: true
+  ang:
+    output: true
+  ltg:
+    output: true
+  gya:
+    output: true
+  qte:
+    output: true
+  az:
+    output: true
+  gwi:
+    output: true
+  pad:
+    output: true
+  tdt:
+    output: true
+  yrk:
+    output: true
+  mns:
+    output: true
+  qxp:
+    output: true
+  kbc:
+    output: true
+  ssp:
+    output: true
+  drs:
+    output: true
+  bgs:
+    output: true
+  pay:
+    output: true
+  umo:
+    output: true
+  eo:
+    output: true
+  rmc:
+    output: true
+  sab:
+    output: true
+  arh:
+    output: true
+  qti:
+    output: true
+  nmf:
+    output: true
+  yi:
+    output: true
+  wuu:
+    output: true
+  apy:
+    output: true
+  axm:
+    output: true
+  oge:
+    output: true
+  xmf:
+    output: true
+  sdh:
+    output: true
+  co:
+    output: true
+  glk:
+    output: true
+  zza:
+    output: true
+  unk:
+    output: true
+  pro:
+    output: true
+  ctn:
+    output: true
+  scn:
+    output: true
+  brh:
+    output: true
+  lrc:
+    output: true
+  mg:
+    output: true
+  pal:
+    output: true
+  sc:
+    output: true
+  tk:
+    output: true
+# End of language collections (do not remove this comment, addlanguage.sh looks for it)
+
+
+
+# Tagset conversion tables (even for languages that do not have their sections yet)
+#
+  tagset-conversion:
+    output: true
+    permalink: /tagset-conversion/:path.html
+#
+# Meeting materials
+#
+  v2_prelim:
+    output: true
+    permalink: /v2_prelim/:path.html
+  v2:
+    output: true
+    permalink: /v2/:path.html
+  misc:
+    output: true
+    permalink: /misc/:path.html
+
+
+excerpt_separator: "\n\n"
+
+# URL configuration
+
+home: "https://grew.fr/spoken-language-guidelines/"
+tracker: "https://github.com/universaldependencies/docs/issues"
+git_raw: "https://raw.githubusercontent.com/UniDive/spoken-language-guidelines/pages-source"
+git_edit: "https://github.com/UniDive/spoken-language-guidelines/edit/spoken-language-guidelines"
