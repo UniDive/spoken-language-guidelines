@@ -17,7 +17,7 @@ udver: '2'
 # Maximal Unit Segmentation
 
 Unlike written text, spoken language unfolds in time and is jointly produced by multiple participants, who continuously cooperate in the real-time production and reception of syntactic structure. Linearized transcriptions, however, necessarily flatten the temporal and multi-party dimension of spoken data.
-Universal Dependencies inherits a broadly shared assumption in syntactic theory: that syntax operates within the boundaries of a sentence. While this assumption is largely unproblematic (although, with exceptions) for written language, it raises difficulties for spoken interaction, as syntactic dependencies may extend across speaker turns, interruptions, and overlapping contributions. Existing spoken UD treebanks do not adopt a uniform segmentation strategy, and this makes it difficult to consistently identify what should count as a maximal unit.
+Universal Dependencies inherits a broadly shared assumption in syntactic theory: that syntax operates within the boundaries of a sentence. While this assumption is largely unproblematic (although, with exceptions) for written language, it raises difficulties for spoken interaction, as syntactic dependencies may extend across speech turns, interruptions, and overlapping contributions. Existing spoken UD treebanks do not adopt a uniform segmentation strategy, and this makes it difficult to consistently identify what should count as a maximal unit.
 
 Not all currently available spoken treebanks take the same approach at maximal unit segmentation. More specifically, there is a tension between a prosodic and a syntactic view of sentence completion.
 The prosodic approach goes for minimal boundaries, segmenting sentences at prosodic termination. The drawback is that these can be hard to find (i.e., subjective interpretation of the annotator, difficult to come up with a clear test), and the resulting unit doesn't always correspond to what we intuitively think of as a sentence.
@@ -57,7 +57,7 @@ But there are some cases with two adjacent clauses where we do not cut, because 
 
 When reported speech is introduced by a speech verb (or by any other construction), only the first sentence of the reported speech is attached to it, as the complement of the speech verb, with the relation `ccomp`:
 
-> *she said please don't do that // we need it //*
+* *she said please don't do that // we need it //*
 
 ~~~ sdparse
 she said please don't do that
@@ -73,13 +73,13 @@ The root of the reported speech also carries the feature `Reported=Yes`. This fe
 
 The speech verb can also be inserted inside the reported speech, rather than introducing it:
 
-> *don't do that, she said*
-> *ne fais pas ça, a-t-elle dit* (in French, the subject must be inverted)
+* *don't do that, she said*
+* *ne fais pas ça, a-t-elle dit* (in French, the subject must be inverted)
 
 Such an insertion is usually found at the end of the reported speech, but it can also occur in the middle of it:
 
-> *if you do that, she said, you won't be able to stay*
-> *the Christ, Job said/thought, is the Saver*
+* *if you do that, she said, you won't be able to stay*
+* *the Christ, Job said, is the Saver*
 
 In these cases the speech verb is not the root of the sentence — it is genuinely inserted — so it is attached with the relation `parataxis:insert`.
 
@@ -95,7 +95,7 @@ In spoken data, markers of subordination (i.e. subordinating conjunctions) are o
 
 Examples, where subordination is signalled without an explicit subordinating conjunction:
 
-* *j'avais six ans, j'ai eu un accident* — 'I was six, I had an accident' (in French this construction is lexicalized as *il y a*: *il y a six ans* 'six years ago')
+* *j'avais six ans, j'ai eu un accident* — 'I was six, I had an accident' (in French this construction has lexicalized with *il y a* now analyzed as a fixed adposition: *il y a six ans* 'six years ago')
 * *tu as beau essayer, tu n'y arrives pas* — 'even if you try, you can't do it', lit. 'you have nice try…' (*avoir beau* cannot be used in a main clause: it is a verbal idiom that is lexically subordinated)
 * *tu me l'aurais dit, je ne serais pas venu* — 'if you had told me, I wouldn't have come', lit. 'you'd have told me' (here the subordination is marked by the conditional)
 * *hai voglia a provarci, non ci riuscirai* — 'you can try, you won't do it', lit. 'you have willingness to try'
@@ -144,6 +144,10 @@ If there is no repair, the false start is instead treated as a separate sentence
 
 By default, a false start is assumed to be followed by a repair, unless the syntactic structure of the second part is completely unrelated to that of the first — in which case the two are segmented as independent sentences.
 
+The reparandum must be treated as a unit. In the following example, there is only one reparandum and *this* and *you* must be linked.
+
+* *for this you … for this we'll find a solution*
+
 NOTE: there are also cases where the main clause is interrupted and the speaker restarts from scratch, rather than repairing the interrupted clause. SST annotates these with `parataxis:restart`; we propose instead to segment the two parts, marking the first one with the feature `Scrap`.
 
-ex. what did you just -- which line will you draw
+* *what did you just … which line will you draw*
