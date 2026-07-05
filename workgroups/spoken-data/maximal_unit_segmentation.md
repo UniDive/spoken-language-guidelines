@@ -76,7 +76,7 @@ The speech verb can also be inserted inside the reported speech, rather than int
 * *don't do that, she said*
 * *ne fais pas ça, a-t-elle dit* (in French, the subject must be inverted)
 
-Such an insertion is usually found at the end of the reported speech, but it can also occur in the middle of it:
+Such an insertion is usually found at the end of the reported speech in VO languages, but it can also occur in the middle of it:
 
 * *if you do that, she said, you won't be able to stay*
 * *the Christ, Job said, is the Saver*
@@ -88,6 +88,16 @@ don't do that, she said
 root(do-2)
 parataxis:insert(do-2, said-5)
 ~~~
+
+Note that in OV languages, a speech verb at the end of a sentence can be the head. 
+* Beja *askʷi ini* 'I_chased_him he_said'
+
+~~~ sdparse
+skʷi ini
+root(ini-2)
+ccomp(ini-2, skʷi-1)
+~~~
+
 
 ### Adverbial clause without markers
 
