@@ -186,9 +186,10 @@ If a file `metadata.json` is present the `<BASE>/not-to-release/original_split` 
 
 ### Build the shared metadata version from the full version (with repetitions)
 
-The script [`metadata_share.py`](https://github.com/UniDive/SpLAn-UD/blob/main/metadata-encoding/metadata_share.py) is available. It can be used to produce both the `metadata.json` files and the new version of the `conllu` files without the shared metadata.
-The metadata to share must be given explicitly.
-Please refer to `--help` options of the script for usage detail.
+The [`metadata_share.py`](https://github.com/UniDive/SpLAn-UD/blob/main/metadata-encoding/metadata_share.py) script is available.
+This can be used to produce both the `metadata.json` files and the new version of the `conllu` files without the shared metadata.
+The metadata to be shared must be given explicitly.
+Please refer to the scriop's `--help` options for usage details.
 
 ### Discover the metadata dependencies in a treebank
 
@@ -196,5 +197,5 @@ The script [`metadata_detect_sharable.py`](https://github.com/UniDive/SpLAn-UD/b
 
 **Note**: the output of the script must be manually processed because we may observe:
  - spurious dependencies between metadata that we do not want to exploit
- - missing expected dependencies due to errors in the metadata treebank (as occurred in [Rhapsodie](https://github.com/surfacesyntacticud/SUD_French-Rhapsodie/commit/23ee4055ad82a20b603db0df5513582e135b1cb7)])
- - when two metadata are mutually dependent (for instance `document_id` and `sound_url`), we have to choose the meaniful one
+ - missing expected dependencies due to errors in the metadata treebank (as occurred in [Rhapsodie](https://github.com/surfacesyntacticud/SUD_French-Rhapsodie/commit/23ee4055ad82a20b603db0df5513582e135b1cb7))
+ - when two pieces of metadata are mutually dependent (for example, `document_id` and `sound_url`), we have to choose the more meaningful one.
