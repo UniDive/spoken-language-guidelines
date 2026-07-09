@@ -173,7 +173,7 @@ In cases like this:
 - promote _nice_ as the `obj` of _has_ and give _it_ the feature Promotion=amod;
 - annotate _a_ as `det` of _nice_ with a feature Head=Position, and _very_ as `advmod` of _nice_ with a feature Head=Word.
 
-__Annotation of parralel (A.2) and subsequent realisations (A.3) - stacking__
+__Annotation of parallel (A.2) and subsequent realisations (A.3) - stacking__
 
 Stacking can be annotate with different deprels.
 - For repetitions or repair use `reparandum`; <!-- what should we do with "repair"? -->
