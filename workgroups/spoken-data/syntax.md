@@ -1,6 +1,6 @@
 ---
 layout: base
-title:  'Morphology'
+title:  'Syntax'
 udver: '2'
 ---
 
@@ -20,7 +20,7 @@ A coconstruction is encoded by a feature on the root of the second utterance ind
 
 `Coconstruct=<deprel>::<sent-id>::<token-id>`
 
-<!--Attribute in MISC?? -->
+This is kept as a feature in MISC.
 
 Additional instruction for different cases of coconstructions will be provided as follows.
 
@@ -39,7 +39,7 @@ __A.1 Completion__: Speaker 1 leaves a syntactic dependency unrealized, and Spea
 (1)
 
 __Cuz 31 (Ono & Thompson 1996: 72)__
-  
+
 L: his position is pretty uh\
 A: … % (TSK) (H) stable.\
 … yeah
@@ -67,17 +67,17 @@ __A.3. Subsequent realisation__: Speaker 1 completes their own tree, and Speaker
 
 __Rhapsodie - D2001__
 
-$L2 "eh bien" je crois que je ne me suis pas\
+\$L2 "eh bien" je crois que je ne me suis pas\
 _well I think I haven't_\
-$L2 conduit d'une façon conforme à ce qu'on\
+\$L2 conduit d'une façon conforme à ce qu'on\
 _behaved as one would_\
-$L2 attend “euh" { { d’une jeune fille d’abord\
+\$L2 attend “euh" { { d’une jeune fille d’abord\
 _expect from a young girl first_\
-$L2 | ˆ et d’une femme ensuite } |} //+\
+\$L2 | ˆ et d’une femme ensuite } |} //+\
 _and from a woman afterwards_\
-$L1 {| d’une jeune bourgeoise |} ?//+\
+\$L1 {| d’une jeune bourgeoise |} ?//+\
 _from a young bourgeois girl?_\
-$L2 {| “disons" d’une jeune bourgeoise } //\
+\$L2 {| “disons" d’une jeune bourgeoise } //\
 _let's say from a young bourgeois girl_
 
 
@@ -95,14 +95,14 @@ _more between said and unsaid_
 __B. Speaker B adds a new dependency__: Speaker 2 realizes a syntactic dependency that is not already projected by Speaker 1, thereby extending the syntactic structure initiated by them.
 
 
-(5) 
+(5)
 
 __Ono and Thompson (1996: 81)__
 
 M: they must know each other.\
 H: . . . very well.
 
-(6) 
+(6)
 
 __KIParla - BOA3017__
 
@@ -124,10 +124,10 @@ If the intervention by Speaker 2 is fully overlapping, that is Speaker 2 does NO
 
 __Annotation of cases of completion (A1) and additional dependency (B)__
 
-When a projected dependency remains unrealized in Speaker-1’s utterance (cases A1 and B), promote the unfinished element to fill the syntactic position that would normally be occupied by its missing complement. 
-Then, annotate the element element or subtree whose syntactic projection is unifinished with two additional MISC features: 
-- Scrap=Yes
-- Promotion=⟨deprel⟩, specifying the relation that was not realised.
+When a projected dependency remains unrealized in Speaker-1’s utterance (cases A1 and B), promote the unfinished element to fill the syntactic position that would normally be occupied by its missing complement.
+Then, annotate the element or subtree whose syntactic projection is unifinished with two additional MISC features:
+- `Scrap=Yes`
+- `Promotion=⟨deprel⟩`, specifying the relation that was not realised.
 
 The missing element may be the head of a dependecy relation, as in example (7):
 
@@ -143,16 +143,16 @@ In cases like this:
 __Annotation of parallel (A.2) and subsequent realisations (A.3) - stacking__
 
 Stacking can be annotate with different deprels.
-- For repetitions or repair use `reparandum`; <!-- what should we do with "repair"? -->
+- For repetitions or repair use `repair` as the deprel label, it is then transformed into `reparandum` in dependency view;
 - For reformulations (when the first conjunct is complete and the
 second conjunct is different) use the newly introduced relation: `conj:reform`.
 
-Reformulations may be distinguished from coordinated conjuncts because, in reformulation the conjuncts are different denotations of the same referents, contrary to coordinated conjunts. 
+Reformulations may be distinguished from coordinated conjuncts because, in reformulation the conjuncts are different denotations of the same referents, contrary to coordinated conjunts.
 
 ### 2. Wh-questions
-Consider answers to wh-questions (ex. 8) as con-constructions, since they are syntactically dependent on the question, and thus part of the same rectional unit. Answers to polar questions should not be treated  coconstructions, since their response items do not depend syntactically on any element of the question nor fill a pre-existing syntactic slot. 
+Consider answers to wh-questions (ex. 8) as con-constructions, since they are syntactically dependent on the question, and thus part of the same rectional unit. Answers to polar questions should not be treated  coconstructions, since their response items do not depend syntactically on any element of the question nor fill a pre-existing syntactic slot.
 
-(8) 
+(8)
 
 __KIParla - PTA007__
 
@@ -161,7 +161,7 @@ _where do you climb?_\
 TOI007: al bi side4 vicino alla colletta\
 _at the bi side close to colletta_
 
-<!-- To what should we link the deprel? -->
+The head of the coconstruction is the interrogative element (pronoun, adverb etc..)
 
 
 ### 3. Backchanneling
@@ -174,7 +174,7 @@ In order to be recognised as BC, a specific utterance must:
 - not require a reaction from the other speaker (see ex. 9, where the speaker continues)
 
 
-(9) 
+(9)
 
 __KIParla - BOA3017__
 
@@ -188,7 +188,7 @@ _and then daniela you musn’t have prejudices about me I_
 
 (10)
 
-__KIParla - BOD2018__ 
+__KIParla - BOD2018__
 
 BO118: [sì] sì ma anch'io:: però era proprio l'esigenza [de sta da sola in dei momenti]\
 _yes yes me too I also have the need to be alone sometimes_\
@@ -202,11 +202,9 @@ In dependency-based view, tokens are linearly placed based on time alignment to 
 
 `discourse:backchannel` is introduced as a new dependency sub-label, but should only be used in the cross-speaker case (i.e. when the BC has a different speaker ID to its syntactic parent).
 
-In case of BC, we consider that the main speaker keeps the speech turn, its utterance is not interrupted and has not to be segmented. The BC will be placed in a separate sentence.
+In case of BC, we consider that the main speaker keeps the speech turn, its utterance is not interrupted and has not to be segmented. The BC will be placed in a separate sentence and attached to its triggering element (where possible, otherwise, the root of the utterance)
 
-TODO: head selection criteria
-
-TODO: can the backchannel be used to take the floor?
+TO-DISCUSS: can the backchannel be used to take the floor? Where is the boundary between proper feedback and backchannel?
 
 Encoding: In the speaker-based view, the backchannel has a feature:
 `Backchannel=<sent-id>::<token-id>`
