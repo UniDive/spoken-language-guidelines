@@ -84,18 +84,18 @@ Such an insertion is usually found at the end of the reported speech in VO langu
 In these cases the speech verb is not the root of the sentence — it is genuinely inserted — so it is attached with the relation `parataxis:insert`.
 
 ~~~ sdparse
-don't do that, she said
-root(do-2)
-parataxis:insert(do-2, said-5)
+ROOT don't do that, she said
+root(ROOT, do)
+parataxis:insert(do, said)
 ~~~
 
 Note that in OV languages, a speech verb at the end of a sentence can be the head. 
 * Beja *askʷi ini* 'I_chased_him he_said'
 
 ~~~ sdparse
-skʷi ini
-root(ini-2)
-ccomp(ini-2, skʷi-1)
+ROOT skʷi ini
+root(ROOT,ini)
+ccomp(ini, skʷi)
 ~~~
 
 
@@ -113,7 +113,32 @@ Examples, where subordination is signalled without an explicit subordinating con
 
 See also, for English:
 
-> *It would still give him room to progress in the current job group should he not be promoted.* (`sent_id`: email-enronsent30_01-0047, `document_id`: en_ewt-ud-train)
+* *It would still give him room to progress in the current job group should he not be promoted.* (`sent_id`: email-enronsent30_01-0047)
+
+~~~ conllu
+# sent_id = email-enronsent30_01-0047
+# text = It would still give him room to progress in the current job group should he not be promoted.
+1	It	it	PRON	PRP	Case=Nom|Gender=Neut|Number=Sing|Person=3|PronType=Prs	4	nsubj	_	_
+2	would	would	AUX	MD	VerbForm=Fin	4	aux	_	_
+3	still	still	ADV	RB	_	4	advmod	_	_
+4	give	give	VERB	VB	VerbForm=Inf	0	root	_	Cxn=Conditional-UnspecifiedEpistemic-SubjVerbInversion|CxnElt=4:Conditional-UnspecifiedEpistemic-SubjVerbInversion.Apodosis
+5	him	he	PRON	PRP	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs	4	iobj	_	_
+6	room	room	NOUN	NN	Number=Sing	4	obj	_	_
+7	to	to	PART	TO	_	8	mark	_	_
+8	progress	progress	VERB	VB	VerbForm=Inf	6	acl	_	_
+9	in	in	ADP	IN	_	13	case	_	_
+10	the	the	DET	DT	Definite=Def|PronType=Art	13	det	_	_
+11	current	current	ADJ	JJ	Degree=Pos	13	amod	_	_
+12	job	job	NOUN	NN	Number=Sing	13	compound	_	_
+13	group	group	NOUN	NN	Number=Sing	8	obl	_	_
+14	should	should	AUX	MD	VerbForm=Fin	18	aux	_	_
+15	he	he	PRON	PRP	Case=Nom|Gender=Masc|Number=Sing|Person=3|PronType=Prs	18	nsubj:pass	_	_
+16	not	not	PART	RB	Polarity=Neg	18	advmod	_	_
+17	be	be	AUX	VB	VerbForm=Inf	18	aux:pass	_	_
+18	promoted	promote	VERB	VBN	Tense=Past|VerbForm=Part|Voice=Pass	4	advcl	_	CxnElt=4:Conditional-UnspecifiedEpistemic-SubjVerbInversion.Protasis|SpaceAfter=No
+19	.	.	PUNCT	.	_	4	punct	_	_
+
+~~~
 
 ### Clause in the paradigm of a dislocated element
 

@@ -16,15 +16,17 @@ This is a relatively new aspect for the UD formalism, as written text is usually
 Eliminating this aspect from the syntactic analysis of spoken language would however introduce a bias in the comparison with planned or written language, as speaker-dependent vision would hide syntactic relations deriving from contributions given by different speakers in the same time frame, and at the same time result in sentence-like units that can only be interpreted (even syntactically) contextually given the contributions of other participants to the interaction.
 It is worth remarking that the issue is not entirely new, as for instance social media data might show the same features when it comes to sequences of posts in a thread, possibly posted by different users.
 
-A coconstruction is encoded by a feature on the root of the second utterance indicating the syntactic role of the second utterance towards the first utterance, the sent-id of the first utterance, and the token-id of the governor of the second utterance:
+## Encoding
 
-`Coconstruct=<deprel>::<sent-id>::<token-id>`
+Coconstruction are encoded with two features in the MISC columns.
 
-This is kept as a feature in MISC.
+ - `Coconstruct`: A coconstruction is encoded by a feature on the root of the second utterance indicating the syntactic role of the second utterance towards the first utterance, the `sent-id` of the first utterance, and the `token-id` of the governor of the second utterance: `Coconstruct=<deprel>::<sent-id>::<token-id>`
+
+ - `Backchannel`: For backchannels (see below), in the speaker-based view, the backchannel has a feature `Backchannel=<sent-id>::<token-id>`
 
 Additional instruction for different cases of coconstructions will be provided as follows.
 
-### Typology of coconstructions
+## Typology of coconstructions
 
 We distinguish three major types of co-constructions: co-construction proper,  wh-question constructions, and backchannelling.
 
@@ -196,7 +198,7 @@ BO140: [__sì__ di stare da so:la di non] parla~ \
 _yes to be alone not to talk_
 
 
-In dependency view, tokens that form BCs should be identifiable by an attribute in the MISC column (Backchannel=Yes).
+In dependency view, tokens that form BCs should be identifiable by an attribute in the MISC column (`Backchannel=Yes`).
 
 In dependency-based view, tokens are linearly placed based on time alignment to their closest token in time, when such information is available. Syntactically, backchannelling enters the syntactic flow and is linked by a discourse relation.
 
@@ -206,5 +208,3 @@ In case of BC, we consider that the main speaker keeps the speech turn, its utte
 
 TO-DISCUSS: can the backchannel be used to take the floor? Where is the boundary between proper feedback and backchannel?
 
-Encoding: In the speaker-based view, the backchannel has a feature:
-`Backchannel=<sent-id>::<token-id>`
