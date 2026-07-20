@@ -1,11 +1,10 @@
 ---
 layout: base
-title:  'Treebank structure'
+title:  'Treebank structure and metadata sharing'
 udver: '2'
 ---
 
-
-# Treebank structure
+# Treebank structure and metadata sharing
 
 ## Problem identification
 While token- and sentence-level information should remain encoded directly in the CoNLL-U files (in the MISC column for tokens and in # comment lines for sentences), we propose storing document-level and speaker-level metadata, such as detailed information on speech events and speakers, in an external metadata file to avoid redundancy, improve readability, and enable consistent maintenance.

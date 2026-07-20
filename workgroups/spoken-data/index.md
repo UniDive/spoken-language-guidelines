@@ -22,7 +22,7 @@ Disclaimer: This page represents the output of UniDive WG1 T1.5 group. It is not
     * co-constructed syntax and handling of overlap (in [Syntax](syntax.html))
     * question answering
   * [Speech specific metadata](metadata.html)
-  * [CoNLL-U format and treebank structure](treebank_structure.html)
+  * [Treebank structure and metadata sharing](treebank_structure.html)
 
 * Documentation of tags, features and relations
   * POS tags:
