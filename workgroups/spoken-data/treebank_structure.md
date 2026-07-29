@@ -1,55 +1,52 @@
 ---
 layout: base
-title:  'Treebank structure'
+title:  'Treebank structure and metadata sharing'
 udver: '2'
 ---
 
-
-# Treebank structure
+# Treebank structure and metadata sharing
 
 ## Problem identification
 While token- and sentence-level information should remain encoded directly in the CoNLL-U files (in the MISC column for tokens and in # comment lines for sentences), we propose storing document-level and speaker-level metadata, such as detailed information on speech events and speakers, in an external metadata file to avoid redundancy, improve readability, and enable consistent maintenance.
 
 Concretely, this takes the form of a `metadata.json` file placed in a designated folder, containing entries indexed by stable identifiers (e.g. `document_id` and `speaker_id`) that are referenced in the CoNLL-U files through those identifiers, as in the examples below.
 
-Another issue relates to the storage of treebanks in CoNLL-U files, which are organised in a way that is consistent with a document-level structure, as discussed in the [Github issue #1146](https://github.com/UniversalDependencies/docs/issues/1146). This problem is also addressed in the proposal below.
-
-> if there is a general template generated for a new treebank, the creation of metadata.json could be a default feature -- to discuss with Dan Zeman
+Another issue relates to the storage of treebanks in CoNLL-U files, which are organised in a way that is consistent with a document-level structure, as discussed in the [GitHub issue #1146](https://github.com/UniversalDependencies/docs/issues/1146). This problem is also addressed in the proposal below.
 
 ## Proposal overview
-We propose two major optional evolutions for the storage of corpora in Universal Dependencies and related projects.
+We propose two major optional evolutions to the storage of corpora in the Universal Dependencies and related projects.
 
-1. A more flexible organisation of the corpus into individual files, in order to be able to keep original split into "document" when such split exists in the original data.
-2. A shared storage of some metadata. When some specific metadata is shared among several sentences, we want to avoid to copy it on each sentence.
+1. A more flexible organisation of the corpus into individual files, in order to be able to keep the original split into "documents" when such a split exists in the original data.
+2. A shared storage of some metadata. When some specific metadata is shared among several sentences, we want to avoid copying it on each sentence.
 
 Note that the two proposals can be used independently, but in practice, it is interesting to use both together, because keeping the original split into sub documents (1) may allow for a better sharing in (2).
 
-The proposal (1) was already discussed in [Github issue #1146](https://github.com/UniversalDependencies/docs/issues/1146). In order to prevent problems reported there, we propose to make the new organisation available in a specific subfolder and to keep the existing UD requirements (i.e. test, dev, train split) at the root of each repository.
+The proposal (1) was already discussed in [GitHub issue #1146](https://github.com/UniversalDependencies/docs/issues/1146). In order to prevent problems reported there, we propose to make the new organisation available in a specific subfolder and to keep the existing UD requirements (i.e. test, dev, train split) at the root of each repository.
 
-> To discuss: in which folder shall we put the new organisation?
+> To discuss: In which folder shall we put the new organisation?
 > - `original_split`
-> 	- ✅ more visible and available in official data releases 
-> 	- ❌ need to change the UD infrastructure 
+> 	- ✅ more visible and available in official data releases
+> 	- ❌ need to change the UD infrastructure
 > 		- allowing the new folder
 > 		- check at validation time consistency of data in `.` and in `original_split` (a script is available for this)
 > - `not-to-release/original_split`
 > 	- ✅ no change in UD infrastructure
-> 	- ❌ less visible and requires users to go to github if they want to use it
-> 
-> **Note** For now, we chose the second option (in this document, scripts and examples) for a better intergration into UD infrastructure, but we would like the first one to be chosen.
+> 	- ❌ less visible and requires users to go to GitHub if they want to use it
+>
+> **Note:** For now, we chose the second option (in this document, scripts and examples) for a better integration into UD infrastructure, but we would like the first one to be chosen.
 
 ## Flexible organisation
 
 We propose (as an optional feature) to store a user defined organisation of the corpus into subfiles in the folder `not-to-release/original_split`.
-If this option is chosen, the folder must also contain a file `merge.json` which describes how to build the UD final files to be stored at the root folder.
+If this option is chosen, the folder must also contain a file, `merge.json`, which describes how to build the UD final files to be stored at the root folder.
 
-### JSON file encoding 
+### JSON file encoding
 
 The file `merge.json` stores a dictionary describing each file for the final UD split into dev/test/train. The description can be document-based (one whole document goes in one UD file) or sentence-based (when a document is split across different UD files). Document-based and sentence-based can be mixed.
 Technically, in  `merge.json` main dictionary, each UD file is described as a list of *sections*, a *section* being a JSON object with one key (either `document_ids` or `sent_ids`) associated with a list of strings.
 
-### Example 
-Below here shortened example of the `merge.json`  for the corpus `UD_French-Rhapsodie` with a mixed description (the document `Rhap_M0001` is partially used in `dev` and in `test`).
+### Example
+Below is a shortened example of the `merge.json`  for the corpus `UD_French-Rhapsodie` with a mixed description (the document `Rhap_M0001` is partially used in `dev` and in `test`).
 
 ```json
 { "fr_rhapsodie-ud-dev": [
@@ -87,32 +84,32 @@ Below here shortened example of the `merge.json`  for the corpus `UD_French-Rhap
 ]}
 ```
 
-See below for a python script using `merge.json` to produce the final UD files.
+See below for a Python script using `merge.json` to produce the final UD files.
 
 ## Metadata sharing
 
-This question was discussed in [Github issue #1135](https://github.com/UniversalDependencies/docs/issues/1135). The current proposal borrows idea from this discussion but relies on a explicit sharing through an external file instead of encoding it in specific metadata such as `meta::author`
+This question was discussed in [GitHub issue #1135](https://github.com/UniversalDependencies/docs/issues/1135). The current proposal borrows ideas from this discussion but relies on explicit sharing through an external file instead of encoding it in specific metadata such as `meta::author`
 
-In this context, we require that all metadata are encoded as: `# <key> = <value>`. Even if it is not a strict requirement in UD, it is a largely used in pratice.
+In this context, we require that all metadata are encoded as: `# <key> = <value>`. Even if it is not a strict requirement in UD, it is a widely used in practice.
 
-The metadata sharing mechanism is based on the fact that there are many cases where one metadata is dependent of another. Formally, the metadata `key_B` depends on `key_A` (written `key_A -> key_B`), if for each value of `key_A`, in all the treebank, there is only one possible value for `key_B`. In such a case, we can store this association (values of `key_A` -> values to `key_B` globally, in a dictionary, instead of copying it each time or relying on a implicit mechanism).
+The metadata sharing mechanism is based on the fact that there are many cases where one metadata is dependent of another. Formally, the metadata `key_B` depends on `key_A` (written `key_A -> key_B`), if for each value of `key_A`, in the whole treebank, there is only one possible value for `key_B`. In such a case, we can store this association (values of `key_A` -> values of `key_B` globally, in a dictionary, instead of copying it each time or relying on an implicit mechanism).
 
 ### Examples of dependencies
-In spoken data treebank, it is common to have speaker related information and to use of the meta `speaker_id` as a treebank level identifier. In this case, we have the following dependencies:
+In spoken data treebanks, it is common to have speaker related information and to use the meta `speaker_id` as a treebank level identifier. In this case, we have the following dependencies:
  - `speaker_id -> speaker_age`
  - `speaker_id -> speaker_sex`
  - …
 
-We also consider that each sentence has an implicit metadata `document_id` which corresponds to the base name or the CoNLL-U file (for instance, each sentence in the file `Rhap_M0018.conllu` as an implicit metadata `document_id = Rhap_M0018`). Again in case of spoken data, it is common to have an audio file associated to each recording. If each recording is a file, the following dependency can be used:
- - `document_id -> sound_url`. This example explain why it is useful to use both mechanisms (flexible document splitting and metadata sharing) at the same time.
+We also consider that each sentence has an implicit metadata `document_id` which corresponds to the base name or the CoNLL-U file (for instance, each sentence in the file `Rhap_M0018.conllu` as an implicit metadata `document_id = Rhap_M0018`). Again in case of spoken data, it is common to have an URL to the audio file associated to each recording. If each recording is a file, the following dependency can be used:
+ - `document_id -> sound_url`. This example explains why it is useful to use both mechanisms (flexible document splitting and metadata sharing) at the same time.
 
 ### JSON encoding of values dependencies
 
-Shared metadata are stored in a JSON file `metadata.json` (in the folder `not-to-release/original_split`) with nested objects following the structure (when the metadata `key_B` depends on `key_A`):
+Shared metadata are stored in a JSON file, `metadata.json` (in the folder `not-to-release/original_split`), with nested objects following the structure (when the metadata `key_B` depends on `key_A`):
 ```json
-{ "key_A": 
+{ "key_A":
   { "value_A":
-	{ "key_B": "value_B" }  
+	{ "key_B": "value_B" } 
   }
 }
 ```
@@ -162,7 +159,7 @@ The above proposal is currently being implemented in three treebanks:
 
 The table below provides access to the relevant GitHub folders and files.
 
-| treebank | base folder | original_split folder | merge JSON file | metadata JSON file |
+| Treebank | Base folder | Original_split folder | `merge.json` | `metadata.json` |
 |----------|:----------:|:----------:|:----------:|:----------:|
 | **UD_French-Sequoia** | [dev](https://github.com/UniversalDependencies/UD_French-Sequoia/tree/dev) | [dev](https://github.com/UniversalDependencies/UD_French-Sequoia/tree/dev/not-to-release/original_split) | [merge.json](https://github.com/UniversalDependencies/UD_French-Sequoia/blob/dev/not-to-release/original_split/merge.json) | Unused |
 | **UD_French-ParisStories** | [dev](https://github.com/UniversalDependencies/UD_French-ParisStories/tree/dev) | [dev](https://github.com/UniversalDependencies/UD_French-ParisStories/tree/dev/not-to-release/original_split) | [merge.json](https://github.com/UniversalDependencies/UD_French-ParisStories/blob/dev/not-to-release/original_split/merge.json) | [metadata.json](https://github.com/UniversalDependencies/UD_French-ParisStories/blob/dev/not-to-release/original_split/metadata.json) |
@@ -172,7 +169,7 @@ The table below provides access to the relevant GitHub folders and files.
 
 ## Python tools
 
-The scripts described below are available in [https://github.com/UniDive/SpLAn-UD](https://github.com/UniDive/SpLAn-UD) (folder `metadata-encoding`).
+The scripts described below are available at [https://github.com/UniDive/SpLAn-UD](https://github.com/UniDive/SpLAn-UD) (folder `metadata-encoding`).
 
 These scripts use the [conllup](https://pypi.org/project/conllup/) library. It would be easy to switch to a different CoNLL Python library if better integration with the UD infrastructure is required.
 
@@ -181,7 +178,7 @@ These scripts use the [conllup](https://pypi.org/project/conllup/) library. It w
 We provide a Python script [`merge_and_unshare.py`](https://github.com/UniDive/SpLAn-UD/blob/main/metadata-encoding/merge_and_unshare.py) which takes the base folder `<BASE>` (where dev/test/train `conllu` files are expected) as an argument.
 From the folder `<BASE>/not-to-release/original_split`, the script reads documents (all files with the `.conllu` extension), as well as the files `merge.json` and, if present, `metadata.json`.
 
-Running the script poduces files in the folder `<BASE>` according to the description in the `merge.json` file.
+Running the script produces files in the folder `<BASE>` according to the description in the `merge.json` file.
 If a file `metadata.json` is present the `<BASE>/not-to-release/original_split` folder, the script will also take care of unsharing when producing the final UD files (with repetition of metadata on each sentence where it holds).
 
 ### Build the shared metadata version from the full version (with repetitions)
@@ -189,13 +186,13 @@ If a file `metadata.json` is present the `<BASE>/not-to-release/original_split` 
 The [`metadata_share.py`](https://github.com/UniDive/SpLAn-UD/blob/main/metadata-encoding/metadata_share.py) script is available.
 This can be used to produce both the `metadata.json` files and the new version of the `conllu` files without the shared metadata.
 The metadata to be shared must be given explicitly.
-Please refer to the scriop's `--help` options for usage details.
+Please refer to the script's `--help` options for usage details.
 
 ### Discover the metadata dependencies in a treebank
 
 The script [`metadata_detect_sharable.py`](https://github.com/UniDive/SpLAn-UD/blob/main/metadata-encoding/metadata_detect_sharable.py) reads a all the documents in a given folder (i.e. all files with the `.conllu` extension) and prints diagnostics on the dependencies between the metadata used in the treebank. It can be used to help build an explicit metadata set to share with the script `metadata_share.py`.
 
-**Note**: the output of the script must be manually processed because we may observe:
+**Note:** The output of the script must be manually processed because we may observe:
  - spurious dependencies between metadata that we do not want to exploit
  - missing expected dependencies due to errors in the metadata treebank (as occurred in [Rhapsodie](https://github.com/surfacesyntacticud/SUD_French-Rhapsodie/commit/23ee4055ad82a20b603db0df5513582e135b1cb7))
  - when two pieces of metadata are mutually dependent (for example, `document_id` and `sound_url`), we have to choose the more meaningful one.
