@@ -6,37 +6,23 @@ udver: '2'
 
 - [Morphology](#morphology)
   - [Interrupted words, false starts, reparandum](#interrupted-words-false-starts-reparandum)
-  - [Onomatopoeia](#onomatopoeia)
   - [Unintelligible material](#unintelligible-material)
-  - [Lemmas](#lemmas)
-  - [Part-of-Speech Tags](#part-of-speech-tags)
 
 # Morphology
 
-TODO: do we have something to say here besides the below? Possibly:
-- some specifications about what to treat as an `INTJ` and what not, in particular for elements that have discourse functions
-
 ## Interrupted words, false starts, reparandum
 
-Interrupted words (repetitions, false starts, reformulations) are transcribed with a trailing `~` or `-`, and marked `Interrupted=Yes` in `MISC` — this feature is needed because a token can also legitimately end in `-` for other reasons (e.g. pre- and postposition).
+Interrupted words (repetitions, false starts, reformulations) are generally transcribed with a trailing `~` or `-`, and marked `Interrupted=Yes` in `MISC` — this feature is needed because a token can also legitimately end in `-` for other reasons (e.g. pre- and postposition).
 
-Their lemma can be either:
+As far as lemmatization and pos-tagging are concerned, two options are possible:
 
-* the same as the form, or
-* the lemma of the target form, but only when it is clearly recoverable from the morphosyntactic context (e.g. the word is almost complete, or the same stem is repeated nearby) — whether this should instead be captured with a dedicated `ExtLemma` feature is still to be discussed.
+* lemmatizing with the same element as the form and adding upos `X`: in this case we suggest to encode the recoverable lemma and the recoverable part of speech, when possible, in MISC, by means of `ExtPos` and `ExtLemma`
+* the lemma of the target form, when it is clearly recoverable from the morphosyntactic context (e.g. the word is almost complete, or the same stem is repeated nearby)
 
-False starts are annotated with `upos=X` and `ExtPos=<upos-of-the-target>` ([example](https://universal.grew.fr/?custom=6a3b66e04bed8)); `ExtPos` can be left empty when the reconstruction of the target word is unclear.
-
-## Onomatopoeia
-
-Open problem: what lemma and what POS should onomatopoeic items receive?
+Syntactic relations are annotated when they can be inferred, otherwise `dep` is used.
 
 ## Unintelligible material
 
-Unintelligible material is generally transcribed as `x`, with lemma `x`; POS and syntactic relation are annotated when they can be inferred, otherwise left unspecified.
-
-For languages, or transcription conventions, where `x` is not a suitable placeholder, the feature `Unintelligible=Yes` should be added to `MISC` instead.
-
-## Lemmas
-
-## Part-of-Speech Tags
+Unintelligible material is transcribed with corpus-specific conventions.
+We suggest to mark this tokens as `Unintelligible=Yes` in MISC.
+As far as lemmatization and postagging, the same strategies as *interrupted words* apply.
