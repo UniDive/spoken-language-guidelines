@@ -8,9 +8,6 @@ udver: '2'
 
 This section of the [syntax overview](syntax.html) contains detailed discussion of particular linguistic constructions that fall outside (or cut across) the main categories of simple clauses, complex clauses, and nominal phrases.
 
-* [Paratactic constructions](#paratactic-constructions)
-* [Punctuation](#punctuation)
-
 ## Paratactic Constructions
 
 In spoken data, the `parataxis` deprel is less used as the two clauses, which are not otherwise syntactically connected, should be split into two different maximal units (i.e., sentences).
@@ -59,7 +56,7 @@ We suggest to use `discourse` for tag questions such as _isn't it?_ or _haven't 
 
 ~~~ sdparse
 It 's not me , is it ?
-tag(me, is)
+discourse(me, is)
 punct(is, ,)
 ~~~
 

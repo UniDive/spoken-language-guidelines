@@ -9,6 +9,7 @@ udver: '2'
   - [Pauses](#pauses)
   - [Non-verbal behaviours](#non-verbal-behaviours)
   - [Anonymized/Pseudonymized tokens](#anonymizedpseudonymized-tokens)
+  - [Added material (e.g., punctuation)](#added-material-eg-punctuation)
 
 # Tokenization and Word Segmentation
 
@@ -40,3 +41,8 @@ In case the maintainers of the treebank want to include these elements as syntac
 Personal or otherwise sensitive information (names, places, institutions, etc.) is frequently anonymized or pseudonymized in spoken corpora. Such items generally have a clear syntactic position — they occupy an argument or adjunct slot just like the word they replace — and are therefore treated as ordinary tokens, integrated into the tree with the relation that fits their function.
 We recommend to mark these tokens as `Anonymized=Yes` in MISC. In case of full anonymization, if the corpus has no other standard, we recommend generic english uppercased names such as [PLACE], [COUNTRY], [PERSON], [CITY]...
 Category-specific placeholders are preferable whenever the corpus needs to preserve coreference between anonymized mentions (e.g. distinguishing two different anonymized speakers referred to later in the same conversation).
+
+## Added material (e.g., punctuation)
+
+Whenever tokens are added during the transcription/normalization phase, which are not actually part of the uttered speech, this should be declared in the general README of the treebank and it is a good practice to mark these tokes as `Added=Yes` in MISC.
+This is typically the case of punctuation, which can be added either to make the text more similar to written standards, or to encode prosodic traits.
