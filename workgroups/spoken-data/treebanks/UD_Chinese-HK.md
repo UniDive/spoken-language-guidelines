@@ -1,0 +1,61 @@
+---
+layout: base
+title: 'Chinese HK'
+udver: '2'
+---
+
+# Chinese HK
+
+[Back to index](ud_spoken_treebanks.html)
+
+## Overview
+
+| | |
+|---|---|
+| **type** | only spoken |
+| **available since** | 2.1 |
+| **link** | [https://github.com/UniversalDependencies/UD_Chinese-HK](https://github.com/UniversalDependencies/UD_Chinese-HK) |
+| **genre** | spoken |
+| **contact** | tswong-c@my.cityu.edu.hk; jsylee@cityu.edu.hk |
+| **sentences** | 1004 |
+| **tokens** | 9874 |
+
+**Issue draft:** [UD_Chinese-HK](../issue_drafts/UD_Chinese-HK.html)
+
+## Modality identification
+
+**Is spoken part clearly identifiable?** N/A
+
+
+## Metadata review
+
+### corpus metadata
+
+Parallel treebank with [UD_Cantonese-HK](UD_Cantonese-HK.html), linked via `parallel_id` (e.g. `hk/1`). Per the README, the 1004 sentences come from **4 distinct sources**, documented only in prose in the README, not in the `.conllu`:
+
+| `sent_id` range | Title | Source |
+|---|---|---|
+| 1-410 | Missing days / 小時光 | [YouTube film](https://www.youtube.com/watch?v=1qSMiw0vhzU) |
+| 411-547 | Tempo in Temple / 廟眾樂樂 | [YouTube film](https://www.youtube.com/watch?v=8e8Lqd6grTE) |
+| 548-650 | What day is today / 今日星期幾 | [YouTube film](https://www.youtube.com/watch?v=bBGwxIDiZ_o) |
+| 651-1004 | Legislative Council presidential election meeting (2016-10-12) | [Hansard](https://www.legco.gov.hk/yr16-17/chinese/counmtg/hansard/cm20161012-translate-c.pdf), [webcast](https://webcast.legco.gov.hk/public/zh-hk/SearchResult?MeetingID=M16100003) |
+
+
+
+### transcription and annotation levels available
+
+| Field | Advice |
+|---|---|
+| `translit` | pinyin transcription (added in v2.12, per changelog) - rename to `text_transliteration` |
+
+### speaker metadata
+
+_(none found)_ - no speaker distinction encoded, even though the legislative-council portion clearly involves multiple speakers.
+
+### doc (and paragraphs) metadata
+
+_(none found)_ - no `newdoc id`. Given the table above, `# newdoc id` could be set at sentences 1, 411, 548, and 651, one per source (same ranges as its Cantonese-HK counterpart).
+
+### modality metadata
+
+_(none found)_ - not required for a single-modality (`only spoken`) treebank, but `# genre` (film/legislative-proceedings) could be added per document using the table above.
