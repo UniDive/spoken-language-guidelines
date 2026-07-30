@@ -19,7 +19,7 @@ We therefore suggest to restrict the use of parataxis to these specific cases:
 In the case of reported speech, when the speech verb is not the main predicate.
 In right branching languages, this happens often when the segment starts with reported speech, and the speech verb appears later on in the sentence (e.g., "Don't do that -- she said").
 
-In French for instance, this is easy to detect as the speech verb appears with inversion (e.g., "Ne fais pas ça, a-t-elle dit")
+In French for instance, this is easy to detect as the speech verb appears with inversion (e.g., "Ne fais pas ça, a-t-elle dit" 'Don't do that -- she said')
 
 Other examples:
 - If you do that, she said, you won't be able to stay
@@ -28,11 +28,10 @@ These are marked with `parataxis:insert`
 
 ### Parentheticals
 
-A parenthesis is a clause that could be uttered alone but is interrupts another maximal unit. It is generally a comment on the whole sentence.
+A parenthesis is a clause that could be uttered alone but interrupts another maximal unit. It is generally a comment on the whole sentence.
 
 Example:
-- Partiva da, come si chiama, via Porrettana
-- en. He was leaving from, what is the name again, via Porrettana
+- It. Partiva da, come si chiama, via Porrettana 'He was leaving from, what is the name again, via Porrettana'
 
 These are marked with `parataxis:parenth`
 
@@ -41,12 +40,10 @@ These are marked with `parataxis:parenth`
 A false start is considered as a restart if there is repair that comes after it. For this reason it is not considered an autonomous unit and therefore it is kept in the same sentence of its repair.
 
 Examples:
-- In peggio perchè non ... prima c'era più sicurezza
-- en. Worse because it's not ... it was safer before
+- In peggio perchè non ... prima c'era più sicurezza 'Worse because it's not ... it was safer before'
 - what did you just -- which line will you draw
 
 If there is no repair, the false start is a separate sentence.
-
 
 ## Tag questions
 
