@@ -26,8 +26,6 @@ udver: '2'
 
 **Is spoken part clearly identifiable?** N/A
 
-
-
 ## Metadata review
 
 ### doc (and paragraphs) metadata
@@ -42,4 +40,3 @@ _(none found)_ - no `newdoc id` exists at all.
 ### speaker metadata
 
 _(none found)_ - each document is one L2 English speaker's interview session; no `speaker_id` is encoded, though one could plausibly be derived from the same filename once `newdoc id` exists.
-

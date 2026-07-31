@@ -24,11 +24,9 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** possibly - via a naming pattern in `newdoc id` (a weak signal, not an explicit tag).
+**Is spoken part clearly identifiable?** possibly - via a naming pattern in `newdoc id`: the 43 `newdoc id` values themselves split into two groups: ~17 match biblical book names, the remaining ~26 look like oral narratives/rituals (`oieigo_*`, `coqueiro01`-`coqueiro09`, `historia_mitica_bor`, `rituais_bororo`, `bokodori_ecerae`, `juko_ro`) - plausibly **spoken** fieldwork material, matching the README's description
 
-*Re-checked directly against all 3 `.conllu` files (train/dev/test, 21384 sentences). Only `newdoc id`, `sent_id`, and `text` exist - no genre, source, or modality field at all. But the 43 `newdoc id` values themselves split cleanly into two groups: ~17 match biblical book names (`samuel_1_2`, `reis_1_2` = Kings, `esdras_2` = Ezra, `oseias_2` = Hosea, `genesis_2`, `levitico_2`, `daniel_2`, `novo_testamento_ochoa`, etc.) - almost certainly translated scripture, i.e. **written**; the remaining ~26 look like oral narratives/rituals (`oieigo_*`, `coqueiro01`-`coqueiro09`, `historia_mitica_bor`, `rituais_bororo`, `bokodori_ecerae`, `juko_ro`) - plausibly **spoken** fieldwork material, matching the README's description of "mythological narratives, fieldwork material (elicited and spontaneous discourse)".*
-
-**Data-quality issue found:** 4 of the 43 `newdoc id` values are not real identifiers - they're leaked local Windows file paths (e.g. `G:\Mi unidad\hiwi\tasks_materials\...\ipare_ereru_(...)-udpipe.txt`, with corrupted/mojibake characters in 2 of them). Two of these duplicate a document that also exists under a clean id (`ipare_ereru`, `oieigo_de_danca_2`) - worth confirming with the maintainer whether this means the same document is present twice under two different ids.
+**Data-quality issue found:** 4 of the 43 `newdoc id` values are not real identifiers - they're leaked local Windows file paths (e.g. `G:\Mi unidad\hiwi\tasks_materials\...\ipare_ereru_(...)-udpipe.txt`).
 
 ## Things to check manually
 

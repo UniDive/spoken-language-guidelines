@@ -16,16 +16,16 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 No `newdoc id` exists in the current `.conllu` (the field this section previously listed, `_filename`, is not actually present - that suggestion was stale). However, the repo's own README documents exactly 4 distinct sources by `sent_id` range, each with a title, source URL, and fluency note:
 
-| `sent_id` range | Title | Fluency |
-|---|---|---|
-| 1-410 | Missing days / 小時光 (film) | mostly prepared dialogue |
-| 411-547 | Tempo in Temple / 廟眾樂樂 (film) | spontaneous interview |
-| 548-650 | What day is today / 今日星期幾 (film) | mostly prepared |
-| 651-1004 | Legislative Council meeting (2016-10-12) | spontaneous discussion |
+| `sent_id` range | Proposed `newdoc id` | Title | Fluency |
+|---|---|---|---|
+| 1-410 | `missing_days` | Missing days / 小時光 (film) | mostly prepared dialogue |
+| 411-547 | `tempo_in_temple` | Tempo in Temple / 廟眾樂樂 (film) | spontaneous interview |
+| 548-650 | `what_day_is_today` | What day is today / 今日星期幾 (film) | mostly prepared |
+| 651-1004 | `legco_president_election_2016` | Legislative Council meeting (2016-10-12) | spontaneous discussion |
 
 | Field | Suggestion |
 |---|---|
-| — | add `# newdoc id` at sentences 1, 411, 548, and 651 (one per source above) |
+| — | add `# newdoc id` at sentences 1, 411, 548, and 651, using the proposed ids above (please confirm the slugs) |
 | — | add `# genre` (film / legislative-proceedings) and `degree_of_spontaneity` (`planned` for the 3 films, `unplanned` for the legislative discussion and the "Tempo in Temple" interview) per document |
 
 ### 2. Speaker-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#speaker-level))

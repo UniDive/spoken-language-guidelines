@@ -16,16 +16,16 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 No `newdoc id` exists in the current `.conllu`. However, the repo's own README documents exactly 4 distinct sources by `sent_id` range (matching the parallel UD_Cantonese-HK treebank):
 
-| `sent_id` range | Title | Source |
-|---|---|---|
-| 1-410 | Missing days / 小時光 (film) | https://www.youtube.com/watch?v=1qSMiw0vhzU |
-| 411-547 | Tempo in Temple / 廟眾樂樂 (film) | https://www.youtube.com/watch?v=8e8Lqd6grTE |
-| 548-650 | What day is today / 今日星期幾 (film) | https://www.youtube.com/watch?v=bBGwxIDiZ_o |
-| 651-1004 | Legislative Council meeting (2016-10-12) | https://www.legco.gov.hk/yr16-17/chinese/counmtg/hansard/cm20161012-translate-c.pdf |
+| `sent_id` range | Proposed `newdoc id` | Title | Source |
+|---|---|---|---|
+| 1-410 | `missing_days` | Missing days / 小時光 (film) | https://www.youtube.com/watch?v=1qSMiw0vhzU |
+| 411-547 | `tempo_in_temple` | Tempo in Temple / 廟眾樂樂 (film) | https://www.youtube.com/watch?v=8e8Lqd6grTE |
+| 548-650 | `what_day_is_today` | What day is today / 今日星期幾 (film) | https://www.youtube.com/watch?v=bBGwxIDiZ_o |
+| 651-1004 | `legco_president_election_2016` | Legislative Council meeting (2016-10-12) | https://www.legco.gov.hk/yr16-17/chinese/counmtg/hansard/cm20161012-translate-c.pdf |
 
 | Field | Suggestion |
 |---|---|
-| — | add `# newdoc id` at sentences 1, 411, 548, and 651 (one per source above) |
+| — | add `# newdoc id` at sentences 1, 411, 548, and 651, using the proposed ids above (please confirm the slugs; same ranges as the parallel UD_Cantonese-HK treebank) |
 | — | add `# genre` (film / legislative-proceedings) per document |
 
 ### 2. Speaker-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#speaker-level))

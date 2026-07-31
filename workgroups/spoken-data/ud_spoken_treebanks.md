@@ -62,10 +62,10 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td class="num">977</td>
         <td class="num">19334</td>
         <td>yes</td>
+        <td class="num">0</td>
         <td class="num">1</td>
         <td class="num">1</td>
-        <td class="num">1</td>
-        <td class="num">1</td>
+        <td class="num">0</td>
         <td class="num">0</td>
         <td><a href="issue_drafts/UD_Alemannic-DIVITAL.html">draft &#8599;</a></td>
       </tr>
@@ -238,30 +238,30 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td class="num">0</td>
         <td><a href="issue_drafts/UD_English-ESLSpok.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="5">
+      <tr data-type="mixed" data-ident="yes" data-todo="0">
         <td><a href="treebanks/UD_English-GENTLE.html">English GENTLE</a></td>
         <td>mixed</td>
         <td class="num">1334</td>
         <td class="num">17619</td>
-        <td>not assessed</td>
+        <td>yes</td>
         <td class="num">2</td>
         <td class="num">1</td>
         <td class="num">1</td>
         <td class="num">0</td>
-        <td class="num">5</td>
+        <td class="num">0</td>
         <td><a href="issue_drafts/UD_English-GENTLE.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="6">
+      <tr data-type="mixed" data-ident="yes" data-todo="0">
         <td><a href="treebanks/UD_English-GUM.html">English GUM</a></td>
         <td>mixed</td>
         <td class="num">14353</td>
         <td class="num">252284</td>
-        <td>not assessed</td>
+        <td>yes</td>
         <td class="num">2</td>
         <td class="num">1</td>
         <td class="num">2</td>
         <td class="num">0</td>
-        <td class="num">6</td>
+        <td class="num">0</td>
         <td><a href="issue_drafts/UD_English-GUM.html">draft &#8599;</a></td>
       </tr>
       <tr data-type="only spoken" data-ident="yes" data-todo="7">

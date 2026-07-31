@@ -28,9 +28,6 @@ udver: '2'
 
 ## Metadata review
 
-### corpus metadata
-
-_(none found)_
 
 
 ### languages and translation(s)
@@ -73,6 +70,3 @@ _(none found)_
 | `AlignBegin` | rename to `WordAlignmentBegin` |
 | `AlignEnd` | rename to `WordAlignmentEnd` |
 | `Lang` | OK |
-
-
-
