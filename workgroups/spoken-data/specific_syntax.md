@@ -49,11 +49,11 @@ If there is no repair, the false start is a separate sentence.
 
 NOTE: difference from guidelines
 
-We suggest to use `discourse` for tag questions such as _isn't it?_ or _haven't you?_, as these do not constitute autonomous units.
+We suggest to use `discourse:tag` for tag questions such as _isn't it?_ or _haven't you?_, as these do not constitute autonomous units.
 
 ~~~ sdparse
 It 's not me , is it ?
-discourse(me, is)
+discourse:tag(me, is)
 punct(is, ,)
 ~~~
 

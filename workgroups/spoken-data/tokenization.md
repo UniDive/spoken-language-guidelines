@@ -1,25 +1,41 @@
 ---
 layout: base
-title:  'Tokenization and Word Segmentation'
+title:  'Tokenization and Morphological annotation'
 udver: '2'
 ---
 
-- [Tokenization and Word Segmentation](#tokenization-and-word-segmentation)
-  - [Numbers and acronyms](#numbers-and-acronyms)
+- [Tokenization and Morphological annotation](#tokenization-and-morphological-annotation)
+  - [Numbers](#numbers)
+  - [Acronyms](#acronyms)
+  - [Onomatopoeias](#onomatopoeias)
   - [Pauses](#pauses)
   - [Non-verbal behaviours](#non-verbal-behaviours)
   - [Anonymized/Pseudonymized tokens](#anonymizedpseudonymized-tokens)
   - [Added material (e.g., punctuation)](#added-material-eg-punctuation)
+  - [Interrupted words, false starts, reparandum](#interrupted-words-false-starts-reparandum)
+  - [Unintelligible material](#unintelligible-material)
 
-# Tokenization and Word Segmentation
+# Tokenization and Morphological annotation
 
 In general, we consider as a token those elements that have a clear syntactic position. Phenomena with no written counterpart — pauses, non-verbal noises, anonymized content — are only tokenized when they can be given such a position; otherwise they are represented as features on a neighbouring token, or not represented at all. The rest of this chapter goes through the main cases.
 
-## Numbers and acronyms
+## Numbers
 
 Numbers can appear in a transcript either as figures or spelled out; in both cases they are annotated as `NUM`.
 
-Acronyms, when transcribed as their phonetic realization, are a single token: for instance *esseoesse* for "S.O.S", as the acronym is pronounced in Italian.
+## Acronyms
+
+In some transcription standards, acronyms are rendered as their phonetic realization. For instance *esseoesse* or *esse o esse* for "S.O.S", as the acronym is pronounced in Italian.
+
+In these cases, we recommend to treat the acronym as a single token in all cases, and normalize it to its standard spelling in the `form` field. The original transcription can be retained in `MISC` through the `OrigTranscription` feature.
+
+## Onomatopoeias
+
+Onomatopoeias they can serve multiple purposes and fill various morphosyntactic slots.
+
+Our proposal is to tag them distributionally, assigning them the `upos` based on their function.
+
+In a sentence like "and then we heard BOOM", `BOOM` is to be tagged as `NOUN` whereas in "il faut compter, euh, pff, l'équivalent de quarante euros, quelque chose comme ça." (en. "we need to consider, euh, pff, the equivalent of 40 euros, something like that.") `pff` is to be tagged as `INTJ`.
 
 ## Pauses
 
@@ -44,5 +60,22 @@ Category-specific placeholders are preferable whenever the corpus needs to prese
 
 ## Added material (e.g., punctuation)
 
-Whenever tokens are added during the transcription/normalization phase, which are not actually part of the uttered speech, this should be declared in the general README of the treebank and it is a good practice to mark these tokes as `Added=Yes` in MISC.
+Whenever tokens are added during the transcription/normalization phase, which are not actually part of the uttered speech, this should be declared in the general README of the treebank and it is a good practice to mark these tokens as `Added=Yes` in MISC.
 This is typically the case of punctuation, which can be added either to make the text more similar to written standards, or to encode prosodic traits.
+
+## Interrupted words, false starts, reparandum
+
+Interrupted words (repetitions, false starts, reformulations) are generally transcribed with a trailing `~` or `-`, and marked `Interrupted=Yes` in `MISC` — this feature is needed because a token can also legitimately end in `-` for other reasons (e.g. pre- and postposition).
+
+As far as lemmatization and pos-tagging are concerned, two options are possible:
+
+* lemmatizing with the same element as the form and adding upos `X`: in this case we suggest to encode the recoverable lemma and the recoverable part of speech, when possible, in MISC, by means of `ExtPos` and `ExtLemma`
+* the lemma of the target form, when it is clearly recoverable from the morphosyntactic context (e.g. the word is almost complete, or the same stem is repeated nearby)
+
+Syntactic relations are annotated when they can be inferred, otherwise `dep` is used.
+
+## Unintelligible material
+
+Unintelligible material is transcribed with corpus-specific conventions.
+We suggest to mark this tokens as `Unintelligible=Yes` in MISC.
+As far as lemmatization and postagging, the same strategies as *interrupted words* apply.
