@@ -4,6 +4,8 @@ title:  'Metadata harmonisation'
 udver: '2'
 ---
 
+[Guidelines for Spoken Language UD Treebanks](../spoken-data/)
+
 # Metadata harmonisation
 
 ## Background

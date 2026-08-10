@@ -4,18 +4,20 @@ title:  'Tokenization and Morphological annotation'
 udver: '2'
 ---
 
-- [Tokenization and Morphological annotation](#tokenization-and-morphological-annotation)
-  - [Numbers](#numbers)
-  - [Acronyms](#acronyms)
-  - [Onomatopoeias](#onomatopoeias)
-  - [Pauses](#pauses)
-  - [Non-verbal behaviours](#non-verbal-behaviours)
-  - [Anonymized/Pseudonymized tokens](#anonymizedpseudonymized-tokens)
-  - [Added material (e.g., punctuation)](#added-material-eg-punctuation)
-  - [Interrupted words, false starts, reparandum](#interrupted-words-false-starts-reparandum)
-  - [Unintelligible material](#unintelligible-material)
+[Guidelines for Spoken Language UD Treebanks](../spoken-data/)
 
 # Tokenization and Morphological annotation
+
+- [Numbers](#numbers)
+- [Acronyms](#acronyms)
+- [Onomatopoeias](#onomatopoeias)
+- [Pauses](#pauses)
+- [Non-verbal behaviours](#non-verbal-behaviours)
+- [Anonymized/Pseudonymized tokens](#anonymizedpseudonymized-tokens)
+- [Added material (e.g., punctuation)](#added-material-eg-punctuation)
+- [Interrupted words, false starts, reparandum](#interrupted-words-false-starts-reparandum)
+- [Unintelligible material](#unintelligible-material)
+
 
 In general, we consider as a token those elements that have a clear syntactic position. Phenomena with no written counterpart — pauses, non-verbal noises, anonymized content — are only tokenized when they can be given such a position; otherwise they are represented as features on a neighbouring token, or not represented at all. The rest of this chapter goes through the main cases.
 

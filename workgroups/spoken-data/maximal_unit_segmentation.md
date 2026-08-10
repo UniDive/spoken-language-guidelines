@@ -4,17 +4,19 @@ title:  'Maximal Unit Segmentation'
 udver: '2'
 ---
 
-- [Maximal Unit Segmentation](#maximal-unit-segmentation)
-  - [Speaker view vs. Dependency view](#speaker-view-vs-dependency-view)
-  - [What to do](#what-to-do)
-    - [Reported speech](#reported-speech)
-    - [Adverbial clause without markers](#adverbial-clause-without-markers)
-    - [Clause in the paradigm of a dislocated element](#clause-in-the-paradigm-of-a-dislocated-element)
-    - [Verbal discourse markers](#verbal-discourse-markers)
-    - [Parenthesis](#parenthesis)
-    - [False starts](#false-starts)
+[Guidelines for Spoken Language UD Treebanks](../spoken-data/)
 
 # Maximal Unit Segmentation
+
+- [Speaker view vs. Dependency view](#speaker-view-vs-dependency-view)
+- [What to do](#what-to-do)
+  - [Reported speech](#reported-speech)
+  - [Adverbial clause without markers](#adverbial-clause-without-markers)
+  - [Clause in the paradigm of a dislocated element](#clause-in-the-paradigm-of-a-dislocated-element)
+  - [Verbal discourse markers](#verbal-discourse-markers)
+  - [Parenthesis](#parenthesis)
+  - [False starts](#false-starts)
+
 
 Unlike written text, spoken language unfolds in time and is jointly produced by multiple participants, who continuously cooperate in the real-time production and reception of syntactic structure. Linearized transcriptions, however, necessarily flatten the temporal and multi-party dimension of spoken data.
 Universal Dependencies inherits a broadly shared assumption in syntactic theory: that syntax operates within the boundaries of a sentence. While this assumption is largely unproblematic (although, with exceptions) for written language, it raises difficulties for spoken interaction, as syntactic dependencies may extend across speech turns, interruptions, and overlapping contributions. Existing spoken UD treebanks do not adopt a uniform segmentation strategy, and this makes it difficult to consistently identify what should count as a maximal unit.
@@ -41,9 +43,17 @@ The "if you can link, link" principle doesn't necessarily need to be applied in 
 
 More specifically, in the speaker-based view each speaker utterance is a new tree, and the Speaker ID attribute applied to the tree (`# speaker_id` metadata). This is the view currently adopted by spoken treebanks in UD, organized in speaker-dependent maximal units.
 
-In the dependency-based view, a tree may be the outcome of multiple speaker concatenations, fully relying on the definition of "sentence" as "rectional unit" and enabling e.g. coconstructions to be realised as regular syntactic dependencies. Each token has a `Speaker_id` attribute in `MISC`, as there may be arbitrarily many speakers contributing.
+In the dependency-based view, a tree may be the outcome of multiple speaker concatenations, fully relying on the definition of "sentence" as "rectional unit" and enabling e.g. coconstructions to be realised as regular syntactic dependencies. Each token has a `speaker_id` attribute in `MISC`, as there may be arbitrarily many speakers contributing.
 
-A conversion script (developed by @bguil) is provided to derive the dependency-based view from the speaker-based view on demand; treebanks are currently released in the speaker-based view only, and parallel releases in both formats are not yet distributed.
+An example is given In the figure below, taken from **UD_Italian-KIParlaForest** data.
+The speaker-based view contains three sentences, each with a `speaker_id` (highlighted in orange) and with cross-sentences dependencies encoded via MISC features `Coconstruct` and `Backchannel` (highlighted in green). 
+On the bottom part, the dependency-based view is given, with `speaker_id` on tokens (highlighted in orange) and cross-speaker dependencies (highlighted in green).
+![Image](/img/coconstruct.png)
+
+More examples and dicussions are available in the UDW 2026 paper:
+> Pannitto, L., Dobrovoljc Zor, K., Kahane, S., Battaglia, E., Guillaume, B., Mauri, C., & Zucchini, E. (2026). [Coconstructions in Spoken Data: UD Annotation Guidelines and First Results](http://www.lrec-conf.org/proceedings/lrec2026/workshops/udw/pdf/2026.udw-1.4.pdf). In Proceedings of the Ninth Workshop on Universal Dependencies (UDW 2026) (pp. 60–75). European Language Resources Association (ELRA). [https://doi.org/10.63317/3kcohrckgnkz](https://doi.org/10.63317/3kcohrckgnkz).
+
+A conversion script [`sp_to_db.py`](https://github.com/UniDive/SpLAn-UD/tree/main/co-construction) is provided to derive the dependency-based view from the speaker-based view on demand; treebanks are currently released in the speaker-based view only, and parallel releases in both formats are not yet distributed.
 
 ## What to do
 

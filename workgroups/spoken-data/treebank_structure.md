@@ -4,6 +4,8 @@ title:  'Treebank structure and metadata sharing'
 udver: '2'
 ---
 
+[Guidelines for Spoken Language UD Treebanks](../spoken-data/)
+
 # Treebank structure and metadata sharing
 
 ## Problem identification
