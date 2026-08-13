@@ -37,12 +37,9 @@ No `newdoc id` exists, but it can be derived from the source-identifier prefix o
 | `aannotation` (`begintime`) | convert `H:MM:SS` to milliseconds, split into `sound_alignment_begin`                                                                             |
 | `aannotation` (`endtime`)   | convert `H:MM:SS` to milliseconds, split into `sound_alignment_end` (when present); derive `duration` (ms) from begin/end when both are available |
 | `text_fi`                   | rename to `text_fin` (ISO 639-3)                                                                                                                  |
-| `story_id`                  | corpus-specific (sentence-level) - verify against metadata.html                                                                                   |
-| `comment`                   | corpus-specific (sentence-level) - verify against metadata.html                                                                                   |
 | `text_en`                   | rename to `text_eng` (ISO 639-3)                                                                                                                  |
-| `-`                         | corpus-specific (sentence-level) - verify against metadata.html                                                                                   |
-| `text_olo`                  | OK - Olonets/Livvi Karelian translation (`olo` is already the correct ISO 639-3 code); only present on the 20 written/translated sentences        |
-| `text_mdf`                  | OK - Moksha translation (`mdf` is already the correct ISO 639-3 code); only present on the 20 written/translated sentences                        |
+| `text_olo`                  | unsure - could you clarify what this field represents?                                                                                            |
+| `text_mdf`                  | unsure - could you clarify what this field represents?                                                                                            |
 
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.
