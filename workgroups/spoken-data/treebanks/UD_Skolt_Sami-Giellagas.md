@@ -24,7 +24,7 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** Yes - it aligns exactly with the file split. Per the README, the corpus "originally consists of twenty translated sentences ... made by Hilkka Fofonoff from the Finnish texts", with all subsequent sentences from the Giellagas Corpus of Spoken Saami Languages. Confirmed in the data: `sms_giellagas-ud-train.conllu` contains exactly those 20 sentences (`sent_id` prefix `FofonoffHilkka_brat_2018`) - written, translated from Finnish. `sms_giellagas-ud-test.conllu` contains the remaining 241 sentences - spoken, drawn from field recordings (`sent_id` prefixes like `11308_1a::<timestamp>`, `NA2_00635_1az::<timestamp>`) and published transcriptions of recorded speech (`kotus-skak2010-*`). Note: a handful of `test` sentences (`SK2020-*`, `SKKV2020:*`) are grammar-book examples rather than recordings - please confirm with the maintainer whether these should also count as spoken.
+**Is spoken part clearly identifiable?** Yes - it aligns exactly with the file split. Per the README, the corpus "originally consists of twenty translated sentences ... made by Hilkka Fofonoff from the Finnish texts", with all subsequent sentences from the Giellagas Corpus of Spoken Saami Languages. Confirmed in the data: `sms_giellagas-ud-train.conllu` contains exactly those 20 sentences (`sent_id` prefix `FofonoffHilkka_brat_2018`) - written, translated from Finnish. `sms_giellagas-ud-test.conllu` contains the remaining 241 sentences - spoken, drawn from field recordings (`sent_id` prefixes like `11308_1a::<timestamp>`, `NA2_00635_1az::<timestamp>`) and published transcriptions of recorded speech (`kotus-skak2010-*`). Note: a handful of `test` sentences (`SK2020-*`, `SKKV2020:*`) seem grammar-book examples rather than recordings.
 
 ## Metadata review
 
@@ -77,19 +77,19 @@ _(none found)_ - add `# modality = written` to `sms_giellagas-ud-train.conllu` s
 
 ### additional fields found by clone verification (2026-07-30)
 
-`aannotation` (likely a typo for "annotation") packs three XML-style attributes into one comment line: `# aannotation="yes" begintime="0:39:13" endtime="0:09:18"` (`endtime` is sometimes empty). We suggest splitting these into the standard sentence-level timing fields.
+`aannotation` (likely a typo for "annotation") packs three XML-style attributes into one comment line: `# aannotation="yes" begintime="0:39:13" endtime="0:09:18"` (`endtime` is sometimes empty). We suggest splitting these into the standard sentence-level timing fields; `sound_alignment_begin`/`sound_alignment_end` are specified in milliseconds, so `begintime`/`endtime` (currently `H:MM:SS`) need converting, not just copying.
 
-| Field                       | Advice                                                                                                                                     |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| `aannotation` (`begintime`) | split into `sound_alignment_begin`                                                                                                         |
-| `aannotation` (`endtime`)   | split into `sound_alignment_end` (when present); derive `duration` from begin/end when both are available                                  |
-| `text_fi`                   | rename to `text_fin` (ISO 639-3)                                                                                                           |
-| `story_id`                  | corpus-specific (sentence-level) - verify against metadata.html                                                                            |
-| `comment`                   | corpus-specific (sentence-level) - verify against metadata.html                                                                            |
-| `text_en`                   | rename to `text_eng` (ISO 639-3)                                                                                                           |
-| `-`                         | corpus-specific (sentence-level) - verify against metadata.html                                                                            |
-| `text_olo`                  | OK - Olonets/Livvi Karelian translation (`olo` is already the correct ISO 639-3 code); only present on the 20 written/translated sentences |
-| `text_mdf`                  | OK - Moksha translation (`mdf` is already the correct ISO 639-3 code); only present on the 20 written/translated sentences                 |
+| Field                       | Advice                                                                                                                                            |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `aannotation` (`begintime`) | convert `H:MM:SS` to milliseconds, split into `sound_alignment_begin`                                                                             |
+| `aannotation` (`endtime`)   | convert `H:MM:SS` to milliseconds, split into `sound_alignment_end` (when present); derive `duration` (ms) from begin/end when both are available |
+| `text_fi`                   | rename to `text_fin` (ISO 639-3)                                                                                                                  |
+| `story_id`                  | corpus-specific (sentence-level) - verify against metadata.html                                                                                   |
+| `comment`                   | corpus-specific (sentence-level) - verify against metadata.html                                                                                   |
+| `text_en`                   | rename to `text_eng` (ISO 639-3)                                                                                                                  |
+| `-`                         | corpus-specific (sentence-level) - verify against metadata.html                                                                                   |
+| `text_olo`                  | OK - Olonets/Livvi Karelian translation (`olo` is already the correct ISO 639-3 code); only present on the 20 written/translated sentences        |
+| `text_mdf`                  | OK - Moksha translation (`mdf` is already the correct ISO 639-3 code); only present on the 20 written/translated sentences                        |
 
 ## Things to check manually
 
