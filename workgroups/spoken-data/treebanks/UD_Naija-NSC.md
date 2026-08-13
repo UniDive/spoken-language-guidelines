@@ -52,7 +52,7 @@ udver: '2'
 | `speaker_education`              | OK     |
 | `speaker_age`                    | OK     |
 | `speaker_sex`                    | OK     |
-| `speaker_resindence`             | OK     |
+| `speaker_residence`              | OK     |
 | `speaker_naija_competency`       | OK     |
 | `speaker_birthplace`             | OK     |
 | `speaker_primary_other_language` | OK     |

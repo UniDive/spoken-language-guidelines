@@ -43,12 +43,14 @@ _(none found)_ - no `newdoc id` exists at all. But `sent_id` already encodes it:
 | Field         | Advice                       |
 | ------------- | ---------------------------- |
 | `macrosyntax` | change to `text_macrosyntax` |
+| `prosodic_annotation` | corpus-specific (only on a subset of sentences) - please confirm what this represents |
 
 ### speaker metadata
 
 | Field        | Advice |
 | ------------ | ------ |
 | `speaker_id` | OK     |
+| `speaker` | corpus-specific turn-position label (`L1`, `L2`, ...), distinct from and redundant with `speaker_id` (e.g. `§LF30`) - keep, `speaker_id` is already standard |
 
 ### token-level metadata (MISC)
 

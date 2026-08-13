@@ -44,4 +44,16 @@ udver: '2'
 | `genre` | OK |
 | `form` | drives modality: `dialog` &rarr; add `# modality = spoken`; `prose`/`mixed (form)`/`verse` &rarr; add `# modality = written` |
 
+### speaker metadata
+
+| Field | Advice |
+| --- | --- |
+| `author` | rename to `speaker_id` |
+
+### sent metadata
+
+| Field | Advice |
+| --- | --- |
+| `language_variety` | corpus-specific (sentence-level) - verify against metadata.html |
+
 

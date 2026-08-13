@@ -52,7 +52,18 @@ udver: '2'
 | ----- | --------------------------------------------------------------------------------------------------------------------------- |
 | —     | derive `# newdoc id = NSDC_UA_28_Feb2014` for the NSDC-sourced sentences (`sent_id` prefix before the trailing `-<number>`) |
 
+### sent metadata
+
+`text_en` and `phonetic_text` each appear exactly once across the entire corpus, both with the literal placeholder value `undefined undefined` - leftover template artifacts rather than real content.
+
 | Field           | Advice |
 | --------------- | ------ |
-| `text_en`       | remove |
-| `phonetic_text` | remove |
+| `text_en`       | remove (single occurrence, placeholder value `undefined undefined`) |
+| `phonetic_text` | remove (single occurrence, placeholder value `undefined undefined`) |
+| `WARNING`       | corpus-specific (sentence-level, parser-diagnostic comments e.g. dependency-cycle warnings) - verify against metadata.html |
+
+### token-level metadata (MISC)
+
+| Field | Advice |
+| --- | --- |
+| `lang` | rename to `Lang` |

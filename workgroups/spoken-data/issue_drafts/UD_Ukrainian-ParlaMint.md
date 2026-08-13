@@ -28,17 +28,19 @@ Yes - the entire corpus should be `# modality = spoken`. The README describes it
 
 ### 3. Sentence-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#sentence-level))
 
+`text_en` and `phonetic_text` each appear exactly once across the entire corpus, both with the literal placeholder value `undefined undefined` - these look like leftover template artifacts rather than real content.
+
 | Field           | Suggestion                                                                         |
 | --------------- | ---------------------------------------------------------------------------------- |
-| `text_en`       | possibly rename to `text_en` (see Sentence-level in metadata.html) - please verify |
-| `phonetic_text` | corpus-specific (sentence-level) - verify against metadata.html                    |
-| `WARNING`       | corpus-specific (sentence-level) - verify against metadata.html                    |
+| `text_en`       | remove (single occurrence, placeholder value `undefined undefined`) |
+| `phonetic_text` | remove (single occurrence, placeholder value `undefined undefined`) |
+| `WARNING`       | corpus-specific (sentence-level, parser-diagnostic comments e.g. dependency-cycle warnings) - verify against metadata.html |
 
 ### 4. Token-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#token-level))
 
 | Field  | Suggestion                                                                   |
 | ------ | ---------------------------------------------------------------------------- |
-| `lang` | possibly rename to `Lang` (see Token-level in metadata.html) - please verify |
+| `lang` | rename to `Lang` |
 
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

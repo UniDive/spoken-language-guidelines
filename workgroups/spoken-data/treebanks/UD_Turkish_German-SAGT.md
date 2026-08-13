@@ -35,3 +35,10 @@ No `newdoc id` exists, but it can be derived directly from the `sent_id` prefix:
 | Field | Advice                                                                                      |
 | ----- | ------------------------------------------------------------------------------------------- |
 | —     | derive `# newdoc id` from the `sent_id` prefix (everything before the trailing `-<number>`) |
+
+### sent metadata
+
+| Field | Advice |
+| --- | --- |
+| `NOTE` | corpus-specific (sentence-level) - verify against metadata.html |
+| `annotated with partaxis` | corpus-specific (sentence-level) - verify against metadata.html |

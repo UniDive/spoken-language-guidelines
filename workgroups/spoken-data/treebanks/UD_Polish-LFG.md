@@ -44,7 +44,3 @@ udver: '2'
 | `genre` (`spoken (media)`)          | split into `# genre = spoken` (or a more specific value, please confirm - radio show/TV show/podcast?) + `# setting = broadcast` |
 | `This program is free software`     | corpus-specific (sentence-level) - verify against metadata.html                                                                  |
 | `converted_from_file`               | corpus-specific (sentence-level) - verify against metadata.html                                                                  |
-
-## Things to check manually
-
-- **sent metadata:** decompose `genre` into `# genre` plus interaction parameters as proposed above; confirm the `spoken (media)` sub-type and whether it should map to a more specific genre (radio show/TV show/podcast)

@@ -19,27 +19,20 @@ No `newdoc id` exists, but it can be derived from the `sent_id` prefix (please c
 | Field       | Suggestion                                                                           |
 | ----------- | ------------------------------------------------------------------------------------ |
 | —           | derive `# newdoc id` from the `sent_id` prefix identifying the source recording      |
-| `sound_url` | possibly rename to `sound_url` (see Document-level in metadata.html) - please verify |
+| `sound_url` | possibly move to document level |
 
-### 2. Speaker-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#speaker-level))
+### 2. Sentence-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#sentence-level))
 
-| Field               | Suggestion                                                                                  |
-| ------------------- | ------------------------------------------------------------------------------------------- |
-| `speaker_residence` | possibly rename to `speaker_residence` (see Speaker-level in metadata.html) - please verify |
+| Field        | Suggestion                     |
+| ------------ | ------------------------------- |
+| `text_ortho` | change to `text_orthographic`  |
 
-### 3. Sentence-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#sentence-level))
-
-| Field        | Suggestion           |
-| ------------ | -------------------- |
-| `text_ortho` | make tags: text_orth |
-
-### 4. Token-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#token-level))
+### 3. Token-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#token-level))
 
 | Field        | Suggestion                     |
 | ------------ | ------------------------------ |
 | `AlignBegin` | rename to `WordAlignmentBegin` |
 | `AlignEnd`   | rename to `WordAlignmentEnd`   |
-| `Lang`       | rename to `Lang`               |
 
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

@@ -46,6 +46,9 @@ udver: '2'
 | `morphemic_text`      | change to `text_morphemic` |
 | `text_phrase-gls-it`  | change to `text_phonetic`  |
 | `text_phrase-gls-pro` | change to `text_prosodic`  |
+| `text_phrase-gls-tl`  | corpus-specific - verify against metadata.html |
+| `text_phrase-gls-de`  | corpus-specific - verify against metadata.html |
+| `text_phrase-gls-wg`  | change to `text_gloss`  |
 
 ### speaker metadata
 

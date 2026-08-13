@@ -86,12 +86,3 @@ _(none found)_ - no `newdoc id` exists, but per the README, `sent_id` values mat
 ### additional fields found by clone verification (2026-07-30)
 
 (none found)
-
-## Things to check manually
-
-- **doc (and paragraphs) metadata:** derive `# newdoc id` from the `sent_id` prefix identifying the source recording (confirm exact delimiter with maintainer); treat `+`-joined `sent_id`s as one document
-- **languages and translation(s):** `text_en` → make tags: text_en
-- **languages and translation(s):** `text_ru` → text_rus
-- **languages and translation(s):** `text_end` → text_en
-- **token-level metadata (MISC):** `OrigLang` → rename to `OrigLang`
-- **token-level metadata (MISC):** `Lang` → rename to `Lang`

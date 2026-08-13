@@ -25,7 +25,7 @@ This treebank's `genre` metadata lists `spoken` alongside `news`, `fiction`, `me
 | Field      | Suggestion                                                                         |
 | ---------- | ---------------------------------------------------------------------------------- |
 | `translit` | corpus-specific (sentence-level) - verify against metadata.html                    |
-| `text_en`  | possibly rename to `text_en` (see Sentence-level in metadata.html) - please verify |
+| `text_en`  | rename to `text_eng` (ISO 639-3) |
 
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

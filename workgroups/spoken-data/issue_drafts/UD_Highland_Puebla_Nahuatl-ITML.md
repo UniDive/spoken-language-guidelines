@@ -24,17 +24,25 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 
 | Field         | Suggestion                                                      |
 | ------------- | --------------------------------------------------------------- |
-| `text[spa]`   | make tags: text_sp                                              |
-| `text[orig]`  | transl_LANGUAGE                                                 |
-| `text[gloss]` | make tags: text_gloss                                           |
-| `text[glosa]` | corpus-specific (sentence-level) - verify against metadata.html |
-| `text[a140]`  | corpus-specific (sentence-level) - verify against metadata.html |
+| `text[spa]`   | change to `text_spa`                                             |
+| `text[orig]`  | change to `text_transcription`                                  |
+| `text[gloss]` | change to `text_glossing` - unsure what this is, please confirm |
+| `text[glosa]` | typo (duplicate of `text[gloss]`) - please confirm               |
 
 ### 3. Other / corpus-specific
 
-| Field    | Suggestion |
-| -------- | ---------- |
-| `labels` | revise     |
+`# text[a\d+] = ...` generates a very large number of distinct metadata labels (one per numbered variant). We suggest consolidating these into a single field, e.g. converting:
+
+```text
+# text[a134] = Ke:mah wa:n pos nika:n Kwesala:n tikitah, *este**, ki...,
+# text[a136] = ki..., kinamakah a:mo ika *kilo**, ta: ata ika tamachi:w.
+```
+
+into:
+
+```text
+# text_original = [a134] Ke:mah wa:n pos nika:n Kwesala:n tikitah, *este**, ki..., [a136] ki..., kinamakah a:mo ika *kilo**, ta: ata ika tamachi:w.
+```
 
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

@@ -26,7 +26,7 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 
 | Field         | Suggestion                                                      |
 | ------------- | --------------------------------------------------------------- |
-| `english`     | corpus-specific (sentence-level) - verify against metadata.html |
+| `english`     | change to `text_eng` (ISO 639-3) |
 | `parallel_id` | corpus-specific (sentence-level) - verify against metadata.html |
 
 ### 3. Token-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#token-level))

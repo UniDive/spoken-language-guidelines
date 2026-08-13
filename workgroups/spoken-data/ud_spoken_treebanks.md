@@ -21,7 +21,6 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
     <option value="">Spoken identifiable: any</option>
       <option value="n/a">n/a</option>
       <option value="no">no</option>
-      <option value="not assessed">not assessed</option>
       <option value="yes">yes</option>
   </select>
   <label><input type="checkbox" id="tb-todo-only" /> only treebanks with open items</label>
@@ -36,117 +35,144 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
       <th data-col="2" data-type="number">sentences</th>
       <th data-col="3" data-type="number">tokens</th>
       <th data-col="4" data-type="string">spoken identifiable?</th>
-      <th data-col="5" data-type="number">document-level</th>
-      <th data-col="6" data-type="number">speaker-level</th>
-      <th data-col="7" data-type="number">sentence-level</th>
-      <th data-col="8" data-type="number">token-level</th>
-      <th data-col="9" data-type="number">items to check</th>
-      <th data-col="10" data-type="string">issue draft</th>
+      <th data-col="5" data-type="string">how identified</th>
+      <th data-col="6" data-type="string">newdoc id</th>
+      <th data-col="7" data-type="string">translations</th>
+      <th data-col="8" data-type="string">other text fields</th>
+      <th data-col="9" data-type="string">speaker metadata</th>
+      <th data-col="10" data-type="string">sound alignment</th>
+      <th data-col="11" data-type="string">general notes</th>
+      <th data-col="12" data-type="number">items to check</th>
+      <th data-col="13" data-type="string">issue draft</th>
     </tr>
   </thead>
   <tbody>
-      <tr data-type="only spoken" data-ident="n/a" data-todo="0">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="3">
         <td><a href="treebanks/UD_Abaza-ATB.html">Abaza ATB</a></td>
         <td>only spoken</td>
         <td class="num">98</td>
         <td class="num">652</td>
         <td>n/a</td>
+        <td></td>
+        <td>`text_name`: this is a document identifier but is wrongly repeated on every…</td>
+        <td></td>
+        <td>`text_orth` → `text_morphemic`; `text_transcription` → `text_transliteration`</td>
+        <td>no speaker metadata exists at all. The 6 `text_name` filenames each seem to encode one…</td>
+        <td></td>
+        <td></td>
         <td class="num">3</td>
-        <td class="num">1</td>
-        <td class="num">2</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
         <td><a href="issue_drafts/UD_Abaza-ATB.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="yes" data-todo="0">
+      <tr data-type="mixed" data-ident="yes" data-todo="1">
         <td><a href="treebanks/UD_Alemannic-DIVITAL.html">Alemannic DIVITAL</a></td>
         <td>mixed</td>
         <td class="num">977</td>
         <td class="num">19334</td>
         <td>yes</td>
-        <td class="num">0</td>
+        <td>via the `form` field: all 97 documents carry a `# form = ...` value</td>
+        <td>`newdoc id`: OK</td>
+        <td></td>
+        <td></td>
+        <td>`author` → `speaker_id`</td>
+        <td></td>
+        <td></td>
         <td class="num">1</td>
-        <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
         <td><a href="issue_drafts/UD_Alemannic-DIVITAL.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="n/a" data-todo="0">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="2">
         <td><a href="treebanks/UD_Beja-Autogramm.html">Beja Autogramm</a></td>
         <td>only spoken</td>
         <td class="num">763</td>
         <td class="num">11948</td>
         <td>n/a</td>
+        <td></td>
+        <td>derive from recording basename</td>
+        <td>`text_en` → `text_eng`</td>
+        <td></td>
+        <td></td>
+        <td>`sent_timecode` → `sound_alignment_begin`</td>
+        <td></td>
         <td class="num">2</td>
-        <td class="num">0</td>
-        <td class="num">4</td>
-        <td class="num">2</td>
-        <td class="num">0</td>
         <td><a href="issue_drafts/UD_Beja-Autogramm.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="n/a" data-todo="0">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="1">
         <td><a href="treebanks/UD_Bokota-ChibErgIS.html">Bokota ChibErgIS</a></td>
         <td>only spoken</td>
         <td class="num">406</td>
         <td class="num">2713</td>
         <td>n/a</td>
-        <td class="num">2</td>
-        <td class="num">0</td>
-        <td class="num">3</td>
-        <td class="num">2</td>
-        <td class="num">0</td>
+        <td></td>
+        <td>derive from recording basename; `sound_url` → move to document level</td>
+        <td>`text_en` → `text_eng`</td>
+        <td>`text_ortho` → `text_orthographic`</td>
+        <td></td>
+        <td>`sent_timecode` → `sound_alignment_begin`</td>
+        <td></td>
+        <td class="num">1</td>
         <td><a href="issue_drafts/UD_Bokota-ChibErgIS.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="2">
+      <tr data-type="mixed" data-ident="no" data-todo="1">
         <td><a href="treebanks/UD_Bororo-BDT.html">Bororo BDT</a></td>
         <td>mixed</td>
         <td class="num">21384</td>
         <td class="num">160356</td>
-        <td>not assessed</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">2</td>
+        <td>no</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>data-quality issue flagged (see page)</td>
+        <td class="num">1</td>
         <td><a href="issue_drafts/UD_Bororo-BDT.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="n/a" data-todo="0">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="2">
         <td><a href="treebanks/UD_Cantonese-HK.html">Cantonese HK</a></td>
         <td>only spoken</td>
         <td class="num">1004</td>
         <td class="num">13918</td>
         <td>n/a</td>
+        <td></td>
+        <td>add `# newdoc id` at sentences 1, 411, 548, and 651, using the proposed ids above…</td>
+        <td></td>
+        <td></td>
+        <td>no speaker metadata exists; the legislative-council portion (sentences 651-1004) clearly…</td>
+        <td></td>
+        <td></td>
         <td class="num">2</td>
-        <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
         <td><a href="issue_drafts/UD_Cantonese-HK.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="not assessed" data-todo="0">
+      <tr data-type="only spoken" data-ident="no" data-todo="0">
         <td><a href="treebanks/UD_Central_Romani-Selice.html">Central_Romani Selice</a></td>
         <td>only spoken</td>
         <td class="num">0</td>
         <td class="num">0</td>
-        <td>not assessed</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
+        <td>no</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>corpus appears empty (0 sentences)</td>
         <td class="num">0</td>
         <td>&mdash;</td>
       </tr>
-      <tr data-type="only spoken" data-ident="n/a" data-todo="0">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="5">
         <td><a href="treebanks/UD_Chinese-HK.html">Chinese HK</a></td>
         <td>only spoken</td>
         <td class="num">1004</td>
         <td class="num">9874</td>
         <td>n/a</td>
-        <td class="num">2</td>
-        <td class="num">1</td>
-        <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
+        <td></td>
+        <td>add `# newdoc id` at sentences 1, 411, 548, and 651, using the proposed ids above…</td>
+        <td></td>
+        <td></td>
+        <td>no speaker metadata exists; the legislative-council portion (sentences 651-1004) clearly…</td>
+        <td></td>
+        <td></td>
+        <td class="num">5</td>
         <td><a href="issue_drafts/UD_Chinese-HK.html">draft &#8599;</a></td>
       </tr>
       <tr data-type="only spoken" data-ident="n/a" data-todo="0">
@@ -155,687 +181,846 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td class="num">1004</td>
         <td class="num">5389</td>
         <td>n/a</td>
-        <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">5</td>
-        <td class="num">0</td>
+        <td></td>
+        <td>derive from `sent_id` prefix (everything before `:`)</td>
+        <td>`text[eng]` → `text_eng`; `text[rus]` → `text_rus`</td>
+        <td>`text[eng']` → `text_eng_literal`; `text[phon]` → `text_phonetic`</td>
+        <td></td>
+        <td>`timestamp` → `sound_alignment_begin`</td>
+        <td></td>
         <td class="num">0</td>
         <td><a href="issue_drafts/UD_Chukchi-HSE.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="0">
+      <tr data-type="mixed" data-ident="no" data-todo="0">
         <td><a href="treebanks/UD_Classical_Nahuatl-FloCo.html">Classical_Nahuatl FloCo</a></td>
         <td>mixed</td>
         <td class="num">0</td>
         <td class="num">0</td>
-        <td>not assessed</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
+        <td>no</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>corpus appears empty (0 sentences)</td>
         <td class="num">0</td>
         <td>&mdash;</td>
       </tr>
-      <tr data-type="mixed" data-ident="yes" data-todo="0">
+      <tr data-type="mixed" data-ident="yes" data-todo="1">
         <td><a href="treebanks/UD_Czech-PDTC.html">Czech PDTC</a></td>
         <td>mixed</td>
         <td class="num">213897</td>
         <td class="num">3432078</td>
         <td>yes</td>
-        <td class="num">0</td>
+        <td>via the `newdoc id` prefix `pdtsc`</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>`global.Entity`: corpus-specific (coreference/entity annotation, project-wide) -…</td>
+        <td></td>
+        <td></td>
         <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
         <td><a href="issue_drafts/UD_Czech-PDTC.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="no" data-todo="0">
+      <tr data-type="mixed" data-ident="no" data-todo="1">
         <td><a href="treebanks/UD_Danish-DDT.html">Danish DDT</a></td>
         <td>mixed</td>
         <td class="num">5512</td>
         <td class="num">100733</td>
         <td>no</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="num">1</td>
         <td><a href="issue_drafts/UD_Danish-DDT.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="not assessed" data-todo="0">
+      <tr data-type="only spoken" data-ident="no" data-todo="0">
         <td><a href="treebanks/UD_Dargwa-Mehweb.html">Dargwa Mehweb</a></td>
         <td>only spoken</td>
         <td class="num">0</td>
         <td class="num">0</td>
-        <td>not assessed</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
+        <td>no</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>corpus appears empty (0 sentences)</td>
         <td class="num">0</td>
         <td>&mdash;</td>
       </tr>
-      <tr data-type="only spoken" data-ident="n/a" data-todo="0">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="2">
         <td><a href="treebanks/UD_English-CHILDES.html">English CHILDES</a></td>
         <td>only spoken</td>
         <td class="num">48183</td>
         <td class="num">289817</td>
         <td>n/a</td>
-        <td class="num">1</td>
-        <td class="num">4</td>
-        <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
+        <td></td>
+        <td>`corpus_name`: recompose: sort sentences by `original_sent_id` within each…</td>
+        <td></td>
+        <td></td>
+        <td>`child_name` → `speaker_id`; `child_age` → `speaker_age`; `child_gender` → `speaker_gender`; `chi l d`: **data bug**, not a real field: a single malformed line (`# chi l d…</td>
+        <td></td>
+        <td></td>
+        <td class="num">2</td>
         <td><a href="issue_drafts/UD_English-CHILDES.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="n/a" data-todo="0">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="1">
         <td><a href="treebanks/UD_English-ESLSpok.html">English ESLSpok</a></td>
         <td>only spoken</td>
         <td class="num">2320</td>
         <td class="num">21312</td>
         <td>n/a</td>
+        <td></td>
+        <td>derive from `sent_id` prefix (everything before `_&lt;number&gt;`</td>
+        <td></td>
+        <td></td>
+        <td>no speaker metadata exists; each document is one L2 English speaker's interview session…</td>
+        <td></td>
+        <td></td>
         <td class="num">1</td>
-        <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
         <td><a href="issue_drafts/UD_English-ESLSpok.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="yes" data-todo="0">
+      <tr data-type="mixed" data-ident="yes" data-todo="3">
         <td><a href="treebanks/UD_English-GENTLE.html">English GENTLE</a></td>
         <td>mixed</td>
         <td class="num">1334</td>
         <td class="num">17619</td>
         <td>yes</td>
-        <td class="num">2</td>
-        <td class="num">1</td>
-        <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
+        <td>via `meta::genre = esports`</td>
+        <td>`newdoc id`: OK</td>
+        <td></td>
+        <td></td>
+        <td>`speaker` → `speaker_id`</td>
+        <td></td>
+        <td></td>
+        <td class="num">3</td>
         <td><a href="issue_drafts/UD_English-GENTLE.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="yes" data-todo="0">
+      <tr data-type="mixed" data-ident="yes" data-todo="3">
         <td><a href="treebanks/UD_English-GUM.html">English GUM</a></td>
         <td>mixed</td>
         <td class="num">14353</td>
         <td class="num">252284</td>
         <td>yes</td>
-        <td class="num">2</td>
-        <td class="num">1</td>
-        <td class="num">2</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
+        <td>via `meta::genre`</td>
+        <td>`newdoc id`: OK</td>
+        <td></td>
+        <td></td>
+        <td>`speaker` → `speaker_id`</td>
+        <td></td>
+        <td></td>
+        <td class="num">3</td>
         <td><a href="issue_drafts/UD_English-GUM.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="7">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="1">
         <td><a href="treebanks/UD_French-ParisStories.html">French ParisStories</a></td>
         <td>only spoken</td>
         <td class="num">2776</td>
         <td class="num">42257</td>
-        <td>yes</td>
+        <td>n/a</td>
+        <td></td>
+        <td>derive from `sent_id` prefix (everything before the trailing `_&lt;number&gt;`); `sound_url` → move to document level</td>
+        <td></td>
+        <td></td>
+        <td>`speaker` → `speaker_id`</td>
+        <td></td>
+        <td></td>
         <td class="num">1</td>
-        <td class="num">1</td>
-        <td class="num">2</td>
-        <td class="num">3</td>
-        <td class="num">7</td>
         <td><a href="issue_drafts/UD_French-ParisStories.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="7">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="1">
         <td><a href="treebanks/UD_French-Rhapsodie.html">French Rhapsodie</a></td>
         <td>only spoken</td>
         <td class="num">3209</td>
         <td class="num">43691</td>
-        <td>yes</td>
+        <td>n/a</td>
+        <td></td>
+        <td>derive from `sent_id` prefix (everything before the trailing `-&lt;number&gt;`); `sound_url` → move to document level</td>
+        <td></td>
+        <td></td>
+        <td>`speaker`: corpus-specific turn-position label (`L1`, `L2`, ...), distinct from…</td>
+        <td></td>
+        <td></td>
         <td class="num">1</td>
-        <td class="num">1</td>
-        <td class="num">2</td>
-        <td class="num">3</td>
-        <td class="num">7</td>
         <td><a href="issue_drafts/UD_French-Rhapsodie.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="3">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="2">
         <td><a href="treebanks/UD_Frisian_Dutch-Fame.html">Frisian_Dutch Fame</a></td>
         <td>only spoken</td>
         <td class="num">400</td>
         <td class="num">3729</td>
-        <td>yes</td>
-        <td class="num">1</td>
-        <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">1</td>
-        <td class="num">3</td>
+        <td>n/a</td>
+        <td></td>
+        <td>`newdoc id`: OK</td>
+        <td></td>
+        <td>`text_switch`: OK</td>
+        <td>`speaker` (3rd segment, e.g. `sp0013f`) → `speaker_id`; `speaker` (2nd segment: `male`/`female`/`child`, 285/114/2 sentences) → `speaker_gender`; `speaker` (1st segment: `fr`/`nl`): split out; not a standard…</td>
+        <td></td>
+        <td></td>
+        <td class="num">2</td>
         <td><a href="issue_drafts/UD_Frisian_Dutch-Fame.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="1">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="1">
         <td><a href="treebanks/UD_Gheg-GPS.html">Gheg GPS</a></td>
         <td>only spoken</td>
         <td class="num">966</td>
         <td class="num">15990</td>
-        <td>yes</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">1</td>
+        <td>n/a</td>
+        <td></td>
+        <td>derive from `sent_id` prefix (everything before the trailing `_&lt;number&gt;`)</td>
+        <td></td>
+        <td></td>
+        <td>consider adding `speaker_residence` (`Prishtina`/`Zurich`), derived from the `P`/`Z`…; consider a corpus-specific `speaker_generation` field (`G1`/`G2`/`G3`) - the…; add `speaker_age` if per-speaker ages are available…</td>
+        <td></td>
+        <td></td>
         <td class="num">1</td>
         <td><a href="issue_drafts/UD_Gheg-GPS.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="2">
+      <tr data-type="mixed" data-ident="yes" data-todo="2">
         <td><a href="treebanks/UD_Greek-GDT.html">Greek GDT</a></td>
         <td>mixed</td>
         <td class="num">2521</td>
         <td class="num">61773</td>
-        <td>not assessed</td>
-        <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
+        <td>yes</td>
+        <td>via the source-outlet component embedded in `newdoc id`</td>
+        <td>`newdoc id`: make tags: doc_id</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">2</td>
         <td><a href="issue_drafts/UD_Greek-GDT.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="4">
+      <tr data-type="mixed" data-ident="yes" data-todo="1">
         <td><a href="treebanks/UD_Greek-Lesbian.html">Greek Lesbian</a></td>
         <td>mixed</td>
         <td class="num">625</td>
         <td class="num">6624</td>
-        <td>not assessed</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">3</td>
-        <td class="num">0</td>
-        <td class="num">4</td>
+        <td>yes</td>
+        <td>via the `oral_corpus` field, which marks sentences drawn from audio recordings as opposed to published…</td>
+        <td></td>
+        <td>`text_el` → `text_ell`</td>
+        <td>`text__el`: corpus-specific (sentence-level) - verify against metadata.html</td>
+        <td>`source` (`Gender:...`): split out as `speaker_gender`; `source` (`Location:...`): split out as `speaker_residence`; `source` (`Date:...`): split out as a corpus-specific date field (no standard field covers…; `source`…</td>
+        <td></td>
+        <td></td>
+        <td class="num">1</td>
         <td><a href="issue_drafts/UD_Greek-Lesbian.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="6">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="1">
         <td><a href="treebanks/UD_Hausa-NorthernAutogramm.html">Hausa NorthernAutogramm</a></td>
         <td>only spoken</td>
         <td class="num">1305</td>
         <td class="num">15324</td>
-        <td>yes</td>
+        <td>n/a</td>
+        <td></td>
+        <td></td>
+        <td>`text_en` → `text_eng`</td>
+        <td>`text_ortho` → `text_orthographic`</td>
+        <td></td>
+        <td>`sent_timecode` → split (`sound_alignment_begin`, `sound_alignment_end`, and `duration`)</td>
+        <td></td>
         <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">2</td>
-        <td class="num">3</td>
-        <td class="num">6</td>
         <td><a href="issue_drafts/UD_Hausa-NorthernAutogramm.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="6">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="1">
         <td><a href="treebanks/UD_Hausa-SouthernAutogramm.html">Hausa SouthernAutogramm</a></td>
         <td>only spoken</td>
         <td class="num">1927</td>
         <td class="num">14398</td>
-        <td>yes</td>
+        <td>n/a</td>
+        <td></td>
+        <td></td>
+        <td>`text_en` → `text_eng`</td>
+        <td></td>
+        <td></td>
+        <td>`sent_timecode` → split (`sound_alignment_begin`, `sound_alignment_end`, and `duration`)</td>
+        <td></td>
         <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">2</td>
-        <td class="num">3</td>
-        <td class="num">6</td>
         <td><a href="issue_drafts/UD_Hausa-SouthernAutogramm.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="6">
+      <tr data-type="mixed" data-ident="no" data-todo="2">
         <td><a href="treebanks/UD_Hausa-WesternAutogramm.html">Hausa WesternAutogramm</a></td>
         <td>mixed</td>
         <td class="num">775</td>
         <td class="num">13862</td>
-        <td>not assessed</td>
-        <td class="num">1</td>
-        <td class="num">1</td>
-        <td class="num">3</td>
-        <td class="num">0</td>
-        <td class="num">6</td>
+        <td>no</td>
+        <td></td>
+        <td></td>
+        <td>`text_en` → `text_eng`</td>
+        <td>`text_ortho` → `text_orthographic`</td>
+        <td></td>
+        <td>`sent_timecode` → split (`sound_alignment_begin`, `sound_alignment_end`, and `duration`)</td>
+        <td></td>
+        <td class="num">2</td>
         <td><a href="issue_drafts/UD_Hausa-WesternAutogramm.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="3">
+      <tr data-type="mixed" data-ident="no" data-todo="1">
         <td><a href="treebanks/UD_Hebrew-IAHLTknesset.html">Hebrew IAHLTknesset</a></td>
         <td>mixed</td>
         <td class="num">2883</td>
         <td class="num">50499</td>
-        <td>not assessed</td>
+        <td>no</td>
+        <td></td>
+        <td>`newdoc id`: OK</td>
+        <td></td>
+        <td></td>
+        <td>`speaker` → `speaker_id`</td>
+        <td></td>
+        <td></td>
         <td class="num">1</td>
-        <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">3</td>
         <td><a href="issue_drafts/UD_Hebrew-IAHLTknesset.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="7">
+      <tr data-type="mixed" data-ident="yes" data-todo="2">
         <td><a href="treebanks/UD_Highland_Puebla_Nahuatl-ITML.html">Highland_Puebla_Nahuatl ITML</a></td>
         <td>mixed</td>
         <td class="num">1260</td>
         <td class="num">10018</td>
-        <td>not assessed</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">5</td>
-        <td class="num">0</td>
-        <td class="num">7</td>
+        <td>yes</td>
+        <td>via `sent_id`: sentences from spoken material carry a `.eaf`</td>
+        <td></td>
+        <td>`text[spa]` → `text_spa`</td>
+        <td>`text[orig]` → `text_transcription`; `text[gloss]` → `text_glossing`; `text[glosa]`: typo</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="num">2</td>
         <td><a href="issue_drafts/UD_Highland_Puebla_Nahuatl-ITML.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="4">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="1">
         <td><a href="treebanks/UD_Ika-ChibErgIS.html">Ika ChibErgIS</a></td>
         <td>only spoken</td>
         <td class="num">628</td>
         <td class="num">5307</td>
-        <td>yes</td>
+        <td>n/a</td>
+        <td></td>
+        <td></td>
+        <td>`text_en` → `text_eng`</td>
+        <td>`text_phrase-gls-es` → `text_esp`; `text_phrase-gls-tl`: not sure what this is</td>
+        <td></td>
+        <td>`sent_timecode` → split (`sound_alignment_begin`, `sound_alignment_end`, and `duration`)</td>
+        <td></td>
         <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">1</td>
-        <td class="num">2</td>
-        <td class="num">4</td>
         <td><a href="issue_drafts/UD_Ika-ChibErgIS.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="4">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="0">
         <td><a href="treebanks/UD_Italian-KIParlaForest.html">Italian KIParlaForest</a></td>
         <td>only spoken</td>
         <td class="num">2221</td>
         <td class="num">18050</td>
-        <td>yes</td>
-        <td class="num">1</td>
+        <td>n/a</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">0</td>
-        <td class="num">1</td>
-        <td class="num">2</td>
-        <td class="num">4</td>
         <td><a href="issue_drafts/UD_Italian-KIParlaForest.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="0">
+      <tr data-type="only spoken" data-ident="no" data-todo="0">
         <td><a href="treebanks/UD_Japanese-JDD.html">Japanese JDD</a></td>
         <td>only spoken</td>
         <td class="num">0</td>
         <td class="num">0</td>
-        <td>yes</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
+        <td>no</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>corpus appears empty (0 sentences)</td>
         <td class="num">0</td>
         <td>&mdash;</td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="5">
+      <tr data-type="mixed" data-ident="yes" data-todo="2">
         <td><a href="treebanks/UD_Khoekhoe-KDT.html">Khoekhoe KDT</a></td>
         <td>mixed</td>
         <td class="num">3589</td>
         <td class="num">27611</td>
-        <td>not assessed</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
+        <td>yes</td>
+        <td>via the `newdoc id` prefix, which names the source type: `book`</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">2</td>
-        <td class="num">2</td>
-        <td class="num">5</td>
         <td><a href="issue_drafts/UD_Khoekhoe-KDT.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="1">
+      <tr data-type="mixed" data-ident="n/a" data-todo="0">
         <td><a href="treebanks/UD_Khunsari-AHA.html">Khunsari AHA</a></td>
         <td>mixed</td>
         <td class="num">10</td>
         <td class="num">74</td>
-        <td>not assessed</td>
+        <td>n/a</td>
+        <td></td>
+        <td></td>
+        <td>`text_en` → `text_eng`; `text_fa` → `text_fas`</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">1</td>
         <td>&mdash;</td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="5">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="1">
         <td><a href="treebanks/UD_Komi_Zyrian-IKDP.html">Komi_Zyrian IKDP</a></td>
         <td>only spoken</td>
         <td class="num">214</td>
         <td class="num">2304</td>
-        <td>yes</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">3</td>
-        <td class="num">2</td>
-        <td class="num">5</td>
+        <td>n/a</td>
+        <td></td>
+        <td>derive from `sent_id` prefix identifying the source recording (please confirm…</td>
+        <td>`text_en`: make tags: text_en; `text_ru`: text_rus; `text_end`: text_en</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="num">1</td>
         <td><a href="issue_drafts/UD_Komi_Zyrian-IKDP.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="1">
+      <tr data-type="mixed" data-ident="no" data-todo="1">
         <td><a href="treebanks/UD_Latvian-LVTB.html">Latvian LVTB</a></td>
         <td>mixed</td>
         <td class="num">19580</td>
         <td class="num">330318</td>
-        <td>not assessed</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
+        <td>no</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">1</td>
-        <td>&mdash;</td>
+        <td><a href="issue_drafts/UD_Latvian-LVTB.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="2">
+      <tr data-type="mixed" data-ident="no" data-todo="2">
         <td><a href="treebanks/UD_Ligurian-GLT.html">Ligurian GLT</a></td>
         <td>mixed</td>
         <td class="num">316</td>
         <td class="num">6568</td>
-        <td>not assessed</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">1</td>
-        <td class="num">0</td>
+        <td>no</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">2</td>
         <td><a href="issue_drafts/UD_Ligurian-GLT.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="6">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="1">
         <td><a href="treebanks/UD_Naija-NSC.html">Naija NSC</a></td>
         <td>only spoken</td>
         <td class="num">9241</td>
         <td class="num">140837</td>
-        <td>yes</td>
+        <td>n/a</td>
+        <td></td>
+        <td>derive from `sent_id` prefix identifying the source recording</td>
+        <td>`text_en` → `text_eng`</td>
+        <td>`text_ortho` → `text_orthographic`</td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">1</td>
-        <td class="num">1</td>
-        <td class="num">1</td>
-        <td class="num">3</td>
-        <td class="num">6</td>
         <td><a href="issue_drafts/UD_Naija-NSC.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="1">
+      <tr data-type="mixed" data-ident="n/a" data-todo="0">
         <td><a href="treebanks/UD_Nayini-AHA.html">Nayini AHA</a></td>
         <td>mixed</td>
         <td class="num">10</td>
         <td class="num">78</td>
-        <td>not assessed</td>
+        <td>n/a</td>
+        <td></td>
+        <td></td>
+        <td>`text_en` → `text_eng`; `text_fa` → `text_fas`</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">1</td>
         <td>&mdash;</td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="10">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="2">
         <td><a href="treebanks/UD_Nenets-Tundra.html">Nenets Tundra</a></td>
         <td>only spoken</td>
         <td class="num">170</td>
         <td class="num">1272</td>
-        <td>yes</td>
-        <td class="num">3</td>
+        <td>n/a</td>
+        <td></td>
+        <td>`doc_title_`: use as `# newdoc id` (rename/repurpose the field)</td>
+        <td>`text_en` → `text_eng`; `text_ru` → `text_rus`</td>
+        <td>`text_p`: unclear</td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">2</td>
-        <td class="num">3</td>
-        <td class="num">2</td>
-        <td class="num">10</td>
         <td><a href="issue_drafts/UD_Nenets-Tundra.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="132">
+      <tr data-type="mixed" data-ident="no" data-todo="2">
         <td><a href="treebanks/UD_Nheengatu-CompLin.html">Nheengatu CompLin</a></td>
         <td>mixed</td>
         <td class="num">2839</td>
         <td class="num">26444</td>
-        <td>not assessed</td>
-        <td class="num">1</td>
-        <td class="num">20</td>
-        <td class="num">109</td>
-        <td class="num">1</td>
-        <td class="num">132</td>
+        <td>no</td>
+        <td></td>
+        <td>`title` → `newdoc id`</td>
+        <td></td>
+        <td>`text_eng`, `text_por`, `text_rus`: OK</td>
+        <td>`speaker` → `speaker_id`; `speaker_gender`: OK</td>
+        <td></td>
+        <td></td>
+        <td class="num">2</td>
         <td><a href="issue_drafts/UD_Nheengatu-CompLin.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="4">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="1">
         <td><a href="treebanks/UD_Northwest_Gbaya-Autogramm.html">Northwest_Gbaya Autogramm</a></td>
         <td>only spoken</td>
         <td class="num">403</td>
         <td class="num">2692</td>
-        <td>yes</td>
+        <td>n/a</td>
+        <td></td>
+        <td></td>
+        <td>`text_fr` → `text_fra`</td>
+        <td></td>
+        <td></td>
+        <td>`sent_timecode` → split (`sound_alignment_begin`, `sound_alignment_end`, and `duration`)</td>
+        <td></td>
         <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">1</td>
-        <td class="num">2</td>
-        <td class="num">4</td>
         <td><a href="issue_drafts/UD_Northwest_Gbaya-Autogramm.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="1">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="0">
         <td><a href="treebanks/UD_Norwegian-NynorskLIA.html">Norwegian NynorskLIA</a></td>
         <td>only spoken</td>
         <td class="num">5250</td>
         <td class="num">55410</td>
-        <td>yes</td>
+        <td>n/a</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>`dialect`: OK</td>
+        <td></td>
+        <td></td>
         <td class="num">0</td>
-        <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">1</td>
         <td><a href="issue_drafts/UD_Norwegian-NynorskLIA.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="3">
+      <tr data-type="mixed" data-ident="no" data-todo="2">
         <td><a href="treebanks/UD_Persian-Seraji.html">Persian Seraji</a></td>
         <td>mixed</td>
         <td class="num">5997</td>
         <td class="num">151627</td>
-        <td>not assessed</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
+        <td>no</td>
+        <td></td>
+        <td></td>
+        <td>`text_en` → `text_eng`</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">2</td>
-        <td class="num">0</td>
-        <td class="num">3</td>
         <td><a href="issue_drafts/UD_Persian-Seraji.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="10">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="0">
         <td><a href="treebanks/UD_Pesh-ChibErgIS.html">Pesh ChibErgIS</a></td>
         <td>only spoken</td>
         <td class="num">524</td>
         <td class="num">4275</td>
-        <td>yes</td>
-        <td class="num">1</td>
+        <td>n/a</td>
+        <td></td>
+        <td>derive from `sent_id` prefix identifying the source recording</td>
+        <td>`text_en` → `text_eng`</td>
+        <td>`text_phrase-gls-es` → `text_spa`; `text_phrase-gls-it` → `text_phonetic`; `text_phrase-gls-pro` → `text_prosodic`; `text_phrase-gls-tl`: corpus-specific - verify against metadata.html; `text_phrase-gls-de`:…</td>
+        <td></td>
+        <td>`sent_timecode` → split (`sound_alignment_begin`, `sound_alignment_end`, and `duration`)</td>
+        <td></td>
         <td class="num">0</td>
-        <td class="num">7</td>
-        <td class="num">2</td>
-        <td class="num">10</td>
         <td><a href="issue_drafts/UD_Pesh-ChibErgIS.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="3">
+      <tr data-type="mixed" data-ident="yes" data-todo="3">
         <td><a href="treebanks/UD_Polish-LFG.html">Polish LFG</a></td>
         <td>mixed</td>
         <td class="num">17246</td>
         <td class="num">130967</td>
-        <td>not assessed</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">2</td>
-        <td class="num">0</td>
+        <td>yes</td>
+        <td>via the sentence-level `genre` field</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">3</td>
         <td><a href="issue_drafts/UD_Polish-LFG.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="5">
+      <tr data-type="mixed" data-ident="yes" data-todo="0">
         <td><a href="treebanks/UD_Scottish_Gaelic-ARCOSG.html">Scottish_Gaelic ARCOSG</a></td>
         <td>mixed</td>
         <td class="num">4748</td>
         <td class="num">86139</td>
-        <td>not assessed</td>
-        <td class="num">1</td>
-        <td class="num">1</td>
+        <td>yes</td>
+        <td>via the letter prefix of `newdoc id`</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>`speaker` → `speaker_id`</td>
+        <td></td>
+        <td></td>
         <td class="num">0</td>
-        <td class="num">2</td>
-        <td class="num">5</td>
         <td><a href="issue_drafts/UD_Scottish_Gaelic-ARCOSG.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="9">
+      <tr data-type="mixed" data-ident="yes" data-todo="3">
         <td><a href="treebanks/UD_Skolt_Sami-Giellagas.html">Skolt_Sami Giellagas</a></td>
         <td>mixed</td>
         <td class="num">261</td>
         <td class="num">3049</td>
-        <td>not assessed</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">8</td>
-        <td class="num">0</td>
-        <td class="num">9</td>
+        <td>yes</td>
+        <td>per README description</td>
+        <td>derive from `sent_id` source-identifier prefix</td>
+        <td>`text_fi` → `text_fin`; `text_en` → `text_eng`</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="num">3</td>
         <td><a href="issue_drafts/UD_Skolt_Sami-Giellagas.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="10">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="1">
         <td><a href="treebanks/UD_Slovenian-SST.html">Slovenian SST</a></td>
         <td>only spoken</td>
         <td class="num">6121</td>
         <td class="num">98393</td>
-        <td>yes</td>
-        <td class="num">2</td>
-        <td class="num">6</td>
-        <td class="num">2</td>
-        <td class="num">0</td>
-        <td class="num">10</td>
+        <td>n/a</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td class="num">1</td>
         <td><a href="issue_drafts/UD_Slovenian-SST.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="1">
+      <tr data-type="mixed" data-ident="yes" data-todo="0">
         <td><a href="treebanks/UD_Soi-AHA.html">Soi AHA</a></td>
         <td>mixed</td>
         <td class="num">8</td>
         <td class="num">55</td>
-        <td>not assessed</td>
+        <td>yes</td>
+        <td>per README description</td>
+        <td></td>
+        <td>`text_en` → `text_eng`; `text_fa` → `text_fas`</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>declared type/genre may not match actual content - see modality note</td>
         <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">1</td>
-        <td>&mdash;</td>
+        <td><a href="issue_drafts/UD_Soi-AHA.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="1">
+      <tr data-type="mixed" data-ident="no" data-todo="1">
         <td><a href="treebanks/UD_South_Levantine_Arabic-MADAR.html">South_Levantine_Arabic MADAR</a></td>
         <td>mixed</td>
         <td class="num">100</td>
         <td class="num">789</td>
-        <td>not assessed</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
+        <td>no</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>declared type/genre may not match actual content - see modality note</td>
         <td class="num">1</td>
-        <td>&mdash;</td>
+        <td><a href="issue_drafts/UD_South_Levantine_Arabic-MADAR.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="5">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="1">
         <td><a href="treebanks/UD_Spanish-COSER.html">Spanish COSER</a></td>
         <td>only spoken</td>
         <td class="num">539</td>
         <td class="num">7987</td>
-        <td>yes</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">5</td>
-        <td class="num">0</td>
-        <td class="num">5</td>
+        <td>n/a</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>`turn_time` → split (`sound_alignment_begin` and `sound_alignment_end`; derive `duration`); `time` → split (`sound_alignment_begin` and `sound_alignment_end` (same as…); `turn_time` → split (`sound_alignment_begin` and…</td>
+        <td></td>
+        <td class="num">1</td>
         <td><a href="issue_drafts/UD_Spanish-COSER.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="0">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="0">
         <td><a href="treebanks/UD_Swedish_Sign_Language-SSLC.html">Swedish_Sign_Language SSLC</a></td>
         <td>only spoken</td>
         <td class="num">203</td>
         <td class="num">1610</td>
-        <td>yes</td>
+        <td>n/a</td>
+        <td></td>
+        <td>derive from `sent_id` prefix (everything before the first `:`)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td>&mdash;</td>
+        <td><a href="issue_drafts/UD_Swedish_Sign_Language-SSLC.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="1">
+      <tr data-type="only spoken" data-ident="no" data-todo="1">
         <td><a href="treebanks/UD_Telugu_English-TECT.html">Telugu_English TECT</a></td>
         <td>only spoken</td>
         <td class="num">97</td>
         <td class="num">456</td>
-        <td>yes</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">1</td>
+        <td>no</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>declared type/genre may not match actual content - see modality note</td>
         <td class="num">1</td>
         <td><a href="issue_drafts/UD_Telugu_English-TECT.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="4">
+      <tr data-type="only spoken" data-ident="no" data-todo="2">
         <td><a href="treebanks/UD_Turkish_English-BUTR.html">Turkish_English BUTR</a></td>
         <td>only spoken</td>
         <td class="num">58</td>
         <td class="num">441</td>
-        <td>yes</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">3</td>
-        <td class="num">1</td>
-        <td class="num">4</td>
+        <td>no</td>
+        <td></td>
+        <td></td>
+        <td>`text_en` → `text_eng`</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>declared type/genre may not match actual content - see modality note</td>
+        <td class="num">2</td>
         <td><a href="issue_drafts/UD_Turkish_English-BUTR.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="3">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="2">
         <td><a href="treebanks/UD_Turkish_German-SAGT.html">Turkish_German SAGT</a></td>
         <td>only spoken</td>
         <td class="num">2184</td>
         <td class="num">36934</td>
-        <td>yes</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
+        <td>n/a</td>
+        <td></td>
+        <td>derive from `sent_id` prefix (everything before the trailing `-&lt;number&gt;`)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">2</td>
-        <td class="num">1</td>
-        <td class="num">3</td>
         <td><a href="issue_drafts/UD_Turkish_German-SAGT.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="5">
+      <tr data-type="mixed" data-ident="yes" data-todo="1">
         <td><a href="treebanks/UD_Ukrainian-ParlaMint.html">Ukrainian ParlaMint</a></td>
         <td>mixed</td>
         <td class="num">7142</td>
         <td class="num">109166</td>
-        <td>not assessed</td>
-        <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">3</td>
+        <td>yes</td>
+        <td>per README description</td>
+        <td>derive `# newdoc id = NSDC_UA_28_Feb2014` for the NSDC-sourced sentences (`sent_id`…</td>
+        <td>`text_en`: remove (single occurrence, placeholder value `undefined undefined`)</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">1</td>
-        <td class="num">5</td>
         <td><a href="issue_drafts/UD_Ukrainian-ParlaMint.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="2">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="0">
         <td><a href="treebanks/UD_Vietnamese-TueCL.html">Vietnamese TueCL</a></td>
         <td>only spoken</td>
         <td class="num">100</td>
         <td class="num">1888</td>
-        <td>yes</td>
+        <td>n/a</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">2</td>
-        <td class="num">0</td>
-        <td class="num">2</td>
-        <td><a href="issue_drafts/UD_Vietnamese-TueCL.html">draft &#8599;</a></td>
+        <td>&mdash;</td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="3">
+      <tr data-type="mixed" data-ident="yes" data-todo="1">
         <td><a href="treebanks/UD_Western_Armenian-ArmTDP.html">Western_Armenian ArmTDP</a></td>
         <td>mixed</td>
         <td class="num">6644</td>
         <td class="num">121432</td>
-        <td>not assessed</td>
+        <td>yes</td>
+        <td>via the `newdoc id` prefix, which already encodes genre</td>
+        <td>`doc_title`: `newdoc id` already exists separately (e.g. `spoken-002R`);…</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">3</td>
         <td><a href="issue_drafts/UD_Western_Armenian-ArmTDP.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="18">
+      <tr data-type="mixed" data-ident="no" data-todo="13">
         <td><a href="treebanks/UD_Western_Sierra_Puebla_Nahuatl-MesoTree.html">Western_Sierra_Puebla_Nahuatl MesoTree</a></td>
         <td>mixed</td>
         <td class="num">3024</td>
         <td class="num">19191</td>
-        <td>not assessed</td>
-        <td class="num">0</td>
-        <td class="num">4</td>
+        <td>no</td>
+        <td></td>
+        <td></td>
+        <td>`text[spa]` → `text_spa`; `text[eng]` → `text_eng`</td>
+        <td>`text[orig]` → `text_original`; `text[morf]` → `text_morphemic`; `text[gloss]` → `text_glossing`; `text[orig_omitlan]`: corpus-specific (sentence-level) - verify against metadata.html; `text[orig_smt]`: corpus-specific…</td>
+        <td>`user_id`: corpus-specific (speaker/paragraph-level) - verify against…; `finished`: corpus-specific (speaker/paragraph-level) - verify against…; `location`: corpus-specific (speaker/paragraph-level) - verify against…;…</td>
+        <td>`timestamp` → `sound_alignment_begin`</td>
+        <td></td>
         <td class="num">13</td>
-        <td class="num">0</td>
-        <td class="num">18</td>
         <td><a href="issue_drafts/UD_Western_Sierra_Puebla_Nahuatl-MesoTree.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="mixed" data-ident="not assessed" data-todo="6">
+      <tr data-type="mixed" data-ident="yes" data-todo="3">
         <td><a href="treebanks/UD_Yiddish-YiTB.html">Yiddish YiTB</a></td>
         <td>mixed</td>
         <td class="num">3113</td>
         <td class="num">27954</td>
-        <td>not assessed</td>
-        <td class="num">0</td>
-        <td class="num">2</td>
+        <td>yes</td>
+        <td>via the sentence-level `genre` field</td>
+        <td></td>
+        <td>`text_en` → `text_eng`</td>
+        <td></td>
+        <td>`rtl`: corpus-specific (speaker/paragraph-level) - verify against…; `source`: corpus-specific (speaker/paragraph-level) - verify against…</td>
+        <td></td>
+        <td></td>
         <td class="num">3</td>
-        <td class="num">0</td>
-        <td class="num">6</td>
         <td><a href="issue_drafts/UD_Yiddish-YiTB.html">draft &#8599;</a></td>
       </tr>
-      <tr data-type="only spoken" data-ident="yes" data-todo="1">
+      <tr data-type="only spoken" data-ident="n/a" data-todo="0">
         <td><a href="treebanks/UD_Zazaki-ZSD.html">Zazaki ZSD</a></td>
         <td>only spoken</td>
         <td class="num">200</td>
         <td class="num">1371</td>
-        <td>yes</td>
+        <td>n/a</td>
+        <td></td>
+        <td>add `# newdoc id = Seyristane_dialogue` corpus-wide (single document)</td>
+        <td>`text_en` → `text_eng`</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         <td class="num">0</td>
-        <td class="num">0</td>
-        <td class="num">1</td>
-        <td class="num">0</td>
-        <td class="num">1</td>
         <td><a href="issue_drafts/UD_Zazaki-ZSD.html">draft &#8599;</a></td>
       </tr>
   </tbody>

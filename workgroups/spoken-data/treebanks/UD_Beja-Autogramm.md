@@ -65,5 +65,4 @@ udver: '2'
 | ------------ | ------------------------------ |
 | `AlignBegin` | rename to `WordAlignmentBegin` |
 | `AlignEnd`   | rename to `WordAlignmentEnd`   |
-| `Lang`       | OK               |
 

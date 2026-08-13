@@ -24,15 +24,15 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 
 ### 2. Document-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#document-level))
 
-| Field       | Suggestion        |
-| ----------- | ----------------- |
-| `newdoc id` | make tags: doc_id |
+| Field       | Suggestion             |
+| ----------- | ---------------------- |
+| `newdoc id` | OK - already standard  |
 
 ### 3. Speaker-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#speaker-level))
 
-| Field     | Suggestion            |
-| --------- | --------------------- |
-| `speaker` | make tags: speaker_id |
+| Field     | Suggestion             |
+| --------- | ----------------------- |
+| `speaker` | change to `speaker_id` |
 
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

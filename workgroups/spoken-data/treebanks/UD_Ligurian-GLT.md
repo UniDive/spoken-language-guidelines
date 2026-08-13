@@ -26,3 +26,11 @@ udver: '2'
 
 **Is spoken part clearly identifiable?** No - only 12 documents total, with mixed short `newdoc id` prefixes (`bdl-c00`, `cairo`, `esl-c01`, `wp-arba`, `wp-tintin`, ...) and no dominant separator/prefix pattern. The README mentions a radio broadcast among the sources, but it's unclear which document(s)/sentences it corresponds to - flagged to maintainers for per-document confirmation.
 
+## Metadata review
+
+### sent metadata
+
+| Field | Advice |
+| --- | --- |
+| `parallel_id` | corpus-specific (sentence-level) - verify against metadata.html |
+

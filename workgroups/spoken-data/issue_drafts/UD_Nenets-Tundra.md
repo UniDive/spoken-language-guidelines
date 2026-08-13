@@ -19,25 +19,18 @@ No `newdoc id` exists, but `doc_title_` already identifies the document and can 
 | Field        | Suggestion                                                                           |
 | ------------ | ------------------------------------------------------------------------------------ |
 | `doc_title_` | use as `# newdoc id` (rename/repurpose the field)                                    |
-| `sound_url`  | possibly rename to `sound_url` (see Document-level in metadata.html) - please verify |
+| `sound_url`  | move to document level |
 | `media`      | corpus-specific (doc-level) - verify against metadata.html                           |
 
-### 2. Speaker-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#speaker-level))
+### 2. Sentence-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#sentence-level))
 
-| Field              | Suggestion              |
-| ------------------ | ----------------------- |
-| `speaker metadata` | make tags: speaker_id   |
-| `?`                | add speaker_INFORMATION |
+| Field      | Suggestion                             |
+| ---------- | --------------------------------------- |
+| `text_p`   | unclear                                |
+| `translit` | change to `text_translitteration`      |
+| `p_text`   | unclear, maybe also typo for `text_p`? |
 
-### 3. Sentence-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#sentence-level))
-
-| Field      | Suggestion    |
-| ---------- | ------------- |
-| `text_p`   | unclear, keep |
-| `translit` | text_translit |
-| `p_text`   | unclear, keep |
-
-### 4. Token-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#token-level))
+### 3. Token-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#token-level))
 
 | Field        | Suggestion                     |
 | ------------ | ------------------------------ |

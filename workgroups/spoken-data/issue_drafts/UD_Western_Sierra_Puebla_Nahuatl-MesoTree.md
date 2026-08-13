@@ -44,9 +44,9 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 | `text[orig_omitlan]` | corpus-specific (sentence-level) - verify against metadata.html                                                        |
 | `text[orig_smt]`     | corpus-specific (sentence-level) - verify against metadata.html                                                        |
 | `label`              | corpus-specific (sentence-level) - verify against metadata.html                                                        |
-| `text[eng]`          | corpus-specific (sentence-level) - verify against metadata.html                                                        |
-| `text[morf]`         | corpus-specific (sentence-level) - verify against metadata.html                                                        |
-| `text[gloss]`        | possibly rename to `text_gloss` (see Sentence-level in metadata.html) - please verify                                  |
+| `text[eng]`          | change to `text_eng`                                                                                                   |
+| `text[morf]`         | change to `text_morphemic`                                                                                             |
+| `text[gloss]`        | change to `text_glossing`                                                                                              |
 | `note`               | corpus-specific (sentence-level) - verify against metadata.html                                                        |
 
 ---

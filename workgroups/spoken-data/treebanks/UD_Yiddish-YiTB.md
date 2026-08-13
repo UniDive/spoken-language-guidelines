@@ -30,9 +30,17 @@ udver: '2'
 
 _(none found)_ - add `# modality = spoken` to the 165 sentences whose `genre` value contains "spoken" (`spoken, web` / `spoken, liturgical`).
 
+### speaker metadata
+
+| Field | Advice |
+| --- | --- |
+| `rtl` | corpus-specific (speaker/paragraph-level) - verify against metadata.html |
+| `source` | corpus-specific (speaker/paragraph-level) - verify against metadata.html |
+
 ### additional fields found by clone verification (2026-07-30)
 
 | Field      | Advice                            |
 | ---------- | --------------------------------- |
 | `translit` | rename to `text_translitteration` |
 | `text_en`  | rename to `text_eng` (ISO 639-3)  |
+| `note` | corpus-specific (sentence-level) - verify against metadata.html |

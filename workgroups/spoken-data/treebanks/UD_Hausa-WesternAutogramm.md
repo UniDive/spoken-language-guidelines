@@ -24,7 +24,7 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** _(not assessed)_
+**Is spoken part clearly identifiable?** No - no genre-like field or `newdoc id` found at all; no comment-level metadata beyond `sent_id`/`text` detected. Flagged to maintainers to confirm which sentences/documents are spoken vs. written.
 
 ## Metadata review
 

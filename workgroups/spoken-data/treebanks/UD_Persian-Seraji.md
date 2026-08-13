@@ -25,3 +25,12 @@ udver: '2'
 ## Modality identification
 
 **Is spoken part clearly identifiable?** no - the readme only mentions written data
+
+## Metadata review
+
+### sent metadata
+
+| Field | Advice |
+| --- | --- |
+| `translit` | corpus-specific (sentence-level) - verify against metadata.html |
+| `text_en` | rename to `text_eng` (ISO 639-3) |

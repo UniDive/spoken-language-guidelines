@@ -50,6 +50,7 @@ No `newdoc id` exists, but `doc_title_` already identifies the document and can 
 | Field        | Advice                                            |
 | ------------ | ------------------------------------------------- |
 | `doc_title_` | use as `# newdoc id` (rename/repurpose the field) |
+| `media` | corpus-specific (doc-level) - verify against metadata.html |
 
 ### token-level metadata (MISC)
 

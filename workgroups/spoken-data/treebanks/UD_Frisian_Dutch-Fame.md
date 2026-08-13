@@ -57,7 +57,3 @@ udver: '2'
 | Field       | Advice                                                                                                                                 |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | `newdoc id` | OK - already standard, and already one-per-sentence here (400 documents, each a single standalone utterance - no recomposition needed) |
-
-## Things to check manually
-
-- split `speaker` (e.g. `fr/female/sp0013f`) into `speaker_id` (3rd segment), `speaker_gender` (2nd segment - `child` doesn't fit, confirm handling for those 2 sentences), and a corpus-specific speaker-variety field (1st segment: `fr`/`nl`, stable per speaker)
