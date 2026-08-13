@@ -22,10 +22,6 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 
 ### 2. Document-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#document-level))
 
-| Field       | Suggestion        |
-| ----------- | ----------------- |
-| `newdoc id` | make tags: doc_id |
-
 Per the README, each spoken subcorpus also has a fairly clear genre and interaction profile:
 
 | `newdoc id` prefix | Subcorpus                                                                  | `# genre`                                                 | Interaction parameters                                                                                                                                     |
@@ -40,16 +36,9 @@ Please confirm these against your own understanding - especially `number_of_part
 
 ### 3. Speaker-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#speaker-level))
 
-| Field     | Suggestion            |
-| --------- | --------------------- |
-| `speaker` | make tags: speaker_id |
-
-### 4. Token-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#token-level))
-
-| Field      | Suggestion           |
-| ---------- | -------------------- |
-| `OrigLang` | rename to `OrigLang` |
-| `Lang`     | rename to `Lang`     |
+| Field     | Suggestion             |
+| --------- | ---------------------- |
+| `speaker` | change to `speaker_id` |
 
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.
