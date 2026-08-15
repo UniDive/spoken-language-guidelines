@@ -34,5 +34,18 @@ No `newdoc id` exists in the current `.conllu` (the field this section previousl
 |---|---|
 | — | no speaker metadata exists; the legislative-council portion (sentences 651-1004) clearly involves multiple speakers - could `speaker_id` be recovered and tagged? |
 
+### Implementation notes
+
+**Quick search & replace**
+- None.
+
+**Needs a small script**
+- `sent_id` is a plain sequential integer (`1`, `2`, ... `1004`, confirmed by dry inspection of the clone) with no separator to derive document boundaries from - `harmonize_metadata.py derive-newdoc` doesn't apply here since it needs a regex-extractable prefix. Instead, insert `# newdoc id` (and `# genre`/`# degree_of_spontaneity`) at the four fixed `sent_id` boundaries (1, 411, 548, 651) with a short bespoke script (~15 lines: iterate sentences, insert a comment block when `sent_id` matches one of the four boundary values). Happy to write this once the id slugs and genre/spontaneity values are confirmed.
+
+**Needs manual input from maintainers**
+- Confirm the four proposed `newdoc id` slugs (`missing_days`, `tempo_in_temple`, `what_day_is_today`, `legco_president_election_2016`).
+- Confirm `genre` and `degree_of_spontaneity` values per document.
+- Whether `speaker_id` can be recovered for the legislative-council portion (sentences 651-1004) - needs source material, not a mechanical transform.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

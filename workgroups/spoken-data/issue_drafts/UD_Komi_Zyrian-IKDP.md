@@ -35,5 +35,15 @@ No `newdoc id` exists, but per the README, `sent_id` values match those in the a
 | `OrigLang` | rename to `OrigLang` |
 | `Lang`     | rename to `Lang`     |
 
----
-This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.
+### Implementation notes
+
+**Quick search & replace**
+- `text_ru` → `text_rus`, `text_end` → `text_en` (`text_end` looks like a typo for `text_en`; confirm before merging with any existing `text_en`). `text_en` itself is already correctly named.
+- `OrigLang`, `Lang`: already the standard MISC key names (verified) - no change needed.
+
+**Needs a small script**
+- Once the `sent_id` delimiter is confirmed (see below), deriving `# newdoc id`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc <path> --pattern '<confirmed-pattern>' --write`.
+
+**Needs manual input from maintainers**
+- `sent_id` document delimiter: two different conventions are visible in the data itself - `13756_2bz.002` (dot before a numeric suffix) and `kpv_izva19591100-05582_1az-04` (dash before the suffix) - so a single regex can't derive `newdoc id` for the whole corpus automatically; need the exact rule (and confirmation that a single rule covers all recordings).
+- `+`-joined `sent_id`s (e.g. `kpv_izva20140325-2-a-027+...+031`, up to 5-way merges): confirmed by the draft to belong to one document, but `derive-newdoc` as written takes the *first* sent_id in a merge as the document key - should double check merged-sentence handling once the delimiter rule is set.

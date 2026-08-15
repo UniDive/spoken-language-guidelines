@@ -33,5 +33,29 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 | `text_orth` | this is a morpheme-segmented orthographic form (hyphens mark morpheme boundaries, stress marked) rather than a duplicate of `text` — rename to `text_morphemic` |
 | `text_transcription` | this is a Latin-script rendering of the Cyrillic orthographic form, not a phonetic/IPA transcription — rename to `text_transliteration` |
 
+### Implementation notes
+
+**Quick search & replace**
+- `text_orth` → `text_morphemic`
+- `text_transcription` → `text_transliteration`
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR \
+      --map text_orth=text_morphemic,text_transcription=text_transliteration --write
+  ```
+
+**Needs a small script**
+- Convert `text_name` (6 distinct values across 98 sentences, confirmed by dry-run) into `# newdoc id`, deduped per document and with the `.eaf` extension stripped:
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc-from-field DIR \
+      --key text_name --strip-suffix .eaf --write
+  ```
+  This adds `# newdoc id` once per document but leaves the original repeated `# text_name` comments in place - a follow-up `rename-comment`/removal pass is needed if `text_name` should disappear entirely rather than stay as a corpus-specific field.
+- Once `newdoc id` exists, a `speaker_id` could likely be derived from the same filename component (e.g. `AjsanovaFB`) with a small regex extraction script - worth doing only after the maintainers confirm the naming convention (see below).
+
+**Needs manual input from maintainers**
+- Whether `# genre` (`narrative`/`interview`) should be added per document - inferred from filenames only, not confirmed.
+- Whether individual recording links exist and can be published as `# sound_url`.
+- Confirm the `speaker_id` extraction pattern from `text_name` before scripting it.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

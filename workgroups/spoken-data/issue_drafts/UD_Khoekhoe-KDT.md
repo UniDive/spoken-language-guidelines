@@ -36,5 +36,15 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 | `OrigLang` | rename to `OrigLang` |
 | `Lang`     | rename to `Lang`     |
 
----
-This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.
+### Implementation notes
+
+**Quick search & replace**
+- `english` → `text_eng` (`# english =` → `# text_eng =`).
+- `OrigLang`, `Lang`: already the standard MISC key names in the released data (verified) - no change needed, the draft's "rename to X" here is a no-op.
+
+**Needs a small script**
+- Modality tagging, once confirmed: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py tag-modality <path> --spoken-if '^(conversation|film)' --written-if '^(book|grammar)' --write`. Dry-run against all three released files (`naq_kdt-ud-{dev,test,train}.conllu`) tags all 25 `newdoc id`s cleanly (15 book, 4 grammar → written; 3 conversation, 3 film → spoken), no unmatched ids.
+
+**Needs manual input from maintainers**
+- Whether `film` documents are subtitle/transcript text (spoken) as assumed - confirms the regex above.
+- `parallel_id`: corpus-specific field, needs a decision on whether/how it maps to the naming conventions before any action.

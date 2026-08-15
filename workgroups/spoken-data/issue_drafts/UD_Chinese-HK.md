@@ -40,5 +40,21 @@ No `newdoc id` exists in the current `.conllu`. However, the repo's own README d
 |---|---|
 | `translit` | pinyin transcription (added in v2.12) - rename to `text_transliteration` |
 
+### Implementation notes
+
+**Quick search & replace**
+- `translit` → `text_transliteration`
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map translit=text_transliteration --write
+  ```
+
+**Needs a small script**
+- Same situation as the parallel UD_Cantonese-HK treebank: `sent_id` is a plain sequential integer with no derivable prefix, so `derive-newdoc` doesn't apply. Insert `# newdoc id` (and `# genre`) at the four fixed `sent_id` boundaries (1, 411, 548, 651) with a short bespoke script, once the id slugs and genre values are confirmed - can share the same script written for UD_Cantonese-HK since the boundaries match exactly.
+
+**Needs manual input from maintainers**
+- Confirm the four proposed `newdoc id` slugs (same as UD_Cantonese-HK: `missing_days`, `tempo_in_temple`, `what_day_is_today`, `legco_president_election_2016`).
+- Confirm `genre` values per document.
+- Whether `speaker_id` can be recovered for the legislative-council portion (sentences 651-1004) - needs source material, not a mechanical transform.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

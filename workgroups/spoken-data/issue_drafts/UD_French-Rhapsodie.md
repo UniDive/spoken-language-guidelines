@@ -42,5 +42,14 @@ No `newdoc id` exists, but `sent_id` already encodes it: e.g. `Rhap_D0001-1` is 
 | `AlignBegin` | rename to `WordAlignmentBegin` |
 | `AlignEnd`   | rename to `WordAlignmentEnd`   |
 
+### Implementation notes
+
+- **Quick search & replace:** `macrosyntax`→`text_macrosyntax`, `AlignBegin`→`WordAlignmentBegin`, `AlignEnd`→`WordAlignmentEnd`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map macrosyntax=text_macrosyntax --write` and `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-misc DIR --map AlignBegin=WordAlignmentBegin,AlignEnd=WordAlignmentEnd --write`.
+- **Needs a small script:**
+  - Deriving `# newdoc id` from `sent_id`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc DIR --pattern '^(?P<doc>.+)-\d+$' --write` (verified clean against the release + `not-to-release/original_split/` files).
+  - Moving `genre`, `subgenre`, `type`, `task`, `subject`, `channel`, `modalities` to document level: after deriving newdoc ids, `python3 workgroups/spoken-data/scripts/harmonize_metadata.py hoist-to-doc DIR --key <field> --write`, once per field.
+  - Moving `sound_url` to document level: **⚠ discrepancy found** - the draft says this was "verified: none vary within a document", but a dry-run of `hoist-to-doc --key sound_url` (after deriving newdoc ids) on `fr_rhapsodie-ud-test.conllu` shows most documents hoist cleanly, but several (e.g. the documents starting around line 4701, 9916, 12682, 19532, 21447, 22817, 29805, 30141 in that file) have **2 distinct `sound_url` values** within the same document and get skipped. This needs to be resolved with maintainers (likely a resegmentation or duplicate-sentence artifact) before the hoist is run for real.
+- **Needs manual input from maintainers:** `prosodic_annotation` (present on only a subset of sentences) - unclear what it represents, needs clarification before it can be classified or renamed.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

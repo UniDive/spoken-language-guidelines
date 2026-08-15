@@ -28,5 +28,8 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 | ------------- | --------------------------------------------------------------- |
 | `parallel_id` | corpus-specific (sentence-level) - verify against metadata.html |
 
----
-This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.
+### Implementation notes
+
+**Needs manual input from maintainers**
+- Modality: only 12 documents total, no dominant naming pattern - needs a per-document call from maintainers (spoken vs. written for each of `bdl-c00`, `cairo`, `esl-c01`, `wp-arba`, `wp-tintin`, and the rest), plus identification of which document(s) correspond to the radio broadcast. With only 12 documents this is faster to answer directly than to script; once the per-document list exists, tagging via `harmonize_metadata.py tag-modality --spoken-if '<confirmed ids>'` (or a plain per-document `rename-comment`/manual edit, since 12 is small) is trivial.
+- `parallel_id`: corpus-specific field, needs a decision on whether/how it maps to the naming conventions before any action.

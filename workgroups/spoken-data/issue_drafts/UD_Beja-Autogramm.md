@@ -35,5 +35,37 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 | `AlignBegin` | rename to `WordAlignmentBegin` |
 | `AlignEnd` | rename to `WordAlignmentEnd` |
 
+### Implementation notes
+
+**Quick search & replace**
+- `text_en` → `text_eng`
+- `phonetic_text` → `text_phonetic`
+- `AlignBegin` → `WordAlignmentBegin`, `AlignEnd` → `WordAlignmentEnd` (MISC keys)
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR \
+      --map text_en=text_eng,phonetic_text=text_phonetic --write
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-misc DIR \
+      --map AlignBegin=WordAlignmentBegin,AlignEnd=WordAlignmentEnd --write
+  ```
+
+**Needs a small script**
+- Derive `# newdoc id` from `sound_url` (confirmed by dry-run: 18 distinct recordings, e.g. `BEJ_MV_NARR_01_SHELTER.WAV`), then hoist `sound_url` to document level:
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc-from-field DIR \
+      --key sound_url --strip-suffix .WAV --write
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py hoist-to-doc DIR --key sound_url --write
+  ```
+  Caveat: `sound_url` is a full URL (e.g. `https://corporan.huma-num.fr/.../BEJ_MV_NARR_01_SHELTER.WAV`), so the derived `newdoc id` would be the whole URL minus `.WAV`, not a clean basename like `BEJ_MV_NARR_01_SHELTER` - confirm the desired id format with maintainers before running with `--write` (or extract the basename with a one-line regex tweak first).
+- `sent_timecode` mostly holds two comma-separated millisecond values (e.g. `0, 1025`), but the separator isn't consistent (`2412,3794` with no space) and dry-running `split-field --sep ', '` against the real clone found at least one malformed value (`100298, 104357 104357, 113282` - looks like two timecodes concatenated). `duration` isn't stored and needs a computed field (`end - begin`), not a split. Recommended sequence: normalize the separator first (simple regex, e.g. `sed -E 's/([0-9]),([0-9])/\1, \2/'` on the comment lines), spot-check/fix the malformed value(s) by hand, then:
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py split-field DIR \
+      --key sent_timecode --sep ', ' --into sound_alignment_begin,sound_alignment_end --write
+  ```
+  followed by a short script to add `duration = sound_alignment_end - sound_alignment_begin`.
+
+**Needs manual input from maintainers**
+- What `tags` represents (mostly `?`/`TO CHECK`/`TODO` placeholders) - no mechanical action possible until clarified.
+- Confirm the newdoc-id basename format above before running the script for real.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

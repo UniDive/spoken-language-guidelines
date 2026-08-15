@@ -43,5 +43,13 @@ The corpus also carries roughly 100 further sentence-level fields (`text_orig`, 
 
 `OrigLang` is already used with the standard name - no change needed.
 
+### Implementation notes
+
+**Needs manual input from maintainers**
+- Whether any sentences are actually spoken/elicited fieldwork (vs. published written sources) - this is a factual question only the maintainers can answer; nothing to script until it's resolved.
+- `title` → `newdoc id`: mechanically a one-line rename (field occurs once per document already), but flagged "please verify" since it changes the document-identification scheme - once confirmed: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map title="newdoc id" --write`.
+- `speaker` → `speaker_id`: mechanically a one-line rename (`# speaker = Gerson` style, repeats per sentence, no split/hoist needed), but flagged "please verify" - once confirmed: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map speaker=speaker_id --write`.
+- The ~18 editorial/philological fields and ~100 source-tracking sentence-level fields: no rename proposed, just need maintainer confirmation they should stay as-is (no script involved either way).
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

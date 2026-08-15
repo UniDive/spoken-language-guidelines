@@ -20,5 +20,14 @@ No `newdoc id` exists, but it can be derived directly from the `sent_id` prefix:
 | ----- | -------------------------------------------------------------------------------- |
 | —     | derive `# newdoc id` from the `sent_id` prefix (everything before the first `:`) |
 
+### Implementation notes
+
+- **Needs a small script:** derive `# newdoc id` from the `sent_id` prefix using the already-written helper script `workgroups/spoken-data/scripts/harmonize_metadata.py`:
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc \
+      UD_Swedish_Sign_Language-SSLC --pattern '^(?P<doc>[^:]+):.*$' --write
+  ```
+  Verified against the local clone (`swl_sslc-ud-test.conllu`, dry-run): correctly derives all 6 documents (`SSLC01_104`, `SSLC01_320`, `SSLC01_391`, `SSLC02_331`, `SSLC02_332`, `SSLC02_409`) with no unmatched `sent_id`s.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

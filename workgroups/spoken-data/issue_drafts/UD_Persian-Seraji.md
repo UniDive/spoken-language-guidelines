@@ -27,5 +27,14 @@ This treebank's `genre` metadata lists `spoken` alongside `news`, `fiction`, `me
 | `translit` | corpus-specific (sentence-level) - verify against metadata.html                    |
 | `text_en`  | rename to `text_eng` (ISO 639-3) |
 
+### Implementation notes
+
+**Quick search & replace**
+- `text_en` → `text_eng`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map text_en=text_eng --write`
+
+**Needs manual input from maintainers**
+- Whether any part of the corpus is actually spoken, or `spoken` should be dropped from `genre` - this is a factual question, no script can resolve it.
+- `translit` - corpus-specific field, needs confirmation of what it represents before proposing a name.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

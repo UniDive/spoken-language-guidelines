@@ -41,5 +41,20 @@ No `newdoc id` exists, but it can be derived from the `sent_id` prefix (please c
 | `AlignBegin` | rename to `WordAlignmentBegin` |
 | `AlignEnd`   | rename to `WordAlignmentEnd`   |
 
+### Implementation notes
+
+**Quick search & replace**
+- `AlignBegin`/`AlignEnd` → `WordAlignmentBegin`/`WordAlignmentEnd` (token MISC): `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-misc DIR --map AlignBegin=WordAlignmentBegin,AlignEnd=WordAlignmentEnd --write`
+- The `text_phrase-gls-*` / `morphemic_text` renames in the table above are plain 1:1 renames once the target names are confirmed (see below): `rename-comment DIR --map "text_phrase-gls-es"=text_sp,"text_phrase-gls-tl"=text_tl,"text_phrase-gls-de"=text_de,morphemic_text=annot_morph,"text_phrase-gls-it"=text_phon,"text_phrase-gls-pro"=annot_prosodic,"text_phrase-gls-wg"=text_gloss --write`
+
+**Needs a small script**
+- Derive `# newdoc id` from the `sent_id` source-recording prefix (format `NNN_NNN-NNN`, e.g. `008_001-001`): `python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc DIR --pattern '^(?P<doc>[0-9]+)_[0-9]+-[0-9]+$' --write` — dry-run on the real file derives 7 `newdoc id`s cleanly (matching the 7 distinct `sound_url` values / 7 source files under `not-to-release/`); two `sent_id`s with a `_split1`/`_split2` suffix don't match and need either a broader pattern or manual handling.
+- `sound_url` → document level, after the step above: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py hoist-to-doc DIR --key sound_url --write`.
+- `sent_timecode` → split into `sound_alignment_begin`/`sound_alignment_end` (format confirmed as `# sent_timecode = 420, 10620`): `python3 workgroups/spoken-data/scripts/harmonize_metadata.py split-field DIR --key sent_timecode --sep ", " --into sound_alignment_begin,sound_alignment_end --write`; `duration` is computed (end − begin), needing a small script on top (not covered by any subcommand).
+
+**Needs manual input from maintainers**
+- Confirm the exact `sent_id` delimiter/recording-identifier convention before running `derive-newdoc` for real (the pattern above is inferred, not confirmed).
+- Confirm the target names for the `text_phrase-gls-*` fields listed above (currently just "make tags"/short suggestions, not fully spelled out).
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

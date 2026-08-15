@@ -27,5 +27,21 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 |---|---|
 | `global.Entity` | corpus-specific (coreference/entity annotation, project-wide) - keep, not spoken-specific |
 
+### Implementation notes
+
+**Quick search & replace**
+- None.
+
+**Needs a small script**
+- Once confirmed with maintainers, tagging modality from the `pdtsc` prefix is a single run across the whole repo (confirmed by dry-run: matches 1553 `newdoc id`s starting `pdtsc` across `cs_pdtc-ud-test.conllu`, `cs_pdtc-ud-dev.conllu`, and `cs_pdtc-ud-train-st.conllu`):
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py tag-modality DIR \
+      --spoken-if '^pdtsc' --written-if '.' --write
+  ```
+
+**Needs manual input from maintainers**
+- Confirm the `pdtsc` → spoken inference with the PDTC maintainers before running `--write` (the draft explicitly flags this as inferred from the corpus name, not documented).
+- `global.Entity` is intentionally left as-is (project-wide coreference annotation, not spoken-specific) - no action needed.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

@@ -26,5 +26,10 @@ No `newdoc id` exists, but `sent_id` already encodes document structure: e.g. `f
 |---|---|
 | — | no speaker metadata exists; each document is one L2 English speaker's interview session - could `speaker_id` be derived from the same filename once `newdoc id` is introduced? |
 
+### Implementation notes
+
+- **Needs a small script:** deriving `# newdoc id` from the `sent_id` prefix is mechanical and verified clean (0 sent_ids fail to match, run against all three release files): `python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc DIR --pattern '^(?P<doc>.+)_\d+$' --write` (dry-run against `en_eslspok-ud-{dev,test,train}.conllu` derives 198/200/808 doc ids respectively - the 872 distinct-document figure in the draft is the union across all three splits, since a document's sentences can be split across dev/train/test, so the count is correctly done per-file). This only inserts the id; it does **not** recompose sentence order (see manual item below).
+- **Needs manual input from maintainers:** recomposing "shuffled" sentences into their original per-document order needs the true source ordering key, which isn't in the current fields (unlike CHILDES, there's no visible `original_sent_id` equivalent here) - could you point us to what determines original order, or confirm the corpus should stay as one-sentence-per-doc-order-unknown? Same for `speaker_id`: whether it can simply be derived from the (soon-to-exist) `newdoc id` needs a maintainer confirmation before scripting it (trivial `rename-comment`-style copy once confirmed).
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

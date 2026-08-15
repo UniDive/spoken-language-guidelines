@@ -18,5 +18,9 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 **Suggestion:** Could you confirm whether any sentences are actually spoken, or should `spoken` be dropped from `genre`?
 
+### Implementation notes
+
+- **Needs manual input from maintainers:** whether `spoken` should be dropped from `genre` (or whether any of the 100 sentences really are transcribed speech) is a factual question about the corpus, not something inferable from the data itself. No script applies until this is answered - if the answer is "drop it", it's then a trivial `sed -i '' 's/, spoken//;s/spoken, //;s/^spoken$/prose/' *.conllu`-style fix on the `# genre` line (exact command depends on the confirmed wording).
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

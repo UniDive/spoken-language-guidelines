@@ -34,5 +34,20 @@ No `newdoc id` exists, but it can be derived from the `sent_id` prefix (please c
 | `AlignBegin` | rename to `WordAlignmentBegin` |
 | `AlignEnd`   | rename to `WordAlignmentEnd`   |
 
----
-This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.
+### Implementation notes
+
+**Quick search & replace**
+- `text_ortho` → `text_orthographic` (`# text_ortho =` → `# text_orthographic =`).
+- `AlignBegin` → `WordAlignmentBegin`, `AlignEnd` → `WordAlignmentEnd` (token-level MISC keys):
+  `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-misc <path> --map AlignBegin=WordAlignmentBegin,AlignEnd=WordAlignmentEnd --write`
+
+**Needs a small script**
+- Derive `# newdoc id` from `sent_id`: the released files (`pcm_nsc-ud-{train,dev,test}.conllu`) use a clean `<DOC>__<N>` pattern (e.g. `ABJ_GWA_14_Mary-Lifestory_MG__1`), confirmed by dry-run:
+  `python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc <path> --pattern '^(?P<doc>.+)__\d+$' --write`
+  (10/10 documents in `pcm_nsc-ud-test.conllu` derived cleanly.)
+- Move `sound_url` to document level, **after** the derive-newdoc step above:
+  `python3 workgroups/spoken-data/scripts/harmonize_metadata.py hoist-to-doc <path> --key sound_url --write`
+  ⚠️ Dry-run turned up a discrepancy worth flagging to maintainers before running for real: 2 of the 10 documents in `pcm_nsc-ud-test.conllu` have **two distinct `sound_url` values** within the same derived document (not fully constant), so those 2 would be skipped by the script and need manual resolution rather than an automatic hoist.
+
+**Needs manual input from maintainers**
+- Confirm the `sent_id` delimiter/pattern above is correct for the whole corpus (not just the sample checked here), and resolve the 2 documents with non-constant `sound_url` before hoisting.

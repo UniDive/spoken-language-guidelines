@@ -34,5 +34,36 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 | `AlignBegin` | rename to `WordAlignmentBegin` |
 | `AlignEnd` | rename to `WordAlignmentEnd` |
 
+### Implementation notes
+
+**Quick search & replace**
+- `text_ortho` → `text_orthographic`
+- `morphemic_text` → `text_morphemic`
+- `AlignBegin` → `WordAlignmentBegin`, `AlignEnd` → `WordAlignmentEnd` (MISC keys)
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR \
+      --map text_ortho=text_orthographic,morphemic_text=text_morphemic --write
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-misc DIR \
+      --map AlignBegin=WordAlignmentBegin,AlignEnd=WordAlignmentEnd --write
+  ```
+
+**Needs a small script**
+- Derive `# newdoc id` from `sound_url` (confirmed by dry-run: 54 distinct recordings, e.g. `SAB-TXT-AN-00000-01.WAV`), then hoist `sound_url` to document level:
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc-from-field DIR \
+      --key sound_url --strip-suffix .WAV --write
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py hoist-to-doc DIR --key sound_url --write
+  ```
+  Caveat: `sound_url` is a full URL (e.g. `https://corporan.huma-num.fr/Archives/media/SAB-TXT-AN-00000-01.WAV/WAV/SAB-TXT-AN-00000-01.WAV`), so the derived `newdoc id` would be the whole URL minus `.WAV`, not a clean basename - confirm the desired id format with maintainers first.
+- `sent_timecode` splits cleanly into two comma-space-separated millisecond values in this treebank (dry-run against the real clone found no malformed values):
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py split-field DIR \
+      --key sent_timecode --sep ', ' --into sound_alignment_begin,sound_alignment_end --write
+  ```
+  `duration` isn't stored and needs a follow-up computed field (`end - begin`).
+
+**Needs manual input from maintainers**
+- Confirm the newdoc-id basename format before running the derive/hoist scripts for real.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

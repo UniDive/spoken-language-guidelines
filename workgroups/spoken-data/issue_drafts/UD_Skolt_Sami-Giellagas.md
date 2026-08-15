@@ -41,5 +41,20 @@ No `newdoc id` exists, but it can be derived from the source-identifier prefix o
 | `text_olo`                  | unsure - could you clarify what this field represents?                                                                                            |
 | `text_mdf`                  | unsure - could you clarify what this field represents?                                                                                            |
 
+### Implementation notes
+
+**Quick search & replace**
+- `text_fi` → `text_fin`, `text_en` → `text_eng`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map text_fi=text_fin,text_en=text_eng --write`
+
+**Needs a small script**
+- `# modality` tagging by file (`train` = written, `test` = spoken): a two-line shell loop is enough (`harmonize_metadata.py` has no per-file constant-value mode, since this isn't derived from a field) - e.g. insert `# modality = written` after every `# sent_id` in `*-train.conllu` and `# modality = spoken` in `*-test.conllu`. Simple, but hold off on the `test` file until the grammar-book-example caveat below is resolved.
+- `aannotation` → split + convert: confirmed format is `# aannotation="yes" begintime="0:39:13" endtime="0:01:36"` (XML-style, `endtime` sometimes empty) - not a plain `key = value` comment, so neither `split-field` nor `rename-comment` apply. Needs a ~15-line custom script: regex-match `begintime="(?P<b>[\d:]+)"\s+endtime="(?P<e>[\d:]*)"`, convert `H:MM:SS` → milliseconds, emit `# sound_alignment_begin = <ms>` and (when `endtime` is non-empty) `# sound_alignment_end = <ms>` + computed `# duration = <ms>`.
+- `# newdoc id` derivation from the `sent_id` source prefix: mechanically similar to `derive-newdoc`, but the delimiter differs by source (`::` before a timestamp for recordings, e.g. `11308_1a::0:01:32-0:01:36` → doc `11308_1a`; `-`/`:` before a numeric counter for other sources) - a single regex won't cleanly cover both, so this needs a small script with 2-3 source-specific patterns rather than one `derive-newdoc --pattern` call. Confirm document granularity first (see below).
+
+**Needs manual input from maintainers**
+- Whether `SK2020-*`/`SKKV2020:*` grammar-book examples (in the `test` file) should count as `modality = spoken` alongside the real recordings.
+- The intended document granularity/delimiter convention for deriving `newdoc id` (varies by source, as above).
+- `text_olo`, `text_mdf` - unclear fields, need clarification before any rename.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

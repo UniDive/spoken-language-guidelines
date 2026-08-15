@@ -29,5 +29,20 @@ The spoken portion of this treebank is clearly identifiable via the `form` field
 |---|---|
 | `language_variety` | corpus-specific (sentence-level) - verify against metadata.html |
 
+### Implementation notes
+
+**Quick search & replace**
+- `author` → `speaker_id`
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map author=speaker_id --write
+  ```
+
+**Needs a small script**
+- Tagging `# modality` from `# form`: confirmed via dry-run that `form` values are `dialog` (18 docs) / `mixed (form)` (38) / `prose` (40) / `verse` (1). Our shared script's `tag-modality` command only matches against `newdoc id`, not an arbitrary field, so this needs a short bespoke pass (~10 lines) that reads `# form` per document and inserts `# modality = spoken` for `dialog`, `# modality = written` otherwise. Happy to extend `harmonize_metadata.py` with a `--from-field` option if useful.
+
+**Needs manual input from maintainers**
+- Confirm `language_variety` naming/placement against metadata.html (flagged as "verify" in the draft).
+- Confirm the intended mapping of existing `channel` values (`digital`, `printed`, `typescript` - none of these look like phonic-auditory/gestural-visual/graphic-visual) onto the proposed `channel` vocabulary before any script writes it.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

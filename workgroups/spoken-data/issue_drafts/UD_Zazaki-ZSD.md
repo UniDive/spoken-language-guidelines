@@ -26,5 +26,15 @@ No `newdoc id` exists, but it's trivial to derive: `sent_id` follows `Seyristane
 | --------- | -------------------------------- |
 | `text_en` | rename to `text_eng` (ISO 639-3) |
 
+### Implementation notes
+
+- **Quick search & replace:** `text_en` → `text_eng`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment UD_Zazaki-ZSD --map text_en=text_eng --write`.
+- **Needs a small script:** add `# newdoc id = Seyristane_dialogue` corpus-wide.
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc \
+      UD_Zazaki-ZSD --pattern '^(?P<doc>Seyristane_dialogue)_\d+[AB](?:_split\d+)?$' --write
+  ```
+  Verified against the local clone (dry-run, all three splits): the simpler pattern from the issue draft (`^(?P<doc>.+)-\d+$`-style, without the `_split\d+` suffix) misses 2 `sent_id`s in the test split (`Seyristane_dialogue_185A_split1`/`_split2`) - the pattern above (with the optional `_split\d+` suffix) correctly derives the single document across all three files with no unmatched `sent_id`s.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

@@ -59,5 +59,14 @@ Notes: `conversation` is Santa Barbara Corpus audio (no video) of private family
 | `meta` | corpus-specific (sentence-level) - verify against metadata.html |
 | `trailing_xml` | corpus-specific (sentence-level) - verify against metadata.html |
 
+### Implementation notes
+
+- **Quick search & replace:** `newdoc id`→tag `doc_id`, `meta::genre`→tag `genre`, `speaker`→tag `speaker_id`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map meta::genre=genre,speaker=speaker_id --write` (the `doc_id` tag addition is a tagset change, not a comment rename).
+- **Needs a small script:** modality tagging by genre is mechanical and verified against the real corpus: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py tag-modality DIR --spoken-if '_(vlog|speech|podcast|court|conversation)_' --written-if '.*' --write` gives exactly 10/30 spoken documents in dev and 10/30 in test, matching the draft's count precisely. Only run on `en_gum-ud-dev.conllu`/`en_gum-ud-test.conllu` for now (train genre labels aren't yet confirmed - see manual item below); once confirmed, the same command run over the whole treebank directory covers train too.
+- **Needs manual input from maintainers:**
+  - Confirm the 15 genre labels (and the 5 spoken ones) apply consistently in `en_gum-ud-train.conllu` before running the modality-tagging command over train.
+  - The proposed per-genre interaction parameters (`degree_of_spontaneity`, `number_of_participants`, `context`, `setting`, `channels`, `symmetry`) are genre-level defaults, not verified per document - once confirmed, adding them is a mechanical `rename-comment`-style insert per document, but the values themselves need sign-off first.
+  - `meta` and `trailing_xml` (sentence-level) are corpus-specific with no proposed names yet.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

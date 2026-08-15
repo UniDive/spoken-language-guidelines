@@ -33,5 +33,16 @@ No `newdoc id` exists, but it can be derived directly from the `sent_id` prefix:
 | ------ | ---------------- |
 | `Lang` | rename to `Lang` |
 
+### Implementation notes
+
+- **Needs a small script:** derive `# newdoc id` from the `sent_id` prefix:
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc \
+      UD_Turkish_German-SAGT --pattern '^(?P<doc>.+)-\d+$' --write
+  ```
+  Verified against the local clone (dry-run, all three splits): derives 17/16/15 documents (dev/test/train) with no unmatched `sent_id`s.
+- **Needs manual input from maintainers:** `NOTE` and `annotated with partaxis` (sentence-level, corpus-specific) - need a name decision against the naming conventions before any rename can be scripted.
+- No action needed: `Lang` is already using the standard name.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

@@ -49,5 +49,19 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 | `text[gloss]`        | change to `text_glossing`                                                                                              |
 | `note`               | corpus-specific (sentence-level) - verify against metadata.html                                                        |
 
+### Implementation notes
+
+- **Quick search & replace:** the bracketed `text[...]` fields are literal fixed-string comment keys that `harmonize_metadata.py`'s key regex doesn't currently parse (it doesn't allow `[`/`]` in a key name), so plain `sed` is actually simpler here. Confirmed the exact key format in the local clone (`nhi_mesotree-ud-test.conllu`, e.g. `# text[spa] = `):
+  ```
+  sed -i '' \
+    -e 's/^# text\[spa\] = /# text_spa = /' \
+    -e 's/^# text\[orig\] = /# text_original = /' \
+    -e 's/^# text\[eng\] = /# text_eng = /' \
+    -e 's/^# text\[morf\] = /# text_morphemic = /' \
+    -e 's/^# text\[gloss\] = /# text_glossing = /' \
+    *.conllu
+  ```
+- **Needs manual input from maintainers:** which documents (if any) are spoken material (item 1, no signal found in the data at all); `timestamp`'s possible mapping to `sound_alignment_begin`/`sound_alignment_end`; and all remaining corpus-specific fields needing a naming decision (`user_id`, `finished`, `location`, `orthography`, `hash`, `alimg`, `locale`, `text[orig_omitlan]`, `text[orig_smt]`, `label`, `note`).
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

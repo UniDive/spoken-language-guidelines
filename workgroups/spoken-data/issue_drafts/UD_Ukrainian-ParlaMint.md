@@ -42,5 +42,16 @@ Yes - the entire corpus should be `# modality = spoken`. The README describes it
 | ------ | ---------------------------------------------------------------------------- |
 | `lang` | rename to `Lang` |
 
+### Implementation notes
+
+- **Quick search & replace:**
+  - Add corpus-wide `# modality = spoken` - since the whole corpus is spoken, this is a single-line insertion after every `# newdoc id` (or every `# sent_id` if `newdoc id` is still missing for the NSDC block, see below): `sed -i '' '/^# newdoc id/a\
+# modality = spoken' *.conllu`.
+  - Remove `text_en` / `phonetic_text` (placeholder `undefined undefined`). Checked the local clone: this occurs once per release split (dev/test/train = 3 total occurrences, not "exactly once" as the draft states - each is one line pair, e.g. `uk_parlamint-ud-dev.conllu:5432-5433`) - safe to delete both lines wherever they appear: `sed -i '' '/^# text_en = undefined undefined$/d;/^# phonetic_text = undefined undefined$/d' *.conllu`.
+  - `lang` → `Lang` (MISC key): note this key was **not found** in the currently-cloned copy of the corpus (`grep` for `lang=`/`Lang=` in MISC came up empty) - double-check it still exists in the maintainers' working copy before running `harmonize_metadata.py rename-misc UD_Ukrainian-ParlaMint --map lang=Lang --write`; it may already have been fixed upstream.
+- **Needs a small script:** derive `# newdoc id = NSDC_UA_28_Feb2014` for the 502 NSDC-sourced sentences. Note `harmonize_metadata.py derive-newdoc` isn't directly usable here since it skips any file that already contains *some* `# newdoc` comments (which this file does, from the ParlaMint-sourced sentences) - but since all 502 NSDC sentences collapse into a single document, this is actually simpler than the generic tool: insert one line before the first NSDC sentence: `sed -i '' '/^# sent_id = NSDC_UA_28_Feb2014-1$/i\
+# newdoc id = NSDC_UA_28_Feb2014' *.conllu` (confirmed only `train` contains the NSDC block).
+- **Needs manual input from maintainers:** `WARNING` (sentence-level, parser-diagnostic comments) - corpus-specific, needs a naming decision.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

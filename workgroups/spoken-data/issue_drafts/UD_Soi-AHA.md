@@ -25,5 +25,12 @@ The README states the treebank "is based on interviews with Soi speakers"; despi
 | `text_en` | change to `text_eng` (ISO 639-3) |
 | `text_fa` | change to `text_fas` (ISO 639-3) |
 
+### Implementation notes
+
+**Quick search & replace**
+- `text_en` → `text_eng`, `text_fa` → `text_fas`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map text_en=text_eng,text_fa=text_fas --write`
+- `# modality = spoken` corpus-wide (only 8 sentences, single small file): a one-line loop is simpler than a script - `sed -i '' '/^# sent_id/i\
+# modality = spoken' DIR/*.conllu` (insert once before every `# sent_id`), or equivalently `rename-comment`/`tag-modality` don't apply since there's no existing field to key off - this is just inserting a constant comment everywhere.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

@@ -27,5 +27,20 @@ The organization into documents is not clear from the data. Sentences come from 
 | `turn_time` | convert to milliseconds, split into `sound_alignment_begin` and `sound_alignment_end`; derive `duration`                             |
 | `time`      | convert to milliseconds, split into `sound_alignment_begin` and `sound_alignment_end` (same as `turn_time`, different format/source) |
 
+### Implementation notes
+
+- **Needs manual input from maintainers:** the document/recording structure question (item 1) - whether `orig_turn_id`'s numeric prefix corresponds to one recording, and how to resolve the one prefix (`3203`) that spans 36 `location` values. This has to be settled before any document-level `newdoc id` can be derived.
+- **Needs a small script:** `turn_time` and `time` aren't simple field renames - they need format parsing (verified in the local clone: `turn_time` values look like `01:25:28.640000-01:26:47.121270` or `01:17:53.37-01:18:00.72`, `time` uses `HH:MM:SS,mmm--> HH:MM:SS,mmm`), conversion to milliseconds, splitting into `sound_alignment_begin`/`sound_alignment_end`, and deriving `duration` as their difference. This isn't covered by `workgroups/spoken-data/scripts/harmonize_metadata.py`'s generic `split-field` (which does a plain separator split, not a time-parse + unit conversion + derived field) - it needs a small bespoke script, e.g.:
+  ```python
+  import re
+  def to_ms(hms):
+      h, m, s = re.split('[:,]', hms.replace('-->', ':'))[:3]
+      return (int(h)*3600 + int(m)*60 + float(s.replace(',', '.'))) * 1000
+  # for each `# turn_time = A-B` or `# time = A--> B` comment:
+  #   begin, end = to_ms(A), to_ms(B)
+  #   emit sound_alignment_begin=begin, sound_alignment_end=end, duration=end-begin
+  ```
+  Best deferred until the document-structure question above is resolved, since it may affect where `duration` ends up living.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

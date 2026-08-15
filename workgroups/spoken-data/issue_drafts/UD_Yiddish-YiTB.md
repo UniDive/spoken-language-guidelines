@@ -37,5 +37,18 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 | `text_en`  | rename to `text_eng` (ISO 639-3)                                |
 | `note`     | corpus-specific (sentence-level) - verify against metadata.html |
 
+### Implementation notes
+
+- **Quick search & replace:**
+  - `translit` → `text_translitteration`, `text_en` → `text_eng`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment UD_Yiddish-YiTB --map translit=text_translitteration,text_en=text_eng --write`.
+- **Needs a small script:** add `# modality = spoken` to the 165 sentences whose sentence-level `genre` contains "spoken" (`spoken, web` / `spoken, liturgical` - confirmed present, e.g. in `yi_yitb-ud-train.conllu`). This is sentence-level, not doc-level, so `harmonize_metadata.py tag-modality` (which keys off `newdoc id`) doesn't apply directly - needs a short variant:
+  ```python
+  # for each `# genre = ...` comment containing "spoken", insert
+  # `# modality = spoken` right after it
+  ```
+  or equivalently `sed -i '' '/^# genre = .*spoken/a\
+# modality = spoken' *.conllu`.
+- **Needs manual input from maintainers:** `rtl` and `source` (speaker/paragraph-level, corpus-specific) and `note` (sentence-level) all need a naming decision against the conventions.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

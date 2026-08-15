@@ -41,5 +41,13 @@ No `newdoc id` exists, but `sent_id` already encodes it: e.g. `ParisStories_2020
 | `AlignBegin` | rename to `WordAlignmentBegin` |
 | `AlignEnd`   | rename to `WordAlignmentEnd`   |
 
+### Implementation notes
+
+- **Quick search & replace:** `speaker`→`speaker_id`, `macrosyntax`→`text_macrosyntax`, `AlignBegin`→`WordAlignmentBegin`, `AlignEnd`→`WordAlignmentEnd`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map speaker=speaker_id,macrosyntax=text_macrosyntax --write` and `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-misc DIR --map AlignBegin=WordAlignmentBegin,AlignEnd=WordAlignmentEnd --write`.
+- **Needs a small script:**
+  - Deriving `# newdoc id` from `sent_id`: the simple `_<number>$` pattern misses ~40 sentences with `bis`-suffixed ids (e.g. `..._16bis`, `..._53bis`) - use `python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc DIR --pattern '^(?P<doc>.+)_\d+[a-z]*$' --write` instead, which matches all sent_ids cleanly (0 mismatches, verified against all three release files plus `not-to-release/original_split/`).
+  - Moving `sound_url` to document level: run `derive-newdoc` first (needed since no `newdoc id` currently exists), then `python3 workgroups/spoken-data/scripts/harmonize_metadata.py hoist-to-doc DIR --key sound_url --write`. Dry-run on `fr_parisstories-ud-train.conllu` after deriving newdoc ids: 30/34 documents hoist cleanly, but 4 are flagged NOT constant (multiple distinct `sound_url` values within the same document) - those 4 need a maintainer look before hoisting (the 27 sentences the draft already notes as missing `sound_url` may be part of this).
+- **Needs manual input from maintainers:** the `tags` field (1 occurrence, literal value `TODO`) - looks like a leftover placeholder rather than real data; could you confirm/remove it at the source?
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

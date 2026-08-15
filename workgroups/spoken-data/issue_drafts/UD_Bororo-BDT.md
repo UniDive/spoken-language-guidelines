@@ -25,5 +25,23 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 
 We found a data-quality issue while checking `newdoc id`: 4 of the 43 values are not real identifiers - they're leaked local Windows file paths (e.g. `G:\Mi unidad\hiwi\tasks_materials\...\ipare_ereru_(...)-udpipe.txt`, with corrupted/mojibake characters in 2 of them). Two of these duplicate a document that also exists under a clean id (`ipare_ereru`, `oieigo_de_danca_2`) - could you confirm whether the same document is present twice under two different ids, and clean up the leaked file paths?
 
+### Implementation notes
+
+**Quick search & replace**
+- None - all items here are inferences from document naming or data-quality issues, not confirmed mappings.
+
+**Needs a small script**
+- Once the spoken/written split is confirmed (see below), tagging is a one-line run:
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py tag-modality DIR \
+      --spoken-if '(oieigo|coqueiro|historia_mitica_bor|rituais_bororo|bokodori_ecerae|juko_ro)' \
+      --written-if '.' --write
+  ```
+  Dry-running the "obvious" biblical-name pattern (`samuel|reis|esdras|oseias|genesis|levitico|daniel|novo_testamento`) against the real `train` split leaves several more `newdoc id`s unmatched that are *also* clearly biblical books (`naum_e_habacuc_2`, `ageu_2`, `baruc_2`, `jeremias_2`, `judite_e_ester_2`, `deuteronomio_2`, `jonas_2`) - a catch-all `--written-if '.'` (default-to-written) as above is safer than trying to enumerate every book name, but confirm with maintainers first since this is exactly the inference the draft flags as unconfirmed.
+
+**Needs manual input from maintainers**
+- Confirm the spoken/written split inferred from `newdoc id` naming (see above) before running `tag-modality --write`.
+- The leaked Windows file-path `newdoc id`s (4 of 43, e.g. `G:\Mi unidad\hiwi\...\ipare_ereru_(...)-udpipe.txt`) and the 2 duplicate documents they may represent (`ipare_ereru`, `oieigo_de_danca_2`) need maintainer confirmation before any cleanup script touches them - deleting/merging documents isn't something to automate without sign-off. There's also one further unmatched, non-obviously-biblical id (`boe_readodae`) worth asking about explicitly.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

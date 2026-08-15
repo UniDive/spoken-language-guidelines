@@ -22,5 +22,7 @@ This treebank mixes spoken and written material (`genre` includes `spoken` along
 
 No further outstanding metadata items were flagged for this treebank in the latest review.
 
----
-This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.
+### Implementation notes
+
+**Needs manual input from maintainers**
+- Modality: no `newdoc id` or genre-like comment metadata found at all, so no automatic detection was possible - need pointers to which sentences/documents are spoken vs. written (`genre = spoken` is only a value in the current genre field, not a per-sentence/document marker). Once that pointer exists, tagging is a one-line `harmonize_metadata.py tag-modality` or `rename-comment` run, but there's nothing to script against yet.

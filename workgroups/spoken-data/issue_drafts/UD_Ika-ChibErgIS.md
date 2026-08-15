@@ -31,5 +31,15 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 | `AlignBegin` | rename to `WordAlignmentBegin` |
 | `AlignEnd`   | rename to `WordAlignmentEnd`   |
 
----
-This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.
+### Implementation notes
+
+**Quick search & replace**
+- `morphemic_text` → `annot_morph` (`# morphemic_text =` → `# annot_morph =`).
+- `AlignBegin` → `WordAlignmentBegin`, `AlignEnd` → `WordAlignmentEnd` (token-level MISC keys):
+  `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-misc <path> --map AlignBegin=WordAlignmentBegin,AlignEnd=WordAlignmentEnd --write`
+
+**Needs a small script**
+- None outstanding - `sound_url` is already present under the standard name in `arh_chibergis-ud-test.conllu` (verified), so item 1 needs no change once confirmed (see below).
+
+**Needs manual input from maintainers**
+- `sound_url`: the draft flags this as "possibly rename to `sound_url`" - the field is already named `sound_url` in the released data, so this looks like a leftover from an earlier check; please just confirm no change is actually needed here.

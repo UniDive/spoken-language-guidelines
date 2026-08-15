@@ -17,5 +17,16 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 
 **Suggestion:** Could `# modality` (or `# genre`) be added per document/sentence, so the spoken portion can be identified programmatically?
 
+### Implementation notes
+
+**Quick search & replace**
+- None.
+
+**Needs a small script**
+- None currently possible - there's no usable signal (`newdoc id` doesn't exist and `sent_id` is a bare sequential counter) to key a script off, so no automated modality/genre tagging can be built until the maintainers can point at a source for this information.
+
+**Needs manual input from maintainers**
+- Whether `# modality` or `# genre` can be added at all, and if so, from what source (e.g. is there an internal mapping from sentence to original text/document that isn't currently exported to the `.conllu`?). This is the entire blocker here.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

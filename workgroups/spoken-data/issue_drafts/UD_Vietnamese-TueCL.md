@@ -14,5 +14,9 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 _No outstanding metadata items were flagged for this treebank in the latest review._
 
+### Implementation notes
+
+None - no outstanding metadata items, nothing to action.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

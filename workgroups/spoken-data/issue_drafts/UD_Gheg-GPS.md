@@ -37,5 +37,14 @@ Location and generation are encoded in the `sent_id`/proposed `newdoc id` prefix
 | ------ | ---------------- |
 | `Lang` | rename to `Lang` |
 
+### Implementation notes
+
+- **Quick search & replace:** `Lang`→`Lang` is already the standard name, no action needed (kept in the table only for completeness).
+- **Needs a small script:**
+  - Deriving `# newdoc id` from `sent_id`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc DIR --pattern '^(?P<doc>.+)_\d+$' --write` - verified against `aln_gps-ud-test.conllu`, produces exactly 64 documents, matching the draft's "64 recordings" figure.
+  - Adding `# genre = narrative` at document level once `newdoc id` exists: this is a constant value for every document, so simplest as a one-line loop inserting the comment after each `# newdoc id` line (not a `harmonize_metadata.py` op today - `tag-modality`-style logic but with a fixed value rather than a regex-conditioned one; a ~10-line variant would do it).
+  - `speaker_residence` from the `P`/`Z` sent_id component: once newdoc ids exist, this is a `derive-newdoc`-style regex extraction (`P` → `Prishtina`, `Z` → `Zurich`) - straightforward but not yet covered by an existing subcommand.
+- **Needs manual input from maintainers:** whether per-speaker age is available (would enable `speaker_age`) or only the generational bucket (`speaker_generation` ∈ `G1`/`G2`/`G3`) - the latter is derivable by script from the `newdoc id`/`sent_id` prefix once confirmed as the right field to add.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

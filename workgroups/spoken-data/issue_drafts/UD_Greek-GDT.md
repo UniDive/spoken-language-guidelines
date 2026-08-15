@@ -30,5 +30,11 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 | —           | interaction-parameter classification for `ep` documents (please confirm): `degree_of_spontaneity = planned`, `number_of_participants = monologic`, `context = professional`, `setting = broadcast`, `symmetry = symmetric`                                                |
 | —           | interaction-parameter classification for `ert`/`ertonline` documents (please confirm): `degree_of_spontaneity = planned`, `number_of_participants = monologic` (unless interview segments are present), `context = public`, `setting = broadcast`, `symmetry = symmetric` |
 
+### Implementation notes
+
+- **Needs a small script:** the modality tag is mechanical and verified against the real corpus (all three release files): `python3 workgroups/spoken-data/scripts/harmonize_metadata.py tag-modality DIR --spoken-if '\-(ep|ert|ertonline)\-' --written-if '.*' --write` gives 68 spoken documents (11 dev + 12 test + 45 train) - matching the draft's "45 `ep` + 23 `ert`/`ertonline` = 68" total exactly. The `# genre = speech` (on `ep` docs) and `# genre = news` (on `ert`/`ertonline` docs) additions follow the same pattern but with a fixed value instead of `spoken`/`written` - not yet a dedicated subcommand, but a ~10-line variant of `tag-modality` using the same regex groups would cover it.
+- **Quick search & replace:** `newdoc id`→tag `doc_id` is a tagset addition, not a text rename - handle via the repo's tagset file rather than `rename-comment`.
+- **Needs manual input from maintainers:** the proposed interaction-parameter values for `ep` and `ert`/`ertonline` documents (`degree_of_spontaneity`, `number_of_participants`, `context`, `setting`, `symmetry`) are genre-level defaults, not verified per document - need sign-off before scripting the inserts.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

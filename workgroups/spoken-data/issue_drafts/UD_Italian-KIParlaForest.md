@@ -31,5 +31,17 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 | `Begin` | rename to `WordAlignmentBegin` |
 | `End`   | rename to `WordAlignmentEnd`   |
 
----
-This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.
+### Implementation notes
+
+**Quick search & replace**
+- `conversation_id` → `doc_id` (`# conversation_id =` → `# doc_id =`).
+- `jefferson_text` → `text_transcr` (`# jefferson_text =` → `# text_transcr =`).
+- `Begin` → `WordAlignmentBegin`, `End` → `WordAlignmentEnd` (token-level MISC keys):
+  `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-misc <path> --map Begin=WordAlignmentBegin,End=WordAlignmentEnd --write`
+  (verified against `it_kiparlaforest-ud-test.conllu` - both keys are present in MISC and rename cleanly.)
+
+**Needs a small script**
+- None - all three items above are straightforward renames the script above already handles; no structural change needed.
+
+**Needs manual input from maintainers**
+- None outstanding.

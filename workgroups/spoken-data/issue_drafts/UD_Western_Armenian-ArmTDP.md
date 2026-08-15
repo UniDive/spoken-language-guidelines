@@ -34,5 +34,11 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 | ---------- | --------------------------------------------------------------- |
 | `translit` | corpus-specific (sentence-level) - verify against metadata.html |
 
+### Implementation notes
+
+- **Needs a small script:** add `# modality = spoken` to the 2 documents whose `newdoc id` starts with `spoken-` (`spoken-002R` and one other). Intended one-liner is `harmonize_metadata.py tag-modality UD_Western_Armenian-ArmTDP --spoken-if '^spoken-' --write`, but note the shared script's `COMMENT_RE` currently only matches single-word comment keys (`[A-Za-z_][A-Za-z0-9_]*`), so it silently fails to recognize `# newdoc id = ...` (a two-word key) - confirmed via dry-run against the local clone (0 matches reported, when there should be 2). Until that regex is widened to allow spaces in the key, use a plain search & replace instead: `sed -i '' '/^# newdoc id = spoken-/a\
+# modality = spoken' *.conllu`.
+- **Needs manual input from maintainers:** `translit` - corpus-specific field, needs a naming decision. `doc_title` needs no change (kept as corpus-specific, distinct from `newdoc id`).
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

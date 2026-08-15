@@ -20,5 +20,9 @@ The treebank is listed as `only spoken`, but the README says otherwise: sentence
 
 **Suggestion:** Could you point us to which sentences are spoken vs. written, so `type`/`genre` and per-sentence `# modality` can be corrected?
 
+### Implementation notes
+
+- **Needs manual input from maintainers:** no field in the data distinguishes the three source mixtures (Telugu UD / grammar book / MASSIVE-SLURP), so nothing here can be scripted until the maintainers point us to a distinguishing signal (e.g. a `sent_id` range per source, or an external source list). Once that mapping is known, tagging `# modality` per sentence is a one-line job with `harmonize_metadata.py tag-modality` or `rename-comment`.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

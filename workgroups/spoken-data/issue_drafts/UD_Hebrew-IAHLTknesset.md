@@ -34,5 +34,15 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 | --------- | ----------------------- |
 | `speaker` | change to `speaker_id` |
 
----
-This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.
+### Implementation notes
+
+**Quick search & replace**
+- `speaker` → `speaker_id` (`# speaker =` → `# speaker_id =`).
+
+**Needs a small script**
+- Once the modality scope is confirmed (see below), tagging is a one-line run:
+  `python3 workgroups/spoken-data/scripts/harmonize_metadata.py tag-modality <path> --spoken-if '^\d+_pt[vm]_'`
+  (or `--spoken-if '^\d+_ptv_'` only, if `ptm` minutes are excluded).
+
+**Needs manual input from maintainers**
+- Whole-corpus `# modality = spoken` vs. excluding `ptm` (minutes, possibly edited/summarized) - this decides the exact regex for the script above.

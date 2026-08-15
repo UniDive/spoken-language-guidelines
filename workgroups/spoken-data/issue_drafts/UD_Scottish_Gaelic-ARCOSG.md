@@ -40,5 +40,18 @@ Please confirm these against your own understanding - especially `number_of_part
 | --------- | ---------------------- |
 | `speaker` | change to `speaker_id` |
 
+### Implementation notes
+
+**Quick search & replace**
+- `speaker` → `speaker_id`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map speaker=speaker_id --write` (values like `[1]`, `[2]` confirmed in the real data - purely a key rename, no reformatting needed).
+
+**Needs a small script**
+- `# modality` tagging from `newdoc id` prefix (`# newdoc id` already exists in the released files, e.g. `c02`, `f01`): `python3 workgroups/spoken-data/scripts/harmonize_metadata.py tag-modality DIR --spoken-if '^(c|s|n|ns|p)[0-9]' --written-if '^(f|fp|pw)[0-9]' --write` — note `n` vs `ns` and `f` vs `fp` need the digit boundary in the regex (as above) so `n02` doesn't also match the `ns` written/spoken split incorrectly; double-check against the full prefix list before running with `--write`.
+- The per-subcorpus `# genre` and interaction-parameter block (table above) is a fixed lookup by `newdoc id` prefix - once confirmed, a ~20-line script keyed on the same prefix regexes as `tag-modality` can insert all of `genre`, `degree_of_spontaneity`, `number_of_participants`, `context`, `setting`, `symmetry` in one pass (not covered by the current subcommands, which only handle a single field at a time).
+
+**Needs manual input from maintainers**
+- `number_of_participants`/`symmetry` for `p` documents specifically (mixed two-person interviews and one multi-party programme, `p06`) - needs per-document review, not a blanket prefix rule.
+- Confirm the full genre/interaction-parameter table before running the script above.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

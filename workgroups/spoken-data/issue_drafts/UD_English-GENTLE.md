@@ -43,5 +43,11 @@ Both are live esports commentary videos - the other 6 `meta::genre` values (`poe
 |---|---|
 | `meta` | corpus-specific (sentence-level) - verify against metadata.html |
 
+### Implementation notes
+
+- **Quick search & replace:** `newdoc id`→tag `doc_id`, `meta::genre`→tag `genre`, `speaker`→tag `speaker_id` are plain renames: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map meta::genre=genre,speaker=speaker_id --write` (the `newdoc id`→`doc_id` "tag" is a UD tagset addition, not a comment rename - handle via the repo's tagset file).
+- **Needs a small script:** the modality tag is mechanical once the genre→modality mapping is fixed - verified against the real corpus (`en_gentle-ud-test.conllu`): `python3 workgroups/spoken-data/scripts/harmonize_metadata.py tag-modality DIR --spoken-if '_esports_' --written-if '.*' --write` correctly isolates `GENTLE_esports_fifa`/`GENTLE_esports_fortnite` as the only 2 matches out of 26 documents, matching the draft's finding exactly.
+- **Needs manual input from maintainers:** the `meta` sentence-level field is corpus-specific with no proposed name yet - needs a maintainer decision on what it holds before it can be classified or scripted.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

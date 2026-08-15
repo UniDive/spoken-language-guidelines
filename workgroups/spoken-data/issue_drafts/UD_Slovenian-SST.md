@@ -24,5 +24,10 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 | ------------ | ---------- |
 | `speaker_id` | OK         |
 
+### Implementation notes
+
+**Needs manual input from maintainers**
+- `sound_url` → document level: dry-run of `python3 workgroups/spoken-data/scripts/harmonize_metadata.py hoist-to-doc DIR --key sound_url` against the real `train` file shows it's **not** safe to hoist as-is - only 34 of 277 documents have a constant `sound_url` across all their sentences; the other 243 vary sentence-to-sentence (each sentence likely points at its own audio clip within the recording, not one file per document). This confirms the draft's "possibly" hedge - please clarify whether `sound_url` is meant to be per-sentence (in which case no change is needed, it's already correctly scoped) or whether there's a separate constant per-document URL to add instead. No script change is safe to propose until that's settled.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

@@ -37,5 +37,14 @@ The sentences appear to be shuffled: consecutive sentences jump between corpora 
 |---|---|
 | `s_24_sent_id` | present on ~27% of sentences (12984/48183); the literal `24` looks like an unsubstituted template value - could you clarify what this represents? |
 
+### Implementation notes
+
+- **Quick search & replace:** `child_name`→`speaker_id`, `child_age`→`speaker_age`, `child_gender`→`speaker_gender`. Once confirmed: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map child_name=speaker_id,child_age=speaker_age,child_gender=speaker_gender --write`.
+- **Needs a small (bespoke) script:** recomposing `# newdoc id` from `corpus_name` requires sorting sentences by `original_sent_id` within each `corpus_name` group and re-emitting the file in that order (not a mechanical rename/split - `harmonize_metadata.py` doesn't reorder sentences). A ~20-line script reading the file, grouping by `corpus_name`, sorting each group by `original_sent_id`, and rewriting with one `# newdoc id = <corpus_name>` per group would do it - but see the manual item below first, since the grouping key may need to change.
+- **Needs manual input from maintainers:**
+  - Whether "document" should mean the whole `corpus_name` study (current proposal) or one `(corpus_name, child_name, child_age)` recording session - this decides the grouping key for the recompose script above, so it should be resolved before writing it.
+  - The single corrupted `# chi l d = 37.29...` line (1/48183 sentences, `en_childes-ud-train.conllu`) - looks like a broken `child_age` export; needs a source-side check/regeneration rather than a guessed fix on our end.
+  - The `s_24_sent_id` field (~27% of sentences) - unclear what it represents; can't classify or script anything until clarified.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

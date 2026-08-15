@@ -30,5 +30,27 @@ No `# newdoc id` exists, but document boundaries are fully recoverable: per the 
 | `text[phon]` | rename to `text_phonetic` |
 | `timestamp` | change to `sound_alignment_begin`, `sound_alignment_end` and `duration` |
 
+### Implementation notes
+
+**Quick search & replace**
+- `text[eng]` → `text_eng`
+- `text[eng']` → `text_eng_literal`
+- `text[rus]` → `text_rus`
+- `text[phon]` → `text_phonetic`
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR \
+      --map "text[eng]=text_eng,text[eng']=text_eng_literal,text[rus]=text_rus,text[phon]=text_phonetic" --write
+  ```
+  (Our `rename-comment` matches on the comment key as-is, so the bracketed names work as literal keys here - no regex needed.)
+
+**Needs a small script**
+- Derive `# newdoc id` from the `sent_id` prefix before `:` (confirmed by dry-run: exactly 65 distinct documents, matching the draft's count):
+  ```
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc DIR --pattern '^(?P<doc>.+):\d+$' --write
+  ```
+
+**Needs manual input from maintainers**
+- `timestamp` currently holds a single value per sentence (e.g. `00:02:14`), not a begin/end pair - the draft's suggestion to "change to `sound_alignment_begin`, `sound_alignment_end` and `duration`" doesn't apply mechanically. Confirm whether this is a sentence-start marker only (in which case it likely just renames to `sound_alignment_begin`) or whether an end time exists elsewhere before deciding how to script it.
+
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.
