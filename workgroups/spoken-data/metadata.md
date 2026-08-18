@@ -64,9 +64,9 @@ Below, we list the most recurrent speech-related metadata categories occurring i
 | `WordAlignmentEnd` | End timestamp of the token (ms) | `WordAlignmentEnd=14560` |
 
 
-## Taxonomy for describing speech events
+## (Optional) taxonomy for describing speech events
 
-Spoken treebanks often describe speech events by the type of interaction recorded. To make such descriptions more comparable across treebanks, we distinguish two complementary approaches: an open, descriptive **genre** label that treebanks define flexibly, and an optional, fixed set of **interaction parameters** capturing the main dimensions along which speech events vary.
+Spoken treebanks often describe speech events by the type of interaction recorded. To make such descriptions more comparable across treebanks, we propose to distinguish two complementary approaches: an open, descriptive **# genre** label that treebanks define flexibly, and an optional, fixed set of labels describing **interaction parameters** capturing the main dimensions along which speech events vary.
 
 ### Genre
 
@@ -74,7 +74,7 @@ Genre is encoded as `genre`, an open descriptive label that treebanks define fle
 
 ### Interaction parameters (optional add-on)
 
-In addition to the open genre label, speech events may be described with a fixed set of interaction parameters. This optional, more fine-grained layer captures the key dimensions of variation in spoken communication, drawing on controlled value sets so that descriptions stay comparable across treebanks. Each parameter is drawn from a fixed value set:
+In addition to the open-class `genre` label, speech events may be described with a fixed set of interaction parameters. This optional, more fine-grained layer captures the key dimensions of variation in spoken communication, drawing on controlled value sets so that descriptions stay comparable across treebanks. Each parameter is drawn from a fixed value set:
 
 | Parameter | Values | Meaning (in order) |
 |---|---|---|
