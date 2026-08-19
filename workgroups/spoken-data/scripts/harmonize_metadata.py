@@ -9,18 +9,19 @@ Covers the three kinds of changes that recur across nearly every issue draft:
                    paragraph-level) to a new key name.
   rename-misc      rename a token-level MISC key (10th column, `Key=Value`
                    pairs separated by `|`).
-  hoist-to-doc     move a sentence-level comment up to the `# newdoc id`
+  hoist-to-doc     move a sentence-level comment up to the `# document_id`
                    comment of its document, IF the value is constant
                    throughout the document (aborts with a report otherwise -
                    this is the check maintainers were asked to "confirm").
   split-field      split a composite comment value on a separator into
                    several new comments.
   tag-modality     add `# modality = spoken|written` to each document's
-                   `# newdoc id` line, based on a regex match against the
-                   `newdoc id` value.
-  derive-newdoc    insert a `# newdoc id = ...` comment derived from the
+                   `# document_id` line, based on a regex match against the
+                   `document_id` value.
+  derive-document-id
+                   insert a `# document_id = ...` comment derived from the
                    `sent_id` of each block's first sentence, when no
-                   `newdoc id` exists at all.
+                   `document_id` exists at all.
 
 Every operation is available as `--dry-run` (default) which only prints a
 diff-like report; pass `--write` to edit the files in place. Run on one file
@@ -46,12 +47,12 @@ Split a composite field like `fr/female/sp0013f`:
     python harmonize_metadata.py split-field DIR --key speaker --sep / \
         --into speaker_variety,speaker_gender,speaker_id --write
 
-Tag modality from a newdoc-id pattern:
+Tag modality from a document_id pattern:
     python harmonize_metadata.py tag-modality DIR \
         --spoken-if '^(conversation|film)' --written-if '^(book|grammar)' --write
 
-Derive newdoc id from sent_id prefix (e.g. Rhap_D0001-1 -> Rhap_D0001):
-    python harmonize_metadata.py derive-newdoc DIR --pattern '^(?P<doc>.+)-\\d+$' --write
+Derive document_id from sent_id prefix (e.g. Rhap_D0001-1 -> Rhap_D0001):
+    python harmonize_metadata.py derive-document-id DIR --pattern '^(?P<doc>.+)-\\d+$' --write
 """
 from __future__ import annotations
 
@@ -70,9 +71,9 @@ def find_conllu_files(path: Path) -> list[Path]:
 
 
 def iter_docs(lines: list[str]):
-    """Yield (start, end) index ranges (half-open) for each `newdoc`-delimited
-    block. If there is no `newdoc` comment at all, the whole file is one doc."""
-    starts = [i for i, l in enumerate(lines) if l.startswith("# newdoc")]
+    """Yield (start, end) index ranges (half-open) for each `document_id`-delimited
+    block. If there is no `document_id` comment at all, the whole file is one doc."""
+    starts = [i for i, l in enumerate(lines) if l.startswith("# document_id")]
     if not starts:
         yield 0, len(lines)
         return
@@ -178,8 +179,8 @@ def cmd_hoist_to_doc(args):
             for i in sorted(occurrences, reverse=True):
                 del lines[i]
                 de -= 1
-            # insert once, right after the newdoc comment (or at doc start)
-            insert_at = ds + 1 if lines[ds].startswith("# newdoc") else ds
+            # insert once, right after the document_id comment (or at doc start)
+            insert_at = ds + 1 if lines[ds].startswith("# document_id") else ds
             lines.insert(insert_at, f"# {key} = {value}\n")
             changed = True
             report(f"{path}: hoisted `{key} = {value}` to document level (doc at line {ds+1})")
@@ -211,16 +212,16 @@ def cmd_split_field(args):
         write_back(path, lines, args.write, changed)
 
 
-def cmd_derive_newdoc_from_field(args):
-    """Insert `# newdoc id` derived from another comment field that is
+def cmd_derive_document_id_from_field(args):
+    """Insert `# document_id` derived from another comment field that is
     already repeated per-sentence (e.g. `text_name`, `sound_url`), one
     insertion per distinct value, at the first sentence carrying it."""
     key = args.key
     suffix = args.strip_suffix
     for path in find_conllu_files(Path(args.path)):
         lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
-        if any(l.startswith("# newdoc") for l in lines):
-            continue  # already has newdoc ids, nothing to derive
+        if any(l.startswith("# document_id") for l in lines):
+            continue  # already has document_ids, nothing to derive
         changed = False
         seen = set()
         offset = 0
@@ -233,11 +234,11 @@ def cmd_derive_newdoc_from_field(args):
             if doc_id in seen:
                 continue
             seen.add(doc_id)
-            lines.insert(idx, f"# newdoc id = {doc_id}\n")
+            lines.insert(idx, f"# document_id = {doc_id}\n")
             offset += 1
             changed = True
         if changed:
-            report(f"{path}: derived {len(seen)} newdoc id(s) from `{key}`")
+            report(f"{path}: derived {len(seen)} document_id(s) from `{key}`")
         write_back(path, lines, args.write, changed)
 
 
@@ -249,7 +250,7 @@ def cmd_tag_modality(args):
         changed = False
         for i, line in enumerate(lines):
             m = COMMENT_RE.match(line.strip("\n"))
-            if not m or m.group(1) != "newdoc id":
+            if not m or m.group(1) != "document_id":
                 continue
             value = m.group(2)
             modality = None
@@ -258,7 +259,7 @@ def cmd_tag_modality(args):
             elif written_re and written_re.search(value):
                 modality = "written"
             if modality is None:
-                report(f"{path}: no modality match for newdoc id `{value}` - needs manual tagging")
+                report(f"{path}: no modality match for document_id `{value}` - needs manual tagging")
                 continue
             lines.insert(i + 1, f"# modality = {modality}\n")
             changed = True
@@ -267,12 +268,12 @@ def cmd_tag_modality(args):
         write_back(path, lines, args.write, changed)
 
 
-def cmd_derive_newdoc(args):
+def cmd_derive_document_id(args):
     pattern = re.compile(args.pattern)
     for path in find_conllu_files(Path(args.path)):
         lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
-        if any(l.startswith("# newdoc") for l in lines):
-            continue  # already has newdoc ids, nothing to derive
+        if any(l.startswith("# document_id") for l in lines):
+            continue  # already has document_ids, nothing to derive
         changed = False
         seen_docs = set()
         offset = 0
@@ -291,11 +292,11 @@ def cmd_derive_newdoc(args):
             if doc_id in seen_docs:
                 continue
             seen_docs.add(doc_id)
-            lines.insert(idx, f"# newdoc id = {doc_id}\n")
+            lines.insert(idx, f"# document_id = {doc_id}\n")
             offset += 1
             changed = True
         if changed:
-            report(f"{path}: derived {len(seen_docs)} newdoc id(s) from sent_id")
+            report(f"{path}: derived {len(seen_docs)} document_id(s) from sent_id")
         write_back(path, lines, args.write, changed)
 
 
@@ -329,22 +330,22 @@ def main():
     sp.add_argument("--into", required=True, help="new_key1,new_key2,...")
     sp.set_defaults(func=cmd_split_field)
 
-    sp = sub.add_parser("derive-newdoc-from-field", help="insert `# newdoc id` derived from another repeated comment field")
+    sp = sub.add_parser("derive-document-id-from-field", help="insert `# document_id` derived from another repeated comment field")
     common(sp)
-    sp.add_argument("--key", required=True, help="the repeated comment field to derive newdoc id from, e.g. sound_url")
+    sp.add_argument("--key", required=True, help="the repeated comment field to derive document_id from, e.g. sound_url")
     sp.add_argument("--strip-suffix", default="", help="suffix to strip from the value, e.g. .WAV or .eaf")
-    sp.set_defaults(func=cmd_derive_newdoc_from_field)
+    sp.set_defaults(func=cmd_derive_document_id_from_field)
 
-    sp = sub.add_parser("tag-modality", help="add `# modality = spoken|written` from a newdoc-id regex")
+    sp = sub.add_parser("tag-modality", help="add `# modality = spoken|written` from a document_id regex")
     common(sp)
-    sp.add_argument("--spoken-if", help="regex matched against newdoc id -> modality=spoken")
-    sp.add_argument("--written-if", help="regex matched against newdoc id -> modality=written")
+    sp.add_argument("--spoken-if", help="regex matched against document_id -> modality=spoken")
+    sp.add_argument("--written-if", help="regex matched against document_id -> modality=written")
     sp.set_defaults(func=cmd_tag_modality)
 
-    sp = sub.add_parser("derive-newdoc", help="insert `# newdoc id` derived from sent_id prefix")
+    sp = sub.add_parser("derive-document-id", help="insert `# document_id` derived from sent_id prefix")
     common(sp)
     sp.add_argument("--pattern", required=True, help="regex with a (?P<doc>...) group, matched against sent_id")
-    sp.set_defaults(func=cmd_derive_newdoc)
+    sp.set_defaults(func=cmd_derive_document_id)
 
     args = p.parse_args()
     args.func(args)

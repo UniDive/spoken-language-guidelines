@@ -38,7 +38,7 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 ### Implementation notes
 
 **Needs a small script**
-- Tag `# modality = spoken` on sentences whose `genre` starts with `spoken`: `genre` is sentence-level (not doc-level), so this isn't the `tag-modality` subcommand (which keys off `newdoc id`) - it needs a short script that reads the `genre` comment per sentence and inserts `# modality = spoken`/`written` next to it directly (adapting the `tag-modality` logic to match on `genre` instead of `newdoc id`, ~15 lines).
+- Tag `# modality = spoken` on sentences whose `genre` starts with `spoken`: `genre` is sentence-level (not doc-level), so this isn't the `tag-modality` subcommand (which keys off `document_id`) - it needs a short script that reads the `genre` comment per sentence and inserts `# modality = spoken`/`written` next to it directly (adapting the `tag-modality` logic to match on `genre` instead of `document_id`, ~15 lines).
 - Splitting `genre` into `# genre` + `# degree_of_spontaneity`/`# setting`: once the three-way mapping is confirmed (see below), this is a per-value lookup-and-rewrite (not a generic separator split, since `spoken (media)`'s target genre value is still open - "please confirm"), so also needs a short custom script rather than `split-field`.
 
 **Needs manual input from maintainers**

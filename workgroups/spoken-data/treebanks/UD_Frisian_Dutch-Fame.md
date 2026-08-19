@@ -24,7 +24,7 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** N/A
+**Is spoken part clearly identifiable?** N/A - spoken data only
 
 ## Metadata review
 
@@ -56,4 +56,4 @@ udver: '2'
 
 | Field       | Advice                                                                                                                                 |
 | ----------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `newdoc id` | OK - already standard, and already one-per-sentence here (400 documents, each a single standalone utterance - no recomposition needed) |
+| `document_id` | OK - already one-per-sentence here (400 documents, each a single standalone utterance - no recomposition needed) |

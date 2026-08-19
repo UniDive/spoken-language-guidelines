@@ -24,13 +24,13 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** Yes - via the `newdoc id` prefix, which already encodes genre (`genre-code`, e.g. `spoken-002R`). Full prefix distribution: news (38), fiction (16), blog (15), nonfiction (9), wiki (7), reviews (3), web (2), spoken (2), social (1).
+**Is spoken part clearly identifiable?** Yes - via the `document_id` prefix, which already encodes genre (`genre-code`, e.g. `spoken-002R`). Full prefix distribution: news (38), fiction (16), blog (15), nonfiction (9), wiki (7), reviews (3), web (2), spoken (2), social (1).
 
 ## Metadata review
 
 ### modality metadata
 
-_(none found)_ - add `# modality = spoken` to the 2 documents whose `newdoc id` starts with `spoken-`.
+_(none found)_ - add `# modality = spoken` to the 2 documents whose `document_id` starts with `spoken-`.
 
 ### additional fields found by clone verification (2026-07-30)
 

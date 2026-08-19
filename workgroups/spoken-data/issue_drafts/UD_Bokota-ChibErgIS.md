@@ -16,8 +16,8 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 | Field | Suggestion |
 |---|---|
-| — | no `newdoc id` exists at all (0 occurrences across 406 sentences) - but the 54 distinct `sound_url` values (e.g. `SAB-TXT-AN-00000-01.WAV`) already identify document boundaries; could `# newdoc id` be derived from the recording basename and set once per document? |
-| `sound_url` | currently repeated on every sentence - move to document level once `newdoc id` exists |
+| — | no `document_id` exists at all (0 occurrences across 406 sentences) - but the 54 distinct `sound_url` values (e.g. `SAB-TXT-AN-00000-01.WAV`) already identify document boundaries; could `# document_id` be derived from the recording basename and set once per document? |
+| `sound_url` | currently repeated on every sentence - move to document level once `document_id` exists |
 
 ### 2. Sentence-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#sentence-level))
 
@@ -48,13 +48,13 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
   ```
 
 **Needs a small script**
-- Derive `# newdoc id` from `sound_url` (confirmed by dry-run: 54 distinct recordings, e.g. `SAB-TXT-AN-00000-01.WAV`), then hoist `sound_url` to document level:
+- Derive `# document_id` from `sound_url` (confirmed by dry-run: 54 distinct recordings, e.g. `SAB-TXT-AN-00000-01.WAV`), then hoist `sound_url` to document level:
   ```
-  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc-from-field DIR \
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-document-id-from-field DIR \
       --key sound_url --strip-suffix .WAV --write
   python3 workgroups/spoken-data/scripts/harmonize_metadata.py hoist-to-doc DIR --key sound_url --write
   ```
-  Caveat: `sound_url` is a full URL (e.g. `https://corporan.huma-num.fr/Archives/media/SAB-TXT-AN-00000-01.WAV/WAV/SAB-TXT-AN-00000-01.WAV`), so the derived `newdoc id` would be the whole URL minus `.WAV`, not a clean basename - confirm the desired id format with maintainers first.
+  Caveat: `sound_url` is a full URL (e.g. `https://corporan.huma-num.fr/Archives/media/SAB-TXT-AN-00000-01.WAV/WAV/SAB-TXT-AN-00000-01.WAV`), so the derived `document_id` would be the whole URL minus `.WAV`, not a clean basename - confirm the desired id format with maintainers first.
 - `sent_timecode` splits cleanly into two comma-space-separated millisecond values in this treebank (dry-run against the real clone found no malformed values):
   ```
   python3 workgroups/spoken-data/scripts/harmonize_metadata.py split-field DIR \
@@ -63,7 +63,7 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
   `duration` isn't stored and needs a follow-up computed field (`end - begin`).
 
 **Needs manual input from maintainers**
-- Confirm the newdoc-id basename format before running the derive/hoist scripts for real.
+- Confirm the document_id basename format before running the derive/hoist scripts for real.
 
 ---
 This issue was prepared as part of the UniDive WG1 T1.5 spoken language guidelines effort. Happy to help implement these changes ourselves if that's easier than doing it on your end - just let us know.

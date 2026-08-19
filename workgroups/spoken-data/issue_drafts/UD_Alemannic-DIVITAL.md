@@ -38,7 +38,7 @@ The spoken portion of this treebank is clearly identifiable via the `form` field
   ```
 
 **Needs a small script**
-- Tagging `# modality` from `# form`: confirmed via dry-run that `form` values are `dialog` (18 docs) / `mixed (form)` (38) / `prose` (40) / `verse` (1). Our shared script's `tag-modality` command only matches against `newdoc id`, not an arbitrary field, so this needs a short bespoke pass (~10 lines) that reads `# form` per document and inserts `# modality = spoken` for `dialog`, `# modality = written` otherwise. Happy to extend `harmonize_metadata.py` with a `--from-field` option if useful.
+- Tagging `# modality` from `# form`: confirmed via dry-run that `form` values are `dialog` (18 docs) / `mixed (form)` (38) / `prose` (40) / `verse` (1). Our shared script's `tag-modality` command only matches against `document_id`, not an arbitrary field, so this needs a short bespoke pass (~10 lines) that reads `# form` per document and inserts `# modality = spoken` for `dialog`, `# modality = written` otherwise. Happy to extend `harmonize_metadata.py` with a `--from-field` option if useful.
 
 **Needs manual input from maintainers**
 - Confirm `language_variety` naming/placement against metadata.html (flagged as "verify" in the draft).

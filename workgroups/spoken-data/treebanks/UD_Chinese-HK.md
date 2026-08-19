@@ -24,7 +24,7 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** N/A
+**Is spoken part clearly identifiable?** N/A - spoken data only
 
 
 ## Metadata review
@@ -33,7 +33,7 @@ udver: '2'
 
 Parallel treebank with [UD_Cantonese-HK](UD_Cantonese-HK.html), linked via `parallel_id` (e.g. `hk/1`). Per the README, the 1004 sentences come from **4 distinct sources**, documented only in prose in the README, not in the `.conllu`:
 
-| `sent_id` range | Proposed `newdoc id` | Title |
+| `sent_id` range | Proposed `document_id` | Title |
 | --- | --- | --- |
 | 1-410 | `missing_days` | Missing days / 小時光 ([film](https://www.youtube.com/watch?v=1qSMiw0vhzU)) |
 | 411-547 | `tempo_in_temple` | Tempo in Temple / 廟眾樂樂 ([film](https://www.youtube.com/watch?v=8e8Lqd6grTE)) |
@@ -52,7 +52,7 @@ _(none found)_ - no speaker distinction encoded, even though the legislative-cou
 
 ### doc (and paragraphs) metadata
 
-_(none found)_ - no `newdoc id`. Add `# newdoc id` at sentences 1, 411, 548, and 651, using the proposed ids in the table above (same ranges as its Cantonese-HK counterpart).
+_(none found)_ - no `document_id`. Add `# document_id` at sentences 1, 411, 548, and 651, using the proposed ids in the table above (same ranges as its Cantonese-HK counterpart).
 
 ### modality metadata
 

@@ -43,7 +43,7 @@ Notes: `conversation` is Santa Barbara Corpus audio (no video) of private family
 
 | Field | Suggestion |
 |---|---|
-| `newdoc id` | make tags: doc_id |
+| `document_id` | make tags: doc_id |
 | `meta::genre` | make tags: genre |
 
 ### 3. Speaker-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#speaker-level))
@@ -61,7 +61,7 @@ Notes: `conversation` is Santa Barbara Corpus audio (no video) of private family
 
 ### Implementation notes
 
-- **Quick search & replace:** `newdoc id`→tag `doc_id`, `meta::genre`→tag `genre`, `speaker`→tag `speaker_id`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map meta::genre=genre,speaker=speaker_id --write` (the `doc_id` tag addition is a tagset change, not a comment rename).
+- **Quick search & replace:** `document_id`→tag `doc_id`, `meta::genre`→tag `genre`, `speaker`→tag `speaker_id`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map meta::genre=genre,speaker=speaker_id --write` (the `doc_id` tag addition is a tagset change, not a comment rename).
 - **Needs a small script:** modality tagging by genre is mechanical and verified against the real corpus: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py tag-modality DIR --spoken-if '_(vlog|speech|podcast|court|conversation)_' --written-if '.*' --write` gives exactly 10/30 spoken documents in dev and 10/30 in test, matching the draft's count precisely. Only run on `en_gum-ud-dev.conllu`/`en_gum-ud-test.conllu` for now (train genre labels aren't yet confirmed - see manual item below); once confirmed, the same command run over the whole treebank directory covers train too.
 - **Needs manual input from maintainers:**
   - Confirm the 15 genre labels (and the 5 spoken ones) apply consistently in `en_gum-ud-train.conllu` before running the modality-tagging command over train.

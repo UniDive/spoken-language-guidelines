@@ -24,19 +24,19 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** N/A
+**Is spoken part clearly identifiable?** N/A - spoken data only
 
 ## Metadata review
 
 ### doc (and paragraphs) metadata
 
-_(none found)_ - no `newdoc id` exists at all.
+_(none found)_ - no `document_id` exists at all.
 
 | Field | Advice |
 |---|---|
-| — | derive `# newdoc id` from the `sent_id` prefix (everything before `_<number>`, e.g. `file01243.txt`); recompose by sorting sentences within each prefix by that trailing number, which recovers a consistent (if sparse, since only a sample was taken) in-document order |
+| — | derive `# document_id` from the `sent_id` prefix (everything before `_<number>`, e.g. `file01243.txt`); recompose by sorting sentences within each prefix by that trailing number, which recovers a consistent (if sparse, since only a sample was taken) in-document order |
 
 
 ### speaker metadata
 
-_(none found)_ - each document is one L2 English speaker's interview session; no `speaker_id` is encoded, though one could plausibly be derived from the same filename once `newdoc id` exists.
+_(none found)_ - each document is one L2 English speaker's interview session; no `speaker_id` is encoded, though one could plausibly be derived from the same filename once `document_id` exists.

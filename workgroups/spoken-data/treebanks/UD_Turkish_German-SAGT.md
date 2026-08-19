@@ -30,11 +30,11 @@ udver: '2'
 
 ### doc (and paragraphs) metadata
 
-No `newdoc id` exists, but it can be derived directly from the `sent_id` prefix: `sent_id` follows `<doc-id>-<number>` (e.g. `TRDE-CS-C15-0001`), with 48 distinct document ids (`TRDE-CS-C01` ... `TRDE-CS-V06`).
+No `document_id` exists, but it can be derived directly from the `sent_id` prefix: `sent_id` follows `<doc-id>-<number>` (e.g. `TRDE-CS-C15-0001`), with 48 distinct document ids (`TRDE-CS-C01` ... `TRDE-CS-V06`).
 
 | Field | Advice                                                                                      |
 | ----- | ------------------------------------------------------------------------------------------- |
-| —     | derive `# newdoc id` from the `sent_id` prefix (everything before the trailing `-<number>`) |
+| —     | derive `# document_id` from the `sent_id` prefix (everything before the trailing `-<number>`) |
 
 ### sent metadata
 

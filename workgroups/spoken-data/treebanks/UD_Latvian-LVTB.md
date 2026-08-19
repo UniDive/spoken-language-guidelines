@@ -24,4 +24,4 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** No - `genre` includes `spoken` alongside `news`, `fiction`, `legal`, `academic`, but no comment-level metadata (genre-like field, `newdoc id`, or otherwise) distinguishes spoken from written sentences in the `.conllu` files.
+**Is spoken part clearly identifiable?** No - `genre` includes `spoken` alongside `news`, `fiction`, `legal`, `academic`, but no comment-level metadata (genre-like field, `document_id`, or otherwise) distinguishes spoken from written sentences in the `.conllu` files.

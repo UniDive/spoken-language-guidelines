@@ -20,7 +20,7 @@ Not from the current data. 2,827 of 2,839 sentences carry a written-source citat
 
 | Field   | Suggestion                          |
 | ------- | ------------------------------------ |
-| `title` | rename to `newdoc id` - please verify |
+| `title` | rename to `document_id` - please verify |
 
 ### 3. Speaker-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#speaker-level))
 
@@ -47,7 +47,7 @@ The corpus also carries roughly 100 further sentence-level fields (`text_orig`, 
 
 **Needs manual input from maintainers**
 - Whether any sentences are actually spoken/elicited fieldwork (vs. published written sources) - this is a factual question only the maintainers can answer; nothing to script until it's resolved.
-- `title` → `newdoc id`: mechanically a one-line rename (field occurs once per document already), but flagged "please verify" since it changes the document-identification scheme - once confirmed: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map title="newdoc id" --write`.
+- `title` → `document_id`: mechanically a one-line rename (field occurs once per document already), but flagged "please verify" since it changes the document-identification scheme - once confirmed: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map title="document_id" --write`.
 - `speaker` → `speaker_id`: mechanically a one-line rename (`# speaker = Gerson` style, repeats per sentence, no split/hoist needed), but flagged "please verify" - once confirmed: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map speaker=speaker_id --write`.
 - The ~18 editorial/philological fields and ~100 source-tracking sentence-level fields: no rename proposed, just need maintainer confirmation they should stay as-is (no script involved either way).
 

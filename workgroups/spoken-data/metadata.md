@@ -27,7 +27,7 @@ Below, we list the most recurrent speech-related metadata categories occurring i
 | Feature | Description | Examples |
 |---|---|---|
 | `modality` | Data modality in mixed-modality treebanks | `# modality = spoken`, `# modality = written`, `# modality = signed` |
-| `newdoc id` | Unique identifier of the speech event | `# newdoc id = doc01` |
+| `document_id` | Unique identifier of the speech event | `# document_id = doc01` |
 | `sound_url` | Link to the audio recording| `# sound_url = link-to-audio.mp3` |
 | `video_url` | Link to the video recording| `# video_url = link-to-video.mp4` |
 | `genre` | Descriptive label of the speech event ([more here](#Taxonomy-for-describing-speech-events))  | `# genre = interview`, `# genre = conversation`, `# genre = lecture` |

@@ -24,17 +24,17 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** N/A
+**Is spoken part clearly identifiable?** N/A - spoken data only
 
 ## Metadata review
 
 ### doc (and paragraphs) metadata
 
-No `# newdoc id` exists, but document boundaries are fully recoverable: the README documents that `sent_id` encodes `<filename>:<sentence_number>`, where `<filename>` matches the text's name on the source corpus site ([chuklang.ru](http://chuklang.ru/)). Splitting `sent_id` on `:` gives 65 distinct document prefixes (e.g. `Abramovich`, `GUM`, `Katyusha`) across the 1004 sentences.
+No `# document_id` exists, but document boundaries are fully recoverable: the README documents that `sent_id` encodes `<filename>:<sentence_number>`, where `<filename>` matches the text's name on the source corpus site ([chuklang.ru](http://chuklang.ru/)). Splitting `sent_id` on `:` gives 65 distinct document prefixes (e.g. `Abramovich`, `GUM`, `Katyusha`) across the 1004 sentences.
 
 | Field | Advice |
 |---|---|
-| — | derive `# newdoc id` from the `sent_id` prefix (everything before `:`), set once at each document's first sentence |
+| — | derive `# document_id` from the `sent_id` prefix (everything before `:`), set once at each document's first sentence |
 
 ### languages and translation(s)
 

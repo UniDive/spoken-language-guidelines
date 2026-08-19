@@ -46,8 +46,8 @@ udver: '2'
 
 ### doc (and paragraphs) metadata
 
-_(none found)_ - no `newdoc id` exists, but it can be derived directly from the `sent_id` prefix: `sent_id` follows `<doc-id>:<start>:<end>` (e.g. `SSLC01_104:1:2`), with 6 distinct document ids (`SSLC01_104`, `SSLC01_320`, `SSLC01_391`, `SSLC02_331`, `SSLC02_332`, `SSLC02_409`).
+_(none found)_ - no `document_id` exists, but it can be derived directly from the `sent_id` prefix: `sent_id` follows `<doc-id>:<start>:<end>` (e.g. `SSLC01_104:1:2`), with 6 distinct document ids (`SSLC01_104`, `SSLC01_320`, `SSLC01_391`, `SSLC02_331`, `SSLC02_332`, `SSLC02_409`).
 
 | Field | Advice                                                                           |
 | ----- | -------------------------------------------------------------------------------- |
-| —     | derive `# newdoc id` from the `sent_id` prefix (everything before the first `:`) |
+| —     | derive `# document_id` from the `sent_id` prefix (everything before the first `:`) |

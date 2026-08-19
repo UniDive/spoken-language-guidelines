@@ -46,11 +46,11 @@ udver: '2'
 
 ### doc (and paragraphs) metadata
 
-`newdoc id` already exists for the ParlaMint-sourced sentences (one per utterance, e.g. `ParlaMint-UA_2022-01-25-m0.u100`), but is entirely missing for the 502 sentences sourced from NSDC (`sent_id` like `NSDC_UA_28_Feb2014-1`). These can easily get a `newdoc id` too, derived from the `sent_id` prefix (everything before the trailing `-<number>`) - all 502 collapse to a single document, `NSDC_UA_28_Feb2014`.
+`document_id` already exists for the ParlaMint-sourced sentences (one per utterance, e.g. `ParlaMint-UA_2022-01-25-m0.u100`), but is entirely missing for the 502 sentences sourced from NSDC (`sent_id` like `NSDC_UA_28_Feb2014-1`). These can easily get a `document_id` too, derived from the `sent_id` prefix (everything before the trailing `-<number>`) - all 502 collapse to a single document, `NSDC_UA_28_Feb2014`.
 
 | Field | Advice                                                                                                                      |
 | ----- | --------------------------------------------------------------------------------------------------------------------------- |
-| —     | derive `# newdoc id = NSDC_UA_28_Feb2014` for the NSDC-sourced sentences (`sent_id` prefix before the trailing `-<number>`) |
+| —     | derive `# document_id = NSDC_UA_28_Feb2014` for the NSDC-sourced sentences (`sent_id` prefix before the trailing `-<number>`) |
 
 ### sent metadata
 

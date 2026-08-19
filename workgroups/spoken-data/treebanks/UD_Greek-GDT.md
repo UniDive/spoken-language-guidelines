@@ -24,19 +24,19 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** Yes - via the source-outlet component embedded in `newdoc id` (`gdt-<date>-<source>-<docname>`). Sentences with `ep` as the source (e.g. `gdt-20020204-ep-sessions_*-*`) are transcripts of European Parliament plenary sessions (45 docs); `ert`/`ertonline` (Greek public broadcaster) are also spoken/broadcast material.
+**Is spoken part clearly identifiable?** Yes - via the source-outlet component embedded in `document_id` (`gdt-<date>-<source>-<docname>`). Sentences with `ep` as the source (e.g. `gdt-20020204-ep-sessions_*-*`) are transcripts of European Parliament plenary sessions (45 docs); `ert`/`ertonline` (Greek public broadcaster) are also spoken/broadcast material.
 
 ## Metadata review
 
 | Field       | Advice                                                                                             |
 | ----------- | -------------------------------------------------------------------------------------------------- |
-| `newdoc id` | make tags: doc_id                                                                                  |
+| `document_id` | make tags: doc_id                                                                                  |
 | —           | add `# genre = speech` on `ep`-sourced documents (European Parliament plenary session transcripts) |
 | —           | add `# genre = news` on `ert`/`ertonline`-sourced documents (broadcast news)                       |
 
 ### modality metadata
 
-Add `# modality = spoken` on documents whose `newdoc id` source component is `ep`, `ert`, or `ertonline`.
+Add `# modality = spoken` on documents whose `document_id` source component is `ep`, `ert`, or `ertonline`.
 
 **`ep`** (European Parliament plenary sessions, 45 docs): `degree_of_spontaneity = planned` (prepared parliamentary speeches), `number_of_participants = monologic` (one speaker per document/turn), `context = professional`, `setting = broadcast`, `symmetry = symmetric` (MEPs address the chamber under comparable roles).
 

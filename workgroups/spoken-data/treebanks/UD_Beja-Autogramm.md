@@ -24,7 +24,7 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** N/A
+**Is spoken part clearly identifiable?** N/A - spoken data only
 
 ## Metadata review
 
@@ -32,7 +32,7 @@ udver: '2'
 
 | Field | Advice |
 | --- | --- |
-| — | no `newdoc id` exists at all (0 occurrences across 763 sentences) - but the 18 distinct `sound_url` values (one per recording, e.g. `BEJ_MV_NARR_01_SHELTER.WAV`) already identify document boundaries; derive `# newdoc id` from the recording basename and set it once per document, then move `sound_url` there too |
+| — | no `document_id` exists at all (0 occurrences across 763 sentences) - but the 18 distinct `sound_url` values (one per recording, e.g. `BEJ_MV_NARR_01_SHELTER.WAV`) already identify document boundaries; derive `# document_id` from the recording basename and set it once per document, then move `sound_url` there too |
 
 ### languages and translation(s)
 

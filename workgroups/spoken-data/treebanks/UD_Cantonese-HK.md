@@ -24,7 +24,7 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** N/A
+**Is spoken part clearly identifiable?** N/A - spoken data only
 
 
 ## Metadata review
@@ -33,7 +33,7 @@ udver: '2'
 
 This is a parallel treebank with [UD_Chinese-HK](UD_Chinese-HK.html) (same sentences, Cantonese vs. Mandarin), linked via `parallel_id` (e.g. `hk/1`). Per the README, the 1004 sentences come from **4 distinct sources**, documented only in prose in the README, not in the `.conllu`:
 
-| `sent_id` range | Proposed `newdoc id` | Title | Fluency |
+| `sent_id` range | Proposed `document_id` | Title | Fluency |
 | --- | --- | --- | --- |
 | 1-410 | `missing_days` | Missing days / 小時光 ([film](https://www.youtube.com/watch?v=1qSMiw0vhzU)) | mostly prepared dialogue |
 | 411-547 | `tempo_in_temple` | Tempo in Temple / 廟眾樂樂 ([film](https://www.youtube.com/watch?v=8e8Lqd6grTE)) | spontaneous interview, many disfluencies/reparandums |
@@ -42,7 +42,7 @@ This is a parallel treebank with [UD_Chinese-HK](UD_Chinese-HK.html) (same sente
 
 ### doc (and paragraphs) metadata
 
-_(none found)_ - no `newdoc id` (or the `_filename` this page previously listed; it is **not** present in the current `.conllu`, that was stale). Add `# newdoc id` at sentences 1, 411, 548, and 651, using the proposed ids in the table above (please confirm the slugs - just short mnemonics derived from the titles).
+_(none found)_ - no `document_id` (or the `_filename` this page previously listed; it is **not** present in the current `.conllu`, that was stale). Add `# document_id` at sentences 1, 411, 548, and 651, using the proposed ids in the table above (please confirm the slugs - just short mnemonics derived from the titles).
 
 ### modality metadata
 

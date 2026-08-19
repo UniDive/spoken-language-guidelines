@@ -16,7 +16,7 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 | Field | Suggestion |
 |---|---|
-| `text_name` | this is a document identifier but is wrongly repeated on every sentence (only 6 distinct values across 98 sentences) — convert to `# newdoc id = ...` set once at the first sentence of each of the 6 documents, dropping the per-sentence repetition and the `.eaf` extension |
+| `text_name` | this is a document identifier but is wrongly repeated on every sentence (only 6 distinct values across 98 sentences) — convert to `# document_id = ...` set once at the first sentence of each of the 6 documents, dropping the per-sentence repetition and the `.eaf` extension |
 | — | no `genre` field exists, even though topics are recoverable from the `text_name` filenames (e.g. `Professija` = "profession", `O_muzhe` = "about (my) husband", `Deti_v_pole` = "children in the field") — these read as personal narrative/interview elicitations; could add `# genre = narrative` or `interview` per document, please confirm |
 | — | no `sound_url` field, though the corpus homepage ([lingconlab.ru/spoken_abaza](http://lingconlab.ru/spoken_abaza/)) implies underlying audio recordings exist — could individual recording links be added? |
 
@@ -24,7 +24,7 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 | Field | Suggestion |
 |---|---|
-| — | no speaker metadata exists at all. The 6 `text_name` filenames each seem to encode one speaker/informant (e.g. `AjsanovaFB`, `SanashokovaCKh`, `DzhuzhuevKM`) — once `text_name` becomes `newdoc id`, could a `speaker_id` be derived from the same filename component? |
+| — | no speaker metadata exists at all. The 6 `text_name` filenames each seem to encode one speaker/informant (e.g. `AjsanovaFB`, `SanashokovaCKh`, `DzhuzhuevKM`) — once `text_name` becomes `document_id`, could a `speaker_id` be derived from the same filename component? |
 
 ### 3. Sentence-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#sentence-level))
 
@@ -44,13 +44,13 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
   ```
 
 **Needs a small script**
-- Convert `text_name` (6 distinct values across 98 sentences, confirmed by dry-run) into `# newdoc id`, deduped per document and with the `.eaf` extension stripped:
+- Convert `text_name` (6 distinct values across 98 sentences, confirmed by dry-run) into `# document_id`, deduped per document and with the `.eaf` extension stripped:
   ```
-  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc-from-field DIR \
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-document-id-from-field DIR \
       --key text_name --strip-suffix .eaf --write
   ```
-  This adds `# newdoc id` once per document but leaves the original repeated `# text_name` comments in place - a follow-up `rename-comment`/removal pass is needed if `text_name` should disappear entirely rather than stay as a corpus-specific field.
-- Once `newdoc id` exists, a `speaker_id` could likely be derived from the same filename component (e.g. `AjsanovaFB`) with a small regex extraction script - worth doing only after the maintainers confirm the naming convention (see below).
+  This adds `# document_id` once per document but leaves the original repeated `# text_name` comments in place - a follow-up `rename-comment`/removal pass is needed if `text_name` should disappear entirely rather than stay as a corpus-specific field.
+- Once `document_id` exists, a `speaker_id` could likely be derived from the same filename component (e.g. `AjsanovaFB`) with a small regex extraction script - worth doing only after the maintainers confirm the naming convention (see below).
 
 **Needs manual input from maintainers**
 - Whether `# genre` (`narrative`/`interview`) should be added per document - inferred from filenames only, not confirmed.

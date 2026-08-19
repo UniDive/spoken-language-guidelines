@@ -59,11 +59,11 @@ udver: '2'
 
 ### doc (and paragraphs) metadata
 
-_(none found)_ - no `newdoc id` exists, but it can be derived from the `sent_id` prefix (please confirm the exact delimiter/recording identifier with the maintainer).
+_(none found)_ - no `document_id` exists, but it can be derived from the `sent_id` prefix (please confirm the exact delimiter/recording identifier with the maintainer).
 
 | Field | Advice                                                                          |
 | ----- | ------------------------------------------------------------------------------- |
-| —     | derive `# newdoc id` from the `sent_id` prefix identifying the source recording |
+| —     | derive `# document_id` from the `sent_id` prefix identifying the source recording |
 
 ### token-level metadata (MISC)
 

@@ -13,7 +13,7 @@ udver: '2'
 Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata harmonisation review. We compared `UD_Danish-DDT`'s current CoNLL-U metadata against the [proposed naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html) (see also the full [treebank status table](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/ud_spoken_treebanks.html)). This is a suggestion for maintainers to review - feel free to push back on anything that doesn't fit the corpus.
 
 ### 1. Is the spoken portion identifiable?
-This treebank mixes spoken and written material but its `.conllu` files don't explicitly mark which sentences are spoken, and we could not find any usable signal: there is no `newdoc id`, and `sent_id` is just a sequential counter (`train-v2-0`, `train-v2-1`, ...) with no genre/source information.
+This treebank mixes spoken and written material but its `.conllu` files don't explicitly mark which sentences are spoken, and we could not find any usable signal: there is no `document_id`, and `sent_id` is just a sequential counter (`train-v2-0`, `train-v2-1`, ...) with no genre/source information.
 
 **Suggestion:** Could `# modality` (or `# genre`) be added per document/sentence, so the spoken portion can be identified programmatically?
 
@@ -23,7 +23,7 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 - None.
 
 **Needs a small script**
-- None currently possible - there's no usable signal (`newdoc id` doesn't exist and `sent_id` is a bare sequential counter) to key a script off, so no automated modality/genre tagging can be built until the maintainers can point at a source for this information.
+- None currently possible - there's no usable signal (`document_id` doesn't exist and `sent_id` is a bare sequential counter) to key a script off, so no automated modality/genre tagging can be built until the maintainers can point at a source for this information.
 
 **Needs manual input from maintainers**
 - Whether `# modality` or `# genre` can be added at all, and if so, from what source (e.g. is there an internal mapping from sentence to original text/document that isn't currently exported to the `.conllu`?). This is the entire blocker here.

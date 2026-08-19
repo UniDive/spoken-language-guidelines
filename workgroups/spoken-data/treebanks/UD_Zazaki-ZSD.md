@@ -32,11 +32,11 @@ udver: '2'
 
 ### doc (and paragraphs) metadata
 
-_(none found)_ - no `newdoc id` exists, but it's trivial to derive: `sent_id` follows `Seyristane_dialogue_<number><A/B>` (e.g. `Seyristane_dialogue_171A`), and the whole corpus (200 sentences) seems a single interview/dialogue.
+_(none found)_ - no `document_id` exists, but it's trivial to derive: `sent_id` follows `Seyristane_dialogue_<number><A/B>` (e.g. `Seyristane_dialogue_171A`), and the whole corpus (200 sentences) seems a single interview/dialogue.
 
 | Field | Advice                                                                |
 | ----- | --------------------------------------------------------------------- |
-| —     | add `# newdoc id = Seyristane_dialogue` corpus-wide (single document) |
+| —     | add `# document_id = Seyristane_dialogue` corpus-wide (single document) |
 
 | Field     | Advice                           |
 | --------- | -------------------------------- |

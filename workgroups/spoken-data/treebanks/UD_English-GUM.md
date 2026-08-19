@@ -55,7 +55,7 @@ Notes: `conversation` is Santa Barbara Corpus audio (no video) of private family
 
 | Field | Advice |
 |---|---|
-| `newdoc id` | OK |
+| `document_id` | OK |
 
 ### modality metadata
 

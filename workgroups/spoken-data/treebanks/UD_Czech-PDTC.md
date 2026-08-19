@@ -24,6 +24,6 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** yes - via the `newdoc id` prefix `pdtsc` (not "sentences starting with `s`" as mentioned in the README. The actual `newdoc id`/`sent_id` values spell it out in full, e.g. `pdtsc_jg-27638_04.00`).
+**Is spoken part clearly identifiable?** yes - via the `document_id` prefix `pdtsc` (not "sentences starting with `s`" as mentioned in the README. The actual `document_id`/`sent_id` values spell it out in full, e.g. `pdtsc_jg-27638_04.00`).
 
-**Advise:** add `# modality = spoken` to the 1553 sentences (documents) with `newdoc id` starting `pdtsc`, and `# modality = written` to the rest.
+**Advise:** add `# modality = spoken` to the 1553 sentences (documents) with `document_id` starting `pdtsc`, and `# modality = written` to the rest.

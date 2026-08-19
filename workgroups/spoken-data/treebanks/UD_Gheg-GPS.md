@@ -30,7 +30,7 @@ udver: '2'
 
 ### speaker metadata
 
-Location (`P` Prishtina / `Z` Zurich) and generation (`G1`/`G2`/`G3`) are encoded in the `sent_id`/derived `newdoc id` prefix but not as explicit metadata fields. Speaker age ranges from 10 to 67, but is only reported corpus-wide in the README, not per speaker in the data.
+Location (`P` Prishtina / `Z` Zurich) and generation (`G1`/`G2`/`G3`) are encoded in the `sent_id`/derived `document_id` prefix but not as explicit metadata fields. Speaker age ranges from 10 to 67, but is only reported corpus-wide in the README, not per speaker in the data.
 
 | Field | Advice                                                                                                                                                                             |
 | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -40,9 +40,9 @@ Location (`P` Prishtina / `Z` Zurich) and generation (`G1`/`G2`/`G3`) are encode
 
 ### doc (and paragraphs) metadata
 
-no `newdoc id` exists, but `sent_id` already encodes it: format `<Location>-<Generation>-<SpeakerID>_<N>` (e.g. `P-G1-01_1`), where `Location` ∈ {`P` Prishtina, `Z` Zurich} and `Generation` ∈ {`G1`, `G2`, `G3`}. The prefix before the trailing `_<N>` identifies one interview/recording (64 recordings total, each re-narrating the *Pear Stories* video).
+no `document_id` exists, but `sent_id` already encodes it: format `<Location>-<Generation>-<SpeakerID>_<N>` (e.g. `P-G1-01_1`), where `Location` ∈ {`P` Prishtina, `Z` Zurich} and `Generation` ∈ {`G1`, `G2`, `G3`}. The prefix before the trailing `_<N>` identifies one interview/recording (64 recordings total, each re-narrating the *Pear Stories* video).
 
 | Field | Advice                                                                                                   |
 | ----- | -------------------------------------------------------------------------------------------------------- |
-| —     | derive `# newdoc id` from the `sent_id` prefix (everything before the trailing `_<number>`)              |
+| —     | derive `# document_id` from the `sent_id` prefix (everything before the trailing `_<number>`)              |
 | —     | add `# genre = narrative` at document level (elicited re-narration of the *Pear Stories* stimulus video) |

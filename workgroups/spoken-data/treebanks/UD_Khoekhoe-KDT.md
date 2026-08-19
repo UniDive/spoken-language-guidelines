@@ -24,7 +24,7 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** Yes - via the `newdoc id` prefix, which names the source type: `book` (15), `grammar` (2), `film` (2), `conversation` (1). `conversation` and `film` (transcribed dialogue/subtitles) are plausibly spoken; `book`/`grammar` are written - please confirm whether `film` here means subtitle/transcript text.
+**Is spoken part clearly identifiable?** Yes - via the `document_id` prefix, which names the source type: `book` (15), `grammar` (2), `film` (2), `conversation` (1). `conversation` and `film` (transcribed dialogue/subtitles) are plausibly spoken; `book`/`grammar` are written - please confirm whether `film` here means subtitle/transcript text.
 
 ## Metadata review
 

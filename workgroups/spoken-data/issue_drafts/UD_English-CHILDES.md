@@ -18,9 +18,9 @@ The sentences appear to be shuffled: consecutive sentences jump between corpora 
 
 | Field | Suggestion |
 |---|---|
-| `corpus_name` | recompose: sort sentences by `original_sent_id` within each `corpus_name`, then set `corpus_name` once per document as `# newdoc id` |
+| `corpus_name` | recompose: sort sentences by `original_sent_id` within each `corpus_name`, then set `corpus_name` once per document as `# document_id` |
 
-**Please confirm:** `corpus_name` is the CHILDES *study* name, not a single recording - e.g. `Brown` alone contains three different children (`Adam`, `Eve`, `Sarah`), and `Providence` contains three more (`Lily`, `Naima`, `Violet`). If a "document" should mean one recording session rather than an entire multi-year study, `newdoc id` may need to key on `(corpus_name, child_name, child_age)` instead - `child_age` looks constant within each original session.
+**Please confirm:** `corpus_name` is the CHILDES *study* name, not a single recording - e.g. `Brown` alone contains three different children (`Adam`, `Eve`, `Sarah`), and `Providence` contains three more (`Lily`, `Naima`, `Violet`). If a "document" should mean one recording session rather than an entire multi-year study, `document_id` may need to key on `(corpus_name, child_name, child_age)` instead - `child_age` looks constant within each original session.
 
 ### 2. Speaker-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#speaker-level))
 
@@ -40,7 +40,7 @@ The sentences appear to be shuffled: consecutive sentences jump between corpora 
 ### Implementation notes
 
 - **Quick search & replace:** `child_name`→`speaker_id`, `child_age`→`speaker_age`, `child_gender`→`speaker_gender`. Once confirmed: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map child_name=speaker_id,child_age=speaker_age,child_gender=speaker_gender --write`.
-- **Needs a small (bespoke) script:** recomposing `# newdoc id` from `corpus_name` requires sorting sentences by `original_sent_id` within each `corpus_name` group and re-emitting the file in that order (not a mechanical rename/split - `harmonize_metadata.py` doesn't reorder sentences). A ~20-line script reading the file, grouping by `corpus_name`, sorting each group by `original_sent_id`, and rewriting with one `# newdoc id = <corpus_name>` per group would do it - but see the manual item below first, since the grouping key may need to change.
+- **Needs a small (bespoke) script:** recomposing `# document_id` from `corpus_name` requires sorting sentences by `original_sent_id` within each `corpus_name` group and re-emitting the file in that order (not a mechanical rename/split - `harmonize_metadata.py` doesn't reorder sentences). A ~20-line script reading the file, grouping by `corpus_name`, sorting each group by `original_sent_id`, and rewriting with one `# document_id = <corpus_name>` per group would do it - but see the manual item below first, since the grouping key may need to change.
 - **Needs manual input from maintainers:**
   - Whether "document" should mean the whole `corpus_name` study (current proposal) or one `(corpus_name, child_name, child_age)` recording session - this decides the grouping key for the recompose script above, so it should be resolved before writing it.
   - The single corrupted `# chi l d = 37.29...` line (1/48183 sentences, `en_childes-ud-train.conllu`) - looks like a broken `child_age` export; needs a source-side check/regeneration rather than a guessed fix on our end.

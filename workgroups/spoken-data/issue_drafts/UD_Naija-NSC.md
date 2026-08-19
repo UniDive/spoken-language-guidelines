@@ -14,11 +14,11 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 ### 1. Document-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#document-level))
 
-No `newdoc id` exists, but it can be derived from the `sent_id` prefix (please confirm the exact delimiter/recording identifier).
+No `document_id` exists, but it can be derived from the `sent_id` prefix (please confirm the exact delimiter/recording identifier).
 
 | Field       | Suggestion                                                                           |
 | ----------- | ------------------------------------------------------------------------------------ |
-| —           | derive `# newdoc id` from the `sent_id` prefix identifying the source recording      |
+| —           | derive `# document_id` from the `sent_id` prefix identifying the source recording      |
 | `sound_url` | possibly move to document level |
 
 ### 2. Sentence-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#sentence-level))
@@ -42,10 +42,10 @@ No `newdoc id` exists, but it can be derived from the `sent_id` prefix (please c
   `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-misc <path> --map AlignBegin=WordAlignmentBegin,AlignEnd=WordAlignmentEnd --write`
 
 **Needs a small script**
-- Derive `# newdoc id` from `sent_id`: the released files (`pcm_nsc-ud-{train,dev,test}.conllu`) use a clean `<DOC>__<N>` pattern (e.g. `ABJ_GWA_14_Mary-Lifestory_MG__1`), confirmed by dry-run:
-  `python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc <path> --pattern '^(?P<doc>.+)__\d+$' --write`
+- Derive `# document_id` from `sent_id`: the released files (`pcm_nsc-ud-{train,dev,test}.conllu`) use a clean `<DOC>__<N>` pattern (e.g. `ABJ_GWA_14_Mary-Lifestory_MG__1`), confirmed by dry-run:
+  `python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-document-id <path> --pattern '^(?P<doc>.+)__\d+$' --write`
   (10/10 documents in `pcm_nsc-ud-test.conllu` derived cleanly.)
-- Move `sound_url` to document level, **after** the derive-newdoc step above:
+- Move `sound_url` to document level, **after** the derive-document-id step above:
   `python3 workgroups/spoken-data/scripts/harmonize_metadata.py hoist-to-doc <path> --key sound_url --write`
   ⚠️ Dry-run turned up a discrepancy worth flagging to maintainers before running for real: 2 of the 10 documents in `pcm_nsc-ud-test.conllu` have **two distinct `sound_url` values** within the same derived document (not fully constant), so those 2 would be skipped by the script and need manual resolution rather than an automatic hoist.
 

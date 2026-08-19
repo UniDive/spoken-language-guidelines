@@ -15,11 +15,11 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 ### 1. Is the spoken portion identifiable?
 This treebank mixes spoken and written material but its `.conllu` files don't explicitly mark which sentences are spoken. We looked for a pattern in the data (fairly confident):
 
-**Finding:** Identifiable via the `newdoc id` prefix `pdtsc`, which names a known spoken sub-corpus.
+**Finding:** Identifiable via the `document_id` prefix `pdtsc`, which names a known spoken sub-corpus.
 
-**Evidence:** `newdoc id` prefixes and counts: `ln` (2906), `wsj` (2312), `pdtsc` (1553), `mf` (1131), `lnd` (712), `cmpr` (372), `vesm` (209), `faust` (60). `pdtsc` is the standard abbreviation for the Prague Dependency Treebank of Spoken Czech (PDT-SC), a known spoken sub-corpus of PDTC; the rest are written-text sources (newspapers, magazines, the Wall Street Journal translation, the Faust MT-testing corpus).
+**Evidence:** `document_id` prefixes and counts: `ln` (2906), `wsj` (2312), `pdtsc` (1553), `mf` (1131), `lnd` (712), `cmpr` (372), `vesm` (209), `faust` (60). `pdtsc` is the standard abbreviation for the Prague Dependency Treebank of Spoken Czech (PDT-SC), a known spoken sub-corpus of PDTC; the rest are written-text sources (newspapers, magazines, the Wall Street Journal translation, the Faust MT-testing corpus).
 
-**Suggestion:** Add `# modality = spoken` to all documents whose `newdoc id` starts with `pdtsc`, and `# modality = written` to the rest. Please confirm this reading with the PDTC maintainers, since we inferred it from the corpus name rather than internal documentation.
+**Suggestion:** Add `# modality = spoken` to all documents whose `document_id` starts with `pdtsc`, and `# modality = written` to the rest. Please confirm this reading with the PDTC maintainers, since we inferred it from the corpus name rather than internal documentation.
 
 ### 2. Speaker-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#speaker-level))
 
@@ -33,7 +33,7 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 - None.
 
 **Needs a small script**
-- Once confirmed with maintainers, tagging modality from the `pdtsc` prefix is a single run across the whole repo (confirmed by dry-run: matches 1553 `newdoc id`s starting `pdtsc` across `cs_pdtc-ud-test.conllu`, `cs_pdtc-ud-dev.conllu`, and `cs_pdtc-ud-train-st.conllu`):
+- Once confirmed with maintainers, tagging modality from the `pdtsc` prefix is a single run across the whole repo (confirmed by dry-run: matches 1553 `document_id`s starting `pdtsc` across `cs_pdtc-ud-test.conllu`, `cs_pdtc-ud-dev.conllu`, and `cs_pdtc-ud-train-st.conllu`):
   ```
   python3 workgroups/spoken-data/scripts/harmonize_metadata.py tag-modality DIR \
       --spoken-if '^pdtsc' --written-if '.' --write

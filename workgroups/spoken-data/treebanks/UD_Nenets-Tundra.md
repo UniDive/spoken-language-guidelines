@@ -45,11 +45,11 @@ udver: '2'
 
 ### doc (and paragraphs) metadata
 
-No `newdoc id` exists, but `doc_title_` already identifies the document and can be used directly to introduce it.
+No `document_id` exists, but `doc_title_` already identifies the document and can be used directly to introduce it.
 
 | Field        | Advice                                            |
 | ------------ | ------------------------------------------------- |
-| `doc_title_` | use as `# newdoc id` (rename/repurpose the field) |
+| `doc_title_` | use as `# document_id` (rename/repurpose the field) |
 | `media` | corpus-specific (doc-level) - verify against metadata.html |
 
 ### token-level metadata (MISC)

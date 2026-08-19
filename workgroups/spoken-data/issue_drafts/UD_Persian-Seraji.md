@@ -16,7 +16,7 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 This treebank's `genre` metadata lists `spoken` alongside `news`, `fiction`, `medical`, `legal`, `social`, `nonfiction`, but its README only mentions written data, and its `.conllu` files don't explicitly mark which sentences are spoken.
 
-**Finding:** No genre-like field or `newdoc id` found at all, and no comment-level metadata beyond `sent_id`/`text` detected.
+**Finding:** No genre-like field or `document_id` found at all, and no comment-level metadata beyond `sent_id`/`text` detected.
 
 **Suggestion:** Could you confirm whether any part of this corpus is actually spoken, and if so, point us to which sentences/documents? Otherwise, please consider dropping `spoken` from the `genre` metadata.
 

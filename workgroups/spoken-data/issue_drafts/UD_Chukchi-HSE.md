@@ -14,11 +14,11 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 ### 1. Document-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#document-level))
 
-No `# newdoc id` exists, but document boundaries are fully recoverable: per the README, `sent_id` encodes `<filename>:<sentence_number>`, where `<filename>` matches the text's name on the source corpus site ([chuklang.ru](http://chuklang.ru/)). Splitting `sent_id` on `:` gives 65 distinct documents across the 1004 sentences.
+No `# document_id` exists, but document boundaries are fully recoverable: per the README, `sent_id` encodes `<filename>:<sentence_number>`, where `<filename>` matches the text's name on the source corpus site ([chuklang.ru](http://chuklang.ru/)). Splitting `sent_id` on `:` gives 65 distinct documents across the 1004 sentences.
 
 | Field | Suggestion |
 |---|---|
-| — | derive `# newdoc id` from the `sent_id` prefix (everything before `:`), set once at each document's first sentence |
+| — | derive `# document_id` from the `sent_id` prefix (everything before `:`), set once at each document's first sentence |
 
 ### 2. Sentence-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#sentence-level))
 
@@ -44,9 +44,9 @@ No `# newdoc id` exists, but document boundaries are fully recoverable: per the 
   (Our `rename-comment` matches on the comment key as-is, so the bracketed names work as literal keys here - no regex needed.)
 
 **Needs a small script**
-- Derive `# newdoc id` from the `sent_id` prefix before `:` (confirmed by dry-run: exactly 65 distinct documents, matching the draft's count):
+- Derive `# document_id` from the `sent_id` prefix before `:` (confirmed by dry-run: exactly 65 distinct documents, matching the draft's count):
   ```
-  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc DIR --pattern '^(?P<doc>.+):\d+$' --write
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-document-id DIR --pattern '^(?P<doc>.+):\d+$' --write
   ```
 
 **Needs manual input from maintainers**

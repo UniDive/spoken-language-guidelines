@@ -121,7 +121,7 @@ udver: '2'
 | `phrase_structure`               | corpus-specific (sentence-level) - verify against metadata.html                          |
 | `speaker`                        | possibly rename to `speaker_id` (see Speaker-level in metadata.html) - please verify     |
 | `reviewer2`                      | corpus-specific (speaker/paragraph-level) - verify against metadata.html                 |
-| `title`                          | possibly rename to `newdoc id` (see Document-level in metadata.html) - please verify     |
+| `title`                          | possibly rename to `document_id` (see Document-level in metadata.html) - please verify     |
 | `title_eng`                      | corpus-specific (speaker/paragraph-level) - verify against metadata.html                 |
 | `title_por`                      | corpus-specific (sentence-level) - verify against metadata.html                          |
 | `text_alt`                       | corpus-specific (sentence-level) - verify against metadata.html                          |

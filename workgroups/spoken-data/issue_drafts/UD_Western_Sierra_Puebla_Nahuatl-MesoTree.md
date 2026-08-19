@@ -18,7 +18,7 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 
 **Finding:** Not identifiable - the only `genre`-like field has a single constant value.
 
-**Evidence:** Sentence-level `genre` has exactly one value across all sentences: `examples` (2,115). No `newdoc id` or other field was found either.
+**Evidence:** Sentence-level `genre` has exactly one value across all sentences: `examples` (2,115). No `document_id` or other field was found either.
 
 **Suggestion:** Could you tell us which documents (if any) are transcribed spoken material?
 

@@ -52,11 +52,11 @@ udver: '2'
 
 ### doc (and paragraphs) metadata
 
-_(none found)_ - no `newdoc id` exists, but per the README, `sent_id` values match those in the archived IKDP corpus, with `+` marking sentence IDs that span multiple annotations (i.e. a merge within one recording, not a document boundary). This suggests `sent_id` already encodes a document/recording identifier that `newdoc id` could be derived from.
+_(none found)_ - no `document_id` exists, but per the README, `sent_id` values match those in the archived IKDP corpus, with `+` marking sentence IDs that span multiple annotations (i.e. a merge within one recording, not a document boundary). This suggests `sent_id` already encodes a document/recording identifier that `document_id` could be derived from.
 
 | Field | Advice                                                                                                                                                                                                  |
 | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| —     | derive `# newdoc id` from the `sent_id` prefix identifying the source recording (please confirm the exact delimiter with the maintainer); treat `+`-joined `sent_id`s as belonging to the same document |
+| —     | derive `# document_id` from the `sent_id` prefix identifying the source recording (please confirm the exact delimiter with the maintainer); treat `+`-joined `sent_id`s as belonging to the same document |
 
 ### modality metadata
 

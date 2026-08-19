@@ -18,7 +18,7 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 
 **Finding:** The entire treebank may already be spoken (transcribed Knesset/parliament proceedings), rather than a partial split.
 
-**Evidence:** `newdoc id` values follow `<year>_<doctype>_<id>` where `doctype` is only ever `ptv` (65 docs, likely 'protocol verbatim') or `ptm` (35 docs, likely 'protocol minutes') - both are transcribed parliamentary speech, not a spoken/written split.
+**Evidence:** `document_id` values follow `<year>_<doctype>_<id>` where `doctype` is only ever `ptv` (65 docs, likely 'protocol verbatim') or `ptm` (35 docs, likely 'protocol minutes') - both are transcribed parliamentary speech, not a spoken/written split.
 
 **Suggestion:** Rather than partially tagging, please confirm whether the whole corpus should carry `# modality = spoken` (as transcribed parliamentary speech), or whether `ptm` (minutes, possibly edited/summarized) should be excluded as not verbatim spoken language.
 
@@ -26,7 +26,7 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 
 | Field       | Suggestion             |
 | ----------- | ---------------------- |
-| `newdoc id` | OK - already standard  |
+| `document_id` | OK - already standard  |
 
 ### 3. Speaker-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#speaker-level))
 

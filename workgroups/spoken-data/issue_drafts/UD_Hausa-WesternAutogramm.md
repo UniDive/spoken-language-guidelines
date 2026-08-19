@@ -16,7 +16,7 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 This treebank mixes spoken and written material but its `.conllu` files don't explicitly mark which sentences are spoken. We looked for a pattern in the data (no signal found):
 
-**Finding:** No genre-like field or `newdoc id` found at all.
+**Finding:** No genre-like field or `document_id` found at all.
 
 **Evidence:** No comment-level metadata beyond `sent_id`/`text` detected.
 
@@ -48,11 +48,11 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 - `text_en` → `text_eng`, `text_ortho` → `text_orthographic` (`# oldkey =` → `# newkey =`).
 
 **Needs a small script**
-- `sound_url` → document level: the released `ha_westernautogramm-ud-test.conllu` has no `# newdoc id` at all, but `sound_url` is constant within each of the 6 source recordings (verified against `not-to-release/original_split/*.conllu`, one distinct `sound_url` per file, matching 6 distinct values in the released file). `sent_id` (`BC_HAU_Gouffé_1_01_Zugal_001-002_split1`, …) doesn't have a clean numeric-suffix delimiter `derive-newdoc` can parse automatically, so `# newdoc id` needs to be (re)introduced first, either from the `original_split` file boundaries or from a maintainer-confirmed `sent_id` pattern; after that, `hoist-to-doc --key sound_url` is a one-line, already-constant hoist.
+- `sound_url` → document level: the released `ha_westernautogramm-ud-test.conllu` has no `# document_id` at all, but `sound_url` is constant within each of the 6 source recordings (verified against `not-to-release/original_split/*.conllu`, one distinct `sound_url` per file, matching 6 distinct values in the released file). `sent_id` (`BC_HAU_Gouffé_1_01_Zugal_001-002_split1`, …) doesn't have a clean numeric-suffix delimiter `derive-document-id` can parse automatically, so `# document_id` needs to be (re)introduced first, either from the `original_split` file boundaries or from a maintainer-confirmed `sent_id` pattern; after that, `hoist-to-doc --key sound_url` is a one-line, already-constant hoist.
 - Once the format below is confirmed, most `sent_timecode` values (single `begin, end` pair, e.g. `1000, 3000`) split cleanly with `split-field --key sent_timecode --sep ", " --into sound_alignment_begin,sound_alignment_end`; `duration` would then be a trivial `end - begin` computed in a follow-up pass, not a plain split.
 
 **Needs manual input from maintainers**
-- Modality: no genre/`newdoc id` signal found at all - need pointers to which sentences/documents are spoken vs. written before anything can be tagged.
+- Modality: no genre/`document_id` signal found at all - need pointers to which sentences/documents are spoken vs. written before anything can be tagged.
 - `sent_timecode` format: dry-running the split above shows a subset of values hold **two** `begin, end` pairs space-separated in one field (e.g. `34892, 35164 35164, 35361`) - these line up with `_split1`/`_split2` suffixes in `sent_id`, i.e. one original utterance re-split into two sentences that both kept the parent's full timecode range. Need to confirm whether each half should get its own half of the range, or whether these should be left as corpus-specific.
 
 ---

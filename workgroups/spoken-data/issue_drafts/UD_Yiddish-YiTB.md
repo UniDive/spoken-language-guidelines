@@ -41,7 +41,7 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 
 - **Quick search & replace:**
   - `translit` → `text_translitteration`, `text_en` → `text_eng`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment UD_Yiddish-YiTB --map translit=text_translitteration,text_en=text_eng --write`.
-- **Needs a small script:** add `# modality = spoken` to the 165 sentences whose sentence-level `genre` contains "spoken" (`spoken, web` / `spoken, liturgical` - confirmed present, e.g. in `yi_yitb-ud-train.conllu`). This is sentence-level, not doc-level, so `harmonize_metadata.py tag-modality` (which keys off `newdoc id`) doesn't apply directly - needs a short variant:
+- **Needs a small script:** add `# modality = spoken` to the 165 sentences whose sentence-level `genre` contains "spoken" (`spoken, web` / `spoken, liturgical` - confirmed present, e.g. in `yi_yitb-ud-train.conllu`). This is sentence-level, not doc-level, so `harmonize_metadata.py tag-modality` (which keys off `document_id`) doesn't apply directly - needs a short variant:
   ```python
   # for each `# genre = ...` comment containing "spoken", insert
   # `# modality = spoken` right after it

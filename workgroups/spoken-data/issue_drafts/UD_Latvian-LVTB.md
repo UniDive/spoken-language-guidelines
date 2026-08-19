@@ -16,7 +16,7 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 This treebank mixes spoken and written material (`genre` includes `spoken` alongside `news`, `fiction`, `legal`, `academic`) but its `.conllu` files don't explicitly mark which sentences are spoken. We looked for a pattern in the data (no signal found):
 
-**Finding:** No genre-like field, `newdoc id`, or other comment-level metadata that would let us separate spoken from written sentences was found.
+**Finding:** No genre-like field, `document_id`, or other comment-level metadata that would let us separate spoken from written sentences was found.
 
 **Suggestion:** Could you point us to which sentences/documents are spoken vs. written?
 
@@ -25,4 +25,4 @@ No further outstanding metadata items were flagged for this treebank in the late
 ### Implementation notes
 
 **Needs manual input from maintainers**
-- Modality: no `newdoc id` or genre-like comment metadata found at all, so no automatic detection was possible - need pointers to which sentences/documents are spoken vs. written (`genre = spoken` is only a value in the current genre field, not a per-sentence/document marker). Once that pointer exists, tagging is a one-line `harmonize_metadata.py tag-modality` or `rename-comment` run, but there's nothing to script against yet.
+- Modality: no `document_id` or genre-like comment metadata found at all, so no automatic detection was possible - need pointers to which sentences/documents are spoken vs. written (`genre = spoken` is only a value in the current genre field, not a per-sentence/document marker). Once that pointer exists, tagging is a one-line `harmonize_metadata.py tag-modality` or `rename-comment` run, but there's nothing to script against yet.

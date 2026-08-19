@@ -10,6 +10,8 @@ udver: '2'
 
 This page is a slim recap generated from per-treebank data files in [`workgroups/spoken-data/treebanks/`](https://github.com/UniDive/spoken-language-guidelines/tree/main/workgroups/spoken-data/treebanks). Each treebank has its own page with full metadata review details and a manual-check list. Advice references the standardized naming conventions in [Metadata harmonisation](metadata.html). Use the search box, filters, or click a column header to sort.
 
+**Data version:** the analysis below is based on the latest available version of each treebank (the `master`/`dev` branch HEAD as of May 2026); please check the treebank's own repository for any updates published afterwards.
+
 <div id="tb-controls">
   <input type="text" id="tb-search" placeholder="Search treebank name..." />
   <select id="tb-type-filter">
@@ -36,7 +38,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
       <th data-col="3" data-type="number">tokens</th>
       <th data-col="4" data-type="string">spoken identifiable?</th>
       <th data-col="5" data-type="string">how identified</th>
-      <th data-col="6" data-type="string">newdoc id</th>
+      <th data-col="6" data-type="string">document_id</th>
       <th data-col="7" data-type="string">translations</th>
       <th data-col="8" data-type="string">other text fields</th>
       <th data-col="9" data-type="string">speaker metadata</th>
@@ -52,7 +54,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">98</td>
         <td class="num">652</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td>`text_name`: this is a document identifier but is wrongly repeated on every…</td>
         <td></td>
@@ -70,7 +72,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td class="num">19334</td>
         <td>yes</td>
         <td>via the `form` field: all 97 documents carry a `# form = ...` value</td>
-        <td>`newdoc id`: OK</td>
+        <td>`document_id`: OK</td>
         <td></td>
         <td></td>
         <td>`author` → `speaker_id`</td>
@@ -84,7 +86,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">763</td>
         <td class="num">11948</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from recording basename</td>
         <td>`text_en` → `text_eng`</td>
@@ -100,7 +102,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">406</td>
         <td class="num">2713</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from recording basename; `sound_url` → move to document level</td>
         <td>`text_en` → `text_eng`</td>
@@ -132,9 +134,9 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">1004</td>
         <td class="num">13918</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
-        <td>add `# newdoc id` at sentences 1, 411, 548, and 651, using the proposed ids above…</td>
+        <td>add `# document_id` at sentences 1, 411, 548, and 651, using the proposed ids above…</td>
         <td></td>
         <td></td>
         <td>no speaker metadata exists; the legislative-council portion (sentences 651-1004) clearly…</td>
@@ -164,9 +166,9 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">1004</td>
         <td class="num">9874</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
-        <td>add `# newdoc id` at sentences 1, 411, 548, and 651, using the proposed ids above…</td>
+        <td>add `# document_id` at sentences 1, 411, 548, and 651, using the proposed ids above…</td>
         <td></td>
         <td></td>
         <td>no speaker metadata exists; the legislative-council portion (sentences 651-1004) clearly…</td>
@@ -180,7 +182,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">1004</td>
         <td class="num">5389</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from `sent_id` prefix (everything before `:`)</td>
         <td>`text[eng]` → `text_eng`; `text[rus]` → `text_rus`</td>
@@ -213,7 +215,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td class="num">213897</td>
         <td class="num">3432078</td>
         <td>yes</td>
-        <td>via the `newdoc id` prefix `pdtsc`</td>
+        <td>via the `document_id` prefix `pdtsc`</td>
         <td></td>
         <td></td>
         <td></td>
@@ -260,7 +262,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">48183</td>
         <td class="num">289817</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td>`corpus_name`: recompose: sort sentences by `original_sent_id` within each…</td>
         <td></td>
@@ -276,7 +278,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">2320</td>
         <td class="num">21312</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from `sent_id` prefix (everything before `_&lt;number&gt;`</td>
         <td></td>
@@ -294,7 +296,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td class="num">17619</td>
         <td>yes</td>
         <td>via `meta::genre = esports`</td>
-        <td>`newdoc id`: OK</td>
+        <td>`document_id`: OK</td>
         <td></td>
         <td></td>
         <td>`speaker` → `speaker_id`</td>
@@ -310,7 +312,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td class="num">252284</td>
         <td>yes</td>
         <td>via `meta::genre`</td>
-        <td>`newdoc id`: OK</td>
+        <td>`document_id`: OK</td>
         <td></td>
         <td></td>
         <td>`speaker` → `speaker_id`</td>
@@ -324,7 +326,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">2776</td>
         <td class="num">42257</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from `sent_id` prefix (everything before the trailing `_&lt;number&gt;`); `sound_url` → move to document level</td>
         <td></td>
@@ -340,7 +342,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">3209</td>
         <td class="num">43691</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from `sent_id` prefix (everything before the trailing `-&lt;number&gt;`); `sound_url` → move to document level</td>
         <td></td>
@@ -356,9 +358,9 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">400</td>
         <td class="num">3729</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
-        <td>`newdoc id`: OK</td>
+        <td>`document_id`: OK</td>
         <td></td>
         <td>`text_switch`: OK</td>
         <td>`speaker` (3rd segment, e.g. `sp0013f`) → `speaker_id`; `speaker` (2nd segment: `male`/`female`/`child`, 285/114/2 sentences) → `speaker_gender`; `speaker` (1st segment: `fr`/`nl`): split out; not a standard…</td>
@@ -372,7 +374,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">966</td>
         <td class="num">15990</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from `sent_id` prefix (everything before the trailing `_&lt;number&gt;`)</td>
         <td></td>
@@ -389,8 +391,8 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td class="num">2521</td>
         <td class="num">61773</td>
         <td>yes</td>
-        <td>via the source-outlet component embedded in `newdoc id`</td>
-        <td>`newdoc id`: make tags: doc_id</td>
+        <td>via the source-outlet component embedded in `document_id`</td>
+        <td>`document_id`: make tags: doc_id</td>
         <td></td>
         <td></td>
         <td></td>
@@ -420,7 +422,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">1305</td>
         <td class="num">15324</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td></td>
         <td>`text_en` → `text_eng`</td>
@@ -436,7 +438,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">1927</td>
         <td class="num">14398</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td></td>
         <td>`text_en` → `text_eng`</td>
@@ -470,7 +472,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td class="num">50499</td>
         <td>no</td>
         <td></td>
-        <td>`newdoc id`: OK</td>
+        <td>`document_id`: OK</td>
         <td></td>
         <td></td>
         <td>`speaker` → `speaker_id`</td>
@@ -500,7 +502,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">628</td>
         <td class="num">5307</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td></td>
         <td>`text_en` → `text_eng`</td>
@@ -516,7 +518,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">2221</td>
         <td class="num">18050</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td></td>
         <td></td>
@@ -549,7 +551,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td class="num">3589</td>
         <td class="num">27611</td>
         <td>yes</td>
-        <td>via the `newdoc id` prefix, which names the source type: `book`</td>
+        <td>via the `document_id` prefix, which names the source type: `book`</td>
         <td></td>
         <td></td>
         <td></td>
@@ -580,7 +582,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">214</td>
         <td class="num">2304</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from `sent_id` prefix identifying the source recording (please confirm…</td>
         <td>`text_en`: make tags: text_en; `text_ru`: text_rus; `text_end`: text_en</td>
@@ -628,7 +630,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">9241</td>
         <td class="num">140837</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from `sent_id` prefix identifying the source recording</td>
         <td>`text_en` → `text_eng`</td>
@@ -660,9 +662,9 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">170</td>
         <td class="num">1272</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
-        <td>`doc_title_`: use as `# newdoc id` (rename/repurpose the field)</td>
+        <td>`doc_title_`: use as `# document_id` (rename/repurpose the field)</td>
         <td>`text_en` → `text_eng`; `text_ru` → `text_rus`</td>
         <td>`text_p`: unclear</td>
         <td></td>
@@ -678,7 +680,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td class="num">26444</td>
         <td>no</td>
         <td></td>
-        <td>`title` → `newdoc id`</td>
+        <td>`title` → `document_id`</td>
         <td></td>
         <td>`text_eng`, `text_por`, `text_rus`: OK</td>
         <td>`speaker` → `speaker_id`; `speaker_gender`: OK</td>
@@ -692,7 +694,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">403</td>
         <td class="num">2692</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td></td>
         <td>`text_fr` → `text_fra`</td>
@@ -708,7 +710,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">5250</td>
         <td class="num">55410</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td></td>
         <td></td>
@@ -740,7 +742,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">524</td>
         <td class="num">4275</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from `sent_id` prefix identifying the source recording</td>
         <td>`text_en` → `text_eng`</td>
@@ -773,7 +775,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td class="num">4748</td>
         <td class="num">86139</td>
         <td>yes</td>
-        <td>via the letter prefix of `newdoc id`</td>
+        <td>via the letter prefix of `document_id`</td>
         <td></td>
         <td></td>
         <td></td>
@@ -804,7 +806,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">6121</td>
         <td class="num">98393</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td></td>
         <td></td>
@@ -852,7 +854,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">539</td>
         <td class="num">7987</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td></td>
         <td></td>
@@ -868,7 +870,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">203</td>
         <td class="num">1610</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from `sent_id` prefix (everything before the first `:`)</td>
         <td></td>
@@ -916,7 +918,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">2184</td>
         <td class="num">36934</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from `sent_id` prefix (everything before the trailing `-&lt;number&gt;`)</td>
         <td></td>
@@ -934,7 +936,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td class="num">109166</td>
         <td>yes</td>
         <td>per README description</td>
-        <td>derive `# newdoc id = NSDC_UA_28_Feb2014` for the NSDC-sourced sentences (`sent_id`…</td>
+        <td>derive `# document_id = NSDC_UA_28_Feb2014` for the NSDC-sourced sentences (`sent_id`…</td>
         <td>`text_en`: remove (single occurrence, placeholder value `undefined undefined`)</td>
         <td></td>
         <td></td>
@@ -948,7 +950,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">100</td>
         <td class="num">1888</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
         <td></td>
         <td></td>
@@ -965,8 +967,8 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td class="num">6644</td>
         <td class="num">121432</td>
         <td>yes</td>
-        <td>via the `newdoc id` prefix, which already encodes genre</td>
-        <td>`doc_title`: `newdoc id` already exists separately (e.g. `spoken-002R`);…</td>
+        <td>via the `document_id` prefix, which already encodes genre</td>
+        <td>`doc_title`: `document_id` already exists separately (e.g. `spoken-002R`);…</td>
         <td></td>
         <td></td>
         <td></td>
@@ -1012,9 +1014,9 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>only spoken</td>
         <td class="num">200</td>
         <td class="num">1371</td>
-        <td>n/a</td>
+        <td>n/a - spoken data only</td>
         <td></td>
-        <td>add `# newdoc id = Seyristane_dialogue` corpus-wide (single document)</td>
+        <td>add `# document_id = Seyristane_dialogue` corpus-wide (single document)</td>
         <td>`text_en` → `text_eng`</td>
         <td></td>
         <td></td>

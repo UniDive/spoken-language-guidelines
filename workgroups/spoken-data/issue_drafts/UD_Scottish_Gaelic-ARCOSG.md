@@ -16,15 +16,15 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 This treebank mixes spoken and written material but its `.conllu` files don't explicitly mark which sentences are spoken. The README is explicit about this, though:
 
-**Finding:** The 8 subcorpora are identifiable via the letter prefix of `newdoc id` (`<letters><digits>`, e.g. `c03`, `f08`, `fp09`, `n02`, `ns06`): `c` (Conversation - interview transcripts), `s` (Sport - radio commentary), `n` (Oral narrative), `ns` (News scripts, radio), `p` (Public interview/discussion, radio) are spoken; `f` (Fiction), `fp` (Formal prose), `pw` (Popular writing/newspaper columns) are written.
+**Finding:** The 8 subcorpora are identifiable via the letter prefix of `document_id` (`<letters><digits>`, e.g. `c03`, `f08`, `fp09`, `n02`, `ns06`): `c` (Conversation - interview transcripts), `s` (Sport - radio commentary), `n` (Oral narrative), `ns` (News scripts, radio), `p` (Public interview/discussion, radio) are spoken; `f` (Fiction), `fp` (Formal prose), `pw` (Popular writing/newspaper columns) are written.
 
-**Suggestion:** Add `# modality = spoken` to documents whose `newdoc id` prefix is `c`, `s`, `n`, `ns`, or `p`; `# modality = written` for `f`, `fp`, `pw`.
+**Suggestion:** Add `# modality = spoken` to documents whose `document_id` prefix is `c`, `s`, `n`, `ns`, or `p`; `# modality = written` for `f`, `fp`, `pw`.
 
 ### 2. Document-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#document-level))
 
 Per the README, each spoken subcorpus also has a fairly clear genre and interaction profile:
 
-| `newdoc id` prefix | Subcorpus                                                                  | `# genre`                                                 | Interaction parameters                                                                                                                                     |
+| `document_id` prefix | Subcorpus                                                                  | `# genre`                                                 | Interaction parameters                                                                                                                                     |
 | ------------------ | -------------------------------------------------------------------------- | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `c`                | Conversation (interviews, Western Isles, 1998-2000)                        | `interview`                                               | `degree_of_spontaneity = unplanned`, `number_of_participants = dialogic`, `context = private`, `setting = face-to-face`, `symmetry = asymmetric`           |
 | `s`                | Sport (*Radio nan Gàidheal* match commentary)                              | `commentary`                                              | `degree_of_spontaneity = unplanned`, `number_of_participants = monologic`, `context = public`, `setting = broadcast`                                       |
@@ -46,8 +46,8 @@ Please confirm these against your own understanding - especially `number_of_part
 - `speaker` → `speaker_id`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map speaker=speaker_id --write` (values like `[1]`, `[2]` confirmed in the real data - purely a key rename, no reformatting needed).
 
 **Needs a small script**
-- `# modality` tagging from `newdoc id` prefix (`# newdoc id` already exists in the released files, e.g. `c02`, `f01`): `python3 workgroups/spoken-data/scripts/harmonize_metadata.py tag-modality DIR --spoken-if '^(c|s|n|ns|p)[0-9]' --written-if '^(f|fp|pw)[0-9]' --write` — note `n` vs `ns` and `f` vs `fp` need the digit boundary in the regex (as above) so `n02` doesn't also match the `ns` written/spoken split incorrectly; double-check against the full prefix list before running with `--write`.
-- The per-subcorpus `# genre` and interaction-parameter block (table above) is a fixed lookup by `newdoc id` prefix - once confirmed, a ~20-line script keyed on the same prefix regexes as `tag-modality` can insert all of `genre`, `degree_of_spontaneity`, `number_of_participants`, `context`, `setting`, `symmetry` in one pass (not covered by the current subcommands, which only handle a single field at a time).
+- `# modality` tagging from `document_id` prefix (`# document_id` already exists in the released files, e.g. `c02`, `f01`): `python3 workgroups/spoken-data/scripts/harmonize_metadata.py tag-modality DIR --spoken-if '^(c|s|n|ns|p)[0-9]' --written-if '^(f|fp|pw)[0-9]' --write` — note `n` vs `ns` and `f` vs `fp` need the digit boundary in the regex (as above) so `n02` doesn't also match the `ns` written/spoken split incorrectly; double-check against the full prefix list before running with `--write`.
+- The per-subcorpus `# genre` and interaction-parameter block (table above) is a fixed lookup by `document_id` prefix - once confirmed, a ~20-line script keyed on the same prefix regexes as `tag-modality` can insert all of `genre`, `degree_of_spontaneity`, `number_of_participants`, `context`, `setting`, `symmetry` in one pass (not covered by the current subcommands, which only handle a single field at a time).
 
 **Needs manual input from maintainers**
 - `number_of_participants`/`symmetry` for `p` documents specifically (mixed two-person interviews and one multi-party programme, `p06`) - needs per-document review, not a blanket prefix rule.

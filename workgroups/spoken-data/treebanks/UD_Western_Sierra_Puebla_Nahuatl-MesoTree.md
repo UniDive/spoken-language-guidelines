@@ -24,7 +24,7 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** No - the only `genre`-like field has a single constant value (`examples`, 2,115 sentences); no `newdoc id` or other field was found either. Flagged to maintainers to confirm which documents (if any) are transcribed spoken material.
+**Is spoken part clearly identifiable?** No - the only `genre`-like field has a single constant value (`examples`, 2,115 sentences); no `document_id` or other field was found either. Flagged to maintainers to confirm which documents (if any) are transcribed spoken material.
 
 ## Metadata review
 

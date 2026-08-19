@@ -14,9 +14,9 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 ### 1. Document-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#document-level))
 
-No `newdoc id` exists in the current `.conllu`. However, the repo's own README documents exactly 4 distinct sources by `sent_id` range (matching the parallel UD_Cantonese-HK treebank):
+No `document_id` exists in the current `.conllu`. However, the repo's own README documents exactly 4 distinct sources by `sent_id` range (matching the parallel UD_Cantonese-HK treebank):
 
-| `sent_id` range | Proposed `newdoc id` | Title | Source |
+| `sent_id` range | Proposed `document_id` | Title | Source |
 |---|---|---|---|
 | 1-410 | `missing_days` | Missing days / 小時光 (film) | https://www.youtube.com/watch?v=1qSMiw0vhzU |
 | 411-547 | `tempo_in_temple` | Tempo in Temple / 廟眾樂樂 (film) | https://www.youtube.com/watch?v=8e8Lqd6grTE |
@@ -25,7 +25,7 @@ No `newdoc id` exists in the current `.conllu`. However, the repo's own README d
 
 | Field | Suggestion |
 |---|---|
-| — | add `# newdoc id` at sentences 1, 411, 548, and 651, using the proposed ids above (please confirm the slugs; same ranges as the parallel UD_Cantonese-HK treebank) |
+| — | add `# document_id` at sentences 1, 411, 548, and 651, using the proposed ids above (please confirm the slugs; same ranges as the parallel UD_Cantonese-HK treebank) |
 | — | add `# genre` (film / legislative-proceedings) per document |
 
 ### 2. Speaker-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#speaker-level))
@@ -49,10 +49,10 @@ No `newdoc id` exists in the current `.conllu`. However, the repo's own README d
   ```
 
 **Needs a small script**
-- Same situation as the parallel UD_Cantonese-HK treebank: `sent_id` is a plain sequential integer with no derivable prefix, so `derive-newdoc` doesn't apply. Insert `# newdoc id` (and `# genre`) at the four fixed `sent_id` boundaries (1, 411, 548, 651) with a short bespoke script, once the id slugs and genre values are confirmed - can share the same script written for UD_Cantonese-HK since the boundaries match exactly.
+- Same situation as the parallel UD_Cantonese-HK treebank: `sent_id` is a plain sequential integer with no derivable prefix, so `derive-document-id` doesn't apply. Insert `# document_id` (and `# genre`) at the four fixed `sent_id` boundaries (1, 411, 548, 651) with a short bespoke script, once the id slugs and genre values are confirmed - can share the same script written for UD_Cantonese-HK since the boundaries match exactly.
 
 **Needs manual input from maintainers**
-- Confirm the four proposed `newdoc id` slugs (same as UD_Cantonese-HK: `missing_days`, `tempo_in_temple`, `what_day_is_today`, `legco_president_election_2016`).
+- Confirm the four proposed `document_id` slugs (same as UD_Cantonese-HK: `missing_days`, `tempo_in_temple`, `what_day_is_today`, `legco_president_election_2016`).
 - Confirm `genre` values per document.
 - Whether `speaker_id` can be recovered for the legislative-council portion (sentences 651-1004) - needs source material, not a mechanical transform.
 

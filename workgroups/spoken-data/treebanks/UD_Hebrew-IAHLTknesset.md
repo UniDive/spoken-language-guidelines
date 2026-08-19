@@ -24,7 +24,7 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** The entire treebank may already be spoken (transcribed Knesset/parliament proceedings), rather than a partial split. `newdoc id` values follow `<year>_<doctype>_<id>` where `doctype` is only ever `ptv` (65 docs, likely "protocol verbatim") or `ptm` (35 docs, likely "protocol minutes") - both are transcribed parliamentary speech, not a spoken/written split. Rather than partially tagging, please confirm whether the whole corpus should carry `# modality = spoken`, or whether `ptm` (minutes, possibly edited/summarized) should be excluded as not verbatim spoken language.
+**Is spoken part clearly identifiable?** The entire treebank may already be spoken (transcribed Knesset/parliament proceedings), rather than a partial split. `document_id` values follow `<year>_<doctype>_<id>` where `doctype` is only ever `ptv` (65 docs, likely "protocol verbatim") or `ptm` (35 docs, likely "protocol minutes") - both are transcribed parliamentary speech, not a spoken/written split. Rather than partially tagging, please confirm whether the whole corpus should carry `# modality = spoken`, or whether `ptm` (minutes, possibly edited/summarized) should be excluded as not verbatim spoken language.
 
 ## Metadata review
 
@@ -32,7 +32,7 @@ udver: '2'
 
 | Field | Advice |
 | --- | --- |
-| `newdoc id` | OK - already standard |
+| `document_id` | OK |
 
 ### speaker metadata
 

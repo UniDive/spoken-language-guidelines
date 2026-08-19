@@ -24,7 +24,7 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** N/A
+**Is spoken part clearly identifiable?** N/A - spoken data only
 
 
 ## Metadata review
@@ -35,9 +35,9 @@ _(none found)_ - `corpus_name` (6 distinct values: `Brown`, `Braunwald`, `Provid
 
 | Field | Advice |
 |---|---|
-| `corpus_name` | recompose: sort sentences by `original_sent_id` within each `corpus_name`, then set `corpus_name` once per document as `# newdoc id` |
+| `corpus_name` | recompose: sort sentences by `original_sent_id` within each `corpus_name`, then set `corpus_name` once per document as `# document_id` |
 
-**Caveat to confirm with maintainer:** `corpus_name` is the CHILDES *study* name, not a single recording - e.g. `Brown` alone contains three different children (`Adam`, `Eve`, `Sarah`) recorded across different ages/sessions, and `Providence` contains three more (`Lily`, `Naima`, `Violet`). If a "document" should mean one recording session, `newdoc id` may need to key on `(corpus_name, child_name, child_age)` instead of `corpus_name` alone
+**Caveat to confirm with maintainer:** `corpus_name` is the CHILDES *study* name, not a single recording - e.g. `Brown` alone contains three different children (`Adam`, `Eve`, `Sarah`) recorded across different ages/sessions, and `Providence` contains three more (`Lily`, `Naima`, `Violet`). If a "document" should mean one recording session, `document_id` may need to key on `(corpus_name, child_name, child_age)` instead of `corpus_name` alone
 
 ### speaker metadata
 

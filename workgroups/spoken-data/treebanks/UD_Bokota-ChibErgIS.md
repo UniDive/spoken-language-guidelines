@@ -24,7 +24,7 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** N/A
+**Is spoken part clearly identifiable?** N/A - spoken data only
 
 ## Metadata review
 
@@ -53,8 +53,8 @@ udver: '2'
 
 | Field | Advice |
 |---|---|
-| — | no `newdoc id` exists at all (0 occurrences across 406 sentences) - but the 54 distinct `sound_url` values (e.g. `SAB-TXT-AN-00000-01.WAV`) already identify document boundaries; derive `# newdoc id` from the recording basename and set it once per document |
-| `sound_url` | currently repeated on every sentence - move to document level once `newdoc id` exists |
+| — | no `document_id` exists at all (0 occurrences across 406 sentences) - but the 54 distinct `sound_url` values (e.g. `SAB-TXT-AN-00000-01.WAV`) already identify document boundaries; derive `# document_id` from the recording basename and set it once per document |
+| `sound_url` | currently repeated on every sentence - move to document level once `document_id` exists |
 
 ### sent metadata
 

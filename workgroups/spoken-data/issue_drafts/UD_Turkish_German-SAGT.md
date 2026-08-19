@@ -14,11 +14,11 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 ### 1. Document-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#document-level))
 
-No `newdoc id` exists, but it can be derived directly from the `sent_id` prefix: `sent_id` follows `<doc-id>-<number>` (e.g. `TRDE-CS-C15-0001`), with 48 distinct document ids (`TRDE-CS-C01` ... `TRDE-CS-V06`).
+No `document_id` exists, but it can be derived directly from the `sent_id` prefix: `sent_id` follows `<doc-id>-<number>` (e.g. `TRDE-CS-C15-0001`), with 48 distinct document ids (`TRDE-CS-C01` ... `TRDE-CS-V06`).
 
 | Field | Suggestion                                                                                  |
 | ----- | ------------------------------------------------------------------------------------------- |
-| —     | derive `# newdoc id` from the `sent_id` prefix (everything before the trailing `-<number>`) |
+| —     | derive `# document_id` from the `sent_id` prefix (everything before the trailing `-<number>`) |
 
 ### 2. Sentence-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#sentence-level))
 
@@ -35,9 +35,9 @@ No `newdoc id` exists, but it can be derived directly from the `sent_id` prefix:
 
 ### Implementation notes
 
-- **Needs a small script:** derive `# newdoc id` from the `sent_id` prefix:
+- **Needs a small script:** derive `# document_id` from the `sent_id` prefix:
   ```
-  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc \
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-document-id \
       UD_Turkish_German-SAGT --pattern '^(?P<doc>.+)-\d+$' --write
   ```
   Verified against the local clone (dry-run, all three splits): derives 17/16/15 documents (dev/test/train) with no unmatched `sent_id`s.

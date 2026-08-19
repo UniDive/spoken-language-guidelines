@@ -34,7 +34,7 @@ udver: '2'
 
 | Field | Advice |
 | --- | --- |
-| `newdoc id` | OK |
+| `document_id` | OK |
 
 ### modality metadata
 

@@ -16,11 +16,11 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 This treebank mixes spoken and written material but its `.conllu` files don't explicitly mark which sentences are spoken. We looked for a pattern in the data (a reasonable guess):
 
-**Finding:** Likely identifiable via the `newdoc id` prefix, which names the source type.
+**Finding:** Likely identifiable via the `document_id` prefix, which names the source type.
 
-**Evidence:** `newdoc id` prefixes (small, clean set): `book` (15), `grammar` (2), `film` (2), `conversation` (1). `conversation` and `film` (transcribed dialogue/subtitles) are plausibly spoken; `book`/`grammar` are written.
+**Evidence:** `document_id` prefixes (small, clean set): `book` (15), `grammar` (2), `film` (2), `conversation` (1). `conversation` and `film` (transcribed dialogue/subtitles) are plausibly spoken; `book`/`grammar` are written.
 
-**Suggestion:** Add `# modality = spoken` to documents whose `newdoc id` starts with `conversation` or `film` - please confirm whether `film` here means subtitle/transcript text.
+**Suggestion:** Add `# modality = spoken` to documents whose `document_id` starts with `conversation` or `film` - please confirm whether `film` here means subtitle/transcript text.
 
 ### 2. Sentence-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#sentence-level))
 
@@ -43,7 +43,7 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 - `OrigLang`, `Lang`: already the standard MISC key names in the released data (verified) - no change needed, the draft's "rename to X" here is a no-op.
 
 **Needs a small script**
-- Modality tagging, once confirmed: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py tag-modality <path> --spoken-if '^(conversation|film)' --written-if '^(book|grammar)' --write`. Dry-run against all three released files (`naq_kdt-ud-{dev,test,train}.conllu`) tags all 25 `newdoc id`s cleanly (15 book, 4 grammar → written; 3 conversation, 3 film → spoken), no unmatched ids.
+- Modality tagging, once confirmed: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py tag-modality <path> --spoken-if '^(conversation|film)' --written-if '^(book|grammar)' --write`. Dry-run against all three released files (`naq_kdt-ud-{dev,test,train}.conllu`) tags all 25 `document_id`s cleanly (15 book, 4 grammar → written; 3 conversation, 3 film → spoken), no unmatched ids.
 
 **Needs manual input from maintainers**
 - Whether `film` documents are subtitle/transcript text (spoken) as assumed - confirms the regex above.

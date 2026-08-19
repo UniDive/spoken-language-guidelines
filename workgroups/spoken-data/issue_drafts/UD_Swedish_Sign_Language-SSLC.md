@@ -14,17 +14,17 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 ### 1. Document-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#document-level))
 
-No `newdoc id` exists, but it can be derived directly from the `sent_id` prefix: `sent_id` follows `<doc-id>:<start>:<end>` (e.g. `SSLC01_104:1:2`), with 6 distinct document ids (`SSLC01_104`, `SSLC01_320`, `SSLC01_391`, `SSLC02_331`, `SSLC02_332`, `SSLC02_409`).
+No `document_id` exists, but it can be derived directly from the `sent_id` prefix: `sent_id` follows `<doc-id>:<start>:<end>` (e.g. `SSLC01_104:1:2`), with 6 distinct document ids (`SSLC01_104`, `SSLC01_320`, `SSLC01_391`, `SSLC02_331`, `SSLC02_332`, `SSLC02_409`).
 
 | Field | Suggestion                                                                       |
 | ----- | -------------------------------------------------------------------------------- |
-| —     | derive `# newdoc id` from the `sent_id` prefix (everything before the first `:`) |
+| —     | derive `# document_id` from the `sent_id` prefix (everything before the first `:`) |
 
 ### Implementation notes
 
-- **Needs a small script:** derive `# newdoc id` from the `sent_id` prefix using the already-written helper script `workgroups/spoken-data/scripts/harmonize_metadata.py`:
+- **Needs a small script:** derive `# document_id` from the `sent_id` prefix using the already-written helper script `workgroups/spoken-data/scripts/harmonize_metadata.py`:
   ```
-  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc \
+  python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-document-id \
       UD_Swedish_Sign_Language-SSLC --pattern '^(?P<doc>[^:]+):.*$' --write
   ```
   Verified against the local clone (`swl_sslc-ud-test.conllu`, dry-run): correctly derives all 6 documents (`SSLC01_104`, `SSLC01_320`, `SSLC01_391`, `SSLC02_331`, `SSLC02_332`, `SSLC02_409`) with no unmatched `sent_id`s.

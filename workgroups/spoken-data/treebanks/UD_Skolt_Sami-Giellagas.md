@@ -37,11 +37,11 @@ udver: '2'
 
 ### doc (and paragraphs) metadata
 
- no `newdoc id` exists, but it can be derived from the source-identifier prefix of `sent_id` (the part before the timestamp/counter suffix), e.g. `11308_1a` and `NA2_00635_1az` (recordings), `kotus-skak2010-1-1` (published transcription), `SK2020`, `SKKV2020`, `Juutinen2023`, `FofonoffHilkka_brat_2018` (other sources). The exact delimiter varies by source (`::` before timestamps, `:`/`-` before a numeric counter otherwise) - please confirm the intended document granularity with the maintainer.
+ no `document_id` exists, but it can be derived from the source-identifier prefix of `sent_id` (the part before the timestamp/counter suffix), e.g. `11308_1a` and `NA2_00635_1az` (recordings), `kotus-skak2010-1-1` (published transcription), `SK2020`, `SKKV2020`, `Juutinen2023`, `FofonoffHilkka_brat_2018` (other sources). The exact delimiter varies by source (`::` before timestamps, `:`/`-` before a numeric counter otherwise) - please confirm the intended document granularity with the maintainer.
 
 | Field | Advice                                                           |
 | ----- | ---------------------------------------------------------------- |
-| —     | derive `# newdoc id` from the `sent_id` source-identifier prefix |
+| —     | derive `# document_id` from the `sent_id` source-identifier prefix |
 
 ### modality metadata
 

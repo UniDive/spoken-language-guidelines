@@ -14,11 +14,11 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 ### 1. Document-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#document-level))
 
-No `newdoc id` exists, but per the README, `sent_id` values match those in the archived IKDP corpus, with `+` marking sentence IDs that span multiple annotations (a merge within one recording, not a document boundary). This suggests `sent_id` already encodes a document/recording identifier.
+No `document_id` exists, but per the README, `sent_id` values match those in the archived IKDP corpus, with `+` marking sentence IDs that span multiple annotations (a merge within one recording, not a document boundary). This suggests `sent_id` already encodes a document/recording identifier.
 
 | Field | Suggestion                                                                                                                                                                          |
 | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| —     | derive `# newdoc id` from the `sent_id` prefix identifying the source recording (please confirm the exact delimiter); treat `+`-joined `sent_id`s as belonging to the same document |
+| —     | derive `# document_id` from the `sent_id` prefix identifying the source recording (please confirm the exact delimiter); treat `+`-joined `sent_id`s as belonging to the same document |
 
 ### 2. Sentence-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#sentence-level))
 
@@ -42,8 +42,8 @@ No `newdoc id` exists, but per the README, `sent_id` values match those in the a
 - `OrigLang`, `Lang`: already the standard MISC key names (verified) - no change needed.
 
 **Needs a small script**
-- Once the `sent_id` delimiter is confirmed (see below), deriving `# newdoc id`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-newdoc <path> --pattern '<confirmed-pattern>' --write`.
+- Once the `sent_id` delimiter is confirmed (see below), deriving `# document_id`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-document-id <path> --pattern '<confirmed-pattern>' --write`.
 
 **Needs manual input from maintainers**
-- `sent_id` document delimiter: two different conventions are visible in the data itself - `13756_2bz.002` (dot before a numeric suffix) and `kpv_izva19591100-05582_1az-04` (dash before the suffix) - so a single regex can't derive `newdoc id` for the whole corpus automatically; need the exact rule (and confirmation that a single rule covers all recordings).
-- `+`-joined `sent_id`s (e.g. `kpv_izva20140325-2-a-027+...+031`, up to 5-way merges): confirmed by the draft to belong to one document, but `derive-newdoc` as written takes the *first* sent_id in a merge as the document key - should double check merged-sentence handling once the delimiter rule is set.
+- `sent_id` document delimiter: two different conventions are visible in the data itself - `13756_2bz.002` (dot before a numeric suffix) and `kpv_izva19591100-05582_1az-04` (dash before the suffix) - so a single regex can't derive `document_id` for the whole corpus automatically; need the exact rule (and confirmation that a single rule covers all recordings).
+- `+`-joined `sent_id`s (e.g. `kpv_izva20140325-2-a-027+...+031`, up to 5-way merges): confirmed by the draft to belong to one document, but `derive-document-id` as written takes the *first* sent_id in a merge as the document key - should double check merged-sentence handling once the delimiter rule is set.

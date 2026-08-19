@@ -24,18 +24,18 @@ udver: '2'
 
 ## Modality identification
 
-**Is spoken part clearly identifiable?** N/A
+**Is spoken part clearly identifiable?** N/A - spoken data only
 
 ## Metadata review
 
 ### doc (and paragraphs) metadata
 
-_(none found)_ - no `newdoc id` exists at all. But `sent_id` already encodes it: e.g. `Rhap_D0001-1` is document `Rhap_D0001`, sentence `1`. 57 distinct documents across 3209 sentences, matching exactly the 57 distinct `sound_url` values (present on every single sentence, unlike ParisStories). Several other fields are also constant within each document and should move to document level once `newdoc id` exists: `genre`, `subgenre`, `type`, `task`, `subject`, `channel`, `modalities` (verified: none of these vary within a document). `speaker_id`/`speaker_age` correctly stay sentence-level, since they do vary within documents (multi-speaker dialogues).
+_(none found)_ - no `document_id` exists at all. But `sent_id` already encodes it: e.g. `Rhap_D0001-1` is document `Rhap_D0001`, sentence `1`. 57 distinct documents across 3209 sentences, matching exactly the 57 distinct `sound_url` values (present on every single sentence, unlike ParisStories). Several other fields are also constant within each document and should move to document level once `document_id` exists: `genre`, `subgenre`, `type`, `task`, `subject`, `channel`, `modalities` (verified: none of these vary within a document). `speaker_id`/`speaker_age` correctly stay sentence-level, since they do vary within documents (multi-speaker dialogues).
 
 | Field                                                                   | Advice                                                                                      |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| —                                                                       | derive `# newdoc id` from the `sent_id` prefix (everything before the trailing `-<number>`) |
-| `sound_url`                                                             | move to document level, set once per `newdoc id`                                            |
+| —                                                                       | derive `# document_id` from the `sent_id` prefix (everything before the trailing `-<number>`) |
+| `sound_url`                                                             | move to document level, set once per `document_id`                                            |
 | `genre`, `subgenre`, `type`, `task`, `subject`, `channel`, `modalities` | move to document level (constant per document)                                              |
 
 ### transcription and annotation levels available
