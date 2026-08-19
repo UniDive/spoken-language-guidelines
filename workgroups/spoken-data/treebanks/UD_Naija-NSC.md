@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.2                                                                                                            |
 | **link**            | [https://github.com/UniversalDependencies/UD_Naija-NSC](https://github.com/UniversalDependencies/UD_Naija-NSC) |
 | **genre**           | spoken                                                                                                         |
-| **contact**         | <kim@gerdes.fr>                                                                                                |
+| **contributors**         | Caron, Bernard; Strickland, Emmett; Courtin, Marine; Gerdes, Kim; Guillaume, Bruno; Kahane, Sylvain; Ajede, Chika Kennedy; Onwuegbuzia, Emeka; Tella, Samson |
 | **sentences**       | 9241                                                                                                           |
 | **tokens**          | 140837                                                                                                         |
 

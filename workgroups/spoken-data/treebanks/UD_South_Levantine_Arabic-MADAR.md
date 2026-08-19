@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.7                                                                                                                                                  |
 | **link**            | [https://github.com/UniversalDependencies/UD_South_Levantine_Arabic-MADAR](https://github.com/UniversalDependencies/UD_South_Levantine_Arabic-MADAR) |
 | **genre**           | spoken social                                                                                                                                        |
-| **contact**         | <shorouqjzahra@gmail.com>                                                                                                                            |
+| **contributors**         | Zahra, Shorouq |
 | **sentences**       | 100                                                                                                                                                  |
 | **tokens**          | 789                                                                                                                                                  |
 

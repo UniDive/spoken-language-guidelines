@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.8                                                                                                                                        |
 | **link**            | [https://github.com/UniversalDependencies/UD_Western_Armenian-ArmTDP](https://github.com/UniversalDependencies/UD_Western_Armenian-ArmTDP) |
 | **genre**           | blog fiction news nonfiction reviews social spoken web wiki                                                                                |
-| **contact**         | <marat.yavrumyan@ysu.am>                                                                                                                   |
+| **contributors**         | Yavrumyan, Marat M. |
 | **sentences**       | 6644                                                                                                                                       |
 | **tokens**          | 121432                                                                                                                                     |
 

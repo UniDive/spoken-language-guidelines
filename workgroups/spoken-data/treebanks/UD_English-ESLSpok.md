@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.12 |
 | **link** | [https://github.com/UniversalDependencies/UD_English-ESLSpok](https://github.com/UniversalDependencies/UD_English-ESLSpok) |
 | **genre** | spoken |
-| **contact** | kkyle2@uoregon.edu |
+| **contributors** | Kyle, Kris; Eguchi, Masaki; Miller, Aaron; Sither, Ted |
 | **sentences** | 2320 |
 | **tokens** | 21312 |
 

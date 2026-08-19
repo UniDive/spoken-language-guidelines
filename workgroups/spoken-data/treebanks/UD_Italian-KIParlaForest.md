@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.17                                                                                                                                   |
 | **link**            | [https://github.com/UniversalDependencies/UD_Italian-KIParlaForest](https://github.com/UniversalDependencies/UD_Italian-KIParlaForest) |
 | **genre**           | spoken                                                                                                                                 |
-| **contact**         | <ellepannitto@gmail.com>                                                                                                               |
+| **contributors**         | Pannitto, Ludovica; Zucchini, Eleonora; Bosco, Cristina; Mauri, Caterina; Sanguinetti, Manuela; Cocco, Esther |
 | **sentences**       | 2221                                                                                                                                   |
 | **tokens**          | 18050                                                                                                                                  |
 

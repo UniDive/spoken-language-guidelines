@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.5                                                                                                                                  |
 | **link**            | [https://github.com/UniversalDependencies/UD_Skolt_Sami-Giellagas](https://github.com/UniversalDependencies/UD_Skolt_Sami-Giellagas) |
 | **genre**           | nonfiction news spoken                                                                                                               |
-| **contact**         | <rueter.jack@gmail.com>                                                                                                              |
+| **contributors**         | Rueter, Jack; Juutinen, Markus; Tyers, Francis; Pirinen, Tommi A; Hämäläinen, Mika |
 | **sentences**       | 261                                                                                                                                  |
 | **tokens**          | 3049                                                                                                                                 |
 

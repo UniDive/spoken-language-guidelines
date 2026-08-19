@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.5                                                                                                                                      |
 | **link**            | [https://github.com/UniversalDependencies/UD_Scottish_Gaelic-ARCOSG](https://github.com/UniversalDependencies/UD_Scottish_Gaelic-ARCOSG) |
 | **genre**           | nonfiction fiction news spoken                                                                                                           |
-| **contact**         | <colin.r.batchelor@googlemail.com>                                                                                                       |
+| **contributors**         | Batchelor, Colin |
 | **sentences**       | 4748                                                                                                                                     |
 | **tokens**          | 86139                                                                                                                                    |
 

@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.7 |
 | **link** | [https://github.com/UniversalDependencies/UD_Chukchi-HSE](https://github.com/UniversalDependencies/UD_Chukchi-HSE) |
 | **genre** | spoken |
-| **contact** | ftyers@iu.edu |
+| **contributors** | Tyers, Francis; Mischenkova, Karina |
 | **sentences** | 1004 |
 | **tokens** | 5389 |
 

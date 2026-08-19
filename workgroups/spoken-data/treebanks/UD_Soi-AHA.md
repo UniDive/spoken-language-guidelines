@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.7                                                                                                        |
 | **link**            | [https://github.com/UniversalDependencies/UD_Soi-AHA](https://github.com/UniversalDependencies/UD_Soi-AHA) |
 | **genre**           | grammar-examples spoken                                                                                    |
-| **contact**         | <amojiry@gmail.com>                                                                                        |
+| **contributors**         | Mojiri Foroushani, AmirHossein; Aghaei, Hamid; Ahmadi, Amir |
 | **sentences**       | 8                                                                                                          |
 | **tokens**          | 55                                                                                                         |
 

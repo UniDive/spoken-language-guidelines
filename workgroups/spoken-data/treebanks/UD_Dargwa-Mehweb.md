@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.1 |
 | **link** | [https://github.com/UniversalDependencies/UD_Dargwa-Mehweb](https://github.com/UniversalDependencies/UD_Dargwa-Mehweb) |
 | **genre** | spoken |
-| **contact** | sasha.kozhukhar@gmail.com, olesar@yandex.ru |
+| **contributors** | Kozhukhar, Sasha; Lyashevskaya, Olga |
 | **sentences** | 0 |
 | **tokens** | 0 |
 

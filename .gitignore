@@ -1,5 +1,7 @@
 *~
 .DS_Store
+_site/
+.jekyll-metadata
 gen_index/_corpus_data
 .vscode/settings.json
 workgroups/.vscode/settings.json

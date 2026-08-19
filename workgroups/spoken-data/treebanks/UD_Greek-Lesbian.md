@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.16                                                                                                                   |
 | **link**            | [https://github.com/UniversalDependencies/UD_Greek-Lesbian](https://github.com/UniversalDependencies/UD_Greek-Lesbian) |
 | **genre**           | grammar-examples spoken fiction                                                                                        |
-| **contact**         | <s.bompolas@athenarc.gr>                                                                                               |
+| **contributors**         | Bompolas, Stavros; Markantonatou, Stella; Anastasopoulos, Antonios; Stamou, Vivian |
 | **sentences**       | 625                                                                                                                    |
 | **tokens**          | 6624                                                                                                                   |
 

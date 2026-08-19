@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.17                                                                                                                                     |
 | **link**            | [https://github.com/UniversalDependencies/UD_Hausa-WesternAutogramm](https://github.com/UniversalDependencies/UD_Hausa-WesternAutogramm) |
 | **genre**           | fiction nonfiction spoken                                                                                                                |
-| **contact**         | <bernard.l.caron@gmail.com>                                                                                                              |
+| **contributors**         | Caron, Bernard |
 | **sentences**       | 775                                                                                                                                      |
 | **tokens**          | 13862                                                                                                                                    |
 

@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.14                                                                                                                                       |
 | **link**            | [https://github.com/UniversalDependencies/UD_Hausa-NorthernAutogramm](https://github.com/UniversalDependencies/UD_Hausa-NorthernAutogramm) |
 | **genre**           | spoken                                                                                                                                     |
-| **contact**         | <bernard.l.caron@gmail.com>                                                                                                                |
+| **contributors**         | Caron, Bernard |
 | **sentences**       | 1305                                                                                                                                       |
 | **tokens**          | 15324                                                                                                                                      |
 

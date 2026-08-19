@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.9                                                                                                                                |
 | **link**            | [https://github.com/UniversalDependencies/UD_French-ParisStories](https://github.com/UniversalDependencies/UD_French-ParisStories) |
 | **genre**           | spoken                                                                                                                             |
-| **contact**         | <gerdes@lisn.fr>                                                                                                                   |
+| **contributors**         | Gerdes, Kim; Kahane, Sylvain; Mahamdi, Menel |
 | **sentences**       | 2776                                                                                                                               |
 | **tokens**          | 42257                                                                                                                              |
 

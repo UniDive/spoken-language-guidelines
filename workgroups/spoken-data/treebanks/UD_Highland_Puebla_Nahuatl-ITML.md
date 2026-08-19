@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.13                                                                                                                                                 |
 | **link**            | [https://github.com/UniversalDependencies/UD_Highland_Puebla_Nahuatl-ITML](https://github.com/UniversalDependencies/UD_Highland_Puebla_Nahuatl-ITML) |
 | **genre**           | spoken grammar-examples nonfiction                                                                                                                   |
-| **contact**         | <pughrob@iu.edu>                                                                                                                                     |
+| **contributors**         | Pugh, Robert; Tyers, Francis |
 | **sentences**       | 1260                                                                                                                                                 |
 | **tokens**          | 10018                                                                                                                                                |
 

@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.15                                                                                                                               |
 | **link**            | [https://github.com/UniversalDependencies/UD_Hebrew-IAHLTknesset](https://github.com/UniversalDependencies/UD_Hebrew-IAHLTknesset) |
 | **genre**           | government spoken                                                                                                                  |
-| **contact**         | <amir.zeldes@georgetown.edu>                                                                                                       |
+| **contributors**         | Zeldes, Amir; Algom, Avner; Ordan, Noam; Ben Moshe, Yifat; Howell, Nick; Wigderson, Shira; Strass, Omer; Landau, Israel; Dahan, Netanel; Minerbi, Yael; Merhav, Hilla; Kowner, Emmanuelle; Wintner, Shuly; Goldin, Gili; Rabinovich, Ella; Gurevich, Vladimir |
 | **sentences**       | 2883                                                                                                                               |
 | **tokens**          | 50499                                                                                                                              |
 

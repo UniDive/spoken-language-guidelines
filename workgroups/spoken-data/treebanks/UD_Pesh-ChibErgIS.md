@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.15                                                                                                                     |
 | **link**            | [https://github.com/UniversalDependencies/UD_Pesh-ChibErgIS](https://github.com/UniversalDependencies/UD_Pesh-ChibErgIS) |
 | **genre**           | spoken                                                                                                                   |
-| **contact**         | <natalia.caceres.arandia@cnrs.fr>                                                                                        |
+| **contributors**         | Cáceres Arandia, Natalia; Chamoreau, Claudine; Kahane, Sylvain; Guillaume, Bruno |
 | **sentences**       | 524                                                                                                                      |
 | **tokens**          | 4275                                                                                                                     |
 

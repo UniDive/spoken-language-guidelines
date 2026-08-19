@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.7                                                                                                                                |
 | **link**            | [https://github.com/UniversalDependencies/UD_Turkish_German-SAGT](https://github.com/UniversalDependencies/UD_Turkish_German-SAGT) |
 | **genre**           | spoken                                                                                                                             |
-| **contact**         | <ozlem@ims.uni-stuttgart.de>                                                                                                       |
+| **contributors**         | Çetinoğlu, Özlem; Çöltekin, Çağrı |
 | **sentences**       | 2184                                                                                                                               |
 | **tokens**          | 36934                                                                                                                              |
 

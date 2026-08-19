@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.17                                                                                                                 |
 | **link**            | [https://github.com/UniversalDependencies/UD_Yiddish-YiTB](https://github.com/UniversalDependencies/UD_Yiddish-YiTB) |
 | **genre**           | grammar-examples learner-essays bible wiki fiction nonfiction spoken web                                             |
-| **contact**         | <m.kirkandrews@gmail.com>                                                                                            |
+| **contributors**         | Andrews, Kirk |
 | **sentences**       | 3113                                                                                                                 |
 | **tokens**          | 27954                                                                                                                |
 

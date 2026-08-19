@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.2 |
 | **link** | [https://github.com/UniversalDependencies/UD_English-GUM](https://github.com/UniversalDependencies/UD_English-GUM) |
 | **genre** | academic blog email fiction government legal news nonfiction social spoken web wiki |
-| **contact** | amir.zeldes@georgetown.edu |
+| **contributors** | Peng, Siyao; Zeldes, Amir |
 | **sentences** | 14353 |
 | **tokens** | 252284 |
 

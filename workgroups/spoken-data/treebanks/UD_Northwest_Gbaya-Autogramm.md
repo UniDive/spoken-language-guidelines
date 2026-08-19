@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.15                                                                                                                                           |
 | **link**            | [https://github.com/UniversalDependencies/UD_Northwest_Gbaya-Autogramm](https://github.com/UniversalDependencies/UD_Northwest_Gbaya-Autogramm) |
 | **genre**           | spoken                                                                                                                                         |
-| **contact**         | <pauletteroulon@gmail.com>                                                                                                                     |
+| **contributors**         | Roulon, Paulette |
 | **sentences**       | 403                                                                                                                                            |
 | **tokens**          | 2692                                                                                                                                           |
 

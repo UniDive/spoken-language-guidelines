@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.2                                                                                                                          |
 | **link**            | [https://github.com/UniversalDependencies/UD_Komi_Zyrian-IKDP](https://github.com/UniversalDependencies/UD_Komi_Zyrian-IKDP) |
 | **genre**           | spoken                                                                                                                       |
-| **contact**         | <nikotapiopartanen@gmail.com>                                                                                                |
+| **contributors**         | Partanen, Niko; Blokland, Rogier; Rießler, Michael; Rueter, Jack |
 | **sentences**       | 214                                                                                                                          |
 | **tokens**          | 2304                                                                                                                         |
 

@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 1.1                                                                                                            |
 | **link**            | [https://github.com/UniversalDependencies/UD_Greek-GDT](https://github.com/UniversalDependencies/UD_Greek-GDT) |
 | **genre**           | news wiki spoken                                                                                               |
-| **contact**         | <prokopis@ilsp.gr>                                                                                             |
+| **contributors**         | Prokopidis, Prokopis |
 | **sentences**       | 2521                                                                                                           |
 | **tokens**          | 61773                                                                                                          |
 

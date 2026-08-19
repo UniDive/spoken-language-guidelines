@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.9                                                                                                                  |
 | **link**            | [https://github.com/UniversalDependencies/UD_Ligurian-GLT](https://github.com/UniversalDependencies/UD_Ligurian-GLT) |
 | **genre**           | nonfiction fiction news wiki bible spoken grammar-examples                                                           |
-| **contact**         | <stefano.lusito@uibk.ac.at>                                                                                          |
+| **contributors**         | Lusito, Stefano; Maillard, Jean |
 | **sentences**       | 316                                                                                                                  |
 | **tokens**          | 6568                                                                                                                 |
 

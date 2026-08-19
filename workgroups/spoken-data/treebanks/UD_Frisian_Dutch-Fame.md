@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.8                                                                                                                              |
 | **link**            | [https://github.com/UniversalDependencies/UD_Frisian_Dutch-Fame](https://github.com/UniversalDependencies/UD_Frisian_Dutch-Fame) |
 | **genre**           | spoken                                                                                                                           |
-| **contact**         | <a.r.y.braggaar@student.rug.nl>                                                                                                  |
+| **contributors**         | Braggaar, Anouck; van der Goot, Rob |
 | **sentences**       | 400                                                                                                                              |
 | **tokens**          | 3729                                                                                                                             |
 

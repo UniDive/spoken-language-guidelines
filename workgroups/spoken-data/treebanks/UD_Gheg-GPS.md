@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.11                                                                                                         |
 | **link**            | [https://github.com/UniversalDependencies/UD_Gheg-GPS](https://github.com/UniversalDependencies/UD_Gheg-GPS) |
 | **genre**           | spoken                                                                                                       |
-| **contact**         | <christiangeorg.ebert@uzh.ch>, <barbara.sonnenhauser@uzh.ch>, <paul.widmer@uzh.ch>                           |
+| **contributors**         | Ebert, Christian; Islamaj, Artan; Kuqi, Adrian; Sonnenhauser, Barbara; Widmer, Paul; Plamada, Magdalena |
 | **sentences**       | 966                                                                                                          |
 | **tokens**          | 15990                                                                                                        |
 

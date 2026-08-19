@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.16 |
 | **link** | [https://github.com/UniversalDependencies/UD_Central_Romani-Selice](https://github.com/UniversalDependencies/UD_Central_Romani-Selice) |
 | **genre** | spoken |
-| **contact** | zeman@ufal.mff.cuni.cz |
+| **contributors** | Zemanová, Lucie; Elšík, Viktor; Zeman, Daniel |
 | **sentences** | 0 |
 | **tokens** | 0 |
 

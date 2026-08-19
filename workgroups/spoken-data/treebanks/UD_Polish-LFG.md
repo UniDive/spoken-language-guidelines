@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.2                                                                                                              |
 | **link**            | [https://github.com/UniversalDependencies/UD_Polish-LFG](https://github.com/UniversalDependencies/UD_Polish-LFG) |
 | **genre**           | fiction nonfiction news spoken social                                                                            |
-| **contact**         | <aep@ipipan.waw.pl>, <adamp@ipipan.waw.pl>                                                                       |
+| **contributors**         | Patejuk, Agnieszka; Przepiórkowski, Adam |
 | **sentences**       | 17246                                                                                                            |
 | **tokens**          | 130967                                                                                                           |
 

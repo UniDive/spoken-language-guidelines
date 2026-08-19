@@ -8,7 +8,7 @@ udver: '2'
 
 # Current spoken treebanks
 
-This page is a slim recap generated from per-treebank data files in [`workgroups/spoken-data/treebanks/`](https://github.com/UniDive/spoken-language-guidelines/tree/main/workgroups/spoken-data/treebanks). Each treebank has its own page with full metadata review details and a manual-check list. Advice references the standardized naming conventions in [Metadata harmonisation](metadata.html). Use the search box, filters, or click a column header to sort.
+This page is a slim recap generated from per-treebank data files in [`workgroups/spoken-data/treebanks/`](https://github.com/UniDive/spoken-language-guidelines/tree/main/workgroups/spoken-data/treebanks). Each treebank has its own page with full metadata review details and a manual-check list. Advice references the standardized naming conventions in [Metadata harmonisation](metadata.html). Use the search box, filters, or click a column header to sort. Contributor names are listed on each treebank's page; contact emails are kept separately on the [contributors and contacts](contacts.html) page.
 
 **Note:** this comparison was carried out semi-automatically with the help of Claude (Anthropic); errors or misunderstandings are possible, so please double-check anything unclear before acting on it.
 

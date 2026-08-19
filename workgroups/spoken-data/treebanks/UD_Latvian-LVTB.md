@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 1.3                                                                                                                  |
 | **link**            | [https://github.com/UniversalDependencies/UD_Latvian-LVTB](https://github.com/UniversalDependencies/UD_Latvian-LVTB) |
 | **genre**           | news fiction legal spoken academic                                                                                   |
-| **contact**         | <lauma@ailab.lv>, <normunds@ailab.lv>                                                                                |
+| **contributors**         | Pretkalniņa, Lauma; Rituma, Laura; Nešpore-Bērzkalne, Gunta; Saulīte, Baiba; Znotiņš, Artūrs; Grūzītis, Normunds |
 | **sentences**       | 19580                                                                                                                |
 | **tokens**          | 330318                                                                                                               |
 

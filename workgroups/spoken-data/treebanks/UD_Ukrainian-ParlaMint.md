@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.15                                                                                                                               |
 | **link**            | [https://github.com/UniversalDependencies/UD_Ukrainian-ParlaMint](https://github.com/UniversalDependencies/UD_Ukrainian-ParlaMint) |
 | **genre**           | government legal spoken                                                                                                            |
-| **contact**         | <corpus.textiv@gmail.com>                                                                                                          |
+| **contributors**         | Shvedova, Maria; Lukashevskyi, Arsenii |
 | **sentences**       | 7142                                                                                                                               |
 | **tokens**          | 109166                                                                                                                             |
 

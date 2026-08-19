@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.11                                                                                                           |
 | **link**            | [https://github.com/UniversalDependencies/UD_Abaza-ATB](https://github.com/UniversalDependencies/UD_Abaza-ATB) |
 | **genre**           | spoken                                                                                                         |
-| **contact**         | alexeykochevoy@gmail.com                                                                                       |
+| **contributors**         | Koshevoy, Alexey; Panova, Anastasia; Makarchuk, Ilya |
 | **sentences**       | 98                                                                                                             |
 | **tokens**          | 652                                                                                                            |
 

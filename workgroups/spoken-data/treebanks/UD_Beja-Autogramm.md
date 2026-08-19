@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.8 |
 | **link** | [https://github.com/UniversalDependencies/UD_Beja-Autogramm](https://github.com/UniversalDependencies/UD_Beja-Autogramm) |
 | **genre** | spoken |
-| **contact** | martine.vanhove@cnrs.fr; sylvain@kahane.fr |
+| **contributors** | Vanhove, Martine; Ziane, Rayan; Kahane, Sylvain; Guillaume, Bruno |
 | **sentences** | 763 |
 | **tokens** | 11948 |
 

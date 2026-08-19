@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.12 |
 | **link** | [https://github.com/UniversalDependencies/UD_Classical_Nahuatl-FloCo](https://github.com/UniversalDependencies/UD_Classical_Nahuatl-FloCo) |
 | **genre** | spoken fiction grammar-examples nonfiction |
-| **contact** | pughrob@iu.edu |
+| **contributors** | Pugh, Robert; Huerta Mendez, Marivel; Sasaki, Mitsuya; Tyers, Francis |
 | **sentences** | 0 |
 | **tokens** | 0 |
 

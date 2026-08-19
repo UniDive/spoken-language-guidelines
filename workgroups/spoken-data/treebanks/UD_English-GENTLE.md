@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.12 |
 | **link** | [https://github.com/UniversalDependencies/UD_English-GENTLE](https://github.com/UniversalDependencies/UD_English-GENTLE) |
 | **genre** | academic grammar-examples legal medical nonfiction poetry social spoken |
-| **contact** | amir.zeldes@georgetown.edu |
+| **contributors** | Aoyama, Tatsuya; Behzad, Shabnam; Gessler, Luke; Levine, Lauren; Lin, Yi-Ju Jessica; Liu, Yang Janet; Peng, Siyao Logan; Zhu, Yilun; Zeldes, Amir |
 | **sentences** | 1334 |
 | **tokens** | 17619 |
 

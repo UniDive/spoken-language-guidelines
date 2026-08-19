@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.1                                                                                                                                  |
 | **link**            | [https://github.com/UniversalDependencies/UD_Norwegian-NynorskLIA](https://github.com/UniversalDependencies/UD_Norwegian-NynorskLIA) |
 | **genre**           | spoken                                                                                                                               |
-| **contact**         | <liljao@ifi.uio.no>                                                                                                                  |
+| **contributors**         | Øvrelid, Lilja; Kaasen, Andre |
 | **sentences**       | 5250                                                                                                                                 |
 | **tokens**          | 55410                                                                                                                                |
 

@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.15                                                                                                                 |
 | **link**            | [https://github.com/UniversalDependencies/UD_Japanese-JDD](https://github.com/UniversalDependencies/UD_Japanese-JDD) |
 | **genre**           | spoken                                                                                                               |
-| **contact**         | <masayu-a@ninjal.ac.jp>                                                                                              |
+| **contributors**         | Akama, Reina; Omura, Mai; Asahara, Masayuki |
 | **sentences**       | 0                                                                                                                    |
 | **tokens**          | 0                                                                                                                    |
 

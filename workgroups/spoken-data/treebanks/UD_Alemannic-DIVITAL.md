@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.17                                                                                                                           |
 | **link**            | [https://github.com/UniversalDependencies/UD_Alemannic-DIVITAL](https://github.com/UniversalDependencies/UD_Alemannic-DIVITAL) |
 | **genre**           | fiction nonfiction legal spoken wiki bible                                                                                     |
-| **contact**         | dbernhard@unistra.fr                                                                                                           |
+| **contributors**         | Beiner, Nathanaël; Hoff, Barbara; Bernhard, Delphine |
 | **sentences**       | 977                                                                                                                            |
 | **tokens**          | 19334                                                                                                                          |
 

@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.11                                                                                                                                                                     |
 | **link**            | [https://github.com/UniversalDependencies/UD_Western_Sierra_Puebla_Nahuatl-MesoTree](https://github.com/UniversalDependencies/UD_Western_Sierra_Puebla_Nahuatl-MesoTree) |
 | **genre**           | spoken fiction grammar-examples nonfiction                                                                                                                               |
-| **contact**         | <pughrob@iu.edu>                                                                                                                                                         |
+| **contributors**         | Pugh, Robert; Huerta Mendez, Marivel; Sasaki, Mitsuya; Tyers, Francis; Juarez Huerta, María Ximena; Márquez Hernández, Ángeles |
 | **sentences**       | 3024                                                                                                                                                                     |
 | **tokens**          | 19191                                                                                                                                                                    |
 

@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 1.1 |
 | **link** | [https://github.com/UniversalDependencies/UD_Danish-DDT](https://github.com/UniversalDependencies/UD_Danish-DDT) |
 | **genre** | news fiction spoken nonfiction |
-| **contact** | zeman@ufal.mff.cuni.cz |
+| **contributors** | Johannsen, Anders; Martínez Alonso, Héctor; Plank, Barbara |
 | **sentences** | 5512 |
 | **tokens** | 100733 |
 

@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.17                                                                                                             |
 | **link**            | [https://github.com/UniversalDependencies/UD_Zazaki-ZSD](https://github.com/UniversalDependencies/UD_Zazaki-ZSD) |
 | **genre**           | spoken                                                                                                           |
-| **contact**         | <luigi.talamo@uni-saarland.de>                                                                                   |
+| **contributors**         | Dogan, Mahîr; Talamo, Luigi; Vaz, Helena; Verkerk, Annemarie |
 | **sentences**       | 200                                                                                                              |
 | **tokens**          | 1371                                                                                                             |
 

@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.16 |
 | **link** | [https://github.com/UniversalDependencies/UD_Bokota-ChibErgIS](https://github.com/UniversalDependencies/UD_Bokota-ChibErgIS) |
 | **genre** | spoken |
-| **contact** | marie.benzerrak@laposte.net |
+| **contributors** | Benzerrak, Marie; Cáceres Arandia, Natalia |
 | **sentences** | 406 |
 | **tokens** | 2713 |
 

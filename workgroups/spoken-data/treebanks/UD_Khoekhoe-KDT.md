@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.16                                                                                                                 |
 | **link**            | [https://github.com/UniversalDependencies/UD_Khoekhoe-KDT](https://github.com/UniversalDependencies/UD_Khoekhoe-KDT) |
 | **genre**           | fiction grammar-examples spoken                                                                                      |
-| **contact**         | <kira.tulchynska@mail.huji.ac.il>, <witzlack@gmail.com>                                                              |
+| **contributors**         | Tulchynska, Kira; Witzlack-Makarevich, Alena; Job, Sylvanus; Hahn, Michael |
 | **sentences**       | 3589                                                                                                                 |
 | **tokens**          | 27611                                                                                                                |
 

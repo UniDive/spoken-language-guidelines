@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.7                                                                                                              |
 | **link**            | [https://github.com/UniversalDependencies/UD_Nayini-AHA](https://github.com/UniversalDependencies/UD_Nayini-AHA) |
 | **genre**           | grammar-examples spoken                                                                                          |
-| **contact**         | <amojiry@gmail.com>                                                                                              |
+| **contributors**         | Mojiri Foroushani, AmirHossein; Aghaei, Hamid; Ahmadi, Amir |
 | **sentences**       | 10                                                                                                               |
 | **tokens**          | 78                                                                                                               |
 

@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.16                                                                                                                   |
 | **link**            | [https://github.com/UniversalDependencies/UD_Nenets-Tundra](https://github.com/UniversalDependencies/UD_Nenets-Tundra) |
 | **genre**           | spoken                                                                                                                 |
-| **contact**         | <mus.nikolett@gmail.com>                                                                                               |
+| **contributors**         | Bona, Morgane; Guillaume, Bruno; Kahane, Sylvain; Miletić, Aleksandra; Mus, Nikolett; Zeman, Daniel |
 | **sentences**       | 170                                                                                                                    |
 | **tokens**          | 1272                                                                                                                   |
 

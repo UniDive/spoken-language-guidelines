@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.2                                                                                                                          |
 | **link**            | [https://github.com/UniversalDependencies/UD_French-Rhapsodie](https://github.com/UniversalDependencies/UD_French-Rhapsodie) |
 | **genre**           | spoken                                                                                                                       |
-| **contact**         | <kim@gerdes.fr>                                                                                                              |
+| **contributors**         | Gerdes, Kim; Kahane, Sylvain; Nakhlé, Mariam; Yan, Chunxiao; Etienne, Aline; Courtin, Marine |
 | **sentences**       | 3209                                                                                                                         |
 | **tokens**          | 43691                                                                                                                        |
 

@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 1.0 |
 | **link** | [https://github.com/UniversalDependencies/UD_Czech-PDTC](https://github.com/UniversalDependencies/UD_Czech-PDTC) |
 | **genre** | news reviews nonfiction academic spoken social |
-| **contact** | zeman@ufal.mff.cuni.cz |
+| **contributors** | Zeman, Daniel; Hajič, Jan; Bémová, Alevtina; Buráňová, Eva; Hajičová, Eva; Havelka, Jiří; Hlaváčová, Jaroslava; Kárník, Jiří; Kolářová, Veronika; Kučová, Lucie; Lopatková, Markéta; Mikulová, Marie; Mírovský, Jiří; Nedoluzhko, Anna; Novák, Michal; Pajas, Petr; Panevová, Jarmila; Sgall, Petr; Straka, Milan; Ševčíková, Magda; Štěpánek, Jan; Štěpánková, Barbora; Urešová, Zdeňka; Vidová Hladká, Barbora; Žabokrtský, Zdeněk |
 | **sentences** | 213897 |
 | **tokens** | 3432078 |
 

@@ -447,6 +447,43 @@ table.category td {
   border: none;
 }
 
+/* Plain markdown tables (no explicit class/id) - e.g. the metadata-review
+   tables in workgroups/spoken-data/. Scoped with :not([class]) so it never
+   overrides the purpose-built tables above (.annotation_table, #indextable,
+   table.typeindex, table.category, table.statustable, etc). */
+#content table:not([class]) {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+#content table:not([class]) th,
+#content table:not([class]) td {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 6px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+/* Dark overlays instead of hardcoded light colors, so striping/shading
+   reads correctly whichever page background is in effect (the live site
+   sets body { background-color: antiquewhite; } outside of this repo's
+   tracked CSS; local checkouts default to plain white). */
+#content table:not([class]) th {
+  background-color: rgba(0, 0, 0, 0.08);
+  font-weight: 600;
+}
+
+#content table:not([class]) tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.035);
+}
+
+#content table:not([class]) tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.09);
+}
+
 .jquery-ui-tabs > div {
   font-size: 120%;
 }

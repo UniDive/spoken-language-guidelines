@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.14                                                                                                                   |
 | **link**            | [https://github.com/UniversalDependencies/UD_Spanish-COSER](https://github.com/UniversalDependencies/UD_Spanish-COSER) |
 | **genre**           | spoken                                                                                                                 |
-| **contact**         | <johnatan.bonillahuerfano@ugent.be>                                                                                    |
+| **contributors**         | Bonilla, Johnatan |
 | **sentences**       | 539                                                                                                                    |
 | **tokens**          | 7987                                                                                                                   |
 

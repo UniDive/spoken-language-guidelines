@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.16                                                                                                                                 |
 | **link**            | [https://github.com/UniversalDependencies/UD_Turkish_English-BUTR](https://github.com/UniversalDependencies/UD_Turkish_English-BUTR) |
 | **genre**           | spoken                                                                                                                               |
-| **contact**         | <furkanakkurt7242@icloud.com>                                                                                                        |
+| **contributors**         | Akkurt, Furkan; Teker, Nursena; Binici, Helin; Demir, Ahmet; Sampanis, Konstantinos |
 | **sentences**       | 58                                                                                                                                   |
 | **tokens**          | 441                                                                                                                                  |
 

@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 1.3                                                                                                                    |
 | **link**            | [https://github.com/UniversalDependencies/UD_Slovenian-SST](https://github.com/UniversalDependencies/UD_Slovenian-SST) |
 | **genre**           | spoken                                                                                                                 |
-| **contact**         | <kaja.dobrovoljc@ff.uni-lj.si>                                                                                         |
+| **contributors**         | Dobrovoljc, Kaja; Nivre, Joakim |
 | **sentences**       | 6121                                                                                                                   |
 | **tokens**          | 98393                                                                                                                  |
 

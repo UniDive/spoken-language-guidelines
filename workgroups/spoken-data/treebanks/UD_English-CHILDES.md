@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.16 |
 | **link** | [https://github.com/UniversalDependencies/UD_English-CHILDES](https://github.com/UniversalDependencies/UD_English-CHILDES) |
 | **genre** | spoken |
-| **contact** | xy236@georgetown.edu |
+| **contributors** | Yang, Xiulin; Ju, Zhuoxuan; Bu, Lanni; Liu, Zoey; Schneider, Nathan |
 | **sentences** | 48183 |
 | **tokens** | 289817 |
 

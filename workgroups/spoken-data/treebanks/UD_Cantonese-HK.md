@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.1 |
 | **link** | [https://github.com/UniversalDependencies/UD_Cantonese-HK](https://github.com/UniversalDependencies/UD_Cantonese-HK) |
 | **genre** | spoken |
-| **contact** | tswong-c@my.cityu.edu.hk; jsylee@cityu.edu.hk |
+| **contributors** | Gerdes, Kim; Lee, John; Leung, Herman; Wong, Tak-sum |
 | **sentences** | 1004 |
 | **tokens** | 13918 |
 

@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.12 |
 | **link** | [https://github.com/UniversalDependencies/UD_Bororo-BDT](https://github.com/UniversalDependencies/UD_Bororo-BDT) |
 | **genre** | grammar-examples spoken nonfiction bible |
-| **contact** | <fabricio.gerardi@uni-tuebingen.de> |
+| **contributors** | Gerardi, Fabrício Ferraz; Toribio, Lucas; Sollberger, Dolores |
 | **sentences** | 21384 |
 | **tokens** | 160356 |
 

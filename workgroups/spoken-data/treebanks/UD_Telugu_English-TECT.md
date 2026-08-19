@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.14                                                                                                                               |
 | **link**            | [https://github.com/UniversalDependencies/UD_Telugu_English-TECT](https://github.com/UniversalDependencies/UD_Telugu_English-TECT) |
 | **genre**           | spoken                                                                                                                             |
-| **contact**         | <anishka18v@gmail.com>                                                                                                             |
+| **contributors**         | Vissamsetty, Anishka |
 | **sentences**       | 97                                                                                                                                 |
 | **tokens**          | 456                                                                                                                                |
 

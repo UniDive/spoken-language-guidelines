@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 1.1                                                                                                                      |
 | **link**            | [https://github.com/UniversalDependencies/UD_Persian-Seraji](https://github.com/UniversalDependencies/UD_Persian-Seraji) |
 | **genre**           | news fiction medical legal social spoken nonfiction                                                                      |
-| **contact**         | <mojgan.seraji96@gmail.com>                                                                                              |
+| **contributors**         | Seraji, Mojgan; Ginter, Filip; Nivre, Joakim; Popel, Martin; Zeman, Daniel; Nassajian, Minoo |
 | **sentences**       | 5997                                                                                                                     |
 | **tokens**          | 151627                                                                                                                   |
 

@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.14                                                                                                                         |
 | **link**            | [https://github.com/UniversalDependencies/UD_Vietnamese-TueCL](https://github.com/UniversalDependencies/UD_Vietnamese-TueCL) |
 | **genre**           | spoken                                                                                                                       |
-| **contact**         | <hoa.do@student.uni-tuebingen.de>,<cagri.coeltekin@uni-tuebingen.de>                                                         |
+| **contributors**         | Do, Hoa; Çöltekin, Çağrı |
 | **sentences**       | 100                                                                                                                          |
 | **tokens**          | 1888                                                                                                                         |
 

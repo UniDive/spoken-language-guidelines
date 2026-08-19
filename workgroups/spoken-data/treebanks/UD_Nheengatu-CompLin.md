@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.11                                                                                                                           |
 | **link**            | [https://github.com/UniversalDependencies/UD_Nheengatu-CompLin](https://github.com/UniversalDependencies/UD_Nheengatu-CompLin) |
 | **genre**           | spoken bible fiction nonfiction grammar-examples                                                                               |
-| **contact**         | <leonel.de.alencar@ufc.br>                                                                                                     |
+| **contributors**         | de Alencar, Leonel Figueiredo; Alexandre, Dominick Maia |
 | **sentences**       | 2839                                                                                                                           |
 | **tokens**          | 26444                                                                                                                          |
 

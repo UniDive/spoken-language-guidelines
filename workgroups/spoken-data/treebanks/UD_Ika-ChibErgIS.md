@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 2.16                                                                                                                   |
 | **link**            | [https://github.com/UniversalDependencies/UD_Ika-ChibErgIS](https://github.com/UniversalDependencies/UD_Ika-ChibErgIS) |
 | **genre**           | spoken                                                                                                                 |
-| **contact**         | <jana.bajorat@hu-berlin.de>                                                                                            |
+| **contributors**         | Bajorat, Jana; Cáceres Arandia, Natalia |
 | **sentences**       | 628                                                                                                                    |
 | **tokens**          | 5307                                                                                                                   |
 

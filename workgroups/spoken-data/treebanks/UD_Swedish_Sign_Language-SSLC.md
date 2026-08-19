@@ -16,7 +16,7 @@ udver: '2'
 | **available since** | 1.4                                                                                                                                              |
 | **link**            | [https://github.com/UniversalDependencies/UD_Swedish_Sign_Language-SSLC](https://github.com/UniversalDependencies/UD_Swedish_Sign_Language-SSLC) |
 | **genre**           | spoken                                                                                                                                           |
-| **contact**         | <robert@ling.su.se>                                                                                                                              |
+| **contributors**         | Gärdenfors, Moa; Börstell, Carl; Östling, Robert; Wallin, Lars; Wirén, Mats |
 | **sentences**       | 203                                                                                                                                              |
 | **tokens**          | 1610                                                                                                                                             |
 
