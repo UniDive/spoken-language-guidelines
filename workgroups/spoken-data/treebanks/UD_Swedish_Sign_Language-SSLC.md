@@ -6,7 +6,7 @@ udver: '2'
 
 # Swedish_Sign_Language SSLC
 
-[Back to index](ud_spoken_treebanks.html)
+[Back to index](../ud_spoken_treebanks.html)
 
 ## Overview
 

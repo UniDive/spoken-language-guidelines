@@ -6,7 +6,7 @@ udver: '2'
 
 # Telugu_English TECT
 
-[Back to index](ud_spoken_treebanks.html)
+[Back to index](../ud_spoken_treebanks.html)
 
 ## Overview
 

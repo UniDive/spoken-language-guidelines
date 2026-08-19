@@ -6,7 +6,7 @@ udver: '2'
 
 # Greek Lesbian
 
-[Back to index](ud_spoken_treebanks.html)
+[Back to index](../ud_spoken_treebanks.html)
 
 ## Overview
 

@@ -6,7 +6,7 @@ udver: '2'
 
 # Gheg GPS
 
-[Back to index](ud_spoken_treebanks.html)
+[Back to index](../ud_spoken_treebanks.html)
 
 ## Overview
 

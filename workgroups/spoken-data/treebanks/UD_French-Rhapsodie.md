@@ -6,7 +6,7 @@ udver: '2'
 
 # French Rhapsodie
 
-[Back to index](ud_spoken_treebanks.html)
+[Back to index](../ud_spoken_treebanks.html)
 
 ## Overview
 

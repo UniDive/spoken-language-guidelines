@@ -6,7 +6,7 @@ udver: '2'
 
 # Western_Sierra_Puebla_Nahuatl MesoTree
 
-[Back to index](ud_spoken_treebanks.html)
+[Back to index](../ud_spoken_treebanks.html)
 
 ## Overview
 

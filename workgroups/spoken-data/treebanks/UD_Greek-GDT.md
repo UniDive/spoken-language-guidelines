@@ -6,7 +6,7 @@ udver: '2'
 
 # Greek GDT
 
-[Back to index](ud_spoken_treebanks.html)
+[Back to index](../ud_spoken_treebanks.html)
 
 ## Overview
 
