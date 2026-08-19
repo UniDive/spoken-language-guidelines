@@ -10,6 +10,8 @@ udver: '2'
 
 This page is a slim recap generated from per-treebank data files in [`workgroups/spoken-data/treebanks/`](https://github.com/UniDive/spoken-language-guidelines/tree/main/workgroups/spoken-data/treebanks). Each treebank has its own page with full metadata review details and a manual-check list. Advice references the standardized naming conventions in [Metadata harmonisation](metadata.html). Use the search box, filters, or click a column header to sort.
 
+**Note:** this comparison was carried out semi-automatically with the help of Claude (Anthropic); errors or misunderstandings are possible, so please double-check anything unclear before acting on it.
+
 **Data version:** the analysis below is based on the latest available version of each treebank (the `master`/`dev` branch HEAD as of May 2026); please check the treebank's own repository for any updates published afterwards.
 
 <div id="tb-controls">
