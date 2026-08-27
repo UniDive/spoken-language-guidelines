@@ -32,10 +32,10 @@ udver: '2'
 
 | Field         | Advice                     |
 | ------------- | -------------------------- |
-| `text[spa]`   | change to `text_spa`       |
+| `text[spa]`   | change to `text_es`        |
 | `text[orig]`  | change to `text_original`  |
 | `text[morf]` | change to `text_morphemic` |
-| `text[eng]`   | change to `text_eng`       |
+| `text[eng]`   | change to `text_en`        |
 | `text[gloss]` | change to `text_glossing`  |
 
 ### speaker metadata

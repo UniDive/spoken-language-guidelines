@@ -22,12 +22,12 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 | Field     | Suggestion                                                                                                               |
 | --------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `text_en` | rename to `text_eng` (ISO 639-3)                                                                                         |
+| `text_en` | OK (ISO 639-1 two-letter code)                                                      |
 | `medium`  | rename to `# modality` (values `spoken`/`written`, lowercase); only present on 19/58 sentences - please confirm the rest |
 
 ### Implementation notes
 
-- **Quick search & replace:** `text_en` → `text_eng` - unambiguous rename, e.g. `sed -i '' 's/^# text_en = /# text_eng = /' *.conllu`, or `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment UD_Turkish_English-BUTR --map text_en=text_eng --write`.
+- `text_en` already uses the ISO 639-1 two-letter code - no rename needed.
 - **Needs manual input from maintainers:** `medium` → `modality` for the 39/58 sentences currently missing a value. The 19 already-tagged sentences can be renamed and lowercased today (verified in the local clone, `qti_butr-ud-test.conllu`: values are `Written`/`Spoken`, needs lowercasing too, so `rename-comment` alone isn't quite enough - use `sed -i '' 's/^# medium = Written/# modality = written/;s/^# medium = Spoken/# modality = spoken/' *.conllu`), but the remaining 39 need a maintainer answer before they can be tagged.
 
 ---

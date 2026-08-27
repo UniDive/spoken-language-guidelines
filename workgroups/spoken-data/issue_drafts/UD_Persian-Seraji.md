@@ -25,12 +25,12 @@ This treebank's `genre` metadata lists `spoken` alongside `news`, `fiction`, `me
 | Field      | Suggestion                                                                         |
 | ---------- | ---------------------------------------------------------------------------------- |
 | `translit` | corpus-specific (sentence-level) - verify against metadata.html                    |
-| `text_en`  | rename to `text_eng` (ISO 639-3) |
+| `text_en`  | OK (ISO 639-1 two-letter code) |
 
 ### Implementation notes
 
 **Quick search & replace**
-- `text_en` → `text_eng`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map text_en=text_eng --write`
+- `text_en` already uses the ISO 639-1 two-letter code - no rename needed.
 
 **Needs manual input from maintainers**
 - Whether any part of the corpus is actually spoken, or `spoken` should be dropped from `genre` - this is a factual question, no script can resolve it.

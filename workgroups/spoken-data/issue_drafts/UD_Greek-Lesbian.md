@@ -35,12 +35,12 @@ For recording entries, `source` packs several attributes into one string (`Recor
 
 | Field      | Suggestion                                                      |
 | ---------- | --------------------------------------------------------------- |
-| `text_el`  | rename to `text_ell` (ISO 639-3 code)                           |
+| `text_el`  | OK (ISO 639-1 two-letter code)                         |
 | `text__el` | corpus-specific (sentence-level) - verify against metadata.html |
 
 ### Implementation notes
 
-- **Quick search & replace:** `text_el`→`text_ell`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map text_el=text_ell --write`.
+- `text_el` already uses the ISO 639-1 two-letter code - no rename needed.
 - **Needs a small (bespoke) script:**
   - **Correction:** `oral_corpus` is not a separate field - it's a prefix of `sent_id` itself (e.g. `# sent_id = oral_corpus_1` ... `oral_corpus_270`). Checked against `el_lesbian-ud-test.conllu`: exactly 270 sentences have a `sent_id` starting with `oral_corpus_`, matching the draft's 151+72+19+13+11+4=270 count precisely, and there is no `# document_id` in this file (flat sentence list), so modality tagging has to happen at sentence level. `harmonize_metadata.py tag-modality` only tags at doc level today, so this needs a short bespoke script (~15 lines): for each `# sent_id` line, insert `# modality = spoken` right after it if the id starts with `oral_corpus_`, else `# modality = written`.
   - Splitting `source` for the recording entries (`Recording (Date:..., Location:..., Gender:...)`) is a different shape than `harmonize_metadata.py split-field` supports (that command splits on a fixed separator into a fixed number of parts; this is a labelled key=value string inside parentheses, and only ~270/625 sentences match the "Recording(...)" shape while the rest are book/dictionary citations that should be left untouched). Needs a small bespoke regex-extraction script rather than the generic tool, e.g. matching `Recording \(Date:(?P<date>[^,]+), Location:(?P<loc>[^,]+), Gender:(?P<gender>[^)]+)\)` and only emitting `speaker_gender`/`speaker_residence`/a corpus-specific date field on the sentences that match, leaving citation-style `source` values as-is.

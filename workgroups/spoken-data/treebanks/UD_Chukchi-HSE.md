@@ -40,9 +40,9 @@ No `# document_id` exists, but document boundaries are fully recoverable: the RE
 
 | Field | Advice |
 |---|---|
-| `text[eng]` | change to `text_eng` |
-| `text[eng']` | change to `text_eng_literal` |
-| `text[rus]` | change to `text_rus` |
+| `text[eng]` | change to `text_en` |
+| `text[eng']` | change to `text_en_literal` |
+| `text[rus]` | change to `text_ru` |
 
 ### transcription and annotation levels available
 

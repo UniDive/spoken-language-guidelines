@@ -24,22 +24,22 @@ No `# document_id` exists, but document boundaries are fully recoverable: per th
 
 | Field | Suggestion |
 |---|---|
-| `text[eng]` | rename to `text_eng` |
-| `text[eng']` | rename to `text_eng_literal` |
-| `text[rus]` | rename to `text_rus` |
+| `text[eng]` | rename to `text_en` |
+| `text[eng']` | rename to `text_en_literal` |
+| `text[rus]` | rename to `text_ru` |
 | `text[phon]` | rename to `text_phonetic` |
 | `timestamp` | change to `sound_alignment_begin`, `sound_alignment_end` and `duration` |
 
 ### Implementation notes
 
 **Quick search & replace**
-- `text[eng]` → `text_eng`
-- `text[eng']` → `text_eng_literal`
-- `text[rus]` → `text_rus`
+- `text[eng]` → `text_en`
+- `text[eng']` → `text_en_literal`
+- `text[rus]` → `text_ru`
 - `text[phon]` → `text_phonetic`
   ```
   python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR \
-      --map "text[eng]=text_eng,text[eng']=text_eng_literal,text[rus]=text_rus,text[phon]=text_phonetic" --write
+      --map "text[eng]=text_en,text[eng']=text_en_literal,text[rus]=text_ru,text[phon]=text_phonetic" --write
   ```
   (Our `rename-comment` matches on the comment key as-is, so the bracketed names work as literal keys here - no regex needed.)
 

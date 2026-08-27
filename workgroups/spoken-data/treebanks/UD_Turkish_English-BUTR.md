@@ -36,5 +36,5 @@ _(none found)_ - `medium` (present on 19/58 sentences, values `Spoken`/`Written`
 
 | Field     | Advice                                                                                                                                        |
 | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `text_en` | rename to `text_eng` (ISO 639-3)                                                                                                              |
+| `text_en` | OK (ISO 639-1 two-letter code)                                                               |
 | `medium`  | rename to `# modality` (values `spoken`/`written`, lowercase); only present on 19/58 sentences - ask maintainer if the rest can be classified |

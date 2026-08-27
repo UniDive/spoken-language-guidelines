@@ -36,7 +36,7 @@ udver: '2'
 
 | Field     | Advice               |
 | --------- | -------------------- |
-| `text_fr` | change to `text_fra` |
+| `text_fr` | OK (ISO 639-1 two-letter code) |
 
 ### transcription and annotation levels available
 

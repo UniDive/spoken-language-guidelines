@@ -23,7 +23,7 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 | Field | Suggestion |
 |---|---|
-| `text_en` | rename to `text_eng` |
+| `text_en` | OK (ISO 639-1 two-letter code) |
 | `phonetic_text` | rename to `text_phonetic` |
 | `sent_timecode` | split into `sound_alignment_begin`, `sound_alignment_end`, and `duration` |
 | `tags` | corpus-specific (sentence-level), mostly `?`/`TO CHECK`/`TODO` placeholder values - please confirm what this represents |
@@ -38,12 +38,11 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 ### Implementation notes
 
 **Quick search & replace**
-- `text_en` → `text_eng`
 - `phonetic_text` → `text_phonetic`
 - `AlignBegin` → `WordAlignmentBegin`, `AlignEnd` → `WordAlignmentEnd` (MISC keys)
   ```
   python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR \
-      --map text_en=text_eng,phonetic_text=text_phonetic --write
+      --map phonetic_text=text_phonetic --write
   python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-misc DIR \
       --map AlignBegin=WordAlignmentBegin,AlignEnd=WordAlignmentEnd --write
   ```

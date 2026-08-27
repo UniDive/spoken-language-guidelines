@@ -22,7 +22,7 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 | Field           | Suggestion                                                                |
 | --------------- | ------------------------------------------------------------------------- |
-| `text_en`       | change to `text_eng`                                                      |
+| `text_en`       | OK (ISO 639-1 two-letter code)                                     |
 | `phonetic_text` | change to `text_phonetic`                                                 |
 | `sent_timecode` | split into `sound_alignment_begin`, `sound_alignment_end`, and `duration` |
 
@@ -36,7 +36,7 @@ Cross-posting from the UniDive WG1 T1.5 (spoken language guidelines) metadata ha
 
 ### Implementation notes
 
-- **Quick search & replace:** `text_en`→`text_eng`, `phonetic_text`→`text_phonetic`, `AlignBegin`→`WordAlignmentBegin`, `AlignEnd`→`WordAlignmentEnd`, `Lang`→`Lang` (already standard, no action needed): `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map text_en=text_eng,phonetic_text=text_phonetic --write` and `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-misc DIR --map AlignBegin=WordAlignmentBegin,AlignEnd=WordAlignmentEnd --write`.
+- **Quick search & replace:** `phonetic_text`→`text_phonetic`, `AlignBegin`→`WordAlignmentBegin`, `AlignEnd`→`WordAlignmentEnd`, `Lang`→`Lang` (already standard, no action needed): `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map phonetic_text=text_phonetic --write` and `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-misc DIR --map AlignBegin=WordAlignmentBegin,AlignEnd=WordAlignmentEnd --write`.
 - **Needs a small script:**
   - Splitting `sent_timecode` into begin/end (same `"<begin>, <end>"` format as Hausa-NorthernAutogramm, verified against `ha_southernautogramm-ud-test.conllu`): `python3 workgroups/spoken-data/scripts/harmonize_metadata.py split-field DIR --key sent_timecode --sep ', ' --into sound_alignment_begin,sound_alignment_end --write`; `duration` needs a small follow-up computation (`end - begin`), not a plain split.
   - Moving `sound_url` to document level: `document_id` already exists here. Dry-run against `ha_southernautogramm-ud-test.conllu` (+ `not-to-release/original_split/`): 8 documents hoist cleanly, 1 flagged NOT constant - flag that one before running `python3 workgroups/spoken-data/scripts/harmonize_metadata.py hoist-to-doc DIR --key sound_url --write` for real. (Note: the draft only lists this at document level as "possibly move" - worth confirming it should apply the same way as the Northern variant.)

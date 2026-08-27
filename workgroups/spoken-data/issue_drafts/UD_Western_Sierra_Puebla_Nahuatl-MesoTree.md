@@ -35,7 +35,7 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 
 | Field                | Suggestion                                                                                                             |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `text[spa]`          | change to `text_spa`                                                                                                   |
+| `text[spa]`          | change to `text_es`                                                                                                    |
 | `text[orig]`         | change to `text_original`                                                                                              |
 | `timestamp`          | possibly rename to `sound_alignment_begin / sound_alignment_end` (see Sentence-level in metadata.html) - please verify |
 | `hash`               | corpus-specific (sentence-level) - verify against metadata.html                                                        |
@@ -44,7 +44,7 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 | `text[orig_omitlan]` | corpus-specific (sentence-level) - verify against metadata.html                                                        |
 | `text[orig_smt]`     | corpus-specific (sentence-level) - verify against metadata.html                                                        |
 | `label`              | corpus-specific (sentence-level) - verify against metadata.html                                                        |
-| `text[eng]`          | change to `text_eng`                                                                                                   |
+| `text[eng]`          | change to `text_en`                                                                                                    |
 | `text[morf]`         | change to `text_morphemic`                                                                                             |
 | `text[gloss]`        | change to `text_glossing`                                                                                              |
 | `note`               | corpus-specific (sentence-level) - verify against metadata.html                                                        |
@@ -54,9 +54,9 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 - **Quick search & replace:** the bracketed `text[...]` fields are literal fixed-string comment keys that `harmonize_metadata.py`'s key regex doesn't currently parse (it doesn't allow `[`/`]` in a key name), so plain `sed` is actually simpler here. Confirmed the exact key format in the local clone (`nhi_mesotree-ud-test.conllu`, e.g. `# text[spa] = `):
   ```
   sed -i '' \
-    -e 's/^# text\[spa\] = /# text_spa = /' \
+    -e 's/^# text\[spa\] = /# text_es = /' \
     -e 's/^# text\[orig\] = /# text_original = /' \
-    -e 's/^# text\[eng\] = /# text_eng = /' \
+    -e 's/^# text\[eng\] = /# text_en = /' \
     -e 's/^# text\[morf\] = /# text_morphemic = /' \
     -e 's/^# text\[gloss\] = /# text_glossing = /' \
     *.conllu

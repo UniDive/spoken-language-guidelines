@@ -36,7 +36,7 @@ udver: '2'
 
 | Field        | Advice                         |
 | ------------ | ------------------------------ |
-| `text[spa]`  | change to `text_spa`           |
+| `text[spa]`  | change to `text_es`            |
 | `text[orig]` | change to `text_transcription` |
 
 ### transcription and annotation levels available

@@ -22,13 +22,13 @@ The README states the treebank "is based on interviews with Soi speakers"; despi
 
 | Field     | Suggestion                       |
 | --------- | -------------------------------- |
-| `text_en` | change to `text_eng` (ISO 639-3) |
-| `text_fa` | change to `text_fas` (ISO 639-3) |
+| `text_en` | OK (ISO 639-1 two-letter code) |
+| `text_fa` | OK (ISO 639-1 two-letter code) |
 
 ### Implementation notes
 
 **Quick search & replace**
-- `text_en` → `text_eng`, `text_fa` → `text_fas`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map text_en=text_eng,text_fa=text_fas --write`
+- `text_en` and `text_fa` already use ISO 639-1 two-letter codes - no rename needed.
 - `# modality = spoken` corpus-wide (only 8 sentences, single small file): a one-line loop is simpler than a script - `sed -i '' '/^# sent_id/i\
 # modality = spoken' DIR/*.conllu` (insert once before every `# sent_id`), or equivalently `rename-comment`/`tag-modality` don't apply since there's no existing field to key off - this is just inserting a constant comment everywhere.
 

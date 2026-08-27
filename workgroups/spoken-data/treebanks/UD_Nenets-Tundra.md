@@ -32,8 +32,8 @@ udver: '2'
 
 | Field     | Advice               |
 | --------- | -------------------- |
-| `text_en` | change to `text_eng` |
-| `text_ru` | change to `text_rus` |
+| `text_en` | OK (ISO 639-1 two-letter code) |
+| `text_ru` | OK (ISO 639-1 two-letter code) |
 
 ### transcription and annotation levels available
 

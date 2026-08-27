@@ -32,5 +32,5 @@ udver: '2'
 
 | Field     | Advice                           |
 | --------- | -------------------------------- |
-| `text_en` | change to `text_eng` (ISO 639-3) |
-| `text_fa` | change to `text_fas` (ISO 639-3) |
+| `text_en` | OK (ISO 639-1 two-letter code) |
+| `text_fa` | OK (ISO 639-1 two-letter code) |

@@ -35,7 +35,7 @@ Besides these, the corpus carries ~18 editorial/philological fields at speaker o
 
 | Field | Suggestion |
 | ----------------------------- | ------------------------------------------ |
-| `text_eng`, `text_por`, `text_rus` | OK - already ISO 639-3 (`eng`/`por`/`rus`) |
+| `text_eng`, `text_por`, `text_rus` | rename to `text_en`, `text_pt`, `text_ru` (ISO 639-1 two-letter codes) |
 
 The corpus also carries roughly 100 further sentence-level fields (`text_orig`, `text_source*`, `text_prim*`, `text_sec*`, `text_alt*`, `place*`, `date`, `note*`, cross-references, and similar variant/source-tracking fields, plus their Portuguese-suffixed counterparts). These document the philological apparatus of the printed sources (variant readings, glosses, cross-references) rather than spoken-language properties, so we're not proposing individual renames - happy to share the full field list if useful for your own review.
 

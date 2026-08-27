@@ -32,7 +32,7 @@ udver: '2'
 
 | Field     | Advice               |
 | --------- | -------------------- |
-| `english` | change to `text_eng` |
+| `english` | change to `text_en` |
 | `parallel_id` | corpus-specific (sentence-level) - verify against metadata.html |
 
 ### token-level metadata (MISC)

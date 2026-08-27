@@ -33,4 +33,4 @@ udver: '2'
 | Field | Advice |
 | --- | --- |
 | `translit` | corpus-specific (sentence-level) - verify against metadata.html |
-| `text_en` | rename to `text_eng` (ISO 639-3) |
+| `text_en` | OK (ISO 639-1 two-letter code) |

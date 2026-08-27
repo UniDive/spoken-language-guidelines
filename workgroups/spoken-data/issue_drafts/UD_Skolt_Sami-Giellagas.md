@@ -36,15 +36,15 @@ No `document_id` exists, but it can be derived from the source-identifier prefix
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `aannotation` (`begintime`) | convert `H:MM:SS` to milliseconds, split into `sound_alignment_begin`                                                                             |
 | `aannotation` (`endtime`)   | convert `H:MM:SS` to milliseconds, split into `sound_alignment_end` (when present); derive `duration` (ms) from begin/end when both are available |
-| `text_fi`                   | rename to `text_fin` (ISO 639-3)                                                                                                                  |
-| `text_en`                   | rename to `text_eng` (ISO 639-3)                                                                                                                  |
+| `text_fi`                   | OK (ISO 639-1 two-letter code)                                                                                  |
+| `text_en`                   | OK (ISO 639-1 two-letter code)                                                                                  |
 | `text_olo`                  | unsure - could you clarify what this field represents?                                                                                            |
 | `text_mdf`                  | unsure - could you clarify what this field represents?                                                                                            |
 
 ### Implementation notes
 
 **Quick search & replace**
-- `text_fi` → `text_fin`, `text_en` → `text_eng`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment DIR --map text_fi=text_fin,text_en=text_eng --write`
+- `text_fi` and `text_en` already use ISO 639-1 two-letter codes - no rename needed.
 
 **Needs a small script**
 - `# modality` tagging by file (`train` = written, `test` = spoken): a two-line shell loop is enough (`harmonize_metadata.py` has no per-file constant-value mode, since this isn't derived from a field) - e.g. insert `# modality = written` after every `# sent_id` in `*-train.conllu` and `# modality = spoken` in `*-test.conllu`. Simple, but hold off on the `test` file until the grammar-book-example caveat below is resolved.

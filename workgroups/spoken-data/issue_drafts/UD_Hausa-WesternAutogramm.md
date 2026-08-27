@@ -38,14 +38,14 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 
 | Field           | Suggestion                                                                |
 | --------------- | ------------------------------------------------------------------------- |
-| `text_en`       | change to `text_eng`                                                      |
+| `text_en`       | OK (ISO 639-1 two-letter code)                                     |
 | `text_ortho`    | change to `text_orthographic`                                             |
 | `sent_timecode` | split into `sound_alignment_begin`, `sound_alignment_end`, and `duration` |
 
 ### Implementation notes
 
 **Quick search & replace**
-- `text_en` → `text_eng`, `text_ortho` → `text_orthographic` (`# oldkey =` → `# newkey =`).
+- `text_ortho` → `text_orthographic` (`# oldkey =` → `# newkey =`); `text_en` already uses the ISO 639-1 code.
 
 **Needs a small script**
 - `sound_url` → document level: the released `ha_westernautogramm-ud-test.conllu` has no `# document_id` at all, but `sound_url` is constant within each of the 6 source recordings (verified against `not-to-release/original_split/*.conllu`, one distinct `sound_url` per file, matching 6 distinct values in the released file). `sent_id` (`BC_HAU_Gouffé_1_01_Zugal_001-002_split1`, …) doesn't have a clean numeric-suffix delimiter `derive-document-id` can parse automatically, so `# document_id` needs to be (re)introduced first, either from the `original_split` file boundaries or from a maintainer-confirmed `sent_id` pattern; after that, `hoist-to-doc --key sound_url` is a one-line, already-constant hoist.

@@ -30,4 +30,4 @@ udver: '2'
 
 | Field      | Advice |
 | ---------- | ------ |
-| `text_eng` | OK     |
+| `text_eng` | rename to `text_en` (ISO 639-1 two-letter code) |

@@ -52,7 +52,7 @@ Below, we list the most recurrent speech-related metadata categories occurring i
 | `sound_alignment_end` | End timestamp in the recording (ms) | `# sound_alignment_end = 14560` |
 | `duration` | Duration of the sentence (ms) | `# duration = 2220` |
 | `text_[type]` | Transcription of a given type | `# text_orthographic = qu'est-ce que tu fais` (other types: `text_phonetic`, `text_morphemic`, `text_transliteration`, `text_conversationanalysis`, `text_macrosyntax`) |
-| `text_[ISO]` | Translation into another language (ISO code) | `# text_en = what are you doing` |
+| `text_[ISO]` | Translation into another language (ISO 639-1 two-letter code) | `# text_en = what are you doing` |
 
 ### Token-level
 

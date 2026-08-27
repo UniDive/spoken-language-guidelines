@@ -25,7 +25,7 @@ No `document_id` exists, but per the README, `sent_id` values match those in the
 | Field      | Suggestion         |
 | ---------- | ------------------ |
 | `text_en`  | make tags: text_en |
-| `text_ru`  | text_rus           |
+| `text_ru`  | OK (ISO 639-1 two-letter code) |
 | `text_end` | text_en            |
 
 ### 3. Token-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#token-level))
@@ -38,7 +38,7 @@ No `document_id` exists, but per the README, `sent_id` values match those in the
 ### Implementation notes
 
 **Quick search & replace**
-- `text_ru` → `text_rus`, `text_end` → `text_en` (`text_end` looks like a typo for `text_en`; confirm before merging with any existing `text_en`). `text_en` itself is already correctly named.
+- `text_end` → `text_en` (`text_end` looks like a typo for `text_en`; confirm before merging with any existing `text_en`). `text_ru` and `text_en` already use ISO 639-1 codes.
 - `OrigLang`, `Lang`: already the standard MISC key names (verified) - no change needed.
 
 **Needs a small script**

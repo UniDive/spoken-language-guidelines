@@ -42,5 +42,5 @@ _(none found)_ - add `# modality = spoken` to the 165 sentences whose `genre` va
 | Field      | Advice                            |
 | ---------- | --------------------------------- |
 | `translit` | rename to `text_translitteration` |
-| `text_en`  | rename to `text_eng` (ISO 639-3)  |
+| `text_en`  | OK (ISO 639-1 two-letter code)  |
 | `note` | corpus-specific (sentence-level) - verify against metadata.html |

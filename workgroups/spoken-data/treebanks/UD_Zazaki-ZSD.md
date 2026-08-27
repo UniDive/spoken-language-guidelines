@@ -40,4 +40,4 @@ _(none found)_ - no `document_id` exists, but it's trivial to derive: `sent_id` 
 
 | Field     | Advice                           |
 | --------- | -------------------------------- |
-| `text_en` | rename to `text_eng` (ISO 639-3) |
+| `text_en` | OK (ISO 639-1 two-letter code) |

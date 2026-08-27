@@ -32,8 +32,8 @@ udver: '2'
 
 | Field     | Advice                           |
 | --------- | -------------------------------- |
-| `text_fi` | rename to `text_fin` (ISO 639-3) |
-| `text_en` | rename to `text_eng` (ISO 639-3) |
+| `text_fi` | OK (ISO 639-1 two-letter code) |
+| `text_en` | OK (ISO 639-1 two-letter code) |
 
 ### doc (and paragraphs) metadata
 

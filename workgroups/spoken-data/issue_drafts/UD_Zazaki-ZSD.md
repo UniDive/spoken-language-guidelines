@@ -24,11 +24,11 @@ No `document_id` exists, but it's trivial to derive: `sent_id` follows `Seyrista
 
 | Field     | Suggestion                       |
 | --------- | -------------------------------- |
-| `text_en` | rename to `text_eng` (ISO 639-3) |
+| `text_en` | OK (ISO 639-1 two-letter code) |
 
 ### Implementation notes
 
-- **Quick search & replace:** `text_en` → `text_eng`: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py rename-comment UD_Zazaki-ZSD --map text_en=text_eng --write`.
+- `text_en` already uses the ISO 639-1 two-letter code - no rename needed.
 - **Needs a small script:** add `# document_id = Seyristane_dialogue` corpus-wide.
   ```
   python3 workgroups/spoken-data/scripts/harmonize_metadata.py derive-document-id \

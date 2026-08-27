@@ -26,7 +26,7 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 
 | Field         | Suggestion                                                      |
 | ------------- | --------------------------------------------------------------- |
-| `english`     | change to `text_eng` (ISO 639-3) |
+| `english`     | change to `text_en` (ISO 639-1) |
 | `parallel_id` | corpus-specific (sentence-level) - verify against metadata.html |
 
 ### 3. Token-level ([naming conventions](https://grew.fr/spoken-language-guidelines/workgroups/spoken-data/metadata.html#token-level))
@@ -39,7 +39,7 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 ### Implementation notes
 
 **Quick search & replace**
-- `english` → `text_eng` (`# english =` → `# text_eng =`).
+- `english` → `text_en` (`# english =` → `# text_en =`).
 - `OrigLang`, `Lang`: already the standard MISC key names in the released data (verified) - no change needed, the draft's "rename to X" here is a no-op.
 
 **Needs a small script**

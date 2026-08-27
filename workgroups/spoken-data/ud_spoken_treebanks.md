@@ -91,7 +91,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from recording basename</td>
-        <td>`text_en` → `text_eng`</td>
+        <td>`text_en`: OK (ISO 639-1)</td>
         <td></td>
         <td></td>
         <td>`sent_timecode` → `sound_alignment_begin`</td>
@@ -107,7 +107,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from recording basename; `sound_url` → move to document level</td>
-        <td>`text_en` → `text_eng`</td>
+        <td>`text_en`: OK (ISO 639-1)</td>
         <td>`text_ortho` → `text_orthographic`</td>
         <td></td>
         <td>`sent_timecode` → `sound_alignment_begin`</td>
@@ -187,8 +187,8 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from `sent_id` prefix (everything before `:`)</td>
-        <td>`text[eng]` → `text_eng`; `text[rus]` → `text_rus`</td>
-        <td>`text[eng']` → `text_eng_literal`; `text[phon]` → `text_phonetic`</td>
+        <td>`text[eng]` → `text_en`; `text[rus]` → `text_ru`</td>
+        <td>`text[eng']` → `text_en_literal`; `text[phon]` → `text_phonetic`</td>
         <td></td>
         <td>`timestamp` → `sound_alignment_begin`</td>
         <td></td>
@@ -411,7 +411,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>yes</td>
         <td>via the `oral_corpus` field, which marks sentences drawn from audio recordings as opposed to published…</td>
         <td></td>
-        <td>`text_el` → `text_ell`</td>
+        <td>`text_el`: OK (ISO 639-1)</td>
         <td>`text__el`: corpus-specific (sentence-level) - verify against metadata.html</td>
         <td>`source` (`Gender:...`): split out as `speaker_gender`; `source` (`Location:...`): split out as `speaker_residence`; `source` (`Date:...`): split out as a corpus-specific date field (no standard field covers…; `source`…</td>
         <td></td>
@@ -427,7 +427,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>n/a - spoken data only</td>
         <td></td>
         <td></td>
-        <td>`text_en` → `text_eng`</td>
+        <td>`text_en`: OK (ISO 639-1)</td>
         <td>`text_ortho` → `text_orthographic`</td>
         <td></td>
         <td>`sent_timecode` → split (`sound_alignment_begin`, `sound_alignment_end`, and `duration`)</td>
@@ -443,7 +443,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>n/a - spoken data only</td>
         <td></td>
         <td></td>
-        <td>`text_en` → `text_eng`</td>
+        <td>`text_en`: OK (ISO 639-1)</td>
         <td></td>
         <td></td>
         <td>`sent_timecode` → split (`sound_alignment_begin`, `sound_alignment_end`, and `duration`)</td>
@@ -459,7 +459,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>no</td>
         <td></td>
         <td></td>
-        <td>`text_en` → `text_eng`</td>
+        <td>`text_en`: OK (ISO 639-1)</td>
         <td>`text_ortho` → `text_orthographic`</td>
         <td></td>
         <td>`sent_timecode` → split (`sound_alignment_begin`, `sound_alignment_end`, and `duration`)</td>
@@ -491,7 +491,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>yes</td>
         <td>via `sent_id`: sentences from spoken material carry a `.eaf`</td>
         <td></td>
-        <td>`text[spa]` → `text_spa`</td>
+        <td>`text[spa]` → `text_es`</td>
         <td>`text[orig]` → `text_transcription`; `text[gloss]` → `text_glossing`; `text[glosa]`: typo</td>
         <td></td>
         <td></td>
@@ -507,8 +507,8 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>n/a - spoken data only</td>
         <td></td>
         <td></td>
-        <td>`text_en` → `text_eng`</td>
-        <td>`text_phrase-gls-es` → `text_esp`; `text_phrase-gls-tl`: not sure what this is</td>
+        <td>`text_en`: OK (ISO 639-1)</td>
+        <td>`text_phrase-gls-es` → `text_es`; `text_phrase-gls-tl`: not sure what this is</td>
         <td></td>
         <td>`sent_timecode` → split (`sound_alignment_begin`, `sound_alignment_end`, and `duration`)</td>
         <td></td>
@@ -571,7 +571,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>n/a</td>
         <td></td>
         <td></td>
-        <td>`text_en` → `text_eng`; `text_fa` → `text_fas`</td>
+        <td>`text_en`, `text_fa`: OK (ISO 639-1)</td>
         <td></td>
         <td></td>
         <td></td>
@@ -587,7 +587,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from `sent_id` prefix identifying the source recording (please confirm…</td>
-        <td>`text_en`: make tags: text_en; `text_ru`: text_rus; `text_end`: text_en</td>
+        <td>`text_en`: OK (ISO 639-1); `text_ru`: OK (ISO 639-1); `text_end` → `text_en` (typo)</td>
         <td></td>
         <td></td>
         <td></td>
@@ -635,7 +635,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from `sent_id` prefix identifying the source recording</td>
-        <td>`text_en` → `text_eng`</td>
+        <td>`text_en`: OK (ISO 639-1)</td>
         <td>`text_ortho` → `text_orthographic`</td>
         <td></td>
         <td></td>
@@ -651,7 +651,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>n/a</td>
         <td></td>
         <td></td>
-        <td>`text_en` → `text_eng`; `text_fa` → `text_fas`</td>
+        <td>`text_en`, `text_fa`: OK (ISO 639-1)</td>
         <td></td>
         <td></td>
         <td></td>
@@ -667,7 +667,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>n/a - spoken data only</td>
         <td></td>
         <td>`doc_title_`: use as `# document_id` (rename/repurpose the field)</td>
-        <td>`text_en` → `text_eng`; `text_ru` → `text_rus`</td>
+        <td>`text_en`, `text_ru`: OK (ISO 639-1)</td>
         <td>`text_p`: unclear</td>
         <td></td>
         <td></td>
@@ -684,7 +684,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td></td>
         <td>`title` → `document_id`</td>
         <td></td>
-        <td>`text_eng`, `text_por`, `text_rus`: OK</td>
+        <td>`text_eng` → `text_en`; `text_por` → `text_pt`; `text_rus` → `text_ru`</td>
         <td>`speaker` → `speaker_id`; `speaker_gender`: OK</td>
         <td></td>
         <td></td>
@@ -699,7 +699,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>n/a - spoken data only</td>
         <td></td>
         <td></td>
-        <td>`text_fr` → `text_fra`</td>
+        <td>`text_fr`: OK (ISO 639-1)</td>
         <td></td>
         <td></td>
         <td>`sent_timecode` → split (`sound_alignment_begin`, `sound_alignment_end`, and `duration`)</td>
@@ -731,7 +731,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>no</td>
         <td></td>
         <td></td>
-        <td>`text_en` → `text_eng`</td>
+        <td>`text_en`: OK (ISO 639-1)</td>
         <td></td>
         <td></td>
         <td></td>
@@ -747,8 +747,8 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>n/a - spoken data only</td>
         <td></td>
         <td>derive from `sent_id` prefix identifying the source recording</td>
-        <td>`text_en` → `text_eng`</td>
-        <td>`text_phrase-gls-es` → `text_spa`; `text_phrase-gls-it` → `text_phonetic`; `text_phrase-gls-pro` → `text_prosodic`; `text_phrase-gls-tl`: corpus-specific - verify against metadata.html; `text_phrase-gls-de`:…</td>
+        <td>`text_en`: OK (ISO 639-1)</td>
+        <td>`text_phrase-gls-es` → `text_es`; `text_phrase-gls-it` → `text_phonetic`; `text_phrase-gls-pro` → `text_prosodic`; `text_phrase-gls-tl`: corpus-specific - verify against metadata.html; `text_phrase-gls-de`:…</td>
         <td></td>
         <td>`sent_timecode` → split (`sound_alignment_begin`, `sound_alignment_end`, and `duration`)</td>
         <td></td>
@@ -795,7 +795,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>yes</td>
         <td>per README description</td>
         <td>derive from `sent_id` source-identifier prefix</td>
-        <td>`text_fi` → `text_fin`; `text_en` → `text_eng`</td>
+        <td>`text_fi`, `text_en`: OK (ISO 639-1)</td>
         <td></td>
         <td></td>
         <td></td>
@@ -827,7 +827,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>yes</td>
         <td>per README description</td>
         <td></td>
-        <td>`text_en` → `text_eng`; `text_fa` → `text_fas`</td>
+        <td>`text_en`, `text_fa`: OK (ISO 639-1)</td>
         <td></td>
         <td></td>
         <td></td>
@@ -907,7 +907,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>no</td>
         <td></td>
         <td></td>
-        <td>`text_en` → `text_eng`</td>
+        <td>`text_en`: OK (ISO 639-1)</td>
         <td></td>
         <td></td>
         <td></td>
@@ -987,7 +987,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>no</td>
         <td></td>
         <td></td>
-        <td>`text[spa]` → `text_spa`; `text[eng]` → `text_eng`</td>
+        <td>`text[spa]` → `text_es`; `text[eng]` → `text_en`</td>
         <td>`text[orig]` → `text_original`; `text[morf]` → `text_morphemic`; `text[gloss]` → `text_glossing`; `text[orig_omitlan]`: corpus-specific (sentence-level) - verify against metadata.html; `text[orig_smt]`: corpus-specific…</td>
         <td>`user_id`: corpus-specific (speaker/paragraph-level) - verify against…; `finished`: corpus-specific (speaker/paragraph-level) - verify against…; `location`: corpus-specific (speaker/paragraph-level) - verify against…;…</td>
         <td>`timestamp` → `sound_alignment_begin`</td>
@@ -1003,7 +1003,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>yes</td>
         <td>via the sentence-level `genre` field</td>
         <td></td>
-        <td>`text_en` → `text_eng`</td>
+        <td>`text_en`: OK (ISO 639-1)</td>
         <td></td>
         <td>`rtl`: corpus-specific (speaker/paragraph-level) - verify against…; `source`: corpus-specific (speaker/paragraph-level) - verify against…</td>
         <td></td>
@@ -1019,7 +1019,7 @@ This page is a slim recap generated from per-treebank data files in [`workgroups
         <td>n/a - spoken data only</td>
         <td></td>
         <td>add `# document_id = Seyristane_dialogue` corpus-wide (single document)</td>
-        <td>`text_en` → `text_eng`</td>
+        <td>`text_en`: OK (ISO 639-1)</td>
         <td></td>
         <td></td>
         <td></td>

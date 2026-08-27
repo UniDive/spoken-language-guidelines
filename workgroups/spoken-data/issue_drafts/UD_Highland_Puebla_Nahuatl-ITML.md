@@ -24,7 +24,7 @@ This treebank mixes spoken and written material but its `.conllu` files don't ex
 
 | Field         | Suggestion                                                      |
 | ------------- | --------------------------------------------------------------- |
-| `text[spa]`   | change to `text_spa`                                             |
+| `text[spa]`   | change to `text_es`                                              |
 | `text[orig]`  | change to `text_transcription`                                  |
 | `text[gloss]` | change to `text_glossing` - unsure what this is, please confirm |
 | `text[glosa]` | typo (duplicate of `text[gloss]`) - please confirm               |
@@ -47,7 +47,7 @@ into:
 ### Implementation notes
 
 **Quick search & replace**
-- `text[spa]` → `text_spa`, `text[orig]` → `text_transcription` (`# oldkey =` → `# newkey =`).
+- `text[spa]` → `text_es`, `text[orig]` → `text_transcription` (`# oldkey =` → `# newkey =`).
 - Tag modality: `python3 workgroups/spoken-data/scripts/harmonize_metadata.py tag-modality <path> --spoken-if '\.eaf'` (matched against `sent_id`, not `document_id` - the script currently only pattern-matches `document_id`, so this one needs a one-line tweak to match on `sent_id` instead, or a small adaptation; the underlying detection pattern itself is unambiguous, 499/… sentences carry `.eaf`).
 
 **Needs a small script**

@@ -36,8 +36,8 @@ udver: '2'
 
 | Field                | Advice               |
 | -------------------- | -------------------- |
-| `text_en`            | change to `text_eng` |
-| `text_phrase-gls-es` | change to `text_esp` |
+| `text_en`            | OK (ISO 639-1 two-letter code) |
+| `text_phrase-gls-es` | change to `text_es` |
 
 ### transcription and annotation levels available
 
